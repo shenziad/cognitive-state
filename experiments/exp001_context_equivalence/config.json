@@ -1,0 +1,10 @@
+{
+  "experiment_id": "exp001_context_equivalence",
+  "model": null,
+  "temperature": 0.0,
+  "benchmark": null,
+  "prompt_version": "v0.1",
+  "conditions": ["full_context", "summary", "cognitive_state"],
+  "max_output_tokens": null,
+  "seed": null
+}

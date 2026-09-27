@@ -1,0 +1,2 @@
+# No third-party runtime dependencies in the phase 1 scaffold.
+# Install the project with: python -m pip install -e .
