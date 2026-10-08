@@ -1,0 +1,67 @@
+{
+  "instance_id": "pilot11_log_redaction",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h06"
+    ],
+    "world.facts": [
+      "h03",
+      "h05",
+      "h07"
+    ],
+    "world.beliefs": [
+      "h04"
+    ],
+    "world.assumptions": [
+      "h02"
+    ],
+    "frontier": [
+      "h08"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Restore useful redacted audit logs",
+      "success_criteria": [
+        "All service checks pass"
+      ],
+      "constraints": [
+        "Preserve audit_enabled=true; do not change it.",
+        "Preserve schema_version=1; do not change it.",
+        "No database migration; modify virtual service configuration only."
+      ],
+      "preferences": [
+        "Prefer a small, evidence-based change"
+      ]
+    },
+    "world": {
+      "facts": [
+        "Audit output contains personal fields and excessive debug records.",
+        "Earlier change {\"key\": \"log_level\", \"value\": \"debug\"} failed and was reverted",
+        "Legacy runbook is deprecated; current runbook has not been read"
+      ],
+      "beliefs": [
+        {
+          "claim": "The logger may be using pre-redaction settings",
+          "confidence": 0.6
+        }
+      ],
+      "assumptions": [
+        "The virtual fixture represents the interrupted service"
+      ]
+    },
+    "frontier": {
+      "current_focus": "Restore useful redacted audit logs",
+      "information_needs": [
+        "Current settings guidance"
+      ],
+      "next_action": "Read docs/runbook.json, then edit based on evidence and run checks"
+    }
+  }
+}

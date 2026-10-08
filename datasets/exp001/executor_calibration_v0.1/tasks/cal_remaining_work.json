@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_remaining_work",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: ensure precheck and packaging are validated, then finish. 1 credit."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Certified checkpoint: precheck is validated; packaging has never run."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "purpose": "service_probe_not_experimental_cell",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "config_sha256": "886758acd416f2cb59ada5cf0e37c33753efd96f2fb131751bddc48b77fb3790",
+  "request_attempts": 1,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Reply with OK."
+    }
+  ],
+  "max_tokens": 8,
+  "temperature": 0,
+  "extra_body": {
+    "enable_thinking": false
+  },
+  "total_tokens": 10,
+  "unknown_usage_attempts": 0,
+  "status": "response_received",
+  "response_id": "01a101f9a460b40e81734f6091e6ea47",
+  "usage": {
+    "completion_tokens": 2,
+    "prompt_tokens": 8,
+    "total_tokens": 10,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 8
+  },
+  "latency_seconds": 1.7987261000016588
+}

@@ -1,0 +1,12 @@
+{
+  "base_sha256": {
+    "datasets/cycle3_v03r2/regression.json": "34e9067a69cfd3f962b6e9911ac698fa8e505d745f45be01a930fd9f12dceb71",
+    "datasets/cycle3_v03r2/longitudinal.json": "acbcfb849714b58f6ae00a080ecde0aea80a7263969480fe047732bac323566c"
+  },
+  "changes": [
+    "Explicit public operation kind/receipt semantics; no hidden target or unread observations added to model input.",
+    "Two inflight histories receive a shared public broker identity-alias contract.",
+    "World effects, budgets, rubrics, external patches and existing histories otherwise preserved."
+  ],
+  "scope": "Known synthetic development regression, not unseen generalization. Offline solutions are excluded from model messages."
+}

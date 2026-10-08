@@ -1,0 +1,12 @@
+{
+  "instance_id": "disc_control02_a",
+  "accepted_example": [
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

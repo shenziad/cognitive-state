@@ -1,0 +1,543 @@
+{
+  "schema_version": "v0.3.1",
+  "purpose": "Offline normative examples only, not model input, gold-conditioned baseline, or full execution benchmark",
+  "cases": [
+    {
+      "id": "accepted_pending",
+      "user_goal": "Complete job-17 successfully.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "accepted",
+          "source_refs": [
+            "e1"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Submission is complete with outcome accepted; the job is pending.",
+      "counterexample": {
+        "field": "job.phase",
+        "value": "succeeded",
+        "error": "unsupported_job_success"
+      }
+    },
+    {
+      "id": "submission_only_goal",
+      "user_goal": "Submit the job and report its accepted ID. Do not wait for job completion.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "accepted",
+          "source_refs": [
+            "e1"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": true,
+      "reason": "Acceptance satisfies a submission-only goal; job remains accepted.",
+      "counterexample": null
+    },
+    {
+      "id": "submission_timeout",
+      "user_goal": "Complete the requested job without duplicate submission.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "attempt-1 timed out; server acceptance and side effects unknown; no job ID received. Public interface offers idempotency lookup."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "unknown",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "unknown"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Unknown acceptance does not license resubmission or invented job identity.",
+      "counterexample": {
+        "action": "resubmit_without_recovery",
+        "error": "unsupported_no_side_effect_assumption"
+      }
+    },
+    {
+      "id": "other_job_succeeded",
+      "user_goal": "Complete job-17 successfully.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e2",
+          "role": "tool",
+          "content": "job-18 succeeded; this receipt says nothing new about job-17."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "accepted",
+          "source_refs": [
+            "e1"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Match job identity before changing phase.",
+      "counterexample": {
+        "entity_id": "job-17",
+        "phase": "succeeded",
+        "source_refs": [
+          "e2"
+        ],
+        "error": "wrong_entity_evidence"
+      }
+    },
+    {
+      "id": "job_success_requires_verification",
+      "user_goal": "Complete job-17 and independently validate result v1.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e2",
+          "role": "tool",
+          "content": "job-17 sequence=2 succeeded, required result saved at version v1."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "succeeded",
+          "source_refs": [
+            "e2"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Job succeeded; explicit validation remains an outstanding obligation.",
+      "counterexample": {
+        "action": "finish_completed",
+        "error": "unmet_explicit_validation"
+      }
+    },
+    {
+      "id": "job_success_no_extra_verification",
+      "user_goal": "Complete job-17 and save result v1; no independent validation requirement.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e2",
+          "role": "tool",
+          "content": "job-17 sequence=2 succeeded, required result saved at version v1."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "succeeded",
+          "source_refs": [
+            "e2"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": true,
+      "reason": "Actual required result is confirmed; do not invent extra verification.",
+      "counterexample": null
+    },
+    {
+      "id": "cancel_accepted",
+      "user_goal": "Cancel job-17 and confirm cancellation.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e3",
+          "role": "tool",
+          "content": "cancel attempt cancel-1 accepted for job-17; job remains running, sequence=2."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "s2",
+          "kind": "submission",
+          "entity_id": "cancel-1",
+          "operation": "cancel_job",
+          "phase": "completed",
+          "source_refs": [
+            "e3"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "running",
+          "source_refs": [
+            "e3"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Cancel request completed; job cancellation not confirmed.",
+      "counterexample": {
+        "field": "job.phase",
+        "value": "cancelled",
+        "error": "unsupported_job_cancellation"
+      }
+    },
+    {
+      "id": "cancel_confirmed",
+      "user_goal": "Cancel job-17 and confirm cancellation.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e3",
+          "role": "tool",
+          "content": "cancel attempt cancel-1 accepted for job-17; job remains running, sequence=2."
+        },
+        {
+          "id": "e4",
+          "role": "tool",
+          "content": "job-17 sequence=3 is cancelled; cancellation is final."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "s2",
+          "kind": "submission",
+          "entity_id": "cancel-1",
+          "operation": "cancel_job",
+          "phase": "completed",
+          "source_refs": [
+            "e3"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "cancelled",
+          "source_refs": [
+            "e4"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": true,
+      "reason": "The matching terminal cancellation receipt satisfies this goal.",
+      "counterexample": null
+    },
+    {
+      "id": "sync_success",
+      "user_goal": "Apply setting gold.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Synchronous apply_setting call sync-1 returned successful effects selected=gold."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "o1",
+          "kind": "sync_operation",
+          "entity_id": "sync-1",
+          "operation": "apply_setting",
+          "phase": "succeeded",
+          "source_refs": [
+            "e1"
+          ]
+        }
+      ],
+      "expected_finish_completed": true,
+      "reason": "Synchronous successful effects need no invented job record.",
+      "counterexample": null
+    },
+    {
+      "id": "plan_only",
+      "user_goal": "Apply setting gold.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "assistant",
+          "content": "Plan to call apply_setting. No call issued."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "o1",
+          "kind": "sync_operation",
+          "entity_id": "planned-1",
+          "operation": "apply_setting",
+          "phase": "planned",
+          "source_refs": [
+            "e1"
+          ]
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "A plan cannot establish effects.",
+      "counterexample": {
+        "field": "sync_operation.phase",
+        "value": "succeeded",
+        "error": "plan_as_observation"
+      }
+    },
+    {
+      "id": "late_older_receipt",
+      "user_goal": "Complete job-17 and save result v1.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e2",
+          "role": "tool",
+          "content": "job-17 sequence=2 succeeded, required result saved at version v1."
+        },
+        {
+          "id": "e3",
+          "role": "tool",
+          "content": "Late delivery: job-17 sequence=1 accepted. Public contract specifies monotonically increasing sequence numbers for this job."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "succeeded",
+          "source_refs": [
+            "e2"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": true,
+      "reason": "Retain newer terminal sequence=2 evidence; receive order is not event order.",
+      "counterexample": {
+        "field": "job.phase",
+        "value": "accepted",
+        "error": "stale_receipt_regression"
+      }
+    },
+    {
+      "id": "unordered_conflict",
+      "user_goal": "Complete job-17 successfully.",
+      "public_events": [
+        {
+          "id": "e1",
+          "role": "tool",
+          "content": "Contract: definitive submit response for attempt-1: accepted, job_id=job-17; job status accepted, result not ready."
+        },
+        {
+          "id": "e2",
+          "role": "tool",
+          "content": "job-17 succeeded; no version or ordering guarantee."
+        },
+        {
+          "id": "e3",
+          "role": "tool",
+          "content": "job-17 failed; no version or ordering guarantee. The public contract provides a current-status query."
+        }
+      ],
+      "expected_operations": [
+        {
+          "id": "s1",
+          "kind": "submission",
+          "entity_id": "attempt-1",
+          "operation": "submit_job",
+          "phase": "completed",
+          "source_refs": [
+            "e1"
+          ],
+          "outcome": "accepted",
+          "job_ref": "j1"
+        },
+        {
+          "id": "j1",
+          "kind": "job",
+          "entity_id": "job-17",
+          "operation": "submit_job",
+          "phase": "unknown",
+          "source_refs": [
+            "e2",
+            "e3"
+          ],
+          "handle": "job-17"
+        }
+      ],
+      "expected_finish_completed": false,
+      "reason": "Keep conflicting evidence and resolve via public query; do not arbitrarily choose a terminal state.",
+      "counterexample": {
+        "action": "finish_completed",
+        "error": "unresolved_conflicting_evidence"
+      }
+    }
+  ]
+}

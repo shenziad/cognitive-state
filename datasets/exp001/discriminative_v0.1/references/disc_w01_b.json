@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_w01_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Resolve incident using latest controlled evidence",
+      "success_criteria": [
+        "Apply the evidence-supported remedy"
+      ],
+      "constraints": [
+        "Only one irreversible remedy; 1 credit"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Controlled evidence confirms queue",
+        "Earlier cache claim was conjecture",
+        "Cache hypothesis falsified"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Resolve incident using latest controlled evidence",
+      "information_needs": [],
+      "next_action": "execute repair_queue"
+    }
+  }
+}

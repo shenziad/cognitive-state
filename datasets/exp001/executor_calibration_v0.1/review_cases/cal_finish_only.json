@@ -1,0 +1,11 @@
+{
+  "instance_id": "cal_finish_only",
+  "accepted_example": [
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ]
+}

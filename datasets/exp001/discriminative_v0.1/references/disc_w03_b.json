@@ -1,0 +1,70 @@
+{
+  "instance_id": "disc_w03_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Deploy parser matching observed partner contract",
+      "success_criteria": [
+        "Parser for v2 deployed"
+      ],
+      "constraints": [
+        "1 deployment credit"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Authoritative handshake confirms schema v2",
+        "Old v1 plan was tentative, not deployed"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Deploy parser matching observed partner contract",
+      "information_needs": [],
+      "next_action": "execute apply_parser_v2"
+    }
+  }
+}

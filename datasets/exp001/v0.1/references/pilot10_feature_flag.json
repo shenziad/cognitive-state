@@ -1,0 +1,67 @@
+{
+  "instance_id": "pilot10_feature_flag",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h06"
+    ],
+    "world.facts": [
+      "h03",
+      "h05",
+      "h07"
+    ],
+    "world.beliefs": [
+      "h04"
+    ],
+    "world.assumptions": [
+      "h02"
+    ],
+    "frontier": [
+      "h08"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Restore checkout for the pilot cohort",
+      "success_criteria": [
+        "All service checks pass"
+      ],
+      "constraints": [
+        "Preserve global_enabled=false; do not change it.",
+        "Preserve schema_version=1; do not change it.",
+        "No database migration; modify virtual service configuration only."
+      ],
+      "preferences": [
+        "Prefer a small, evidence-based change"
+      ]
+    },
+    "world": {
+      "facts": [
+        "Pilot users cannot reach checkout; global rollout is explicitly out of scope.",
+        "Earlier change {\"key\": \"cohort\", \"value\": \"internal\"} failed and was reverted",
+        "Legacy runbook is deprecated; current runbook has not been read"
+      ],
+      "beliefs": [
+        {
+          "claim": "The cohort selector may be stale",
+          "confidence": 0.6
+        }
+      ],
+      "assumptions": [
+        "The virtual fixture represents the interrupted service"
+      ]
+    },
+    "frontier": {
+      "current_focus": "Restore checkout for the pilot cohort",
+      "information_needs": [
+        "Current settings guidance"
+      ],
+      "next_action": "Read docs/runbook.json, then edit based on evidence and run checks"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot08_pagination",
+  "files": {
+    "config/service.json": {
+      "page_size": 500,
+      "cursor_mode": "offset",
+      "include_archived": false,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "The current API allows 100 items and requires token cursors.",
+      "recommended_settings": {
+        "page_size": 100,
+        "cursor_mode": "token"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "page_size": 500,
+        "cursor_mode": "offset",
+        "include_archived": false,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Inventory requests fail on the second page; the proxy is reachable."
+  },
+  "rubric": {
+    "target_settings": {
+      "page_size": 100,
+      "cursor_mode": "token"
+    },
+    "protected_keys": [
+      "include_archived",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "page_size",
+        "value": 500
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

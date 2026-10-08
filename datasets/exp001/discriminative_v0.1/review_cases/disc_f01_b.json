@@ -1,0 +1,24 @@
+{
+  "instance_id": "disc_f01_b",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "submit_packet"
+      }
+    },
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/job17"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

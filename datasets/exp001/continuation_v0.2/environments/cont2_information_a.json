@@ -1,0 +1,135 @@
+{
+  "instance_id": "cont2_information_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "cargo_verified": true,
+    "venue_verified": false,
+    "registered_pair": "none"
+  },
+  "operations": {
+    "register_R14_P48": {
+      "description": "Register certificate pair cargo=R14, venue=P48.",
+      "effects": {
+        "registered_pair": "R14_P48"
+      },
+      "cost": 1
+    },
+    "register_R14_P63": {
+      "description": "Register certificate pair cargo=R14, venue=P63.",
+      "effects": {
+        "registered_pair": "R14_P63"
+      },
+      "cost": 1
+    },
+    "register_R29_P48": {
+      "description": "Register certificate pair cargo=R29, venue=P48.",
+      "effects": {
+        "registered_pair": "R29_P48"
+      },
+      "cost": 1
+    },
+    "register_R29_P63": {
+      "description": "Register certificate pair cargo=R29, venue=P63.",
+      "effects": {
+        "registered_pair": "R29_P63"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {
+    "current/cargo_certificate": {
+      "description": "Read the current cargo certificate.",
+      "observation": {
+        "content": {
+          "cargo_code": "R29"
+        }
+      },
+      "effects": {
+        "cargo_verified": true
+      },
+      "cost": 2
+    },
+    "current/venue_certificate": {
+      "description": "Read the current venue certificate.",
+      "observation": {
+        "content": {
+          "venue_code": "P63"
+        }
+      },
+      "effects": {
+        "venue_verified": true
+      },
+      "cost": 2
+    },
+    "current/certificate_index": {
+      "description": "Recover which certificate was already verified, excluding its value.",
+      "observation": {
+        "content": {
+          "already_verified": "cargo"
+        }
+      },
+      "effects": {},
+      "cost": 2
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "cargo_verified": true,
+      "venue_verified": true,
+      "registered_pair": "R29_P63"
+    },
+    "finish_status": "completed",
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "register_R14_P48"
+          }
+        },
+        "state": {
+          "cargo_verified": true,
+          "venue_verified": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "register_R14_P63"
+          }
+        },
+        "state": {
+          "cargo_verified": true,
+          "venue_verified": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "register_R29_P48"
+          }
+        },
+        "state": {
+          "cargo_verified": true,
+          "venue_verified": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "register_R29_P63"
+          }
+        },
+        "state": {
+          "cargo_verified": true,
+          "venue_verified": true
+        }
+      }
+    ],
+    "forbidden_actions": []
+  }
+}

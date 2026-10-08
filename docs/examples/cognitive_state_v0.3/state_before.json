@@ -1,0 +1,92 @@
+{
+  "goal": {
+    "revision": "g1",
+    "objective": "Obtain exactly one fulfilled reservation.",
+    "requirements": [
+      {
+        "id": "req1",
+        "text": "Exactly one reservation is fulfilled.",
+        "source_refs": [
+          "h01"
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "con1",
+        "text": "Do not submit another request after acceptance.",
+        "source_refs": [
+          "h01"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "world": {
+    "claims": [
+      {
+        "id": "c1",
+        "text": "Exactly one request exists (reservation-1); it is not fulfilled and its notice is pending.",
+        "basis": "observed",
+        "source_refs": [
+          "h03"
+        ],
+        "valid_when": "Before a subsequent completion, cancellation or replacement event.",
+        "recheck_when": "An explicit cancellation or replacement event arrives."
+      }
+    ],
+    "operations": [
+      {
+        "id": "op1",
+        "operation": "request_H",
+        "target": {
+          "request_id": "reservation-1",
+          "broker": "pearl"
+        },
+        "phase": "accepted",
+        "source_refs": [
+          "h03"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "budget1",
+        "kind": "credits",
+        "remaining": 3,
+        "scope": "current-checkpoint",
+        "source_refs": [
+          "h04"
+        ]
+      }
+    ]
+  },
+  "frontier": {
+    "obligations": [
+      {
+        "id": "ob1",
+        "text": "Fulfil the already accepted reservation by consuming its pending notice.",
+        "requirement_ref": "req1",
+        "depends_on": [
+          "c1",
+          "op1"
+        ]
+      }
+    ],
+    "open_questions": [],
+    "candidate_action": {
+      "tool": "execute",
+      "arguments": {
+        "operation": "consume_Z"
+      },
+      "requires": [
+        "c1",
+        "op1",
+        "budget1"
+      ],
+      "obligation_ref": "ob1",
+      "goal_revision": "g1",
+      "known_cost": 2
+    }
+  }
+}

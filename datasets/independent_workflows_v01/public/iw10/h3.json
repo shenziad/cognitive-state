@@ -1,0 +1,163 @@
+{
+  "checkpoint": 3,
+  "instance_id": "iw10:h3",
+  "new_public_events": [
+    {
+      "id": "iw10:h3:u",
+      "role": "user",
+      "content": "Build the results table from the validated v2 model. Keep the unchanged audit and use no v1 analytical outputs. Earlier obligations continue unless explicitly withdrawn; fulfill any that remain missing. A requirement to preserve an item does not certify it exists: determine previous action success only from this condition's actual receipts."
+    },
+    {
+      "id": "iw10:h3:n3",
+      "role": "assistant",
+      "content": "Office coordination note 3-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:n4",
+      "role": "assistant",
+      "content": "Office coordination note 3-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:n5",
+      "role": "assistant",
+      "content": "Office coordination note 3-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:n6",
+      "role": "assistant",
+      "content": "Office coordination note 3-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:n1",
+      "role": "assistant",
+      "content": "Office coordination note 3-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:n2",
+      "role": "assistant",
+      "content": "Office coordination note 3-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw10:h3:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "repeat_privacy_audit",
+          "description": "Repeat the previously completed privacy audit.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "audit_complete": true
+          },
+          "successful_increments": {
+            "audits": 1
+          },
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "fit_v1",
+          "description": "Fit the model on cohort v1.",
+          "cost": 1,
+          "preconditions": {
+            "cohort_version": "v1"
+          },
+          "successful_effects": {
+            "model_version": "v1",
+            "model_ready": true,
+            "model_validated": false
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "fit_v2",
+          "description": "Fit the model on corrected cohort v2.",
+          "cost": 1,
+          "preconditions": {
+            "cohort_version": "v2"
+          },
+          "successful_effects": {
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": false
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "validate_v2",
+          "description": "Validate the v2 model using the requested holdout.",
+          "cost": 1,
+          "preconditions": {
+            "model_version": "v2",
+            "model_ready": true
+          },
+          "successful_effects": {
+            "model_validated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "build_v2_table",
+          "description": "Build the v2 results table from the validated v2 model.",
+          "cost": 1,
+          "preconditions": {
+            "model_version": "v2",
+            "model_validated": true
+          },
+          "successful_effects": {
+            "table_version": "v2",
+            "table_ready": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "write_v2_report",
+          "description": "Write the report from the current v2 table and preserved privacy audit.",
+          "cost": 1,
+          "preconditions": {
+            "table_version": "v2",
+            "table_ready": true,
+            "audit_complete": true
+          },
+          "successful_effects": {
+            "report_ready": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw10:h3",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "evidence_scope": "single_repetition_assistant_generated_synthetic_continuation_pilot",
+  "conclusion": "No observed automatic Cognitive State advantage over ordinary Summary in this run.",
+  "hypotheses_confirmed": [],
+  "failure_cases": [
+    {
+      "instance_id": "disc_g02_a",
+      "condition": "full_context",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_a_r0_full_context.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_g02_a",
+      "condition": "cognitive_state",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_a_r0_cognitive_state.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_g02_a",
+      "condition": "summary",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_a_r0_summary.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_g02_b",
+      "condition": "cognitive_state",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_b_r0_cognitive_state.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_g02_b",
+      "condition": "full_context",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_b_r0_full_context.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_g02_b",
+      "condition": "summary",
+      "classification": "premature_finish_without_choice",
+      "raw_artifact": "instances/disc_g02_b_r0_summary.json",
+      "trace_actions": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    },
+    {
+      "instance_id": "disc_control01_a",
+      "condition": "cognitive_state",
+      "classification": "executor_action_schema_and_resource_grounding_failure",
+      "raw_artifact": "instances/disc_control01_a_r0_cognitive_state.json",
+      "trace_actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "workspace/sable/current/qualification"
+          }
+        },
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "workspace/catalog.json"
+          }
+        },
+        {
+          "tool": "execute",
+          "operation": "choose_local"
+        },
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/qualification"
+          }
+        },
+        {
+          "tool": "execute",
+          "operation": "choose_remote"
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "missing_state_information_demonstrated": false
+    }
+  ],
+  "failure_counts": {
+    "premature_finish_without_choice": 6,
+    "executor_action_schema_and_resource_grounding_failure": 1,
+    "representation_errors": 0,
+    "api_errors": 0
+  },
+  "candidate_reference_status": "assistant_generated_pending_researcher_review",
+  "candidate_reference_limitations": [
+    "disc_w02_a repair_queue exact operation name not supported by supplied history",
+    "action specificity differs from automatic representations",
+    "construction cost unmeasured"
+  ],
+  "successful_branch_evidence": {
+    "W02": "A repair only; B diagnose then repair",
+    "F01": "A poll only; B submit then poll",
+    "F02": "execute two unfinished stages",
+    "F03": "read missing branch only then seal"
+  },
+  "experiment_changed_after_observing_results": false,
+  "analysis_is_posthoc": true,
+  "failed_combinations_rerun": false,
+  "reduction_convention": "mean of same-instance reductions; includes extraction and all executor calls; task-success not filtered",
+  "limitations": [
+    "one model, one repetition, small synthetic histories and a single continuation",
+    "G/W/F family labels overlap; not component ablations",
+    "W02 and F01 permit adaptive history-free recovery",
+    "tool correctness and decision consistency auxiliary scores can overrate premature finish",
+    "reference states pending and have provenance/action-specificity confounds"
+  ]
+}

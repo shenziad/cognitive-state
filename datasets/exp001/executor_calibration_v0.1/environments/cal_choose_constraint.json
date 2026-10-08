@@ -1,0 +1,32 @@
+{
+  "instance_id": "cal_choose_constraint",
+  "environment_type": "continuation",
+  "initial_state": {
+    "choice": "none"
+  },
+  "operations": {
+    "select_amber": {
+      "description": "Apply amber processing choice.",
+      "effects": {
+        "choice": "amber"
+      },
+      "cost": 1
+    },
+    "select_violet": {
+      "description": "Apply violet processing choice.",
+      "effects": {
+        "choice": "violet"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {},
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "choice": "amber"
+    },
+    "before_action": [],
+    "finish_status": "completed"
+  }
+}

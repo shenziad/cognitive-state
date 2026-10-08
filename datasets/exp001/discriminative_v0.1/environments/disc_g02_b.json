@@ -1,0 +1,33 @@
+{
+  "instance_id": "disc_g02_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "plan": "none"
+  },
+  "operations": {
+    "choose_offline": {
+      "description": "Select offline plan: latency 2.0 seconds, no network.",
+      "effects": {
+        "plan": "offline"
+      },
+      "cost": 1
+    },
+    "choose_cloud": {
+      "description": "Select cloud plan: latency 0.8 seconds, uses network.",
+      "effects": {
+        "plan": "cloud"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {},
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "plan": "cloud"
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

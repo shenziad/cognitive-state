@@ -1,0 +1,487 @@
+{
+  "stage": "regression",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\regression_recovery_v1_20261003",
+  "results_sha256": "6ba156748428b7df63bc2d03f4bdb4121b5669fedceffce1961af85c523a0b96",
+  "review_sha256": "4964dc230c43bae8846c8fef99ed4b3b46af9efc3cd55e00e7c4559c88c057aa",
+  "audit_sha256": "8de0e9198e4a48212058d32aebdeffe0b4101629e1ee626a77d265127fc20736",
+  "review_method": "public_sources_before_behavior; assistant_not_independent_gold; condition_not_blinded",
+  "behavior_linkage_done_after_source_review_saved": true,
+  "source_counts": {
+    "summary": {
+      "reviewed": 14,
+      "concrete_error_states": 1,
+      "ambiguous_states": 1
+    },
+    "cs_v02": {
+      "reviewed": 14,
+      "concrete_error_states": 3,
+      "ambiguous_states": 5
+    },
+    "cs_v031": {
+      "reviewed": 14,
+      "concrete_error_states": 0,
+      "ambiguous_states": 2
+    }
+  },
+  "cases": [
+    {
+      "artifact": "instances/cont2_completed_a_cs_v02_r0_h1.json",
+      "artifact_sha256": "c1782aaca7adccf0202870bfd364da8375bdf1d1fd9b3b50b0e15c920bea6659",
+      "condition": "cs_v02",
+      "instance_id": "cont2_completed_a",
+      "handoff": 1,
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "oak_calibrated": true,
+          "elm_calibrated": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1815,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "incorrect",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_notes": "公开 h04 确认oak已完成/validated、elm未运行，h01只要求两架校准且不重复；目录提供calibrate_R实际成功效果和可选付费ledger，并没有独立验收要求。表示正确保留oak完成并安排elm，但success_criteria把elm写成requires execution and verification，next_action要求calibrate_R后再observe current/calibration_ledger，属于新增独立查证义务。它同时记余额3、校准2及ledger2，却安排总4的序列，没有传播校准后余1不足以再查ledger的资源依赖，故invented_requirement和missing_decision_dependency错误。当前没有虚构elm完成，oak也未被重开为校准待办。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "calibrate_R"
+            }
+          },
+          "observation": {
+            "operation_applied": "calibrate_R",
+            "public_receipt": {
+              "applied": "calibrate_R"
+            },
+            "confirmed_effects": {
+              "elm_calibrated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "cont2_completed_a:calibrate_R:1",
+                "operation": "calibrate_R",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        },
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/calibration_ledger"
+            }
+          },
+          "observation": {
+            "error": "Workspace credit budget exhausted",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": false,
+          "policy_violations": [
+            "budget_exceeded"
+          ],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/cont2_goal_b_cs_v02_r0_h1.json",
+      "artifact_sha256": "95fd37b4c10cfeca67d781aacf2e0c84fce838f16db79f02425d7f79aa1780bc",
+      "condition": "cs_v02",
+      "instance_id": "cont2_goal_b",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "recipient": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1943,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h04 is the latest user authority: scope 6 supersedes scope 1, review is the sole recipient, retention unauthorized, nothing dispatched. Goal/facts retain these requirements and dispatch_K's 2-credit price. Nevertheless frontier information_needs reopens whether scope changed and next_action unconditionally pays 1 credit to re-fetch current/owner_scope before dispatch, with no later change/invalidation evidence in this packet: unsupported_reopened_question is incorrect. The recipient decision and budget remain preserved; the extra refresh is not explicitly added as a separate user success criterion, so invented_requirement is correct. No async pending job is present; missing_pending_job is not_observed.",
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/owner_scope"
+            }
+          },
+          "observation": {
+            "content": {
+              "authorized_recipient": "review"
+            },
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "recipient": "none"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "dispatch_K"
+            }
+          },
+          "observation": {
+            "operation_applied": "dispatch_K",
+            "public_receipt": {
+              "applied": "dispatch_K"
+            },
+            "confirmed_effects": {
+              "recipient": "review"
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "cont2_goal_b:dispatch_K:2",
+                "operation": "dispatch_K",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "recipient": "review"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "recipient": "review"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/cont2_belief_b_summary_r0_h1.json",
+      "artifact_sha256": "d129e53553a2649d17b63e30dc719aeeee7d69336b4b8d0a291cc2c28ba575d5",
+      "condition": "summary",
+      "instance_id": "cont2_belief_b",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true,
+          "diagnosis_confirmed": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 774,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "incorrect",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h04 establishes only completed diagnosis (flux confirmed) and explicitly says no remediation applied. The Summary opens with 'The sensor incident in workspace lumen is resolved', which is an unsupported assertion of completed user goal while the remedy is still outstanding: unsupported_completion is incorrect. Its subsequent no-remedy sentence and instruction to apply remedy_T correctly preserve the diagnosis-to-remedy decision and 2-credit cost within 3 credits; those later correct instructions do not make the opening completed-goal assertion source-supported. Checking the returned execute receipt is supported and does not invent a paid validation requirement. No async pending job is present; missing_pending_job is not_observed.",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "remedy_T"
+            }
+          },
+          "observation": {
+            "operation_applied": "remedy_T",
+            "public_receipt": {
+              "applied": "remedy_T"
+            },
+            "confirmed_effects": {
+              "remedy": "flux"
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "cont2_belief_b:remedy_T:1",
+                "operation": "remedy_T",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "remedy": "flux",
+            "diagnosis_confirmed": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "remedy": "flux",
+            "diagnosis_confirmed": true
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/cont2_completed_b_cs_v02_r0_h1.json",
+      "artifact_sha256": "99727bfa31ada880738d8797ea2c4f3ac174d51cb3215c840b471f93aea257a6",
+      "condition": "cs_v02",
+      "instance_id": "cont2_completed_b",
+      "handoff": 1,
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "oak_calibrated": true,
+          "elm_calibrated": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1807,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "ambiguous",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_notes": "h04's signed checkpoint already settles elm calibrated/validated and oak not run. Facts and current_focus correctly retain both identities, and calibrate_J is the appropriate remaining 2-credit action. However information_needs reopens whether oak already validated and elm remains validated with no later conflicting evidence: unsupported_reopened_question is incorrect. next_action explicitly appends a 2-credit calibration_ledger observation after calibrate_J; h02/interface prices and runtime_1's 3 credits make this 4-credit sequence unaffordable. missing_decision_dependency is incorrect for failing to apply the retained resource constraint to its continuation, not for lacking a graph. invented_requirement is ambiguous: the state prescribes the extra ledger verification, but its success_criteria require only both calibrated effects and do not explicitly claim the user mandated that separate check. It does not assert both racks already complete or propose repeating elm calibration. No async pending job is present; missing_pending_job is not_observed.",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "calibrate_J"
+            }
+          },
+          "observation": {
+            "operation_applied": "calibrate_J",
+            "public_receipt": {
+              "applied": "calibrate_J"
+            },
+            "confirmed_effects": {
+              "oak_calibrated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "cont2_completed_b:calibrate_J:1",
+                "operation": "calibrate_J",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        },
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/calibration_ledger"
+            }
+          },
+          "observation": {
+            "error": "Workspace credit budget exhausted",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": false,
+          "policy_violations": [
+            "budget_exceeded"
+          ],
+          "cost": 2,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "oak_calibrated": true,
+            "elm_calibrated": true
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Assistant source review is not independent human gold or condition blinded.",
+    "Known synthetic development tasks; one repetition for these stages.",
+    "Association of source content and behavior is not a randomized causal intervention.",
+    "Goal check booleans indicate agreement with expected values, not raw world values."
+  ]
+}

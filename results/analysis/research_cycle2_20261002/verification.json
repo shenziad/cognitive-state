@@ -1,0 +1,36 @@
+{
+  "evidence_type": "local_protocol_and_result_verification",
+  "model_calls_by_verification": 0,
+  "offline_test_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 68,
+    "failed": 0
+  },
+  "replayed_cells": {
+    "calibration": 32,
+    "fair": 56,
+    "budget_ablation": 140,
+    "posthoc_case": 5,
+    "longitudinal": 32
+  },
+  "cross_stage_actual_calls": {
+    "unique_actual_responses": 644,
+    "provider_tokens": 882069,
+    "response_ids_unique_across_entire_cycle": true
+  },
+  "longitudinal_retention_and_actual_world_carry_verified": true,
+  "git_diff_whitespace_check": "passed",
+  "env_git_ignored": true,
+  "env_git_tracked": false,
+  "credential_leakage_check": {
+    "status": "passed",
+    "scanned_files": 1517,
+    "matching_paths": [],
+    "scope": "In-memory exact credential scan before final summary generation, excluding .env/.env.*, .venv, .git and __pycache__; raw model artifacts included."
+  },
+  "limitations": [
+    "Offline tests verify protocol, not hypotheses.",
+    "Raw calls remain ignored and are not uploaded.",
+    "No commit or push performed in this research cycle."
+  ]
+}

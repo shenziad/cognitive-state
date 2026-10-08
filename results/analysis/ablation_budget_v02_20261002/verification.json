@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "replayed_runs": 140,
+  "trace_final_state_and_metrics_match": true,
+  "frozen_hash_checks": 67,
+  "actual_requests_unique": true,
+  "api_responses": 253,
+  "api_total_tokens": 429761,
+  "models": [
+    "deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "results_sha256": "6a2e7d6dcac17f4f8f80fb84c2fdbd919344a8ad1484d887a77e41ddfb9a14a0",
+  "verifier_sha256": "04794673a261b1c6e34fc738827941c51e07619ade7902b6b43c906515213965",
+  "verification_model_calls": 0
+}

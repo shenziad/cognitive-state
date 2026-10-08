@@ -1,0 +1,48 @@
+{
+  "experiment_id": "cycle4-recovery-v1",
+  "status": "frozen_before_recovery_calls",
+  "execution_version": "cycle4-execution-v2",
+  "protocol_id": "cycle4-scoped-lifecycle-v1",
+  "prior_run": "results/raw/cycle4/preflight_v2_20261003",
+  "prior_attempts": 58,
+  "prior_known_tokens": 100764,
+  "prior_unknown_usage_attempts": 1,
+  "service_probe": "results/analysis/cycle4_preflight_v2_interrupted/service_probe.json",
+  "probe_attempts": 1,
+  "probe_tokens": 10,
+  "request_limit_all_runs_and_probe": 1380,
+  "automatic_recovery_limit": 1,
+  "before_stage_rule": "Remaining overall attempts must cover entire frozen stage request cap; otherwise stop.",
+  "stages": [
+    {
+      "stage": "preflight",
+      "config": "configs/cycle4_preflight_v1.json",
+      "output": "results/raw/cycle4/preflight_recovery_v1_20261003",
+      "stage_cap": 720,
+      "requires_gate": null
+    },
+    {
+      "stage": "regression",
+      "config": "configs/cycle4_regression_v1.json",
+      "output": "results/raw/cycle4/regression_recovery_v1_20261003",
+      "stage_cap": 420,
+      "requires_gate": "preflight"
+    },
+    {
+      "stage": "longitudinal",
+      "config": "configs/cycle4_longitudinal_v1.json",
+      "output": "results/raw/cycle4/longitudinal_recovery_v1_20261003",
+      "stage_cap": 240,
+      "requires_gate": "regression"
+    }
+  ],
+  "stop_on": [
+    "api_error",
+    "unknown_usage",
+    "integrity_failure",
+    "failed_stage_gate",
+    "insufficient_remaining_request_budget"
+  ],
+  "inputs_prompts_scoring_changed": false,
+  "combine_partial_and_recovery_rows": false
+}

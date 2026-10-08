@@ -1,0 +1,160 @@
+{
+  "checkpoint": 3,
+  "instance_id": "iw11:h3",
+  "new_public_events": [
+    {
+      "id": "iw11:h3:u",
+      "role": "user",
+      "content": "Now disable k8 after the production clients have switched successfully. Never recreate k9. Earlier obligations continue unless explicitly withdrawn; fulfill any that remain missing. A requirement to preserve an item does not certify it exists: determine previous action success only from this condition's actual receipts."
+    },
+    {
+      "id": "iw11:h3:n5",
+      "role": "assistant",
+      "content": "Office coordination note 3-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:n6",
+      "role": "assistant",
+      "content": "Office coordination note 3-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:n2",
+      "role": "assistant",
+      "content": "Office coordination note 3-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:n1",
+      "role": "assistant",
+      "content": "Office coordination note 3-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:n3",
+      "role": "assistant",
+      "content": "Office coordination note 3-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:e1",
+      "role": "tool",
+      "content": "Security approval now permits k8 revocation after the previously required switch; this changes the timing restriction only."
+    },
+    {
+      "id": "iw11:h3:n4",
+      "role": "assistant",
+      "content": "Office coordination note 3-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw11:h3:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "reissue_credential",
+          "description": "Submit another credential issuance request.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "issuance_accepted": true
+          },
+          "successful_increments": {
+            "issuance_requests": 1
+          },
+          "lifecycle_contract": {
+            "kind": "submission",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "collect_new_credential",
+          "description": "Collect credential k9 from accepted issue-job-810; its secret value is outside this virtual task.",
+          "cost": 1,
+          "preconditions": {
+            "issuance_accepted": true
+          },
+          "successful_effects": {
+            "new_credential_ready": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "job",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "test_new_credential",
+          "description": "Test k9 against the required production endpoint.",
+          "cost": 1,
+          "preconditions": {
+            "new_credential_ready": true
+          },
+          "successful_effects": {
+            "new_credential_tested": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "switch_clients",
+          "description": "Switch production clients to tested k9.",
+          "cost": 1,
+          "preconditions": {
+            "new_credential_tested": true
+          },
+          "successful_effects": {
+            "clients_switched": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "disable_old_credential",
+          "description": "Disable old credential k8.",
+          "cost": 1,
+          "preconditions": {
+            "clients_switched": true
+          },
+          "successful_effects": {
+            "old_disabled": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "record_rotation",
+          "description": "Record the completed k8 to k9 rotation.",
+          "cost": 1,
+          "preconditions": {
+            "old_disabled": true,
+            "clients_switched": true
+          },
+          "successful_effects": {
+            "rotation_recorded": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw11:h3",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "evidence_scope": "single_synthetic_pilot",
+  "main_successes": {
+    "full_context": 10,
+    "summary": 11,
+    "cognitive_state": 10,
+    "no_history": 6
+  },
+  "main_instances": 12,
+  "major_negative_signal": "CS invented need to reconfirm historical accepted identity in cont2_inflight_a",
+  "failures": [
+    {
+      "instance": "cont2_inflight_a",
+      "condition": "cognitive_state",
+      "classification": "unsupported_necessity_assumption_and_reopened_information_need"
+    },
+    {
+      "instance": "cont2_completed_b",
+      "condition": "cognitive_state",
+      "classification": "representation_budget_protocol",
+      "canonical_utf8_bytes": 2995,
+      "budget": 2200,
+      "tokens_spent": 4424
+    },
+    {
+      "instance": "cont2_information_a",
+      "condition": "summary",
+      "classification": "executor_resource_prefix_error"
+    },
+    {
+      "instances": [
+        "cont2_inflight_a",
+        "cont2_inflight_b"
+      ],
+      "condition": "full_context",
+      "classification": "extra_confirmation_after_world_goal_met",
+      "interface_semantics_confound": true
+    }
+  ],
+  "researcher_review_status": "pending",
+  "hypotheses_confirmed": [],
+  "no_history_limits": "shown recovery failures are not a theoretical bound on all adaptive or guessing policies"
+}

@@ -1,0 +1,3544 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_descriptive_run",
+  "run_status": "completed_with_errors",
+  "outcomes_available": true,
+  "performance_evaluation_available": true,
+  "evidence_type": "synthetic_single_run",
+  "benchmark": "exp001-discriminative-v0.1",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "provider": "openai_sdk",
+  "conditions": [
+    "full_context",
+    "summary",
+    "cognitive_state",
+    "reference_state"
+  ],
+  "repetitions": 1,
+  "planned_runs": 24,
+  "manifest_assigned_runs": 24,
+  "saved_runs": 24,
+  "reported_api_responses": 76,
+  "scope": {
+    "selected_instances": 6,
+    "paired_instances": 6,
+    "ab_groups": 3,
+    "controls": 0,
+    "dataset_instances": 18,
+    "family_instances": {
+      "G": 2,
+      "W": 2,
+      "F": 2
+    },
+    "dataset_construction": "assistant_authored_synthetic_counterfactuals",
+    "dataset_review_status": "draft_pending_researcher_review"
+  },
+  "source": {
+    "run_directory": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\exp001\\siliconflow_discriminative_smoke_20261002",
+    "manifest_sha256": "13abc832da14c3f34e606dd49f14a566c69920776e09f085596963cad201a8df",
+    "config_sha256": "b3dcce5cd1a394d686c569f67926930f3b8a55107d02bd093d3b975c6a2392ee",
+    "results_sha256": "5c42b9028dfa2029dfb88a4753b209bb9ca5d97b5407c7cbfdef487b0c984f23",
+    "dataset_manifest_sha256": "6938e089080f2154482cdffd45c125541c17e8f9dcf0d8e5385565cbd88324a0"
+  },
+  "missing_assignments": [],
+  "success_by_scope": {
+    "all": {
+      "full_context": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 4,
+        "task_success_rate": 0.6666666666666666,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 4,
+        "task_success_rate": 0.6666666666666666,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 3,
+        "task_success_rate": 0.5,
+        "errors": 1,
+        "representation_errors": 1
+      },
+      "reference_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 6,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    },
+    "paired_instances": {
+      "full_context": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 4,
+        "task_success_rate": 0.6666666666666666,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 4,
+        "task_success_rate": 0.6666666666666666,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 3,
+        "task_success_rate": 0.5,
+        "errors": 1,
+        "representation_errors": 1
+      },
+      "reference_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "successes": 6,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    },
+    "controls": {
+      "full_context": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "successes": 0,
+        "task_success_rate": null,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "successes": 0,
+        "task_success_rate": null,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "successes": 0,
+        "task_success_rate": null,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "reference_state": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "successes": 0,
+        "task_success_rate": null,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    }
+  },
+  "success_by_family": {
+    "G": {
+      "full_context": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 0,
+        "task_success_rate": 0.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 0,
+        "task_success_rate": 0.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 0,
+        "task_success_rate": 0.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "reference_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    },
+    "W": {
+      "full_context": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 1,
+        "task_success_rate": 0.5,
+        "errors": 1,
+        "representation_errors": 1
+      },
+      "reference_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    },
+    "F": {
+      "full_context": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "summary": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "cognitive_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      },
+      "reference_state": {
+        "assigned_runs": 2,
+        "recorded_runs": 2,
+        "successes": 2,
+        "task_success_rate": 1.0,
+        "errors": 0,
+        "representation_errors": 0
+      }
+    }
+  },
+  "controls": {},
+  "full_context_discordances": {
+    "summary": {
+      "all": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 4,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "paired_instances": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 4,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "controls": {
+        "assigned_pairs": 0,
+        "observed_pairs": 0,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": null,
+        "discordant_instances": []
+      },
+      "G": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "W": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 2,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "F": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 2,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      }
+    },
+    "cognitive_state": {
+      "all": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 3,
+        "only_full_success": 1,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": -0.16666666666666666,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_w02_a",
+            "repetition": 0,
+            "full_context_success": true,
+            "condition_success": false,
+            "success_delta": -1
+          }
+        ]
+      },
+      "paired_instances": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 3,
+        "only_full_success": 1,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": -0.16666666666666666,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_w02_a",
+            "repetition": 0,
+            "full_context_success": true,
+            "condition_success": false,
+            "success_delta": -1
+          }
+        ]
+      },
+      "controls": {
+        "assigned_pairs": 0,
+        "observed_pairs": 0,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": null,
+        "discordant_instances": []
+      },
+      "G": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 2,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "W": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 1,
+        "only_full_success": 1,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": -0.5,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_w02_a",
+            "repetition": 0,
+            "full_context_success": true,
+            "condition_success": false,
+            "success_delta": -1
+          }
+        ]
+      },
+      "F": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 2,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      }
+    },
+    "reference_state": {
+      "all": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 4,
+        "only_full_success": 0,
+        "only_condition_success": 2,
+        "both_fail": 0,
+        "success_rate_delta": 0.3333333333333333,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_g02_a",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          },
+          {
+            "instance_id": "disc_g02_b",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          }
+        ]
+      },
+      "paired_instances": {
+        "assigned_pairs": 6,
+        "observed_pairs": 6,
+        "both_success": 4,
+        "only_full_success": 0,
+        "only_condition_success": 2,
+        "both_fail": 0,
+        "success_rate_delta": 0.3333333333333333,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_g02_a",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          },
+          {
+            "instance_id": "disc_g02_b",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          }
+        ]
+      },
+      "controls": {
+        "assigned_pairs": 0,
+        "observed_pairs": 0,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": null,
+        "discordant_instances": []
+      },
+      "G": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 0,
+        "only_full_success": 0,
+        "only_condition_success": 2,
+        "both_fail": 0,
+        "success_rate_delta": 1.0,
+        "discordant_instances": [
+          {
+            "instance_id": "disc_g02_a",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          },
+          {
+            "instance_id": "disc_g02_b",
+            "repetition": 0,
+            "full_context_success": false,
+            "condition_success": true,
+            "success_delta": 1
+          }
+        ]
+      },
+      "W": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 2,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      },
+      "F": {
+        "assigned_pairs": 2,
+        "observed_pairs": 2,
+        "both_success": 2,
+        "only_full_success": 0,
+        "only_condition_success": 0,
+        "both_fail": 0,
+        "success_rate_delta": 0.0,
+        "discordant_instances": []
+      }
+    }
+  },
+  "tokens_by_scope": {
+    "all": {
+      "full_context": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 1889.3333333333333,
+          "reported_total": 11336,
+          "total": 11336
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 5740.333333333333,
+          "reported_total": 34442,
+          "total": 34442
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 5740.333333333333,
+          "reported_total": 34442,
+          "total": 34442
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": 0
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 5698.833333333333,
+            "reported_total": 34193,
+            "total": 34193
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 41.5,
+            "reported_total": 249,
+            "total": 249
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 5740.333333333333,
+            "reported_total": 34442,
+            "total": 34442
+          },
+          "reported_calls": 17,
+          "reported_call_tokens": 34442
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.0,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 11336,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 1889.3333333333333,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.0,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 34442,
+          "comparable_full_context_token_total": 34442,
+          "comparable_condition_token_macro_mean": 5740.333333333333,
+          "comparable_full_context_token_macro_mean": 5740.333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "summary": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 519,
+          "reported_total": 3114,
+          "total": 3114
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 3640,
+          "reported_total": 21840,
+          "total": 21840
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 3640,
+          "reported_total": 21840,
+          "total": 21840
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1694.3333333333333,
+            "reported_total": 10166,
+            "total": 10166
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 208.33333333333334,
+            "reported_total": 1250,
+            "total": 1250
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1902.6666666666667,
+            "reported_total": 11416,
+            "total": 11416
+          },
+          "reported_calls": 6,
+          "reported_call_tokens": 11416
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1698.6666666666667,
+            "reported_total": 10192,
+            "total": 10192
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 38.666666666666664,
+            "reported_total": 232,
+            "total": 232
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1737.3333333333333,
+            "reported_total": 10424,
+            "total": 10424
+          },
+          "reported_calls": 16,
+          "reported_call_tokens": 10424
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.7252767969057674,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 3114,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 519,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.19041800008603385,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 21840,
+          "comparable_full_context_token_total": 34442,
+          "comparable_condition_token_macro_mean": 3640,
+          "comparable_full_context_token_macro_mean": 5740.333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "cognitive_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 5,
+          "missing_runs": 1,
+          "macro_mean": 682.2,
+          "reported_total": 3411,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 4098.666666666667,
+          "reported_total": 24592,
+          "total": 24592
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 4098.666666666667,
+          "reported_total": 24592,
+          "total": 24592
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1835.3333333333333,
+            "reported_total": 11012,
+            "total": 11012
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 338.8333333333333,
+            "reported_total": 2033,
+            "total": 2033
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2174.1666666666665,
+            "reported_total": 13045,
+            "total": 13045
+          },
+          "reported_calls": 6,
+          "reported_call_tokens": 13045
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1890.3333333333333,
+            "reported_total": 11342,
+            "total": 11342
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 34.166666666666664,
+            "reported_total": 205,
+            "total": 205
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1924.5,
+            "reported_total": 11547,
+            "total": 11547
+          },
+          "reported_calls": 14,
+          "reported_call_tokens": 11547
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 5,
+          "missing_pairs": 1,
+          "macro_mean": 0.6392608631471163,
+          "error_excluded_pairs": 1,
+          "comparable_condition_token_total": 3411,
+          "comparable_full_context_token_total": 9455,
+          "comparable_condition_token_macro_mean": 682.2,
+          "comparable_full_context_token_macro_mean": 1891,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 5,
+          "missing_pairs": 1,
+          "macro_mean": -0.08012270116860024,
+          "error_excluded_pairs": 1,
+          "comparable_condition_token_total": 22414,
+          "comparable_full_context_token_total": 26333,
+          "comparable_condition_token_macro_mean": 4482.8,
+          "comparable_full_context_token_macro_mean": 5266.6,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "reference_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 448.1666666666667,
+          "reported_total": 2689,
+          "total": 2689
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 1589.5,
+          "reported_total": 9537,
+          "total": 9537
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 0,
+          "missing_runs": 6,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": 0
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1548.5,
+            "reported_total": 9291,
+            "total": 9291
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 41,
+            "reported_total": 246,
+            "total": 246
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1589.5,
+            "reported_total": 9537,
+            "total": 9537
+          },
+          "reported_calls": 17,
+          "reported_call_tokens": 9537
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.7628031320009707,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 2689,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 448.1666666666667,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 0,
+          "missing_pairs": 6,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": "reference_construction_cost_unmeasured"
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      }
+    },
+    "paired_instances": {
+      "full_context": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 1889.3333333333333,
+          "reported_total": 11336,
+          "total": 11336
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 5740.333333333333,
+          "reported_total": 34442,
+          "total": 34442
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 5740.333333333333,
+          "reported_total": 34442,
+          "total": 34442
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": 0
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 5698.833333333333,
+            "reported_total": 34193,
+            "total": 34193
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 41.5,
+            "reported_total": 249,
+            "total": 249
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 5740.333333333333,
+            "reported_total": 34442,
+            "total": 34442
+          },
+          "reported_calls": 17,
+          "reported_call_tokens": 34442
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.0,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 11336,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 1889.3333333333333,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.0,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 34442,
+          "comparable_full_context_token_total": 34442,
+          "comparable_condition_token_macro_mean": 5740.333333333333,
+          "comparable_full_context_token_macro_mean": 5740.333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "summary": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 519,
+          "reported_total": 3114,
+          "total": 3114
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 3640,
+          "reported_total": 21840,
+          "total": 21840
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 3640,
+          "reported_total": 21840,
+          "total": 21840
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1694.3333333333333,
+            "reported_total": 10166,
+            "total": 10166
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 208.33333333333334,
+            "reported_total": 1250,
+            "total": 1250
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1902.6666666666667,
+            "reported_total": 11416,
+            "total": 11416
+          },
+          "reported_calls": 6,
+          "reported_call_tokens": 11416
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1698.6666666666667,
+            "reported_total": 10192,
+            "total": 10192
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 38.666666666666664,
+            "reported_total": 232,
+            "total": 232
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1737.3333333333333,
+            "reported_total": 10424,
+            "total": 10424
+          },
+          "reported_calls": 16,
+          "reported_call_tokens": 10424
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.7252767969057674,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 3114,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 519,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.19041800008603385,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 21840,
+          "comparable_full_context_token_total": 34442,
+          "comparable_condition_token_macro_mean": 3640,
+          "comparable_full_context_token_macro_mean": 5740.333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "cognitive_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 5,
+          "missing_runs": 1,
+          "macro_mean": 682.2,
+          "reported_total": 3411,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 4098.666666666667,
+          "reported_total": 24592,
+          "total": 24592
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 4098.666666666667,
+          "reported_total": 24592,
+          "total": 24592
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1835.3333333333333,
+            "reported_total": 11012,
+            "total": 11012
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 338.8333333333333,
+            "reported_total": 2033,
+            "total": 2033
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2174.1666666666665,
+            "reported_total": 13045,
+            "total": 13045
+          },
+          "reported_calls": 6,
+          "reported_call_tokens": 13045
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1890.3333333333333,
+            "reported_total": 11342,
+            "total": 11342
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 34.166666666666664,
+            "reported_total": 205,
+            "total": 205
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1924.5,
+            "reported_total": 11547,
+            "total": 11547
+          },
+          "reported_calls": 14,
+          "reported_call_tokens": 11547
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 5,
+          "missing_pairs": 1,
+          "macro_mean": 0.6392608631471163,
+          "error_excluded_pairs": 1,
+          "comparable_condition_token_total": 3411,
+          "comparable_full_context_token_total": 9455,
+          "comparable_condition_token_macro_mean": 682.2,
+          "comparable_full_context_token_macro_mean": 1891,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 5,
+          "missing_pairs": 1,
+          "macro_mean": -0.08012270116860024,
+          "error_excluded_pairs": 1,
+          "comparable_condition_token_total": 22414,
+          "comparable_full_context_token_total": 26333,
+          "comparable_condition_token_macro_mean": 4482.8,
+          "comparable_full_context_token_macro_mean": 5266.6,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "reference_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 448.1666666666667,
+          "reported_total": 2689,
+          "total": 2689
+        },
+        "api_total_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 6,
+          "missing_runs": 0,
+          "macro_mean": 1589.5,
+          "reported_total": 9537,
+          "total": 9537
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 6,
+          "observed_runs": 0,
+          "missing_runs": 6,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": 0
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1548.5,
+            "reported_total": 9291,
+            "total": 9291
+          },
+          "output_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 41,
+            "reported_total": 246,
+            "total": 246
+          },
+          "total_tokens": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1589.5,
+            "reported_total": 9537,
+            "total": 9537
+          },
+          "reported_calls": 17,
+          "reported_call_tokens": 9537
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 6,
+          "missing_pairs": 0,
+          "macro_mean": 0.7628031320009707,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": 2689,
+          "comparable_full_context_token_total": 11336,
+          "comparable_condition_token_macro_mean": 448.1666666666667,
+          "comparable_full_context_token_macro_mean": 1889.3333333333333,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": true,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 6,
+          "observed_pairs": 0,
+          "missing_pairs": 6,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": "reference_construction_cost_unmeasured"
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      }
+    },
+    "controls": {
+      "full_context": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "summary": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "cognitive_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      },
+      "reference_state": {
+        "initial_executor_input_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "api_total_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "end_to_end_tokens": {
+          "assigned_runs": 0,
+          "observed_runs": 0,
+          "missing_runs": 0,
+          "macro_mean": null,
+          "reported_total": null,
+          "total": null
+        },
+        "extraction": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "executor": {
+          "input_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "output_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "total_tokens": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "reported_calls": 0,
+          "reported_call_tokens": null
+        },
+        "initial_input_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "end_to_end_reduction_vs_full_context": {
+          "assigned_pairs": 0,
+          "observed_pairs": 0,
+          "missing_pairs": 0,
+          "macro_mean": null,
+          "error_excluded_pairs": 0,
+          "comparable_condition_token_total": null,
+          "comparable_full_context_token_total": null,
+          "comparable_condition_token_macro_mean": null,
+          "comparable_full_context_token_macro_mean": null,
+          "comparison_population": "same instance/repetition; both status non-error and tokens observed; task success not filtered",
+          "available": false,
+          "reason": null
+        },
+        "macro_unit": "assigned instance × repetition; observable task-run token counts, not API-call averages",
+        "cost_scope": "complete_assigned_run"
+      }
+    }
+  },
+  "diagnostics_by_scope": {
+    "all": {
+      "full_context": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.3333333333333333,
+            "reported_total": 8,
+            "total": 8
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.3333333333333333,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.925,
+            "reported_total": 5.55,
+            "total": 5.55
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.8888888888888888,
+            "reported_total": 5.333333333333333,
+            "total": 5.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "summary": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.6666666666666665,
+            "reported_total": 16,
+            "total": 16
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.6666666666666665,
+            "reported_total": 16,
+            "total": 16
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.3333333333333333,
+            "reported_total": 8,
+            "total": 8
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.3333333333333333,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.925,
+            "reported_total": 5.55,
+            "total": 5.55
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.8888888888888888,
+            "reported_total": 5.333333333333333,
+            "total": 5.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "cognitive_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 5,
+        "not_executed_recorded_runs": 1,
+        "termination_counts": {
+          "finish_completed": 5,
+          "representation_error": 1
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.8,
+            "reported_total": 14,
+            "total": 14
+          },
+          "executor_api_calls": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.8,
+            "reported_total": 14,
+            "total": 14
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 1.2,
+            "reported_total": 6,
+            "total": 6
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.2,
+            "reported_total": 11,
+            "total": 11
+          },
+          "policy_violation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.4,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.92,
+            "reported_total": 4.6,
+            "total": 4.6
+          },
+          "decision_consistency": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.8666666666666667,
+            "reported_total": 4.333333333333333,
+            "total": 4.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "reference_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.6666666666666667,
+            "reported_total": 10,
+            "total": 10
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.16666666666666666,
+            "reported_total": 1,
+            "total": 1
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.9666666666666667,
+            "reported_total": 5.8,
+            "total": 5.8
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.0,
+            "reported_total": 6.0,
+            "total": 6.0
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      }
+    },
+    "paired_instances": {
+      "full_context": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.3333333333333333,
+            "reported_total": 8,
+            "total": 8
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.3333333333333333,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.925,
+            "reported_total": 5.55,
+            "total": 5.55
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.8888888888888888,
+            "reported_total": 5.333333333333333,
+            "total": 5.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "summary": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.6666666666666665,
+            "reported_total": 16,
+            "total": 16
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.6666666666666665,
+            "reported_total": 16,
+            "total": 16
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.3333333333333333,
+            "reported_total": 8,
+            "total": 8
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.3333333333333333,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.925,
+            "reported_total": 5.55,
+            "total": 5.55
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.8888888888888888,
+            "reported_total": 5.333333333333333,
+            "total": 5.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "cognitive_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 5,
+        "not_executed_recorded_runs": 1,
+        "termination_counts": {
+          "finish_completed": 5,
+          "representation_error": 1
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.8,
+            "reported_total": 14,
+            "total": 14
+          },
+          "executor_api_calls": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.8,
+            "reported_total": 14,
+            "total": 14
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 1.2,
+            "reported_total": 6,
+            "total": 6
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 2.2,
+            "reported_total": 11,
+            "total": 11
+          },
+          "policy_violation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.4,
+            "reported_total": 2,
+            "total": 2
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.92,
+            "reported_total": 4.6,
+            "total": 4.6
+          },
+          "decision_consistency": {
+            "assigned_runs": 5,
+            "observed_runs": 5,
+            "missing_runs": 0,
+            "macro_mean": 0.8666666666666667,
+            "reported_total": 4.333333333333333,
+            "total": 4.333333333333333
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "reference_state": {
+        "assigned_runs": 6,
+        "recorded_runs": 6,
+        "executed_runs": 6,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {
+          "finish_completed": 6
+        },
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "executor_api_calls": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.8333333333333335,
+            "reported_total": 17,
+            "total": 17
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.6666666666666667,
+            "reported_total": 10,
+            "total": 10
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 2.3333333333333335,
+            "reported_total": 14,
+            "total": 14
+          },
+          "policy_violation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0,
+            "reported_total": 0,
+            "total": 0
+          },
+          "invalid_action_count": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.16666666666666666,
+            "reported_total": 1,
+            "total": 1
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 0.9666666666666667,
+            "reported_total": 5.8,
+            "total": 5.8
+          },
+          "decision_consistency": {
+            "assigned_runs": 6,
+            "observed_runs": 6,
+            "missing_runs": 0,
+            "macro_mean": 1.0,
+            "reported_total": 6.0,
+            "total": 6.0
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      }
+    },
+    "controls": {
+      "full_context": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "executed_runs": 0,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {},
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "executor_api_calls": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "policy_violation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "invalid_action_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "decision_consistency": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "summary": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "executed_runs": 0,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {},
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "executor_api_calls": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "policy_violation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "invalid_action_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "decision_consistency": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "cognitive_state": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "executed_runs": 0,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {},
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "executor_api_calls": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "policy_violation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "invalid_action_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "decision_consistency": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      },
+      "reference_state": {
+        "assigned_runs": 0,
+        "recorded_runs": 0,
+        "executed_runs": 0,
+        "not_executed_recorded_runs": 0,
+        "termination_counts": {},
+        "diagnostics": {
+          "steps": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "executor_api_calls": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credits_spent": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "workspace_credit_budget": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "policy_violation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "repeated_work_attempts_posthoc": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "budget_exhausted_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "unavailable_observation_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "invalid_action_count": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "tool_usage_correctness": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          },
+          "decision_consistency": {
+            "assigned_runs": 0,
+            "observed_runs": 0,
+            "missing_runs": 0,
+            "macro_mean": null,
+            "reported_total": null,
+            "total": null
+          }
+        },
+        "diagnostic_denominator": "executed_runs; representation failures are null, never zero behavior"
+      }
+    }
+  },
+  "ab_pairs": {
+    "f01": {
+      "pair_id": "f01",
+      "title": "计划行动与已发出的异步调用",
+      "primary_component": "F",
+      "instances": {
+        "a": "disc_f01_a",
+        "b": "disc_f01_b"
+      },
+      "complete_ab_assignment": true,
+      "conditions": {
+        "full_context": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "summary": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "cognitive_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "reference_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        }
+      }
+    },
+    "g02": {
+      "pair_id": "g02",
+      "title": "软偏好与硬约束",
+      "primary_component": "G",
+      "instances": {
+        "a": "disc_g02_a",
+        "b": "disc_g02_b"
+      },
+      "complete_ab_assignment": true,
+      "conditions": {
+        "full_context": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": false,
+              "b_success": false,
+              "joint_success": false,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 0,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 1,
+          "a_success_rate": 0,
+          "b_success_rate": 0,
+          "joint_success_rate": 0,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "summary": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": false,
+              "b_success": false,
+              "joint_success": false,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 0,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 1,
+          "a_success_rate": 0,
+          "b_success_rate": 0,
+          "joint_success_rate": 0,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "cognitive_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": false,
+              "b_success": false,
+              "joint_success": false,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 0,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 1,
+          "a_success_rate": 0,
+          "b_success_rate": 0,
+          "joint_success_rate": 0,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "reference_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 1,
+              "b_success_delta_vs_full_context": 1,
+              "joint_success_delta_vs_full_context": 1
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 1,
+          "b_success_delta_vs_full_context_macro_mean": 1,
+          "joint_success_delta_vs_full_context_macro_mean": 1
+        }
+      }
+    },
+    "w02": {
+      "pair_id": "w02",
+      "title": "已确认事实与未经确认的信念",
+      "primary_component": "W",
+      "instances": {
+        "a": "disc_w02_a",
+        "b": "disc_w02_b"
+      },
+      "complete_ab_assignment": true,
+      "conditions": {
+        "full_context": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "summary": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        },
+        "cognitive_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": false,
+              "b_success": true,
+              "joint_success": false,
+              "b_minus_a_success": 1,
+              "a_success_delta_vs_full_context": -1,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": -1
+            }
+          ],
+          "both_success": 0,
+          "only_a_success": 0,
+          "only_b_success": 1,
+          "both_fail": 0,
+          "a_success_rate": 0,
+          "b_success_rate": 1,
+          "joint_success_rate": 0,
+          "b_minus_a_success_macro_mean": 1,
+          "a_success_delta_vs_full_context_macro_mean": -1,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": -1
+        },
+        "reference_state": {
+          "assigned_ab_pairs": 1,
+          "observed_ab_pairs": 1,
+          "repetitions": [
+            {
+              "repetition": 0,
+              "a_success": true,
+              "b_success": true,
+              "joint_success": true,
+              "b_minus_a_success": 0,
+              "a_success_delta_vs_full_context": 0,
+              "b_success_delta_vs_full_context": 0,
+              "joint_success_delta_vs_full_context": 0
+            }
+          ],
+          "both_success": 1,
+          "only_a_success": 0,
+          "only_b_success": 0,
+          "both_fail": 0,
+          "a_success_rate": 1,
+          "b_success_rate": 1,
+          "joint_success_rate": 1,
+          "b_minus_a_success_macro_mean": 0,
+          "a_success_delta_vs_full_context_macro_mean": 0,
+          "b_success_delta_vs_full_context_macro_mean": 0,
+          "joint_success_delta_vs_full_context_macro_mean": 0
+        }
+      }
+    }
+  },
+  "reference_construction_cost_measured": false,
+  "reference_end_to_end_advantage": null,
+  "scientific_conclusion": null,
+  "hypotheses_confirmed": [],
+  "significance_inference_performed": false,
+  "task_diagnostics_file": "task_diagnostics.json",
+  "limits": [
+    "本报告只描述这一次小型、助手构造的合成续做任务运行；不能推广到长期真实 Agent 任务。",
+    "G/W/F 是任务设计中的主要信息差异标签，不是组件消融或因果归因。",
+    "各条件的任务失败与提取/表示错误均保留成功率分母；provider/transport 中断使整轮性能与降幅不可发布。",
+    "未启动 executor 的提取/表示失败，其 steps、credits、违规、重复工作与不可用观察等执行诊断为 null；均值按已执行样本计算。",
+    "Token 宏平均按可观测的 instance × repetition 计算，列出覆盖数量；失败样本已报告成本仍计入，未知用量不补零。",
+    "实际已报告 API 花费包含提取失败；降幅仅使用两条件都没有 error 且 Token 可观测的同实例配对，列出 n，不按任务成功筛选。低成本提取失败不能解释为效率优势。",
+    "初次输入是第一条 executor 请求的输入 Token；端到端包括提取与全部 executor API 输入/输出 Token。",
+    "候选参考状态尚待研究者审核，制作成本未测量；仅列已报告 API 成本，不计算参考状态端到端总成本或优势。",
+    "候选参考状态不是 gold：disc_w02_a 的 repair_queue 具体动作名不在关键历史中，含目录知识或作者推断；自动提取阶段看不到目录，存在参考来源缺口。",
+    "ToolUsageCorrectness 只衡量 JSON/工具调用是否合法，不衡量行动是否符合目标；DecisionConsistency 是最终要求、约束合规、finish 状态三项均值，提前合法 finish 可在任务失败时仍得 2/3。",
+    "repeated_work_count 是环境已记录重复工作；超过预算的重复尝试可能不计入。另列 posthoc repeated_work_attempts 与预算耗尽观察次数，未预注册且不改成功判定。",
+    "W02 与 F01 存在统一查询后适应的策略；关键历史可能主要影响成本，因此 A/B joint success 不能证明历史信息不可替代。",
+    "相同表示字节上限不保证实际长度相同；UTF-8 字节不是提供方 Token。",
+    "本轮不进行显著性推断，不能证明 H1–H3，不能证明 Cognitive State 优于 Summary。"
+  ]
+}

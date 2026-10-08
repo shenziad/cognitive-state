@@ -1,0 +1,42 @@
+{
+  "instance_id": "cal_inflight",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01"
+    ],
+    "world": [
+      "h02"
+    ],
+    "frontier": [
+      "h01",
+      "h02"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Workspace quartz: send one batch exactly once and verify its receipt. 1 credit remains.",
+      "success_criteria": [
+        "Active requirements satisfied"
+      ],
+      "constraints": [],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "send_batch was already issued once. q42 is pending. No receipt observed yet."
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Continue from the supplied evidence",
+      "information_needs": [],
+      "next_action": "Use public tools to satisfy the task"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "instance_id": "cont2_control_recoverable_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h04"
+    ],
+    "world.facts": [
+      "h02",
+      "h03",
+      "h04"
+    ],
+    "world.beliefs": [
+      "h03",
+      "h04"
+    ],
+    "world.assumptions": [
+      "h03",
+      "h04"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h04"
+    ]
+  },
+  "provenance_notes": {
+    "operation_names": "Every named action/resource in this candidate occurs in h02.",
+    "checkpoint": "h04 is the current evidence or owner update; h03 is tentative.",
+    "future_observations": "Candidate does not insert any as-yet unread resource value."
+  },
+  "state": {
+    "goal": {
+      "objective": "Route through the currently certified open lane",
+      "success_criteria": [
+        "Current lane evidence read; matching routing done"
+      ],
+      "constraints": [
+        "3 credits",
+        "Read evidence before routing"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "No lane checked",
+        "No parcel routed"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Route through the currently certified open lane",
+      "information_needs": [
+        "Current open lane"
+      ],
+      "next_action": "observe current/lane_status; route through its certified lane"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "run_status": "completed",
+  "verified_instances": 48,
+  "verified_provider_responses": 253,
+  "checks": {
+    "input_snapshot_hashes_match": true,
+    "prompt_snapshot_hashes_match": true,
+    "recorded_code_hashes_match_at_audit": true,
+    "artifact_results_match_aggregate_rows": true,
+    "trace_replay_matches_observations_and_scores": true,
+    "final_target_and_protected_fields_pass": true,
+    "usage_matches_provider_and_row_totals": true,
+    "thinking_tokens_zero": true,
+    "extraction_input_boundary_matches_history_only": true,
+    "executor_initial_input_boundary_matches_representation_only": true,
+    "compressed_representations_fit_2200_byte_budget": true
+  },
+  "manifest_sha256": "0a2278cb6573f904d8fa9487317a6149929f739729e6078e16616925f9a94e77",
+  "results_sha256": "9b5f17bd0f36a24324cb9684b4bdbc2984f99300905ada1d57efb9b03b9e0a68",
+  "credential_value_scan": {
+    "text_files_checked": 419,
+    "matches": 0,
+    "secret_values_printed": false
+  }
+}

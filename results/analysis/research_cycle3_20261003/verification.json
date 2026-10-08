@@ -1,0 +1,31 @@
+{
+  "preflight_minimal_1": {
+    "snapshot_hashes": true,
+    "actual_public_inputs": true,
+    "retained_history_boundary": true,
+    "actual_world_carry": true,
+    "trace_and_score_replay": true,
+    "every_request_accounted_once": true,
+    "unique_response_ids": 113,
+    "model_calls_by_audit": 0
+  },
+  "preflight_minimal_2": {
+    "snapshot_hashes": true,
+    "actual_public_inputs": true,
+    "retained_history_boundary": true,
+    "actual_world_carry": true,
+    "trace_and_score_replay": true,
+    "every_request_accounted_once": true,
+    "unique_response_ids": 115,
+    "model_calls_by_audit": 0
+  },
+  "semantic_review_sha256": "8ea9662092c177c3bac97b5ab9f6807b95c52582862815a669ceb8d71f26b46d",
+  "gate_sha256": "a623f8f5f8eb2817d57e393ff3f7c60f0ec851f0ac3f1ce4ac447e343a29e07e",
+  "analysis_tool_fix": "R2 public-interface event keys reconstructed in frozen insertion order for exact-byte Full Context comparison; runner/results/prompts/scores were unchanged.",
+  "offline_tests": {
+    "initial_full_suite_passed": 83,
+    "revision_specific_tests_passed": 17,
+    "note": "These were separate test invocations, not a claim of one 100-test run."
+  },
+  "failed_gate_blocks_both_comparison_stages_without_calls": true
+}

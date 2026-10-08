@@ -1,0 +1,73 @@
+{
+  "status": "frozen_before_new_model_calls",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "sequence": [
+    "independent_executor_calibration",
+    "fair_comparison_with_history_free_recovery",
+    "information_ablations_and_budget_grid",
+    "four_handoff_state_evolution"
+  ],
+  "executor_calibration": {
+    "tasks": 8,
+    "repetitions": 2,
+    "prompts": [
+      "v0.2",
+      "v0.3"
+    ],
+    "conditions": [
+      "full_context"
+    ],
+    "gate": "v0.3 at least 15/16 task successes, finish-only both repetitions correct; otherwise record failed gate and diagnose on calibration only"
+  },
+  "fair_comparison": {
+    "planned_tasks": 14,
+    "conditions": [
+      "full_context",
+      "summary",
+      "cognitive_state",
+      "no_history"
+    ],
+    "representation_budget_utf8_bytes": 2200,
+    "repetitions": 1,
+    "reference_states_not_main_comparison": true
+  },
+  "ablations": {
+    "budgets_utf8_bytes": [
+      800,
+      1400,
+      2200
+    ],
+    "cs_ablations": [
+      "cs_no_frontier",
+      "cs_no_uncertainty",
+      "cs_no_progress_facts"
+    ],
+    "shared_extraction": true,
+    "ablations_at_budget": 1400,
+    "repetitions": 1,
+    "interpretation": "exploratory information deletion; overlapping fields may reconstruct deleted information; representation budget errors count as failures"
+  },
+  "evolution": {
+    "scenarios": 2,
+    "handoffs_per_chain": 4,
+    "conditions": [
+      "full_context",
+      "summary",
+      "cognitive_state",
+      "no_history"
+    ],
+    "repetitions": 1
+  },
+  "reporting": [
+    "all errors retained",
+    "stage-specific API usage",
+    "model token totals not currency",
+    "no hidden rubric in model inputs",
+    "no silent output repair or full-history fallback",
+    "no selective reruns",
+    "API failure stops run and suppresses incomplete performance"
+  ],
+  "important_result_policy": "Immediately report evidence that changes interpretation, positive or negative; never tune heldout tasks to obtain CS wins",
+  "limits": "small synthetic exploratory suite, no independent researcher validation or significance claims"
+}

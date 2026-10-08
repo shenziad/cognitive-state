@@ -1,0 +1,99 @@
+{
+  "reviewer": "assistant root; current-checkpoint public input and representation reviewed before current behavior/score; prior development results known; neither condition blinded nor independent human gold",
+  "entries": {
+    "instances/release_workflow_summary_r0_h1.json": {
+      "evidence_notes": "release_1_evidence 明确 d1 为已确认 cache、queue 仅0.7信念；表示据此只规划 repair_cache(2)，未把计划当成功，保留当前 public/remote 政策及2额度。读取成功回执不是额外付费验收。"
+    },
+    "instances/release_workflow_summary_r0_h2.json": {
+      "evidence_notes": "h1_o0 真实成功回执支持 cache_repaired；release_2_evidence 推翻旧诊断但明确不撤销已接受修复。表示保持既有作用，改为 queue 修复加用户明确的 A/B 验证，费用2+1+1=4，不重做 cache。"
+    },
+    "instances/release_workflow_summary_r0_h3.json": {
+      "evidence_notes": "h2_o0/o1/o2 支持 queue 与 A/B 已成功；release_3_revision 明确 private/offline 硬要求。表示更新政策并保留已成功工作，规划 pack_private/choose_offline 共2额度，没有重开测试。"
+    },
+    "instances/release_workflow_summary_r0_h4.json": {
+      "evidence_notes": "h3_o0/o1 支持 private bundle 与 offline 已选择；release_4_request 要求沿用批准政策且不重做。表示从先前保留摘要继承 private/offline、结合真实回执选择唯一当前必要交付；release-9f2 仅签名准备，没有替代旧政策。继承的早期事实未免费恢复原史。"
+    },
+    "instances/archive_workflow_cs_v02_r0_h1.json": {
+      "assessment_overrides": {
+        "invented_requirement": "ambiguous"
+      },
+      "evidence_notes": "archive_1_request 的 left=0.7 仅信念，表示先读 current/diagnosis(1) 再按证据修复(1)，没有虚构确认或完成。局部成功标准正确，但另一条写 Complete all checkpoints in sequence, then finish，与 archive_goal 每段 finish 的停止范围可能混淆；当前约束又要求仅当前段，因此停止时点标 ambiguous，不能依据后续行为消除歧义。"
+    },
+    "instances/archive_workflow_cs_v02_r0_h2.json": {
+      "evidence_notes": "h1_o0 明确 right 且推翻 left，h1_o1 支持 right_repaired 成功。archive_2_request 只要求提交即停；表示保留 right，区分 submit_archive 的 submission 契约与 poll 的 job 契约，不声称已提交或已作业成功，费用1并禁止本段 polling。"
+    },
+    "instances/archive_workflow_cs_v02_r0_h3.json": {
+      "evidence_notes": "h2_o0 给 cedar-job-17、submission completed/accepted 与 job accepted；backend ready 本身不是已提交证据。表示以真实提交回执维持 pending，规划 poll 后用户要求 A/B，费用1+1+1=3，保留旧 right 修复。"
+    },
+    "instances/archive_workflow_cs_v02_r0_h4.json": {
+      "evidence_notes": "h3_o0/o1/o2 支持 job succeeded 与两项验证已成功；archive_4_request 禁止重复已接受验证且无新source证据。表示保留先前 right 诊断/修复的内容，区分历史 submission accepted 与当前 job succeeded，只规划 seal_right(1)。早期依据通过真实保留状态继承，没有恢复丢弃原史。"
+    },
+    "instances/archive_workflow_summary_r0_h1.json": {
+      "evidence_notes": "archive_1_request 的 left 仅0.7信念，表示保留先观察再按证据修复、1+1=2额度及每段停止，没有把信念提升为事实。它偏重当前段、未重复全局final-manifest措辞；此时尚无已确认分支，不据后续结果追溯判其捏造或缺分支。"
+    },
+    "instances/archive_workflow_summary_r0_h2.json": {
+      "evidence_notes": "h1_o0/o1 支持 cedar-d1 right 与真实修复；表示保留该身份及receipt，archive_2_request 只提交即停，正确区分 submission 与 job、拒绝无依据handle，不重做修复。"
+    },
+    "instances/archive_workflow_summary_r0_h3.json": {
+      "assessment_overrides": {
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "实际输入 retained_h2 明确保留 cedar-d1/right_repaired，早期公开 archive_goal 已要求用确认修复的分支选择最终manifest；输出仅保留 cedar-job-17 和当前 A/B 工作，丢弃该已确认分支及修复身份。这是跨段依赖信息丢失，不是因为摘要缺图而判错。当前 submission accepted、pending job 和3额度顺序本身正确。只依据公开历史/表示链判断，未读本段执行成绩。"
+    },
+    "instances/archive_workflow_summary_r0_h4.json": {
+      "assessment_overrides": {
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "archive_4_request 需要此前确认分支选择 seal；当前 retained_h3 的确已不含身份。输出诚实承认缺口、不伪造分支，正确保留 succeeded job/A/B 且不重验，但作为续做表示缺少必要分支，因此 missing_decision_dependency。丢失发生在前次更新，本次提取器无法从当前输入恢复；不把真实缺口误判为无依据重开或当前虚构。"
+    },
+    "instances/release_workflow_cs_v031_r0_h1.json": {
+      "assessment_overrides": {
+        "missing_decision_dependency": "ambiguous"
+      },
+      "evidence_notes": "release_1_evidence 的 confirmed cache 与 reported queue 分开，candidate只做repair_cache(2)，operations为空不冒充已执行。release_1_request 的初始 public/remote 值未进入表示，objective只写 latest requirements；这可能削弱未来不重述政策时的续做，但当前动作只修cache，依赖重要性标 ambiguous，不依后续实际政策变化或成绩强判。verify effect指读取成功回执，没有新增独立付费验收。"
+    },
+    "instances/release_workflow_cs_v031_r0_h2.json": {
+      "evidence_notes": "h1_o0 支持实际 cache succeeded，release_2_evidence 更正诊断为queue且明确不撤销执行作用；表示保留op1真实对象、4额度、queue与用户A/B三项义务。旧r3禁止依据未确认假设行事，是有条件原则，未禁止新确认queue修复。"
+    },
+    "instances/release_workflow_cs_v031_r0_h3.json": {
+      "evidence_notes": "h2_o0/o1/o2 支持 queue/test_A/test_B succeeded；新 release_3_revision 明确 private/offline。G更新政策，W保留4个真实成功对象及当前2额度，F只剩private bundle/选择offline，candidate依赖test_A/B，不重做已接受测试。"
+    },
+    "instances/release_workflow_cs_v031_r0_h4.json": {
+      "evidence_notes": "h3_o0/o1 实际支持private bundle与offline；G保留批准政策和不重做规则，W正确扩展两个成功操作及当前1额度，F只剩deliver_private_offline。既有修复/测试是已满足要求而非重新pending；未从signing readiness推导新政策。"
+    },
+    "instances/archive_workflow_cs_v031_r0_h1.json": {
+      "evidence_notes": "archive_goal 事先声明确认修复分支决定final manifest，G r3明确保存该未来用途；left=0.7仅reported未确认，F等待current/diagnosis，W无伪造执行，2额度允许诊断后修复。requires为空不直接判缺依赖，公开契约价格与open_question已给必要信息。"
+    },
+    "instances/archive_workflow_cs_v031_r0_h2.json": {
+      "assessment_overrides": {
+        "missing_decision_dependency": "ambiguous"
+      },
+      "evidence_notes": "h1_o0/o1 支持right确认/真实修复，G保存未来manifest用途，F只submit后停止；不会把未提交计划当job成功。W cl1仍称current belief favors left=0.7、未显式标已反驳，但cl2明确left refuted且cl3保留right真实作用；reported旧依据可理解为历史记录也可读成未更新当前信念，标ambiguous，不能从实际行为消除。"
+    },
+    "instances/archive_workflow_cs_v031_r0_h3.json": {
+      "evidence_notes": "retained_h2 preserves confirmed right diagnosis (cl2), actual right correction (cl3/op1), and the global manifest dependency (r3). h2_o0 certifies only accepted submission; j1 remains accepted and the current frontier correctly requires poll_archive followed by A and B within three credits. cl1 still describes a current left belief although cl2 refutes it; whether this is retained historical reporting or a stale active claim is ambiguous.",
+      "assessment_overrides": {
+        "missing_decision_dependency": "ambiguous"
+      }
+    },
+    "instances/archive_workflow_cs_v031_r0_h4.json": {
+      "evidence_notes": "h3_o0 certifies job success and h3_o1/h3_o2 certify A/B success. j1 and typed validation operations are updated correctly; cl13 and the frontier preserve the right correction identity and select seal_right within one credit. However cl1 still calls left the current belief, cl5 says the job is not yet complete, and cl8 says no validation is complete alongside new succeeded records. These unqualified older claims could be historical evidence or stale current claims, so phase/conflict interpretation is ambiguous. No frontier reopens completed work.",
+      "assessment_overrides": {
+        "entity_phase_confusion": "ambiguous",
+        "missing_decision_dependency": "ambiguous"
+      }
+    },
+    "instances/release_workflow_cs_v02_r0_h1.json": {
+      "evidence_notes": "release_1_evidence confirms cache d1 only and labels queue an unconfirmed 0.7 belief. The state preserves public/remote policy, two-credit checkpoint scope, no executed repair yet, and the allowed repair_cache next action. Receipt verification is satisfied by the execute response, not an invented extra paid validation."
+    },
+    "instances/release_workflow_cs_v02_r0_h2.json": {
+      "evidence_notes": "h1_o0 certifies actual accepted cache repair; release_2_evidence supersedes only the diagnosis and confirms queue root cause. The state preserves the actual cache effect, excludes another cache repair, and requires queue repair plus A/B at costs 2+1+1 with four credits. No successful current action is fabricated. Earlier public/remote policy is omitted but no currently actionable dependency in this checkpoint requires it."
+    },
+    "instances/release_workflow_cs_v02_r0_h3.json": {
+      "evidence_notes": "h2_o0/o1/o2 certify queue repair and A/B success. release_3_revision replaces public delivery with private/offline hard requirements. The state retains actual tests, forbids their repetition, and plans pack_private plus choose_offline at one credit each. It does not promote a planned bundle to executed fact."
+    },
+    "instances/release_workflow_cs_v02_r0_h4.json": {
+      "evidence_notes": "retained_h3 carries private/offline policy and actual A/B completion; h3_o0/o1 certify private bundle and offline route. No requirements changed at checkpoint 4. The state preserves these dependencies and selects deliver_private_offline using the one credit, with no recreation of accepted work or unsupported final completion."
+    }
+  }
+}

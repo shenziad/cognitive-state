@@ -1,0 +1,1049 @@
+{
+  "version": "preflight-v0.3r2",
+  "cases": [
+    {
+      "instance_id": "pre03r2_goal_revision_a",
+      "family": "goal_revision",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply silver. The earlier gold choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_goal_revision_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_silver"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_goal_revision_b",
+      "family": "goal_revision",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply gold. The earlier silver choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_goal_revision_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_gold"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_a",
+      "family": "accepted_pending",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_silver accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_accepted_pending_a",
+        "initial_state": {
+          "done": false,
+          "selected": "silver",
+          "submitted": true,
+          "validated": false
+        },
+        "operations": {
+          "submit_silver": {
+            "description": "Submit another job; forbidden after acceptance.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "consume_silver": {
+            "description": "Consume the accepted pending job notice; confirms job done.",
+            "effects": {
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_silver"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_silver"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_b",
+      "family": "accepted_pending",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_gold accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_accepted_pending_b",
+        "initial_state": {
+          "done": false,
+          "selected": "gold",
+          "submitted": true,
+          "validated": false
+        },
+        "operations": {
+          "submit_gold": {
+            "description": "Submit another job; forbidden after acceptance.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "consume_gold": {
+            "description": "Consume the accepted pending job notice; confirms job done.",
+            "effects": {
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_gold"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_gold"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_already_done_a",
+      "family": "already_done",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_silver and validate accepted with confirmed effects: done=true, selected=silver, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_already_done_a",
+        "initial_state": {
+          "done": true,
+          "selected": "silver",
+          "submitted": false,
+          "validated": true
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 0,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_already_done_b",
+      "family": "already_done",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_gold and validate accepted with confirmed effects: done=true, selected=gold, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_already_done_b",
+        "initial_state": {
+          "done": true,
+          "selected": "gold",
+          "submitted": false,
+          "validated": true
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 0,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_plan_only_a",
+      "family": "plan_only",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_silver, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_plan_only_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_silver"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_plan_only_b",
+      "family": "plan_only",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_gold, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_plan_only_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_gold"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_a",
+      "family": "assumption_refuted",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors gold, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms silver, refutes gold. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_assumption_refuted_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_gold"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_silver"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_b",
+      "family": "assumption_refuted",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors silver, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms gold, refutes silver. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_assumption_refuted_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_silver"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_gold"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_explicit_verification_a",
+      "family": "explicit_verification",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_silver completed; done=true, selected=silver. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_explicit_verification_a",
+        "initial_state": {
+          "done": true,
+          "selected": "silver",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "validate": {
+            "description": "Independently validate the completed setting.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "done": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "silver",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "validate"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03r2_explicit_verification_b",
+      "family": "explicit_verification",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_gold completed; done=true, selected=gold. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03r2_explicit_verification_b",
+        "initial_state": {
+          "done": true,
+          "selected": "gold",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_silver": {
+            "description": "Apply the silver setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "silver"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_gold": {
+            "description": "Apply the gold setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "gold"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "validate": {
+            "description": "Independently validate the completed setting.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "done": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "validate"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    }
+  ]
+}

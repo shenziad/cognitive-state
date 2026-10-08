@@ -1,0 +1,978 @@
+{
+  "complete": true,
+  "evidence_type": "api",
+  "stage": "preflight",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\preflight_recovery_v1_20261003",
+  "results_sha256": "260ba07c5b8a49ffbf60b9484e1cddd8b1c5731ad44548b5cea432de6927888a",
+  "ledger_sha256": "7e66bf32a74a34160b6583ec42a65c768343d72ba1db6e54f25cdd353c820d60",
+  "manifest_sha256": "154b9cfce1b766977b9e5d911667611b4614b80f28db35cdb155c7957aefd244",
+  "artifact_sha256": {
+    "instances/p4_006_cs_v02_r1_h1.json": "83427cd088f334e50c9e1d66c017636a4b600742bce543357ed4c3391596f412",
+    "instances/p4_008_cs_v031_r1_h1.json": "513973225c055a29db448351abe2af913624dbdf4dbb17185ec39567b9cae5a6",
+    "instances/p4_001_summary_r0_h1.json": "623a61e0c352c590cc1323f51190d9533dfcf17cfd85a99f4fff70ac73fdf995",
+    "instances/p4_011_cs_v031_r0_h1.json": "3c54a305637abf31bed3a1e372e644f25bf6eb517aa2108a750e86c1ae5a48bb",
+    "instances/p4_006_full_context_r0_h1.json": "68788759bc8a6b635c0eaa90fc9db8096971657d5d76eb09f98f0d2d7e5df5e6",
+    "instances/p4_009_cs_v02_r0_h1.json": "ef053968d54b3ea9275fff81c8937809d199784f8b6c454da87b7982f0eecfef",
+    "instances/p4_001_full_context_r0_h1.json": "edc11674805120e02877f1ce8547c7e67c6b0e32e46f7c6dbbf9c40a266e5580",
+    "instances/p4_010_summary_r0_h1.json": "a13a98a23978f6512cb3535a25859f2211cf8382fb02b04529beb119ab8443ba",
+    "instances/p4_001_cs_v02_r1_h1.json": "6553bd538bf03eebeedae638b1c38f0efef991903dd5b555194925bcb588b869",
+    "instances/p4_001_summary_r1_h1.json": "358891fcd3d28400bfd2eed527aa95f2388f75bf1acd1a312dca1920b3f30313",
+    "instances/p4_004_cs_v031_r0_h1.json": "dfe8eab6698d542c09c91efa3608e166ca0d611ef8c3d47fcfc8cea806d139b2",
+    "instances/p4_008_summary_r0_h1.json": "baa00f732a6540c87e59a5897750a85b1d17095ce516894df6316584688997ad",
+    "instances/p4_001_cs_v02_r0_h1.json": "4342c9b191a5292bbba62d9d7fd7343cc02a9429bb03f3590a29ecf371d422bf",
+    "instances/p4_007_summary_r1_h1.json": "4f9bf77feed6b5baf8fe8a2348b286b503ab83ff5ca456b75fb27ecc24c5c28d",
+    "instances/p4_005_cs_v02_r0_h1.json": "d9bc3dec13d64c8538e953f7f68b690448bf637aaec4e5323ed1d7a7c6c3fbc8",
+    "instances/p4_002_cs_v031_r1_h1.json": "86493054c2aedbbef817b161a7d474e4345e97292c10392a6259d8b685d181b6",
+    "instances/p4_002_cs_v031_r0_h1.json": "3d239bb9b19fae316a2ec5059825585c1197a3aad1b84744faf3cdf724436e31",
+    "instances/p4_010_cs_v031_r1_h1.json": "77baacf40f6bdab22aff1a1f9af547fd652cb2d407ef2ea8379c47d662b60e09",
+    "instances/p4_008_summary_r1_h1.json": "f6585d73f3ce2748fac99b365f2b4d08adcba488bdf5f02a8632becd13b142de",
+    "instances/p4_005_full_context_r0_h1.json": "c83b17b0200a8a173ef4aedbd6cdc34ace5e23633f9fdd4cd80839918258ffbd",
+    "instances/p4_009_full_context_r1_h1.json": "1bc502b4175310ba398a5aef91ac38946d5f3470c1f8385b528596e8b4a4dc96",
+    "instances/p4_009_cs_v031_r0_h1.json": "2e673310a2d1750863cf4bc0a10083791cc2307362383f6da5294efb1d9db9fd",
+    "instances/p4_007_cs_v031_r1_h1.json": "cd295680f798ece8981c2376cc77b56f17c711c3996d6d0cf5392f43128d9068",
+    "instances/p4_002_summary_r0_h1.json": "6e6feed24ff372d3c644c90982e50c8b83e179749cbdb38506367b0f4df867b3",
+    "instances/p4_011_full_context_r1_h1.json": "8a457caf98d9e19b97b66dcbd29c7febe332dcb386a0ca86b65b965a9286e5d5",
+    "instances/p4_006_full_context_r1_h1.json": "d749f4d613b7211dde8dc9f46f821b5b6d45379c8461990b91b6b9411c1366ea",
+    "instances/p4_004_full_context_r1_h1.json": "b704f6c9d83b219a308a127f7110d562a32da3863df1d9a14d4a80cb4ce31593",
+    "instances/p4_012_summary_r1_h1.json": "5553b3c38e91400e2a0910f2c4f960cd30061d804de9d0ecb601b8c7d5b75b18",
+    "instances/p4_010_full_context_r0_h1.json": "7777a1b8d63b40da510723b4218cf1fe9ed4fab70defc333d06c80216afa9ee4",
+    "instances/p4_009_cs_v031_r1_h1.json": "88957707ac6118c6e1f8e80d36bcdadc1bc525d3bc0005079b017ccd9dc85aaf",
+    "instances/p4_012_cs_v031_r0_h1.json": "d16c8bbed9b3a1d032c176fc8c2816365ef87b941d644204c4a4e3e6768c2364",
+    "instances/p4_007_full_context_r0_h1.json": "5226181a91dbb7d20a85d4dd50d29831891931041e00a2172a2c3d39c153bc04",
+    "instances/p4_008_full_context_r1_h1.json": "e142e75988045b9e08070c12614f42e766c02c92e7ff166c7112079d5eb645af",
+    "instances/p4_012_summary_r0_h1.json": "635535dbf3cc4d64b58c64854a8bcff3eaf7faf5a360632524391a4d235b40bd",
+    "instances/p4_006_summary_r0_h1.json": "1d1ded89edfcb6a8aea761c8fe5534faae52e8b50995e2874b9ae35ff9403464",
+    "instances/p4_010_cs_v02_r1_h1.json": "21e95686ca79fc45c9aa2f6f72fb4893601c5710878ea69a7d82aca029e4cfe8",
+    "instances/p4_010_summary_r1_h1.json": "28e732a51668579a04bf7f06f240c4ebc3819f903f9c55dc34cd263a85d55141",
+    "instances/p4_002_cs_v02_r1_h1.json": "36072ffd57d7c0ac5ea87f4355f206c5850820ccf3d4ab21afaffeeb274a269b",
+    "instances/p4_009_full_context_r0_h1.json": "a1ef63cb7faf6cfc6f849d2b41433cc37135291dbf6a2c1fdff07708c2691f41",
+    "instances/p4_011_full_context_r0_h1.json": "c6610730c4260c8fdeab5baa6b492ce3991fdee42e4ff0c9d49f2c5791762b2d",
+    "instances/p4_008_full_context_r0_h1.json": "58d989dde9c03401c2e6d2c24b12f3249be97b15f921aa845fc79e755c142d84",
+    "instances/p4_011_summary_r1_h1.json": "8e7b74ca0ca11c7c550d600ae81ed691671c9bbaacda2f8d2c7616477f989c5a",
+    "instances/p4_009_cs_v02_r1_h1.json": "999a2d027c94c9ac7eededa9afca273264574fe94806045818754579c4246b9f",
+    "instances/p4_002_full_context_r0_h1.json": "112d1d65c5ab7fd7fe0fc3a2fd66189c61a7755fb990aa659d678bc93866baf9",
+    "instances/p4_002_summary_r1_h1.json": "5b8833d09742841e550a27ede5aab8c301ddfabc0c1f69e52d10877d9e86ef55",
+    "instances/p4_005_cs_v02_r1_h1.json": "1496333a2e58b7e9ce4574349239e0b1587f1b2bba74e22004924726d7294de1",
+    "instances/p4_003_cs_v02_r1_h1.json": "6b48dec8dc04d71fbea7d904976d15a08b199f20b2cea502c9156658ffa4402e",
+    "instances/p4_005_cs_v031_r1_h1.json": "c3850781db8aeba8a2e4a78c6fdc32ae17307fdb519342651aaa2e5ebd044805",
+    "instances/p4_007_full_context_r1_h1.json": "24c1e513b66b7cf635bc12a875e82a418f71218d32576a83643427cb23c509ef",
+    "instances/p4_001_full_context_r1_h1.json": "7f0fe485128617bd08732ab52ce5ab9726920c9f5e37c818479d7ba41f3520f7",
+    "instances/p4_006_summary_r1_h1.json": "eb6fb644b0f675cc75b41a17dea92de1beb5beb2af7b2ee6a437b2e5c861c5ab",
+    "instances/p4_003_cs_v02_r0_h1.json": "f26becf81abe838e5a98a1b13cac238bb7e1a6be77490aa07b70291c1341780e",
+    "instances/p4_012_cs_v02_r1_h1.json": "bc6994442759827ad3699a3acb35fc3b3e701abe547f610768ca9e43e83f566f",
+    "instances/p4_008_cs_v031_r0_h1.json": "2e41481c46068ef5c4b042cea1f5b066345149ac24cf2c7d3b475f61318c1796",
+    "instances/p4_007_cs_v02_r0_h1.json": "ce5c3bb7d2818ac3759ff284b9c6650ffaddcf5ec5d8bafac646a6a766f9dad2",
+    "instances/p4_011_cs_v031_r1_h1.json": "7c3646561c3900a63d2b9cb727ad1a1335f2388fffba6c4e6828d29229586a58",
+    "instances/p4_008_cs_v02_r1_h1.json": "08afc19e79903bb541f3859a6ae0fe163d399ec8ec944989c3491dc1d97302ba",
+    "instances/p4_003_cs_v031_r1_h1.json": "289c8360d2c20f52744c17a3415bb8cf1f42bf12cac12ea2107feb5fc1a3ee5b",
+    "instances/p4_006_cs_v02_r0_h1.json": "551a366a400f0da711333acbcafa454664a1f2555d6c29a647d64f3e61f44857",
+    "instances/p4_010_full_context_r1_h1.json": "1e1a85c82bb9459f9259ba91d74318472b62779d3cb3a32bfb0b035be73f9902",
+    "instances/p4_011_summary_r0_h1.json": "9aa7ce3a24297e182143e7a99d9694460034da0e6ed4584c9808fb0f5ffbdeed",
+    "instances/p4_009_summary_r1_h1.json": "c8639935f491aaab644709c709e419ced99ad898495b1dd5e3fcbfe68b6b4697",
+    "instances/p4_003_full_context_r1_h1.json": "7c32b377324a0f76372e5084896e02cdd89ba43e60e92ffb36d1471fd3d8ee35",
+    "instances/p4_004_cs_v02_r1_h1.json": "65225c18dbe325427e08c5446eca80923a5ee5d1d601e1e4c1e02542472331c2",
+    "instances/p4_001_cs_v031_r1_h1.json": "bf4a2fa4ae30eb274f8ca0192de1d442c0e508f157af15f8b1946272370f9115",
+    "instances/p4_006_cs_v031_r1_h1.json": "37f4cbdc8341f33990308ffbc7f88a6a5424f4c2dde8c4ede77b1b47ee090a5b",
+    "instances/p4_004_cs_v02_r0_h1.json": "461a4ccb2a31690efc628a7afbbbf5ce18624595a418912c313cff411dcfeb10",
+    "instances/p4_007_cs_v031_r0_h1.json": "888127551a10d1fbac0379ee7e037c2f3475c5756fbc969a5b2236362fdac612",
+    "instances/p4_007_cs_v02_r1_h1.json": "87903ddfb78f119cf7729b41dfb05631a537a14ac519046aae8893469ed8814b",
+    "instances/p4_012_full_context_r0_h1.json": "7c48fdb20144423775c65dd88f8d70f388ab11333c3c24ca5dac72cae2b3a6f4",
+    "instances/p4_002_full_context_r1_h1.json": "deacc61c7854dc1c993194042778adc807e6484fb086fc6c4b15b98791e0bd86",
+    "instances/p4_010_cs_v031_r0_h1.json": "934be221ca9d64a552fb08458eea55f843103e1e082af9758afad047b6923bf1",
+    "instances/p4_003_summary_r1_h1.json": "abe72e981f4b8771520fda97afd8b59fa99a00ac85c6f3caa143d6f64c48747b",
+    "instances/p4_012_full_context_r1_h1.json": "eb4e181c8acaa372d93bdc49c0ec4fe3763d8afe658fdb3d07419d69809e834e",
+    "instances/p4_005_full_context_r1_h1.json": "eda36c4468c83019ff8330deafd4b780d8e8e02af27f39a953bb1b4d223a6b96",
+    "instances/p4_011_cs_v02_r0_h1.json": "e0cba9b7c266bdc2503ed3ae6c47643d52c69b5ea8aead31e340e796b08cc0e9",
+    "instances/p4_005_summary_r0_h1.json": "528f1d5d2d6665e45e0ad356b7192f807baa7cc3c93684ab805114aa6a99ca66",
+    "instances/p4_012_cs_v031_r1_h1.json": "c7e4e3049894962bf9939465d11edc33df073774b7c36ecc08595724d583be7c",
+    "instances/p4_004_cs_v031_r1_h1.json": "f3efd13b507df23ffeab279b17d54caf88c9d958f6dd7445d515d03c9c57bafc",
+    "instances/p4_002_cs_v02_r0_h1.json": "b06cd44ffe8b28c7a01a756e5696d24f72e600644a9ddf12db785dbc3d353b7d",
+    "instances/p4_004_summary_r1_h1.json": "872e82a60e879bee287471589bb2c245683811561a051a05695f27f880275a19",
+    "instances/p4_004_summary_r0_h1.json": "88e75fe540c1206176b3a542599b74ca5c147be47ad86810f2dac45002665ca0",
+    "instances/p4_006_cs_v031_r0_h1.json": "8738a18293c0e996f4e7e628c8f5d72910bb23bfc8fc56b38ca515838bcba34a",
+    "instances/p4_010_cs_v02_r0_h1.json": "03afe7b45cc880c67337fef0bc20f33d763f4592e3c64c756396f3e2dedf1617",
+    "instances/p4_012_cs_v02_r0_h1.json": "9d9317313cb10c63f5f67e340b62884b66783a3817f103cf4c58171f9f8cbf2d",
+    "instances/p4_003_summary_r0_h1.json": "1947c538f75f67f22b2c1f1a36661d67590db2825b4bd793166db8c4e22e378d",
+    "instances/p4_008_cs_v02_r0_h1.json": "d32af065d88dee97b4488cbbe693ed0ccb245858f58ef753a5c0aeb16d1e9d4f",
+    "instances/p4_003_full_context_r0_h1.json": "d6daceb23ec7fd3f6a37a9602ef369f66bc869732e385a5b35ef6da27191718c",
+    "instances/p4_011_cs_v02_r1_h1.json": "63785b64d34733557bcd01b9c893118731afe43bc472c743f90b587777fdf12b",
+    "instances/p4_004_full_context_r0_h1.json": "da9e02a0b9111f81a60a5b7aab408819a2fb25ae8842ec7a4475be5eb63ca47c",
+    "instances/p4_009_summary_r0_h1.json": "215d10c486117aca36f2cf25210588ac249eb44e4aaa2ce47c8f82ab4cd7a0df",
+    "instances/p4_005_summary_r1_h1.json": "6f412eb5d5f50c5c7bd0b219a91f5bbdd4500ef521b2257a9b8889bc04c05da8",
+    "instances/p4_007_summary_r0_h1.json": "5f5b1115549da9b3247d23e6005c7537ef46c1867bb2cbd0793562c1ff5f0a7f",
+    "instances/p4_005_cs_v031_r0_h1.json": "8d66dc340b61fa887ecf8d32b7602d1f2f9000344bb5211c7a0efc5a9bb544ce",
+    "instances/p4_001_cs_v031_r0_h1.json": "329cdc6b0d796a8e81b798b3a7325ca16d29fe63d77442c770af9424bb14d521",
+    "instances/p4_003_cs_v031_r0_h1.json": "c7fdc1dd74873196e576211de4e270b3078b2c144f85047fbad7e6ef35e3ab11"
+  },
+  "usage": {
+    "request_attempts": 294,
+    "successful_responses": 294,
+    "total_tokens": 511423,
+    "known_reported_tokens": 511423,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "all": {
+        "saved": 24,
+        "successes": 23,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 57,
+          "successful_responses": 57,
+          "total_tokens": 91743,
+          "known_reported_tokens": 91743,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 90957,
+        "output_tokens": 786,
+        "cached_input_tokens": 8192,
+        "response_latency_seconds": 85.87274810000963,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 24,
+        "successes": 23,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 57,
+          "successful_responses": 57,
+          "total_tokens": 91743,
+          "known_reported_tokens": 91743,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 90957,
+        "output_tokens": 786,
+        "cached_input_tokens": 8192,
+        "response_latency_seconds": 85.87274810000963,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "summary": {
+      "all": {
+        "saved": 24,
+        "successes": 24,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 77,
+          "successful_responses": 77,
+          "total_tokens": 114718,
+          "known_reported_tokens": 114718,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 109318,
+        "output_tokens": 5400,
+        "cached_input_tokens": 4608,
+        "response_latency_seconds": 195.98559730005218,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 24,
+        "successes": 24,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 77,
+          "successful_responses": 77,
+          "total_tokens": 114718,
+          "known_reported_tokens": 114718,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 109318,
+        "output_tokens": 5400,
+        "cached_input_tokens": 4608,
+        "response_latency_seconds": 195.98559730005218,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "cs_v02": {
+      "all": {
+        "saved": 24,
+        "successes": 22,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 83,
+          "successful_responses": 83,
+          "total_tokens": 142598,
+          "known_reported_tokens": 142598,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 132243,
+        "output_tokens": 10355,
+        "cached_input_tokens": 11264,
+        "response_latency_seconds": 288.25519519999943,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 24,
+        "successes": 22,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 83,
+          "successful_responses": 83,
+          "total_tokens": 142598,
+          "known_reported_tokens": 142598,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 132243,
+        "output_tokens": 10355,
+        "cached_input_tokens": 11264,
+        "response_latency_seconds": 288.25519519999943,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "cs_v031": {
+      "all": {
+        "saved": 24,
+        "successes": 22,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 77,
+          "successful_responses": 77,
+          "total_tokens": 162364,
+          "known_reported_tokens": 162364,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 147613,
+        "output_tokens": 14751,
+        "cached_input_tokens": 17152,
+        "response_latency_seconds": 291.1862714000017,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 24,
+        "successes": 22,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 77,
+          "successful_responses": 77,
+          "total_tokens": 162364,
+          "known_reported_tokens": 162364,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 147613,
+        "output_tokens": 14751,
+        "cached_input_tokens": 17152,
+        "response_latency_seconds": 291.1862714000017,
+        "first_valid": 24,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    }
+  },
+  "chains": [],
+  "paired_costs": [
+    {
+      "instance_id": "p4_006",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4403687720674774
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0689655172413794
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.27332274712187377
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.7566096423017106
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5378323108384457
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5087956698240865
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.41583961889638754
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.316196903533148
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.698378164556962
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3947044334975369
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.45712584358872577
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.4734539669914496
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.004131418453669045
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.8029620090148102
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.7720540888602705
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0693504736129906
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0344827586206895
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0480572597137012
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.28216345197852455
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.8692852543464262
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.31575091575091574
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0470347648261757
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.9875457875457876
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3080586080586081
+    },
+    {
+      "instance_id": "p4_006",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.27795213809337005
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6295669824086603
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.9452672247263361
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6150855365474339
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5606680299931834
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6677398583386993
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.39661617155223294
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3150263620386644
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.31084005508557944
+    },
+    {
+      "instance_id": "p4_006",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.2850137308748528
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7692461908580595
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6256410256410256
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0606527093596059
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.39014997973246857
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.7566096423017106
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.2570812807881775
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6382542472173403
+    },
+    {
+      "instance_id": "p4_006",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4764613573950569
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6710730948678072
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.36912065439672803
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4367088607594938
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3062723302897976
+    },
+    {
+      "instance_id": "p4_006",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7165555119654767
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4477848101265822
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7608431293068505
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6400874925432491
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0683355886332881
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.09856473345049799
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.3001555209953342
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.2585087546724376
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.8901098901098901
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.6902689873417722
+    },
+    {
+      "instance_id": "p4_002",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.9954925949774629
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.22567246835443044
+    },
+    {
+      "instance_id": "p4_004",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.17345727848101267
+    },
+    {
+      "instance_id": "p4_006",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.759709690074539
+    },
+    {
+      "instance_id": "p4_010",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7198917456021652
+    },
+    {
+      "instance_id": "p4_012",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4875457875457876
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.319767441860465
+    },
+    {
+      "instance_id": "p4_008",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.2413793103448274
+    },
+    {
+      "instance_id": "p4_011",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.8802488335925349
+    },
+    {
+      "instance_id": "p4_009",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3588957055214723
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.421601416486327
+    },
+    {
+      "instance_id": "p4_007",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3852857721929468
+    },
+    {
+      "instance_id": "p4_005",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3006098760574465
+    },
+    {
+      "instance_id": "p4_001",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.31183009130607386
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.1511627906976742
+    }
+  ],
+  "gate_evidence": {
+    "integrity": {
+      "no_hidden_input_leakage": true,
+      "equal_public_interface": true,
+      "scoring_replay_matches": true,
+      "world_and_history_boundaries_match": true,
+      "snapshot_hashes_match": true,
+      "source_authority_preserved": true,
+      "all_requests_accounted_once": true,
+      "no_unresolved_provider_error": true
+    },
+    "completed_cells": 96,
+    "unknown_usage_requests": 0,
+    "execution_manifest_verified": true,
+    "semantic_review_complete": false,
+    "final_valid": {
+      "summary": 24,
+      "cs_v02": 24,
+      "cs_v031": 24
+    }
+  },
+  "verification": "public inputs, authority, world carry, messages, scores and unique requests replayed"
+}

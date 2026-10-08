@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_choose_speed",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: select and apply the lower-latency option. 1 credit remains."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Measured amber=140ms, violet=80ms. Both eligible. No choice has been applied."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_exact_resource",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: read current/stamp, apply its stamp, then finish. 2 credits."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "No stamp read or applied. Resource is current/stamp; quartz is workspace identity, not a resource path prefix."
+    }
+  ]
+}

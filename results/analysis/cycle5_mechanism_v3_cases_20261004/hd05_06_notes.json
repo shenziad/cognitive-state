@@ -1,0 +1,2407 @@
+{
+  "run_id": "mechanism_v3_20261004",
+  "analysis_scope": "hd05/hd06 only; completed current A-v3 cells",
+  "analyst": "Codex source_hd05_06; post-behavior descriptive case audit; not independent human gold",
+  "manifest_status": "completed",
+  "run_started_at": "2026-10-04T11:08:08.23429+08:00",
+  "run_finished_at": "2026-10-04T11:31:49.340556+08:00",
+  "source_review_sha256": "79ca7ce8bb69b950049e91e24f736c29cd8c0a375254f80373707c47b06ba23c",
+  "inputs": [
+    {
+      "path": "results/raw/cycle5/mechanism_v3_20261004/manifest.json",
+      "sha256": "05369a4d2f49f5b33467024eddb253d6ce87da5498c95f41267869e3a700e1bb"
+    },
+    {
+      "path": "results/raw/cycle5/mechanism_v3_20261004/results.json",
+      "sha256": "dd36116a465b88d2dbb567f6fc8df01e26547d9793efd0baf971c66d8daf80b2"
+    }
+  ],
+  "sealed_source_review_reference": "results/analysis/cycle5_mechanism_v3_sources_20261004/review_hd05_06_completed.json",
+  "sealed_source_review_changed": false,
+  "conditions": [
+    "full_context",
+    "full_planner",
+    "summary_s1",
+    "summary_s2",
+    "cs1",
+    "cs_text"
+  ],
+  "related_cell_count": 24,
+  "approved_choice_correct_cells": 24,
+  "implemented_rubric_success_cells": 24,
+  "all_cells_single_commit_then_completed_finish": true,
+  "pair_comparisons": [
+    {
+      "pair_id": "hd05",
+      "approval_source_event": "hd05:approved_fact",
+      "variant_a_expected": 100,
+      "variant_b_expected": 120,
+      "conditions_distinguishing_variants": 6,
+      "condition_count": 6,
+      "comparisons": [
+        {
+          "condition": "full_context",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_full_context.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_full_context.json"
+          ]
+        },
+        {
+          "condition": "full_planner",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_full_planner.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_full_planner.json"
+          ]
+        },
+        {
+          "condition": "summary_s1",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_summary_s1.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_summary_s1.json"
+          ]
+        },
+        {
+          "condition": "summary_s2",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_summary_s2.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_summary_s2.json"
+          ]
+        },
+        {
+          "condition": "cs1",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_cs1.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_cs1.json"
+          ]
+        },
+        {
+          "condition": "cs_text",
+          "variant_a_value": 100,
+          "variant_b_value": 120,
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_cs_text.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_cs_text.json"
+          ]
+        }
+      ]
+    },
+    {
+      "pair_id": "hd06",
+      "approval_source_event": "hd06:approved_fact",
+      "variant_a_expected": "k9",
+      "variant_b_expected": "k10",
+      "conditions_distinguishing_variants": 6,
+      "condition_count": 6,
+      "comparisons": [
+        {
+          "condition": "full_context",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_full_context.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_full_context.json"
+          ]
+        },
+        {
+          "condition": "full_planner",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_full_planner.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_full_planner.json"
+          ]
+        },
+        {
+          "condition": "summary_s1",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_summary_s1.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_summary_s1.json"
+          ]
+        },
+        {
+          "condition": "summary_s2",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_summary_s2.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_summary_s2.json"
+          ]
+        },
+        {
+          "condition": "cs1",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_cs1.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_cs1.json"
+          ]
+        },
+        {
+          "condition": "cs_text",
+          "variant_a_value": "k9",
+          "variant_b_value": "k10",
+          "both_approved_values_preserved": true,
+          "both_correct_approved_commits": true,
+          "variants_distinguished": true,
+          "both_implemented_rubric_success": true,
+          "artifacts": [
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_cs_text.json",
+            "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_cs_text.json"
+          ]
+        }
+      ]
+    }
+  ],
+  "cells": [
+    {
+      "task_id": "hd05_a",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_full_context.json",
+      "artifact_sha256": "32fdefc733e8ccd9f6c350d487e3d9dce71a3b87d909f97654f276f596d35291",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 10 units per carton. The recorded transfer moved 10 cartons once; calculate the report from this notice, without repeating any physical movement."
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_full_planner.json",
+      "artifact_sha256": "4fe8f93c4a9d6b568dd397e2c8fab12a1d649acc5e3b9887436e1c3f38890618",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 10 units per carton. The recorded transfer moved 10 cartons once; calculate the report from this notice, without repeating any physical movement."
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_summary_s1.json",
+      "artifact_sha256": "15f8090bb46c97ad876fea1b858522e2eefb287e0cd70464137bd889360650b2",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Authoritative evidence: The signed notice pack-r2 for transfer-19 states 10 units per carton. The recorded transfer moved 10 cartons once. Therefore the historically approved report value is 10 cartons × 10 units/carton = 100 units. The current user instruction explicitly confirms that only the historically approved value satisfies the task; the other listed choice is technically executable but not approved. The historical authorization/signed notice is unavailable from current resources, so do not attempt to re-read it."
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_summary_s2.json",
+      "artifact_sha256": "4230825eb3922112006702cb8de09304976c24aed3377baa0887ebc4caa84c90",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Decisive retained evidence: the tool receipt `hd05:approved_fact` states that signed notice pack-r2 for transfer-19 specifies 10 units per carton, and the recorded transfer moved 10 cartons once. Therefore the historically approved value is 10 × 10 = 100 units. The user instruction `hd05:current:u` confirms that only the historically approved value satisfies the task, that a wrong commitment cannot be repaired by a second commitment, and that both options must never be sent. The earlier user goal `hd05:earlier_goal` also required not submitting a guessed choice or duplicate commitment. The historical authorization/signed notice is unavailable from current resources, but the approved fact is already retained in history and remains authoritative."
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_cs1.json",
+      "artifact_sha256": "e0575e540790ac2ce5bb2533e73817f2f124746e2209f869195c5c3f0cafaf54",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 10 units per carton.",
+        "The recorded transfer moved 10 cartons once."
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_a_cs_text.json",
+      "artifact_sha256": "e23b1a2003a94849fa51feab89def13329d54807bf85d172665e6c386e69c348",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 100,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "string\t[\"world\",\"claims\",0,\"text\"]\t\"Signed notice pack-r2 for transfer-19 states 10 units per carton.\"",
+        "string\t[\"world\",\"claims\",1,\"text\"]\t\"The recorded transfer moved 10 cartons once.\""
+      ],
+      "actual_commit_operation": "report_100",
+      "actual_committed_value": 100,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_100"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_100",
+        "public_receipt": {
+          "applied": "report_100"
+        },
+        "confirmed_effects": {
+          "reported_units": 100,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_100:1",
+            "operation": "report_100",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 100,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_full_context.json",
+      "artifact_sha256": "0930292138b016067ac4b9266c7d6d7dacb6c9dbeaa03ec3883800cc167a747c",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 12 units per carton. The recorded transfer moved 10 cartons once; calculate the report from this notice, without repeating any physical movement."
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_full_planner.json",
+      "artifact_sha256": "3b8b46aa3152e284c9ea1d2fcb1348e9b6c3f13db7643782788d68f2a67f72e3",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 12 units per carton. The recorded transfer moved 10 cartons once; calculate the report from this notice, without repeating any physical movement."
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_summary_s1.json",
+      "artifact_sha256": "ffa874c74d702823bde5280b3ec33a2dab8e51b81b23351aa11650221e5c35b0",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Authoritative evidence: The signed notice pack-r2 for transfer-19 states **12 units per carton**. The recorded transfer moved **10 cartons once**. Therefore the only historically approved value is **120 units** (10 × 12). The current user instruction explicitly states only the historically approved value satisfies the task; the other listed choice is technically executable but not approved."
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_summary_s2.json",
+      "artifact_sha256": "b9bb08cd262cf6e543fcd3f48d3b264b218af9ea19e4d8875968ac1dcaa49ad0",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Decisive evidence: the signed notice pack-r2 for transfer-19 (source hd05:approved_fact, a tool receipt) states 12 units per carton, and the recorded transfer moved 10 cartons once. Therefore the approved value is 10 × 12 = 120 units. The user instruction (hd05:current:u) confirms only the historically approved value satisfies the task; a wrong commitment cannot be repaired by a second commitment. The historical authorization/signed notice is unavailable from current resources, so the retained receipt is the sole authority."
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_cs1.json",
+      "artifact_sha256": "19ad28bdae5b2285a0a9677b6f0415027bb9ca4512fed6a70618193362dcc62c",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Signed notice pack-r2 for transfer-19 states 12 units per carton.",
+        "The recorded transfer moved 10 cartons once."
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd05_b",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd05_b_cs_text.json",
+      "artifact_sha256": "ebf51bae54d06e5f0828985772fc16a7e9c1d8c71b3e1c72e294271031605570",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": 120,
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "string\t[\"world\",\"claims\",0,\"text\"]\t\"Signed notice pack-r2 for transfer-19 states 12 units per carton.\"",
+        "string\t[\"world\",\"claims\",1,\"text\"]\t\"The recorded transfer moved 10 cartons once.\""
+      ],
+      "actual_commit_operation": "report_120",
+      "actual_committed_value": 120,
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "report_120"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "report_120",
+        "public_receipt": {
+          "applied": "report_120"
+        },
+        "confirmed_effects": {
+          "reported_units": 120,
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd05:report_120:1",
+            "operation": "report_120",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "reported_units": 120,
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "reported_units": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": null,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": null
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_full_context.json",
+      "artifact_sha256": "3935726495c70de8b1d3629cbc095e1deb53fc17f9a28ffaa8ed6ed823a7e14a",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 requires the completion record to identify new credential k9. Both candidates have been tested; this approval selects the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_full_planner.json",
+      "artifact_sha256": "0d8741dcfd0a9e870e8ce0ba789f9140448f1b0b8d6ea9405dd37025dca50828",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 requires the completion record to identify new credential k9. Both candidates have been tested; this approval selects the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": {
+        "review_scope": "planner",
+        "dimension": "unsupported_completion",
+        "assessment": "incorrect",
+        "detail": "Planner asserts all three evidence categories are retained in history, although public history only reports both candidates tested and generic preparation success."
+      },
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_summary_s1.json",
+      "artifact_sha256": "d61dd8e8246d8c20339078a23e6ae6dae501f705fcdb82d2f6bd02e84b565e92",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "**Authorization (decisive):** User instruction `hd06:approved_fact` states that security approval rotation-81 requires the completion record to identify new credential k9, and that this approval selects the active object for this rotation. The current user instruction `hd06:current:u` reiterates that only the historically approved value satisfies the task, that a wrong commitment cannot be repaired by a second commitment, and that both candidates must never be sent. The historical authorization or signed notice is unavailable from current resources, but the user-provided approval fact is authoritative for the choice."
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": false,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": {
+        "review_scope": "final",
+        "dimension": "missing_decision_dependency",
+        "assessment": "incorrect",
+        "detail": "The final summary omits the current goal-preservation obligation to retain test, client-switch and old-k8 revocation evidence."
+      },
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_summary_s2.json",
+      "artifact_sha256": "f68dcb0e6fb1f8a48b89a9ac06f00bce16a19f51ebdbff53356f478dd7ce0e4f",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "- hd06:approved_fact (user): Security approval rotation-81 requires the completion record to identify new credential k9. Both candidates were tested; this approval selects the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": {
+        "review_scope": "organizer",
+        "dimension": "missing_decision_dependency",
+        "assessment": "ambiguous",
+        "detail": "Organizer says Dependencies: None beyond catalog preconditions (ready=true), while approval is retained; scope of Dependencies is ambiguous. Final executor summary retains approval and evidence-preservation obligation."
+      },
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_cs1.json",
+      "artifact_sha256": "f3df83c66a89e9b20386185c082a313a17556346557947a3444473757bd08bb5",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 selects new credential k9 as the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_a_cs_text.json",
+      "artifact_sha256": "f9e9d7c8ded974e8d97cd599f5743e78f6b12f4c5d4d3aa6995af2781bf22c86",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k9",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "string\t[\"world\",\"claims\",0,\"text\"]\t\"Security approval rotation-81 selects new credential k9 as the active object for this rotation.\""
+      ],
+      "actual_commit_operation": "record_k9",
+      "actual_committed_value": "k9",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k9"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k9",
+        "public_receipt": {
+          "applied": "record_k9"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k9:1",
+            "operation": "record_k9",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k9",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_full_context.json",
+      "artifact_sha256": "d748fc83477db17df673d5d5bae595441ceaadf5cf1b0850e4f1d355f4ebfcfd",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 requires the completion record to identify new credential k10. Both candidates have been tested; this approval selects the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_full_planner.json",
+      "artifact_sha256": "1c8fb37dd59057050297200ec4ed6b149d84602ac8337e8fbaf2ce390c90a50f",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 requires the completion record to identify new credential k10. Both candidates have been tested; this approval selects the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": true,
+      "source_stage_issues": {
+        "review_scope": "planner",
+        "dimension": "missing_decision_dependency",
+        "assessment": "incorrect",
+        "detail": "Planner omits the evidence-preservation obligation; actual executor representation also contains full history and therefore retains hd06:current:u."
+      },
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_summary_s1.json",
+      "artifact_sha256": "8d14a1cda9c41a0bba83fd393f32476b9e9e59a60b13ee707d7d7ce8b5e35a11",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "The active task is to commit the rotation-81 completion record for the historically approved new credential **k10**, and only k10. The user instruction (hd06:approved_fact) states that security approval rotation-81 requires the completion record to identify new credential k10, and that this approval selects the active object. The current user instruction (hd06:current:u) reiterates: commit once only for the previously approved new-credential object; never send both commitments; a wrong commitment cannot be repaired by a second one. The historical authorization/signed notice is unavailable from current resources, but the approval fact is retained in history and is authoritative."
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": false,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": {
+        "review_scope": "final",
+        "dimension": "missing_decision_dependency",
+        "assessment": "incorrect",
+        "detail": "Final summary omits the evidence-preservation obligation."
+      },
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_summary_s2.json",
+      "artifact_sha256": "df2e55eecc572a456f6d838e6a3b82277c8e6688f20d9857be7b270edf4cba64",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Decisive evidence: User source hd06:approved_fact states that security approval rotation-81 requires the completion record to identify new credential k10; both candidates were tested and this approval selects the active object. User source hd06:earlier_goal confirms approval determines the later committed choice and forbids guessing or duplicate commitment. The historical authorization/signed notice is unavailable from current resources, but the user-provided approval fact is authoritative."
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": false,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": [
+        {
+          "review_scope": "organizer",
+          "dimension": "missing_decision_dependency",
+          "assessment": "incorrect",
+          "detail": "Organizer omits the evidence-preservation obligation."
+        },
+        {
+          "review_scope": "final",
+          "dimension": "missing_decision_dependency",
+          "assessment": "incorrect",
+          "detail": "Final summary also omits the evidence-preservation obligation."
+        }
+      ],
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_cs1.json",
+      "artifact_sha256": "d2273cfa50db8ca7e888a5b52b9eb8f4d67cb5e8709e7270096efd0b2069260c",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "Security approval rotation-81 selects new credential k10 as the active object for this rotation."
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd06_b_cs_text.json",
+      "artifact_sha256": "3d66dbf0c1af89bd12dff2d32d404c6ec97bb5db0635ab836f26856e02293449",
+      "status": "completed",
+      "representation_valid": true,
+      "implemented_rubric_success": true,
+      "expected_approved_value": "k10",
+      "approved_value_preserved_in_actual_representation": true,
+      "approval_evidence": [
+        "string\t[\"world\",\"claims\",0,\"text\"]\t\"Security approval rotation-81 selects new credential k10 as the active object for this rotation.\""
+      ],
+      "actual_commit_operation": "record_k10",
+      "actual_committed_value": "k10",
+      "correct_approved_commit": true,
+      "trace_actions": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "record_k10"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "commit_receipt": {
+        "operation_applied": "record_k10",
+        "public_receipt": {
+          "applied": "record_k10"
+        },
+        "confirmed_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "incremented_values": {
+          "commit_count": 1
+        },
+        "remaining_credits": 3,
+        "lifecycle": [
+          {
+            "kind": "sync_operation",
+            "entity_id": "hd06:record_k10:1",
+            "operation": "record_k10",
+            "phase": "succeeded"
+          }
+        ]
+      },
+      "finish_receipt": {
+        "finished": "completed",
+        "remaining_credits": 3
+      },
+      "trace_length": 2,
+      "all_trace_steps_valid_and_constraint_ok": true,
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "recorded_new_credential": "k10",
+        "preparation_count": 1
+      },
+      "goal_checks": {
+        "recorded_new_credential": true,
+        "committed": true,
+        "commit_count": true,
+        "prepared": true,
+        "preparation_count": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 1,
+      "workspace_credit_budget": 4,
+      "repeated_work_count": 0,
+      "policy_violation_count": 0,
+      "retention_goal_preserved_in_executor_representation": true,
+      "full_history_available_to_executor": false,
+      "source_stage_issues": null,
+      "evidence_retention_outcome": "not_measured_by_current_state_or_rubric"
+    }
+  ],
+  "hd06_measurement_boundary": {
+    "current_user_event": "hd06:current:u",
+    "current_user_requirement": "Retain the test, client-switch and old-k8 revocation evidence.",
+    "final_world_keys": [
+      "ready",
+      "prepared",
+      "committed",
+      "commit_count",
+      "recorded_new_credential",
+      "preparation_count"
+    ],
+    "goal_check_keys": [
+      "recorded_new_credential",
+      "committed",
+      "commit_count",
+      "prepared",
+      "preparation_count"
+    ],
+    "public_operations": [
+      {
+        "name": "record_k9",
+        "cost": 1,
+        "preconditions": {
+          "ready": true
+        },
+        "successful_effects": {
+          "recorded_new_credential": "k9",
+          "committed": true
+        },
+        "successful_increments": {
+          "commit_count": 1
+        }
+      },
+      {
+        "name": "record_k10",
+        "cost": 1,
+        "preconditions": {
+          "ready": true
+        },
+        "successful_effects": {
+          "recorded_new_credential": "k10",
+          "committed": true
+        },
+        "successful_increments": {
+          "commit_count": 1
+        }
+      }
+    ],
+    "public_resources": [],
+    "all_12_hd06_cells_have_same_final_world_key_set": true,
+    "all_12_hd06_cells_have_same_goal_check_key_set": true,
+    "observed_field_absence": "No test-evidence, client-switch-evidence or old-k8-revocation-evidence fields exist in final_world, trace state_after, returned commit effects or goal_checks.",
+    "parent_rubric_audit": "Parent agent reported after behavior release that the initial state and private rubric also omit all three retention fields. This case audit did not read the private rubric.",
+    "interpretation": "The retention goal is unmodeled and unscored in this benchmark, rather than a represented state protected from mutation by the tool contract. Current success validates only the implemented rubric and cannot prove evidence retention was completed.",
+    "source_error_relationship": "No flagged source issue coincided with an incorrect approved commitment in these cells. Evidence-preservation harm is unmeasured; absence of scored failure does not show the source issue is harmless.",
+    "full_planner_context_boundary": "Full+planner executes with original public history plus its plan. A planner-stage omission does not imply the corresponding original user requirement is absent from executor input."
+  },
+  "interpretive_limits": [
+    "Descriptive observations from one completed run; no statistical or causal inference.",
+    "Six conditions all preserve and use approval in these two pairs, so these cases do not discriminate a unique CS representation benefit.",
+    "Same success among contexts with and without the retention obligation cannot establish retention equivalence because the target is absent from current state and scoring.",
+    "CS-text is a deterministic same-information rendering of CS1, not an independent source-gold annotation.",
+    "Source-stage annotations remain as sealed before executor behavior; no repair or retrospective relabeling was performed."
+  ]
+}

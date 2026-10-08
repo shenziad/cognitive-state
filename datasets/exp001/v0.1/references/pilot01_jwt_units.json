@@ -1,0 +1,67 @@
+{
+  "instance_id": "pilot01_jwt_units",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h06"
+    ],
+    "world.facts": [
+      "h03",
+      "h05",
+      "h07"
+    ],
+    "world.beliefs": [
+      "h04"
+    ],
+    "world.assumptions": [
+      "h02"
+    ],
+    "frontier": [
+      "h08"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Restore JWT expiration validation",
+      "success_criteria": [
+        "All service checks pass"
+      ],
+      "constraints": [
+        "Preserve schema_version=1; do not change it.",
+        "Preserve clock_skew=30; do not change it.",
+        "No database migration; modify virtual service configuration only."
+      ],
+      "preferences": [
+        "Prefer a small, evidence-based change"
+      ]
+    },
+    "world": {
+      "facts": [
+        "JWT validation fails for fresh tokens; a restart did not help.",
+        "Earlier change {\"key\": \"expiry_unit\", \"value\": \"seconds\"} failed and was reverted",
+        "Legacy runbook is deprecated; current runbook has not been read"
+      ],
+      "beliefs": [
+        {
+          "claim": "Timezone conversion may be wrong",
+          "confidence": 0.6
+        }
+      ],
+      "assumptions": [
+        "The virtual fixture represents the interrupted service"
+      ]
+    },
+    "frontier": {
+      "current_focus": "Restore JWT expiration validation",
+      "information_needs": [
+        "Current settings guidance"
+      ],
+      "next_action": "Read docs/runbook.json, then edit based on evidence and run checks"
+    }
+  }
+}

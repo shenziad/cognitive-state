@@ -1,0 +1,18 @@
+{
+  "instance_id": "disc_w03_b",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "apply_parser_v2"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

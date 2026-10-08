@@ -1,0 +1,53 @@
+{
+  "protocol_id": "cycle5-history-mechanism-v1",
+  "execution_version": "cycle5-execution-v1",
+  "dataset_public": "datasets/history_diagnostics_v01/tasks_public.json",
+  "dataset_private": "datasets/history_diagnostics_v01/fixtures_private.json",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "provider": "openai_sdk",
+  "endpoint": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key_env": "apikey",
+  "output_limit_parameter": "max_tokens",
+  "max_output_tokens": 4096,
+  "final_max_output_tokens": 4096,
+  "intermediate_max_output_tokens": 1024,
+  "timeout_seconds": 60,
+  "extra_body": {
+    "enable_thinking": false
+  },
+  "seed": 20261004,
+  "max_steps": 4,
+  "representation_budget": 6000,
+  "repair_attempts": 1,
+  "executor_prompt": "prompts/cycle5/executor.txt",
+  "repetitions": 1,
+  "stage": "mechanism",
+  "experiment_id": "cycle5-mechanism-v1",
+  "config_path": "configs/cycle5_mechanism_v1.json",
+  "task_ids": [
+    "hd01_a",
+    "hd01_b",
+    "hd02_a",
+    "hd02_b",
+    "hd03_a",
+    "hd03_b",
+    "hd04_a",
+    "hd04_b",
+    "hd05_a",
+    "hd05_b",
+    "hd06_a",
+    "hd06_b"
+  ],
+  "conditions": [
+    "full_context",
+    "full_planner",
+    "summary_s1",
+    "summary_s2",
+    "cs1",
+    "cs_text"
+  ],
+  "max_api_calls": 400,
+  "token_stop_threshold": 750000,
+  "incoming_diagnostic_gate": "results/analysis/cycle5_diagnostic_v1_20261004/gate.json"
+}

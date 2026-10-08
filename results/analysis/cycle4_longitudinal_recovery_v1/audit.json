@@ -1,0 +1,571 @@
+{
+  "complete": true,
+  "evidence_type": "api",
+  "stage": "longitudinal",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\longitudinal_recovery_v1_20261003",
+  "results_sha256": "8c3f85ca192abc48939e1f91a83e6aaa25b1ab30f19e6e530c375a2d53d77343",
+  "ledger_sha256": "19c387c4b283367b71bf98549572a21b2e5c45ccbb2506720a749a9ae1a9ec9c",
+  "manifest_sha256": "16f69b508be21f9e38844e2d4f48489cf5adb7d3449318c8c74e2ee640a861d1",
+  "artifact_sha256": {
+    "instances/release_workflow_summary_r0_h1.json": "6de9523d004e56217b4bf2a2a8b02d969ae8873ca6d2e70f95d500a2e948a0ff",
+    "instances/release_workflow_summary_r0_h2.json": "80fb14bcaaf9ac65a3a316fd08f9d66d9be7f94d671a6f9f661e15ecde637f43",
+    "instances/release_workflow_summary_r0_h3.json": "80ea61e88bd72a4558e3641a1924a36e4cf21a113fe6159618934f18c5e607a5",
+    "instances/release_workflow_summary_r0_h4.json": "c1a549f02100b84c781e1a33433d688fbe5f3f88cace6e8cc67e3939b1447ec4",
+    "instances/archive_workflow_cs_v02_r0_h1.json": "fda72ea103a830dfb4b7d5c0fca9bb412e85d9546e4671b99633bf77743b7bfd",
+    "instances/archive_workflow_cs_v02_r0_h2.json": "edc25d9759db2142dffe95734e18dfd0b73b705098f77656acd73889971ffc1e",
+    "instances/archive_workflow_cs_v02_r0_h3.json": "3541c1f26dad77020879649c923da75848d43ea0eae57f59505f1aa9e8b2e91b",
+    "instances/archive_workflow_cs_v02_r0_h4.json": "8ad19c36e852a5ee1a7b7be68ee0e9beab768bd382da89d656ca5ab8b909229c",
+    "instances/archive_workflow_full_context_r0_h1.json": "d895f49c36e88933914096966f4b192b16340056d05a5b20b2dcd2cc71fcf4fd",
+    "instances/archive_workflow_full_context_r0_h2.json": "fb8d4d8a592767e1accf3283e2787ce62940b47ed49f345675408c350670bb09",
+    "instances/archive_workflow_full_context_r0_h3.json": "82d4709446952c96a2fccac9f84c6d36de301b20776568f8b8f35c4fe0395965",
+    "instances/archive_workflow_full_context_r0_h4.json": "a05a887383d2cfdbdc5a21d0e96cc7aa29f9b132b6ab1f68a3d7fd7f2fd4d634",
+    "instances/archive_workflow_summary_r0_h1.json": "021939e5b5e31c82a42b2878d48f661187d10ca1a26d0f42d61695b2e5e73262",
+    "instances/archive_workflow_summary_r0_h2.json": "0b8119609f8bd382a868878ea9ba9e487ec6452a9643dfd9afb9e3aabd2cf451",
+    "instances/archive_workflow_summary_r0_h3.json": "a4e93a74e2174c541867a1c9ae8495db415a889a2554b818000e90deb492bc10",
+    "instances/archive_workflow_summary_r0_h4.json": "6829d439c8534166786fcb05467e4fae1788d11de4a6475f0111695153102553",
+    "instances/release_workflow_cs_v031_r0_h1.json": "7e9ddc5ea004ccb413c82757c1d6442b492806df866452f9353a892a88b9ac53",
+    "instances/release_workflow_cs_v031_r0_h2.json": "f357cb457e1c478328b06a3b5c87167043f9197e857ff26338e2605e51e33b81",
+    "instances/release_workflow_cs_v031_r0_h3.json": "aee6572ff085aebabf68b6f1edaeed88eabb91f6264bf2524c64351518ee8e89",
+    "instances/release_workflow_cs_v031_r0_h4.json": "b363742c9072af29a8492705af23f44937b8516e418a4ad38a8b169284cfe6b0",
+    "instances/archive_workflow_cs_v031_r0_h1.json": "7207ea919ee06d67317aca24dfdadc447327490ef169bc1eea58958971210031",
+    "instances/archive_workflow_cs_v031_r0_h2.json": "da918d1ae630c908b8bab0801bf4502fd0580d75306c9bd0358812151111952a",
+    "instances/archive_workflow_cs_v031_r0_h3.json": "ff31e381584248ad4b5d6d00ccf3caa396759b27beb13b22e87b8a128dc36331",
+    "instances/archive_workflow_cs_v031_r0_h4.json": "8794e535516ea82bd0246e189261a6fef6b19e516d5cdd166daf7589c09a1b5f",
+    "instances/release_workflow_full_context_r0_h1.json": "ceffad411a24ceacaa7b475289c8059a71ca56aaf9270f640eeeb103d07c367c",
+    "instances/release_workflow_full_context_r0_h2.json": "47188f296675ada880f84d3bc01abfe7976bea7487e6584bee716be3bb6bb1f6",
+    "instances/release_workflow_full_context_r0_h3.json": "a1c63d30453eec7558b432c968b6ea40ffe535d3234a1d2281fd2b7216dc6dea",
+    "instances/release_workflow_full_context_r0_h4.json": "caa490c860a2b7788e40b9e00deb7cbdc54541aea1e7216cf1c17ed204b080ed",
+    "instances/release_workflow_cs_v02_r0_h1.json": "81ca68887d389fcb2127d4cfb6f7dd4930082eb747bf3094c84b0a61aefa9a8a",
+    "instances/release_workflow_cs_v02_r0_h2.json": "ae6614f69fc9fddc5fef44803861ceb00f653dd5973d125115a7118b8296ed9e",
+    "instances/release_workflow_cs_v02_r0_h3.json": "5ef22312ea908919e4c654505b535170b9abb1422471f2d3e5917c818f0bdff9",
+    "instances/release_workflow_cs_v02_r0_h4.json": "00b04ae6f752d1eb37ed872e830894361e5ac4b9ba75370bea134e1ae56ed1ba"
+  },
+  "usage": {
+    "request_attempts": 111,
+    "successful_responses": 111,
+    "total_tokens": 267733,
+    "known_reported_tokens": 267733,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "all": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 22,
+          "successful_responses": 22,
+          "total_tokens": 55325,
+          "known_reported_tokens": 55325,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 55023,
+        "output_tokens": 302,
+        "cached_input_tokens": 23552,
+        "response_latency_seconds": 26.7549710999956,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 22,
+          "successful_responses": 22,
+          "total_tokens": 55325,
+          "known_reported_tokens": 55325,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 55023,
+        "output_tokens": 302,
+        "cached_input_tokens": 23552,
+        "response_latency_seconds": 26.7549710999956,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "summary": {
+      "all": {
+        "saved": 8,
+        "successes": 7,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 29,
+          "successful_responses": 29,
+          "total_tokens": 57471,
+          "known_reported_tokens": 57471,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 54576,
+        "output_tokens": 2895,
+        "cached_input_tokens": 9984,
+        "response_latency_seconds": 79.82701890001772,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 8,
+        "successes": 7,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 29,
+          "successful_responses": 29,
+          "total_tokens": 57471,
+          "known_reported_tokens": 57471,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 54576,
+        "output_tokens": 2895,
+        "cached_input_tokens": 9984,
+        "response_latency_seconds": 79.82701890001772,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "cs_v02": {
+      "all": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 66416,
+          "known_reported_tokens": 66416,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 61779,
+        "output_tokens": 4637,
+        "cached_input_tokens": 12800,
+        "response_latency_seconds": 106.9682735999886,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 66416,
+          "known_reported_tokens": 66416,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 61779,
+        "output_tokens": 4637,
+        "cached_input_tokens": 12800,
+        "response_latency_seconds": 106.9682735999886,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "cs_v031": {
+      "all": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 88521,
+          "known_reported_tokens": 88521,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 79637,
+        "output_tokens": 8884,
+        "cached_input_tokens": 14848,
+        "response_latency_seconds": 130.38211060001777,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 8,
+        "successes": 8,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 88521,
+          "known_reported_tokens": 88521,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 79637,
+        "output_tokens": 8884,
+        "cached_input_tokens": 14848,
+        "response_latency_seconds": 130.38211060001777,
+        "first_valid": 8,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 0,
+        "successes": 0,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 0,
+          "successful_responses": 0,
+          "total_tokens": 0,
+          "known_reported_tokens": 0,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 0,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    }
+  },
+  "chains": [
+    {
+      "scenario": "release_workflow",
+      "condition": "full_context",
+      "success": true
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "summary",
+      "success": true
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "cs_v02",
+      "success": true
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "cs_v031",
+      "success": true
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "full_context",
+      "success": true
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "summary",
+      "success": false
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "cs_v02",
+      "success": true
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "cs_v031",
+      "success": true
+    }
+  ],
+  "paired_costs": [
+    {
+      "instance_id": "release_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.399547072144937
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -0.125985977212971
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": 0.02337801608579093
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": -0.0036214389183968354
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.49603769543799525
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -0.5107747562852745
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": -0.09901738473167043
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": -0.11361487551213356
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3296209038337974
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -0.28809645972293474
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": 0.06613756613756616
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": 0.3172076898833911
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.0197347136848918
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -0.42846187554776516
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": -0.4324932975871314
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": -0.5703766296475132
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7228528592846435
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -1.003335043612109
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": -0.46343537414965996
+    },
+    {
+      "instance_id": "archive_workflow",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": -0.8168925307280177
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5865415723066969
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 2,
+      "comparable": true,
+      "token_reduction": -0.2188869412795793
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 3,
+      "comparable": true,
+      "token_reduction": -0.051689008042895335
+    },
+    {
+      "instance_id": "release_workflow",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 4,
+      "comparable": true,
+      "token_reduction": -0.08715596330275233
+    }
+  ],
+  "gate_evidence": {
+    "integrity": {
+      "no_hidden_input_leakage": true,
+      "equal_public_interface": true,
+      "scoring_replay_matches": true,
+      "world_and_history_boundaries_match": true,
+      "snapshot_hashes_match": true,
+      "source_authority_preserved": true,
+      "all_requests_accounted_once": true,
+      "no_unresolved_provider_error": true
+    },
+    "completed_cells": 32,
+    "unknown_usage_requests": 0,
+    "execution_manifest_verified": true,
+    "semantic_review_complete": false,
+    "final_valid": {
+      "summary": 8,
+      "cs_v02": 8,
+      "cs_v031": 8
+    }
+  },
+  "verification": "public inputs, authority, world carry, messages, scores and unique requests replayed"
+}

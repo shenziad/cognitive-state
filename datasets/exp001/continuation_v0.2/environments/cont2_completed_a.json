@@ -1,0 +1,55 @@
+{
+  "instance_id": "cont2_completed_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "oak_calibrated": true,
+    "elm_calibrated": false
+  },
+  "operations": {
+    "calibrate_J": {
+      "description": "Calibrate oak rack; repeating calibration also costs 2 credits.",
+      "effects": {
+        "oak_calibrated": true
+      },
+      "cost": 2,
+      "repeat_key": "oak_calibrated"
+    },
+    "calibrate_R": {
+      "description": "Calibrate elm rack; repeating calibration also costs 2 credits.",
+      "effects": {
+        "elm_calibrated": true
+      },
+      "cost": 2,
+      "repeat_key": "elm_calibrated"
+    }
+  },
+  "observations": {
+    "current/calibration_ledger": {
+      "description": "Retrieve the signed rack calibration ledger.",
+      "observation": {
+        "content": {
+          "validated_rack": "oak"
+        }
+      },
+      "effects": {},
+      "cost": 2
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "oak_calibrated": true,
+      "elm_calibrated": true
+    },
+    "finish_status": "completed",
+    "before_action": [],
+    "forbidden_actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_J"
+        }
+      }
+    ]
+  }
+}

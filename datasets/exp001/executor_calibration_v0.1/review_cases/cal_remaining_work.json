@@ -1,0 +1,17 @@
+{
+  "instance_id": "cal_remaining_work",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "run_pack"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ]
+}

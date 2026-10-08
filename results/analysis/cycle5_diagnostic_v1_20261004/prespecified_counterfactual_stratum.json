@@ -1,0 +1,114 @@
+{
+  "scope": "entire_predeclared_counterfactual_stratum",
+  "original_D_complete": false,
+  "cells": 24,
+  "basic_workflows": 6,
+  "selection_fixed_before_D": true,
+  "pairs": [
+    {
+      "pair_id": "hd01",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 0,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": true
+    },
+    {
+      "pair_id": "hd02",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 1,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": false
+    },
+    {
+      "pair_id": "hd03",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 1,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": true
+    },
+    {
+      "pair_id": "hd04",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 1,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": false
+    },
+    {
+      "pair_id": "hd05",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 1,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": true
+    },
+    {
+      "pair_id": "hd06",
+      "full_context": {
+        "successes": 2,
+        "joint_success": true
+      },
+      "no_history": {
+        "successes": 1,
+        "joint_success": false
+      },
+      "identical_no_history_first_response": true
+    }
+  ],
+  "conditions": {
+    "full_context": {
+      "successes": 12,
+      "assigned": 12,
+      "usage": {
+        "request_attempts": 24,
+        "successful_responses": 24,
+        "total_tokens": 75964,
+        "known_reported_tokens": 75964,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    },
+    "no_history": {
+      "successes": 5,
+      "assigned": 12,
+      "usage": {
+        "request_attempts": 26,
+        "successful_responses": 26,
+        "total_tokens": 48737,
+        "known_reported_tokens": 48737,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    }
+  },
+  "results_sha256": "fa491d5eb74a1d804994ce4c873fd3f33047df9a1bb299a3533c2f4ce64e275c",
+  "scope_gate_sha256": "310ca6651269ee6606ef040772d58b96cc602bf887e0efcfcae4bdccc78b0fb8",
+  "limits": [
+    "D did not complete its original-candidate stratum.",
+    "Pairs share one missing-fact/two-choice mechanism; this is not six independent cognitive mechanisms.",
+    "NoHistory can guess correctly; joint-pair success is the stronger diagnostic."
+  ]
+}

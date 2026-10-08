@@ -1,0 +1,23 @@
+{
+  "instance_id": "cal_exact_resource",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/stamp"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "stamp_oak"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ]
+}

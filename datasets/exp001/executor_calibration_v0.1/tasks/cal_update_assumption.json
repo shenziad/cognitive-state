@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_update_assumption",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: deploy the parser matching the authoritative handshake. 1 credit."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Earlier default r30 was only an assumption. Current verified handshake is r32; no deployment has occurred."
+    }
+  ]
+}

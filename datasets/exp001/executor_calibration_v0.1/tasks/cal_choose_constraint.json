@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_choose_constraint",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: apply an eligible option without network access; then finish. 1 credit."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Amber is offline at 140ms; violet uses network at 80ms. No choice applied. Faster is only a preference."
+    }
+  ]
+}

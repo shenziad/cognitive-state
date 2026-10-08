@@ -1,0 +1,62 @@
+{
+  "instance_id": "pilot05_csv_format",
+  "title": "修复 CSV 格式",
+  "cutoff": "after:h08",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Restore partner CSV imports. Success means all service checks pass. Preserve skip_errors=false; do not change it. Preserve schema_version=1; do not change it. No database migration; modify virtual service configuration only."
+    },
+    {
+      "id": "h02",
+      "role": "assistant",
+      "content": "I will investigate the virtual service configuration. Working assumption: the virtual fixture represents the interrupted service; this has not independently been checked."
+    },
+    {
+      "id": "h03",
+      "role": "tool",
+      "content": "Imported columns are merged and accented names are corrupted. Current config/service.json: {\"delimiter\": \",\", \"encoding\": \"latin-1\", \"skip_errors\": false, \"schema_version\": 1}"
+    },
+    {
+      "id": "h04",
+      "role": "assistant",
+      "content": "Unconfirmed belief: Input encoding may also differ from local settings. Confidence: 0.6. This is not established."
+    },
+    {
+      "id": "h05",
+      "role": "tool",
+      "content": "Earlier unsuccessful change: {\"key\": \"delimiter\", \"value\": \",\"}. It did not solve the incident and was reverted."
+    },
+    {
+      "id": "h06",
+      "role": "user",
+      "content": "Continue the original repair. Preserve skip_errors=false; do not change it. Preserve schema_version=1; do not change it. No database migration; modify virtual service configuration only. Prefer a small, evidence-based change."
+    },
+    {
+      "id": "h07",
+      "role": "tool",
+      "content": "docs/legacy_runbook.json is explicitly deprecated; it recommends the old configuration. Use docs/runbook.json for current guidance; its contents have not been read yet."
+    },
+    {
+      "id": "d00",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "d01",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "d02",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "h08",
+      "role": "assistant",
+      "content": "Current focus: Restore partner CSV imports. Need the current settings guidance. Next action: read docs/runbook.json before editing; then test and report completion."
+    }
+  ]
+}

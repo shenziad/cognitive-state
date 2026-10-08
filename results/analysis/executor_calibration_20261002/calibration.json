@@ -1,0 +1,27 @@
+{
+  "evidence_type": "independent_synthetic_executor_calibration",
+  "baseline_v02": {
+    "successes": 16,
+    "assigned_runs": 16,
+    "invalid_actions": 2,
+    "premature_finish": 0,
+    "reported_api_responses": 50,
+    "reported_api_tokens": 25662,
+    "results_sha256": "845a7100b5d73d150f7a92ed8c73977837b242b9cd9c83cce3e788d967ee77b0",
+    "replayed_runs": 16
+  },
+  "candidate_v03": {
+    "successes": 16,
+    "assigned_runs": 16,
+    "invalid_actions": 4,
+    "premature_finish": 0,
+    "reported_api_responses": 52,
+    "reported_api_tokens": 35150,
+    "results_sha256": "441867f47d3a1683ad2402f6f0d7e498a133122f056982b47b9624fd1e05a76d",
+    "replayed_runs": 16
+  },
+  "predeclared_gate_passed": true,
+  "candidate_advantage_demonstrated": false,
+  "hypotheses_confirmed": [],
+  "limitation": "Calibration tests tool execution, not state sufficiency; equal success does not show a protocol improvement."
+}

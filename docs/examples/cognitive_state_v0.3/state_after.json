@@ -1,0 +1,78 @@
+{
+  "goal": {
+    "revision": "g1",
+    "objective": "Obtain exactly one fulfilled reservation.",
+    "requirements": [
+      {
+        "id": "req1",
+        "text": "Exactly one reservation is fulfilled.",
+        "source_refs": [
+          "h01"
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "con1",
+        "text": "Do not submit another request after acceptance.",
+        "source_refs": [
+          "h01"
+        ]
+      }
+    ],
+    "preferences": []
+  },
+  "world": {
+    "claims": [
+      {
+        "id": "c2",
+        "text": "Exactly one reservation exists and reservation-1 is fulfilled.",
+        "basis": "observed",
+        "source_refs": [
+          "h05"
+        ]
+      }
+    ],
+    "operations": [
+      {
+        "id": "op1",
+        "operation": "request_H",
+        "target": {
+          "request_id": "reservation-1",
+          "broker": "pearl"
+        },
+        "phase": "accepted",
+        "source_refs": [
+          "h03"
+        ]
+      },
+      {
+        "id": "op2",
+        "operation": "consume_Z",
+        "target": {
+          "request_id": "reservation-1",
+          "broker": "pearl"
+        },
+        "phase": "completed",
+        "source_refs": [
+          "h05"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "budget1",
+        "kind": "credits",
+        "remaining": 1,
+        "scope": "current-checkpoint",
+        "source_refs": [
+          "h05"
+        ]
+      }
+    ]
+  },
+  "frontier": {
+    "obligations": [],
+    "open_questions": []
+  }
+}

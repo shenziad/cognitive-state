@@ -1,0 +1,22 @@
+{
+  "experiment_id": "exp001_context_equivalence",
+  "model": null,
+  "temperature": 0.0,
+  "benchmark": "exp001-pilot-v0.1",
+  "dataset": "datasets/exp001/v0.1",
+  "prompt_version": "v0.1",
+  "conditions": ["full_context", "summary", "cognitive_state", "reference_state"],
+  "instance_ids": ["pilot01_jwt_units", "pilot02_api_endpoint"],
+  "repetitions": 3,
+  "randomization_seed": 20261001,
+  "max_steps": 8,
+  "representation_counter": null,
+  "representation_budget": 512,
+  "provider": "chat_completions",
+  "endpoint": null,
+  "api_key_env": "LLM_API_KEY",
+  "output_limit_parameter": "max_completion_tokens",
+  "max_output_tokens": 2048,
+  "timeout_seconds": 60,
+  "max_api_calls": 200
+}

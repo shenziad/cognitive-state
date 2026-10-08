@@ -1,0 +1,1767 @@
+{
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\preflight_recovery_v1_20261003",
+  "results_sha256": "0243b7e44bc64e7691c4767955174d60c85be9cdd805cb69d1d11288823959d2",
+  "reviewer": "assistant source_review; public-source-first recovery batch; prior similar tasks seen; not independent human gold; neither task nor condition blinded",
+  "review_method": "public_sources_before_behavior; assistant_not_independent_gold; condition_not_blinded",
+  "entries": [
+    {
+      "artifact": "instances/p4_001_cs_v02_r0_h1.json",
+      "artifact_sha256": "4342c9b191a5292bbba62d9d7fd7343cc02a9429bb03f3590a29ecf371d422bf",
+      "condition": "cs_v02",
+      "instance_id": "p4_001",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_001:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_001:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"objective\":\"Complete job-17 successfully; never resubmit an accepted job.\",\"success_criteria\":[\"job-17 result is successfully obtained via consume_job\",\"job-17 result v1 is independently validated via validate_result\"],\"constraints\":[\"Do not resubmit an accepted job; job-17 is already accepted, so submit_job must not be used for job-17\",\"Remaining credits are 2; each operation costs 1 credit, so at most two paid operations can be performed\",\"Use exact catalog tool names: submit_job, consume_job, validate_result, current/submission\"],\"preferences\":[]},\"world\":{\"facts\":[\"Submission attempt-1 returned accepted, job_id=job-17\",\"Job-17 is accepted; its result is pending\",\"No second submission occurred\",\"Remaining credits: 2 (credit_scope p4_001:checkpoint_1)\",\"Public interface version: lifecycle-interface-v1\",\"Catalog cost is 0; remaining credits are 2\"],\"beliefs\":[{\"claim\":\"consume_job will return the final successful result of job-17\",\"confidence\":0.7}],\"assumptions\":[\"The accepted job-17 will eventually produce a result; no evidence of failure yet\",\"The current/submission resource can confirm attempt-1 acceptance without resubmission, but it costs 1 credit and may not be necessary\"]},\"frontier\":{\"current_focus\":\"Obtain the final successful result of job-17 via consume_job, then validate it\",\"information_needs\":[\"Whether consume_job succeeds and returns a result for job-17\",\"Whether the returned result is version v1 for validation\",\"Whether validation succeeds after obtaining the result\"],\"next_action\":\"Call consume_job (cost 1) to obtain the final successful result of job-17; if it succeeds, then call validate_result (cost 1) to independently validate job-17 result v1\"}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "incorrect",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p1 requests successful job-17 completion and no resubmission, without independent validation. The state adds validation as a second success criterion and mandatory later frontier action from an offered tool; this is an invented requirement. p2 attempt-1 accepted/job-17 pending and no second submission are retained, as are credits and the immediate consume_job prerequisite. No terminal success is fabricated."
+    },
+    {
+      "artifact": "instances/p4_007_summary_r1_h1.json",
+      "artifact_sha256": "4f9bf77feed6b5baf8fe8a2348b286b503ab83ff5ca456b75fb27ecc24c5c28d",
+      "condition": "summary",
+      "instance_id": "p4_007",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 accepted as job-17; job-17 subsequently succeeded, result v1 saved. No independent validation has run."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_007:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_007:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "Job-17 was submitted via attempt-1, accepted, and its result v1 was saved successfully. The user's requirement to complete job-17 successfully is satisfied by that actual job success. The user explicitly forbade resubmitting an accepted job, so no further submission is permitted. No independent validation was requested by the user, and none has run. The current goal is fully met; no further actions are required. Remaining credits: 2 in scope p4_007:checkpoint_1.",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 identifies attempt-1/job-17 and certifies subsequent job success with result v1 saved. p1 has no independent validation demand. The summary correctly states the current goal is met, no validation was requested/run, and no further action is required, while preserving no-resubmission and scoped credits. No asynchronous job is pending and no closed work is reopened."
+    },
+    {
+      "artifact": "instances/p4_005_cs_v02_r0_h1.json",
+      "artifact_sha256": "d9bc3dec13d64c8538e953f7f68b690448bf637aaec4e5323ed1d7a7c6c3fbc8",
+      "condition": "cs_v02",
+      "instance_id": "p4_005",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred. A matching job-17 terminal receipt confirms succeeded; result v1 saved."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_005:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_005:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"objective\":\"Complete job-17 successfully; never resubmit an accepted job.\",\"success_criteria\":[\"job-17 result v1 is independently validated (validated=true)\",\"job-17 is succeeded with result v1 saved\"],\"constraints\":[\"Never resubmit an accepted job; do not call submit_job again\",\"Do not fabricate evidence; only use actual tool receipts\",\"Budget: 2 credits remaining; each operation costs 1 credit\"],\"preferences\":[]},\"world\":{\"facts\":[\"Submission attempt-1 returned accepted, job_id=job-17\",\"Job-17 is accepted; result is pending\",\"A matching job-17 terminal receipt confirms succeeded; result v1 saved\",\"Current remaining credits: 2\",\"Public interface version: lifecycle-interface-v1\"],\"beliefs\":[{\"claim\":\"Job-17 succeeded with result v1 saved\",\"confidence\":0.9}],\"assumptions\":[\"The terminal receipt confirming job-17 succeeded is reliable and matches job-17 identity and version v1\",\"consume_job will return the final successful result for job-17 if called\"]},\"frontier\":{\"current_focus\":\"Independently validate job-17 result v1 to satisfy explicit verification requirement\",\"information_needs\":[\"Whether consume_job is required before validate_result, given job-17 already has a terminal succeeded receipt\",\"Whether validate_result will succeed given job_done precondition is met\"],\"next_action\":\"Call validate_result (cost 1) to independently validate job-17 result v1; if it succeeds, goal is complete. If it fails due to missing job_done, then call consume_job first, then validate_result.\"}}",
+      "assessment": {
+        "entity_phase_confusion": "ambiguous",
+        "unsupported_completion": "correct",
+        "invented_requirement": "incorrect",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "ambiguous",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 contains an earlier pending statement followed by matching job-17 succeeded/result v1 saved. Both appear as undated facts, but frontier explicitly recognizes an already terminal job and proposes validation directly, making current phase wording ambiguous rather than definitely pending. The validation is falsely called an explicit requirement absent from p1. The question about whether consume_job is necessary is ambiguous: the public success already supports job_done, while the later conditional missing-precondition recovery would need a new actual rejection. The terminal evidence is present; it is not fabricated completion."
+    },
+    {
+      "artifact": "instances/p4_002_cs_v031_r1_h1.json",
+      "artifact_sha256": "86493054c2aedbbef817b161a7d474e4345e97292c10392a6259d8b685d181b6",
+      "condition": "cs_v031",
+      "instance_id": "p4_002",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_002:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_002:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Successfully submit the job and retain its accepted identity.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Stop at acceptance; do not wait for the job result.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Submission attempt-1 was accepted and returned job_id=job-17.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 is accepted and its result is pending.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c3\",\"text\":\"No second submission occurred.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"attempt-1\",\"operation\":\"submit_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"submit_job\",\"phase\":\"accepted\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"res1\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_002:checkpoint_1\",\"source_refs\":[\"runtime_1\"]}]},\"frontier\":{\"obligations\":[],\"open_questions\":[]}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p1 expressly stops at successful submission acceptance and retains identity, without waiting. p2 supports accepted attempt-1/job-17 with result pending and no second submission. Distinct completed accepted submission and accepted job records match p2; empty obligations respect the acceptance-only goal while the pending job remains represented. Credits are correctly scoped; no extra validation or job success is asserted."
+    },
+    {
+      "artifact": "instances/p4_002_cs_v031_r0_h1.json",
+      "artifact_sha256": "3d239bb9b19fae316a2ec5059825585c1197a3aad1b84744faf3cdf724436e31",
+      "condition": "cs_v031",
+      "instance_id": "p4_002",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_002:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_002:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Successfully submit the job and retain its accepted identity; stop at acceptance, do not wait for the job result.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Successfully submit the job and retain its accepted identity; stop at acceptance, do not wait for the job result.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Submission attempt-1 was accepted and returned job_id=job-17.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 is accepted and its result is pending.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c3\",\"text\":\"No second submission occurred.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"attempt-1\",\"operation\":\"submit_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"submit_job\",\"phase\":\"accepted\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"credits\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_002:checkpoint_1\",\"source_refs\":[\"runtime_1\"]}]},\"frontier\":{\"obligations\":[],\"open_questions\":[]}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p1 acceptance-only goal and stop-before-result rule are retained in r1. p2 accepted attempt-1/job-17, pending result and no second submission match the separate submission.completed/accepted and job.accepted records. Empty frontier is supported by the user stopping point, not evidence of a succeeded job. The actual pending job and remaining credits are retained."
+    },
+    {
+      "artifact": "instances/p4_010_cs_v031_r1_h1.json",
+      "artifact_sha256": "77baacf40f6bdab22aff1a1f9af547fd652cb2d407ef2ea8379c47d662b60e09",
+      "condition": "cs_v031",
+      "instance_id": "p4_010",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed. A subsequent matching job-17 receipt confirms terminal cancelled."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_010:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "cancel_job",
+              "description": "Send another cancellation request for job-17.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {},
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_cancellation",
+              "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "cancelled": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_010:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Cancel job-17 and confirm its terminal cancellation without repeating an accepted cancellation request.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Cancel job-17 and confirm its terminal cancellation.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Do not repeat an accepted cancellation request.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Cancellation request cancel-1 for job-17 was accepted.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 is still running and cancellation is not yet confirmed.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c3\",\"text\":\"A subsequent matching job-17 receipt confirms terminal cancelled.\",\"basis\":\"reported\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"cancel-1\",\"operation\":\"cancel_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"cancel_job\",\"phase\":\"running\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"res1\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_010:checkpoint_1\",\"source_refs\":[\"runtime_1\"]}]},\"frontier\":{\"obligations\":[{\"id\":\"o1\",\"text\":\"Obtain terminal cancellation for job-17 via consume_cancellation.\",\"requirement_ref\":\"r1\"}],\"open_questions\":[],\"candidate_action\":{\"tool\":\"execute\",\"arguments\":{\"operation\":\"consume_cancellation\"},\"requires\":[\"s1\"],\"obligation_ref\":\"o1\",\"goal_revision\":\"g1\",\"known_cost\":1}}}",
+      "assessment": {
+        "entity_phase_confusion": "incorrect",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "p2 subsequently confirms matching job-17 terminal cancelled. The state retains that as c3 yet still presents c2 and j1 as currently running, then demands consume_cancellation. This is stale phase interpretation and unsupported reopening. The candidate only requires s1 acceptance and does not incorporate c3 terminal evidence into deciding whether any obligation remains, so decision dependency is insufficient. Cancellation success itself is source-supported, not fabricated; no actual pending job remains."
+    },
+    {
+      "artifact": "instances/p4_008_summary_r1_h1.json",
+      "artifact_sha256": "f6585d73f3ce2748fac99b365f2b4d08adcba488bdf5f02a8632becd13b142de",
+      "condition": "summary",
+      "instance_id": "p4_008",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job. Independently validate result v1 once; that validation is an explicit acceptance requirement."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 accepted as job-17; job-17 subsequently succeeded, result v1 saved. No independent validation has run."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_008:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_008:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "Job-17 was accepted via submission attempt-1 and has already succeeded, with result v1 saved. The user's explicit requirement is to independently validate result v1 once; that validation has not yet run and remains the sole outstanding obligation. Do not resubmit job-17 or any accepted job. The current public interface provides two relevant operations: `consume_job` (cost 1, precondition `submitted: true`, effect `job_done: true`) to obtain the final successful result of job-17, and `validate_result` (cost 1, precondition `job_done: true`, effect `validated: true`) to independently validate result v1. There is also a resource `current/submission` (cost 1) for idempotency lookup of attempt-1, but since p2 already confirms acceptance and success, that lookup is unnecessary unless evidence is questioned. Remaining credits: 2, sufficient for both operations. The correct sequence is: call `consume_job` first (satisfies `job_done`), then call `validate_result` (satisfies `validated`). Both are synchronous operations; successful receipts certify their effects. After `validate_result` succeeds, the user goal is complete. No further actions are needed beyond these two calls.",
+      "assessment": {
+        "entity_phase_confusion": "incorrect",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "p1 explicitly requires validation once; p2 already certifies same job-17 success/result v1 saved. The summary preserves those facts but requires consume_job first to create job_done before validation, reopening achieved result acquisition and ignoring its already satisfied prerequisite. It also calls both operations synchronous although public_interface explicitly gives consume_job kind=job and validate_result kind=sync_operation, a concrete object-type confusion. Required validation is not invented; no pending job remains, and no unsupported terminal completion is claimed."
+    },
+    {
+      "artifact": "instances/p4_009_cs_v031_r0_h1.json",
+      "artifact_sha256": "2e673310a2d1750863cf4bc0a10083791cc2307362383f6da5294efb1d9db9fd",
+      "condition": "cs_v031",
+      "instance_id": "p4_009",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_009:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "cancel_job",
+              "description": "Send another cancellation request for job-17.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {},
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_cancellation",
+              "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "cancelled": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_009:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Cancel job-17 and confirm its terminal cancellation, without repeating an accepted cancellation request.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Cancel job-17 and confirm its terminal cancellation.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Do not repeat an accepted cancellation request.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Cancellation request cancel-1 for job-17 was accepted.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 remains running; terminal cancellation is not yet confirmed.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"cancel-1\",\"operation\":\"cancel_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"cancel_job\",\"phase\":\"running\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"res1\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_009:checkpoint_1\",\"source_refs\":[\"p3\",\"runtime_1\"]}]},\"frontier\":{\"obligations\":[{\"id\":\"o1\",\"text\":\"Obtain terminal cancellation for job-17 after accepted cancel-1.\",\"requirement_ref\":\"r1\"}],\"open_questions\":[],\"candidate_action\":{\"tool\":\"execute\",\"arguments\":{\"operation\":\"consume_cancellation\"},\"requires\":[\"s1\",\"j1\"],\"obligation_ref\":\"o1\",\"goal_revision\":\"g1\",\"known_cost\":1}}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 supports accepted cancellation request cancel-1 and still-running job-17 with no terminal cancellation. Separate submission.completed/accepted and job.running records are correct. p1 cancellation/no-repeat requirements and frontier obligation match the actual pending job, and consume_cancellation cites s1/j1 plus correct cost and credits. No terminal result is invented or closed work reopened."
+    },
+    {
+      "artifact": "instances/p4_007_cs_v031_r1_h1.json",
+      "artifact_sha256": "cd295680f798ece8981c2376cc77b56f17c711c3996d6d0cf5392f43128d9068",
+      "condition": "cs_v031",
+      "instance_id": "p4_007",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 accepted as job-17; job-17 subsequently succeeded, result v1 saved. No independent validation has run."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_007:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_007:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Complete job-17 successfully; never resubmit an accepted job.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Complete job-17 successfully.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Never resubmit an accepted job.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Submission attempt-1 was accepted as job-17.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 subsequently succeeded, result v1 saved.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c3\",\"text\":\"No independent validation has run.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"attempt-1\",\"operation\":\"submit_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"submit_job\",\"phase\":\"succeeded\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"credits\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_007:checkpoint_1\",\"source_refs\":[\"runtime_1\"]}]},\"frontier\":{\"obligations\":[{\"id\":\"o1\",\"text\":\"Independently validate job-17 result v1.\",\"requirement_ref\":\"r1\"}],\"open_questions\":[],\"candidate_action\":{\"tool\":\"execute\",\"arguments\":{\"operation\":\"validate_result\"},\"requires\":[\"c2\"],\"obligation_ref\":\"o1\",\"goal_revision\":\"g1\",\"known_cost\":1}}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "incorrect",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 supports completed accepted submission and succeeded job-17/result v1; these are scoped and sourced correctly. However p1 has no validation demand, while o1 turns independent validation into a hard remaining obligation tied to r1. Offered validate_result does not add user requirements. Its c2 job-success prerequisite is retained, no pending job is missing, and no unsupported completion is asserted."
+    },
+    {
+      "artifact": "instances/p4_002_summary_r0_h1.json",
+      "artifact_sha256": "6e6feed24ff372d3c644c90982e50c8b83e179749cbdb38506367b0f4df867b3",
+      "condition": "summary",
+      "instance_id": "p4_002",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_002:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_002:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "The user's goal was to successfully submit the job and retain its accepted identity, stopping at acceptance without waiting for the job result. This goal has been fully satisfied.\n\nEvidence: Submission attempt-1 returned accepted with job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred. The user explicitly requested to stop at acceptance, so no further action is required.\n\nCurrent state: 2 credits remain in scope p4_002:checkpoint_1. The public interface offers submit_job (cost 1, do not repeat accepted submission), consume_job (cost 1, obtain final successful result of job-17), validate_result (cost 1, independently validate job-17 result v1), and a resource for idempotency lookup of attempt-1 (cost 1).\n\nNo in-flight work exists. The submission request is complete with the accepted identity job-17 retained. The user did not request job consumption, validation, or any further steps. The task is finished; no next action is warranted unless the user issues new requirements.",
+      "assessment": {
+        "entity_phase_confusion": "ambiguous",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p1 only asks acceptance and retained identity; p2 confirms attempt-1/job-17 accepted with result pending. The summary correctly retains these facts and ends current task work without consumption or validation. Its separate statement No in-flight work exists is ambiguous in scope: no remaining user-goal work is true, whereas the asynchronous job remains pending and is explicitly retained earlier. This is not counted as lost pending content or fabricated job success; natural-language goal-completion dependencies are otherwise sufficient."
+    },
+    {
+      "artifact": "instances/p4_012_summary_r1_h1.json",
+      "artifact_sha256": "5553b3c38e91400e2a0910f2c4f960cd30061d804de9d0ecb601b8c7d5b75b18",
+      "condition": "summary",
+      "instance_id": "p4_012",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Apply setting gold. Do not repeat an already completed application."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Plan: call apply_gold then finish. No call was made; actual checkpoint observation confirms done=false, selected=unset."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_012:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_gold",
+              "description": "Synchronously apply setting gold.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "selected": "gold",
+                "done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_012:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "User goal: apply setting gold, without repeating an already completed application. No call to `apply_gold` has been made yet; the checkpoint observation confirms `done=false` and `selected=unset`, so the application is not yet completed. The public interface offers a single synchronous operation `apply_gold` (cost 1 credit) whose successful effects are `selected=gold` and `done=true`. Remaining credits: 2, scope `p4_012:checkpoint_1`. Next action: call `apply_gold` once; its successful receipt will satisfy the goal. No independent verification was requested.",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 explicitly distinguishes a plan from execution and confirms no apply_gold call, done=false/selected=unset. The summary preserves this, p1 no-repeat rule, synchronous operation contract and scoped credits; the next apply_gold once is supported rather than a claimed past effect. No independent verification or asynchronous job is introduced."
+    },
+    {
+      "artifact": "instances/p4_009_cs_v031_r1_h1.json",
+      "artifact_sha256": "88957707ac6118c6e1f8e80d36bcdadc1bc525d3bc0005079b017ccd9dc85aaf",
+      "condition": "cs_v031",
+      "instance_id": "p4_009",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_009:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "cancel_job",
+              "description": "Send another cancellation request for job-17.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {},
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_cancellation",
+              "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "cancelled": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_009:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Cancel job-17 and confirm its terminal cancellation, without repeating an accepted cancellation request.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Cancel job-17 and confirm its terminal cancellation.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Do not repeat an accepted cancellation request.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"Cancellation request cancel-1 for job-17 was accepted.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"Job-17 remains running and cancellation is not yet confirmed.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]}],\"operations\":[{\"id\":\"s1\",\"kind\":\"submission\",\"entity_id\":\"cancel-1\",\"operation\":\"cancel_job\",\"phase\":\"completed\",\"outcome\":\"accepted\",\"job_ref\":\"j1\",\"source_refs\":[\"p2\"]},{\"id\":\"j1\",\"kind\":\"job\",\"entity_id\":\"job-17\",\"operation\":\"cancel_job\",\"phase\":\"running\",\"source_refs\":[\"p2\"]}],\"resources\":[{\"id\":\"res1\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_009:checkpoint_1\",\"source_refs\":[\"p3\",\"runtime_1\"]}]},\"frontier\":{\"obligations\":[{\"id\":\"o1\",\"text\":\"Obtain terminal cancellation for job-17 after accepted cancel-1.\",\"requirement_ref\":\"r1\"}],\"open_questions\":[],\"candidate_action\":{\"tool\":\"execute\",\"arguments\":{\"operation\":\"consume_cancellation\"},\"requires\":[\"s1\",\"j1\"],\"obligation_ref\":\"o1\",\"goal_revision\":\"g1\",\"known_cost\":1}}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 accepted cancel-1 but leaves job-17 running/unconfirmed. The state correctly records completed accepted submission separate from running job, retains p1 no-repeat requirement and terminal-confirmation obligation, and proposes consume_cancellation with s1/j1 dependencies. Resource scope and credits are supported by p3/runtime_1. No unsupported terminal upgrade or reopening appears."
+    },
+    {
+      "artifact": "instances/p4_012_cs_v031_r0_h1.json",
+      "artifact_sha256": "d16c8bbed9b3a1d032c176fc8c2816365ef87b941d644204c4a4e3e6768c2364",
+      "condition": "cs_v031",
+      "instance_id": "p4_012",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Apply setting gold. Do not repeat an already completed application."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Plan: call apply_gold then finish. No call was made; actual checkpoint observation confirms done=false, selected=unset."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_012:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_gold",
+              "description": "Synchronously apply setting gold.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "selected": "gold",
+                "done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_012:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"revision\":\"g1\",\"objective\":\"Apply setting gold, without repeating an already completed application.\",\"requirements\":[{\"id\":\"r1\",\"text\":\"Apply setting gold.\",\"source_refs\":[\"p1\"]},{\"id\":\"r2\",\"text\":\"Do not repeat an already completed application.\",\"source_refs\":[\"p1\"]}],\"constraints\":[],\"preferences\":[]},\"world\":{\"claims\":[{\"id\":\"c1\",\"text\":\"No application has been made yet; done=false and selected=unset.\",\"basis\":\"observed\",\"source_refs\":[\"p2\"]},{\"id\":\"c2\",\"text\":\"The operation apply_gold is available and costs 1 credit.\",\"basis\":\"observed\",\"source_refs\":[\"interface_1\"]},{\"id\":\"c3\",\"text\":\"Current remaining credits are 2.\",\"basis\":\"observed\",\"source_refs\":[\"runtime_1\"]}],\"operations\":[],\"resources\":[{\"id\":\"res1\",\"kind\":\"credits\",\"remaining\":2,\"scope\":\"p4_012:checkpoint_1\",\"source_refs\":[\"runtime_1\"]}]},\"frontier\":{\"obligations\":[{\"id\":\"o1\",\"text\":\"Execute apply_gold to apply setting gold.\",\"requirement_ref\":\"r1\"}],\"open_questions\":[],\"candidate_action\":{\"tool\":\"execute\",\"arguments\":{\"operation\":\"apply_gold\"},\"requires\":[\"c1\",\"c2\",\"c3\"],\"obligation_ref\":\"o1\",\"goal_revision\":\"g1\",\"known_cost\":1}}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 no-execution/done=false/selected=unset evidence is retained separately from interface_1 availability/price information; the state does not assert those defined future effects have occurred. Empty operations and the apply_gold obligation/candidate are consistent with plan-only history. Requirements, 2 credits and c1/c2/c3 decision prerequisites are sufficient. There is no asynchronous job."
+    },
+    {
+      "artifact": "instances/p4_012_summary_r0_h1.json",
+      "artifact_sha256": "635535dbf3cc4d64b58c64854a8bcff3eaf7faf5a360632524391a4d235b40bd",
+      "condition": "summary",
+      "instance_id": "p4_012",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Apply setting gold. Do not repeat an already completed application."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Plan: call apply_gold then finish. No call was made; actual checkpoint observation confirms done=false, selected=unset."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_012:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_gold",
+              "description": "Synchronously apply setting gold.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "selected": "gold",
+                "done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_012:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "User goal: apply setting gold, without repeating an already completed application. No call to `apply_gold` has been made yet; the checkpoint observation confirms `done=false` and `selected=unset`. The public interface offers one synchronous operation `apply_gold` (cost 1 credit, effects: `selected=gold`, `done=true`). Remaining credits: 2 in scope `p4_012:checkpoint_1`. Next action: call `apply_gold` once; its successful receipt certifies completion. No verification was requested beyond the operation's own effects.",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 says no call was made and actual done=false/selected=unset, correctly retained. The summary accurately treats apply_gold as the single future synchronous action with cost 1, preserves p1 no-repeat and scope/credits, and expects an actual successful receipt rather than inferring completion from a plan. No extra verification or pending job is introduced."
+    },
+    {
+      "artifact": "instances/p4_006_summary_r0_h1.json",
+      "artifact_sha256": "1d1ded89edfcb6a8aea761c8fe5534faae52e8b50995e2874b9ae35ff9403464",
+      "condition": "summary",
+      "instance_id": "p4_006",
+      "repetition": 0,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred. A later terminal success receipt is for job-18 only. It does not update job-17."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_006:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_006:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "Job-17 was accepted via submission attempt-1 (job_id=job-17); do not resubmit. The current user goal is to complete job-17 successfully, which requires consuming its final result and then independently validating that result (v1). No result for job-17 has been obtained yet; a success receipt for job-18 is irrelevant.\n\nCurrent state: 2 credits remain (scope p4_006:checkpoint_1). Available operations: `consume_job` (cost 1, precondition: submitted=true — satisfied by attempt-1 acceptance) and `validate_result` (cost 1, precondition: job_done=true). Also available: `current/submission` idempotency lookup (cost 1) if needed, but no resubmission is permitted.\n\nNext actions in order: (1) execute `consume_job` to obtain job-17's final result (cost 1, leaving 1 credit); (2) execute `validate_result` to independently validate job-17 result v1 (cost 1, leaving 0 credits). Only after both succeed is the goal complete. Do not submit any new job.",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "incorrect",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p2 accepted attempt-1/job-17 pending and the unrelated job-18 success are distinguished; no job-17 terminal result is fabricated. But p1 never requests independent validation, while the summary says the goal requires both consuming and validating and only completes after both. This is a hard added requirement from tool availability. Credits, no-resubmission and both conditional action prerequisites are otherwise retained."
+    },
+    {
+      "artifact": "instances/p4_010_cs_v02_r1_h1.json",
+      "artifact_sha256": "21e95686ca79fc45c9aa2f6f72fb4893601c5710878ea69a7d82aca029e4cfe8",
+      "condition": "cs_v02",
+      "instance_id": "p4_010",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed. A subsequent matching job-17 receipt confirms terminal cancelled."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_010:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "cancel_job",
+              "description": "Send another cancellation request for job-17.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {},
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_cancellation",
+              "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "cancelled": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_010:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"objective\":\"Cancel job-17 and confirm its terminal cancellation, without repeating an accepted cancellation request.\",\"success_criteria\":[\"Observe a terminal cancellation receipt for job-17 (e.g., from consume_cancellation) confirming cancelled state.\"],\"constraints\":[\"Do not call cancel_job again because cancel-1 was already accepted for job-17.\",\"Use only the public_interface catalog operations; each costs 1 credit from the 2-credit checkpoint allowance.\",\"Do not fabricate tool results; rely on actual receipts and lifecycle records.\"],\"preferences\":[]},\"world\":{\"facts\":[\"Cancellation request cancel-1 for job-17 was accepted (submission accepted).\",\"Job-17 remains running; terminal cancellation is not yet confirmed.\",\"Checkpoint allowance is 2 credits; remaining credits are 2.\",\"public_interface version lifecycle-interface-v1 provides operations cancel_job and consume_cancellation.\",\"cancel_job costs 1 credit; consume_cancellation costs 1 credit.\"],\"beliefs\":[{\"claim\":\"consume_cancellation will return a terminal cancellation receipt for job-17 after accepted cancel-1.\",\"confidence\":0.7}],\"assumptions\":[\"The accepted cancel-1 is the applicable cancellation request for job-17; no other cancellation request is needed.\",\"The public_interface catalog is the authoritative source for operation contracts and prices.\"]},\"frontier\":{\"current_focus\":\"Obtain terminal cancellation confirmation for job-17 via consume_cancellation.\",\"information_needs\":[\"Actual receipt from consume_cancellation indicating job-17 is cancelled.\",\"Lifecycle record identity and version matching job-17 and cancel-1.\"],\"next_action\":\"Call consume_cancellation (cost 1 credit) to obtain terminal cancellation for job-17, then verify the returned receipt confirms cancelled.\"}}",
+      "assessment": {
+        "entity_phase_confusion": "incorrect",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "p2 ends in a subsequent matching job-17 terminal cancelled receipt. The state omits that clause, keeps job-17 running/unconfirmed as current facts, and demands consume_cancellation and another terminal receipt. This creates a stale phase, unsupported reopening and loss of decisive current evidence from the action decision. p1 no-repeat, cancel-1 identity, credits and contract are retained. No actual pending job remains; no unsupported completed job is claimed."
+    },
+    {
+      "artifact": "instances/p4_010_summary_r1_h1.json",
+      "artifact_sha256": "28e732a51668579a04bf7f06f240c4ebc3819f903f9c55dc34cd263a85d55141",
+      "condition": "summary",
+      "instance_id": "p4_010",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed. A subsequent matching job-17 receipt confirms terminal cancelled."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_010:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "cancel_job",
+              "description": "Send another cancellation request for job-17.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {},
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_cancellation",
+              "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "cancelled": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_010:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "The user asked to cancel job-17 and confirm its terminal cancellation, with the explicit instruction not to repeat an accepted cancellation request. The history shows that cancellation request cancel-1 was already accepted for job-17, but the job remains running and terminal cancellation is not yet confirmed. A subsequent matching job-17 receipt confirming terminal cancelled is needed.\n\nThe public interface provides two operations: `cancel_job` (cost 1, submission semantics) and `consume_cancellation` (cost 1, job semantics, successful effect `cancelled: true`). The user's instruction not to repeat an accepted cancellation request means `cancel_job` should NOT be called again, since cancel-1 was already accepted. The correct next action is to call `consume_cancellation` to obtain the terminal cancellation receipt for job-17, which costs 1 credit.\n\nCurrent state: 2 credits remaining in scope `p4_010:checkpoint_1`. The user's goal requires both the cancellation (already accepted via cancel-1) and confirmation of terminal cancellation. The confirmation is still outstanding.\n\nNext action: Call `consume_cancellation` once to obtain the terminal cancellation receipt for job-17. This is supported by the accepted cancel-1 and the interface contract. After the call, verify the returned lifecycle record matches job-17 and shows `cancelled: true` to satisfy the user's confirmation requirement. Do not call `cancel_job` again.",
+      "assessment": {
+        "entity_phase_confusion": "incorrect",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "incorrect",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "p2 already provides a subsequent matching job-17 terminal cancelled receipt. The summary keeps only the earlier accepted request/running phase and says confirmation remains outstanding, then proposes consume_cancellation. This loses the decisive terminal evidence, misstates the current phase and reopens satisfied confirmation work. User cancellation/no-repeat and identity/costs remain intact. Public sources have no pending job; it does not fabricate successful completion."
+    },
+    {
+      "artifact": "instances/p4_002_cs_v02_r1_h1.json",
+      "artifact_sha256": "36072ffd57d7c0ac5ea87f4355f206c5850820ccf3d4ab21afaffeeb274a269b",
+      "condition": "cs_v02",
+      "instance_id": "p4_002",
+      "repetition": 1,
+      "handoff": 1,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":2,\"credit_scope\":\"p4_002:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface provides authoritative operation contracts and prices, not evidence of past execution."
+        }
+      ],
+      "public_interface": {
+        "version": "lifecycle-interface-v1",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_job",
+              "description": "Submit another job; do not repeat an accepted submission.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {
+                "submissions": 1
+              },
+              "lifecycle_contract": {
+                "kind": "submission",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "consume_job",
+              "description": "Obtain the final successful result of accepted job-17.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "job_done": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "job",
+                "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+              }
+            },
+            {
+              "name": "validate_result",
+              "description": "Independently validate job-17 result v1.",
+              "cost": 1,
+              "preconditions": {
+                "job_done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {},
+              "lifecycle_contract": {
+                "kind": "sync_operation",
+                "semantics": "Actual successful effects certify this synchronous operation."
+              }
+            }
+          ],
+          "resources": [
+            {
+              "name": "current/submission",
+              "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+              "cost": 1
+            }
+          ],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 2,
+        "credit_scope": "p4_002:checkpoint_1",
+        "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+      },
+      "representation": "{\"goal\":{\"objective\":\"Successfully submit the job and retain its accepted identity; stop at acceptance, do not wait for the job result.\",\"success_criteria\":[\"Submission attempt-1 was accepted and its identity job-17 is retained\"],\"constraints\":[\"Do not submit a second job; attempt-1 is already accepted\",\"Stop at acceptance; do not wait for or consume the job result\",\"Do not fabricate evidence of past execution; use only supplied history\"],\"preferences\":[]},\"world\":{\"facts\":[\"Submission attempt-1 returned accepted, job_id=job-17\",\"Job-17 is accepted; its result is pending\",\"No second submission occurred\",\"Remaining credits: 2; credit scope p4_002:checkpoint_1\",\"public_interface version lifecycle-interface-v1; catalog cost 0\"],\"beliefs\":[],\"assumptions\":[\"The accepted submission response is authoritative evidence of acceptance for attempt-1\",\"The public_interface contract definitions are not observations of past execution\"]},\"frontier\":{\"current_focus\":\"Goal is satisfied at acceptance; no further action is required\",\"information_needs\":[],\"next_action\":\"Stop; do not consume credits or perform any further operations\"}}",
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "p1 requires successful submission acceptance with retained identity and explicitly forbids waiting for the result. The CS v0.2 success criterion retains attempt-1/job-17 acceptance, facts retain actual pending result, and frontier correctly stops without consuming/validating. Credits/no second submission and distinction between contract definitions and evidence are preserved. No job success or additional hard obligation is asserted."
+    }
+  ]
+}

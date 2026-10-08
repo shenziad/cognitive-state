@@ -1,0 +1,806 @@
+{
+  "stage": "diagnostic",
+  "complete": false,
+  "evidence_type": "api",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\diagnostic_v1_20261004",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "thinking": false,
+  "execution_release_sha256": "9790ffbf93ae680676b8882d073ea65a49f174dcd97a7306cf2bd9c6492f7d99",
+  "actual_usage": {
+    "request_attempts": 113,
+    "successful_responses": 113,
+    "total_tokens": 502100,
+    "known_reported_tokens": 502100,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "assigned": 24,
+      "saved": 24,
+      "successes": null,
+      "statuses": {
+        "completed": 23,
+        "step_limit": 1
+      },
+      "representation_valid": 0,
+      "deployment_usage": {
+        "request_attempts": 53,
+        "successful_responses": 53,
+        "total_tokens": 352989,
+        "known_reported_tokens": 352989,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "actual_condition_usage": {
+        "request_attempts": 53,
+        "successful_responses": 53,
+        "total_tokens": 352989,
+        "known_reported_tokens": 352989,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "credits_spent": 30,
+      "by_family": {
+        "historical_counterfactual": {
+          "saved": 12,
+          "successes": null
+        },
+        "original_candidate": {
+          "saved": 12,
+          "successes": null
+        }
+      }
+    },
+    "no_history": {
+      "assigned": 24,
+      "saved": 21,
+      "successes": null,
+      "statuses": {
+        "completed": 14,
+        "step_limit": 7
+      },
+      "representation_valid": 0,
+      "deployment_usage": {
+        "request_attempts": 57,
+        "successful_responses": 57,
+        "total_tokens": 140352,
+        "known_reported_tokens": 140352,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "actual_condition_usage": {
+        "request_attempts": 60,
+        "successful_responses": 60,
+        "total_tokens": 149111,
+        "known_reported_tokens": 149111,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "credits_spent": 37,
+      "by_family": {
+        "historical_counterfactual": {
+          "saved": 12,
+          "successes": null
+        },
+        "original_candidate": {
+          "saved": 9,
+          "successes": null
+        }
+      }
+    }
+  },
+  "paired_variants": [
+    {
+      "pair_id": "hd01",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd01",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd02",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd02",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd03",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd03",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd04",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd04",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd05",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd05",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd06",
+      "condition": "full_context",
+      "saved": 2,
+      "joint_success": null
+    },
+    {
+      "pair_id": "hd06",
+      "condition": "no_history",
+      "saved": 2,
+      "joint_success": null
+    }
+  ],
+  "source_review": {},
+  "actual_requests_not_associated_with_saved_rows": [
+    110,
+    111,
+    112
+  ],
+  "failed_rows": [
+    {
+      "task_id": "hd05_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd05",
+      "variant": "b",
+      "request_indices": [
+        0,
+        1
+      ],
+      "artifact": "instances/hd05_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "reported_units": false,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw03_h4",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        22
+      ],
+      "artifact": "instances/original_iw03_h4_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.75,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "delivered": false,
+          "east_validated": true,
+          "west_validated": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 0,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd01",
+      "variant": "b",
+      "request_indices": [
+        25,
+        26
+      ],
+      "artifact": "instances/hd01_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.4,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "audience": false,
+          "committed": false,
+          "commit_count": false,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 0,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw10_h2",
+      "condition": "full_context",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "artifact": "instances/original_iw10_h2_full_context.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "cohort_version": true,
+          "model_version": true,
+          "model_validated": true,
+          "audit_complete": true,
+          "audits": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw01_h2",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "artifact": "instances/original_iw01_h2_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8333333333333334,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "bundle_ready": true,
+          "cites_ready": true,
+          "notice_ready": true,
+          "release_slot": true,
+          "bundle_builds": false,
+          "published": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd02",
+      "variant": "b",
+      "request_indices": [
+        42,
+        43,
+        44
+      ],
+      "artifact": "instances/hd02_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "hotel_location": false,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 1
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw11_h4",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        47,
+        48,
+        49,
+        50
+      ],
+      "artifact": "instances/original_iw11_h4_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.6,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "rotation_recorded": false,
+          "new_credential_tested": true,
+          "clients_switched": true,
+          "old_disabled": true,
+          "issuance_requests": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw04_h4",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        57,
+        58,
+        59,
+        60
+      ],
+      "artifact": "instances/original_iw04_h4_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.75,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "landscape_released": true,
+          "portrait_cancelled": true,
+          "cancel_requests": false,
+          "portrait_released": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd04_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd04",
+      "variant": "b",
+      "request_indices": [
+        67,
+        68
+      ],
+      "artifact": "instances/hd04_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "notification_channel": false,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd06",
+      "variant": "b",
+      "request_indices": [
+        73,
+        74
+      ],
+      "artifact": "instances/hd06_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "recorded_new_credential": false,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw08_h3",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        75,
+        76,
+        77,
+        78
+      ],
+      "artifact": "instances/original_iw08_h3_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "customer_notified": false,
+          "notification_channel": false,
+          "invoice_corrected": true,
+          "tax_checked": true,
+          "credit_submissions": false,
+          "service_active": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd03",
+      "variant": "b",
+      "request_indices": [
+        81,
+        82
+      ],
+      "artifact": "instances/hd03_b_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "restored_snapshot": false,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw07_h2",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        83,
+        84,
+        85,
+        86
+      ],
+      "artifact": "instances/original_iw07_h2_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "hotel_location": true,
+          "hotel_step_free": true,
+          "hotel_confirmed": true,
+          "rail_bookings": true,
+          "flight_booked": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw05_h4",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "artifact": "instances/original_iw05_h4_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.75,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "review_released": false,
+          "study_a_included": true,
+          "extraction_b": true,
+          "screenings": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 1
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "original_iw09_h4",
+      "condition": "no_history",
+      "family": "original_candidate",
+      "pair_id": null,
+      "variant": null,
+      "request_indices": [
+        104,
+        105,
+        106,
+        107
+      ],
+      "artifact": "instances/original_iw09_h4_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "production_restored": false,
+          "rehearsal_passed": true,
+          "submissions": false,
+          "wrong_snapshot_used": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "status": "step_limit",
+      "representation_valid": null
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "no_history",
+      "family": "historical_counterfactual",
+      "pair_id": "hd01",
+      "variant": "a",
+      "request_indices": [
+        108,
+        109
+      ],
+      "artifact": "instances/hd01_a_no_history.json",
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.4,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "audience": false,
+          "committed": false,
+          "commit_count": false,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 0,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "status": "completed",
+      "representation_valid": null
+    }
+  ],
+  "limits": [
+    "Known assistant-authored synthetic development workflows; paired members are correlated.",
+    "Assistant source annotations are not independent human gold or condition blinded.",
+    "CS-text compares this reversible field-path presentation only; it retains structure and all source information.",
+    "Strategy deployment costs include shared source extraction for each strategy; their sum is not actual suite cost.",
+    "Token usage does not establish measured currency fees or behavioral equivalence.",
+    "Incomplete deployment rows do not cover all incurred strategy costs; actual_condition_usage and unassociated requests preserve them."
+  ]
+}

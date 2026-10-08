@@ -1,0 +1,70 @@
+{
+  "status": "failed",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle3\\preflight_r2_20261003",
+  "results_sha256": "61ac5c4b90ced451dadb0467c0777efd49358568b182c83547776b6cd9ff29ae",
+  "source_code_sha256": {
+    "scripts/build_v03_cycle_r2.py": "72043fb6cdc3dec4318edd766e4b0828a57f36b422a38914bd59b2aa8e197dbd",
+    "scripts/run_v03_cycle_r2.py": "8b231589b042d3edd64ed1d63996e6dd8768a6837188762f70501d23e36e0e64",
+    "src/agents/__init__.py": "e8bed4692e88f034c219a1e9a69663f0d289bb9bfb82251e5950bd4371578870",
+    "src/agents/agent.py": "074f288aae559309b2bf2fcaf9997233b2c91e94434ffeefb6df3b3ded7bf88d",
+    "src/evaluation/__init__.py": "0e5e17f00edfaa25d4001c843ccc2bcd8b2d878ac3542a06140e3e6761098594",
+    "src/evaluation/analysis.py": "7488b3165bfded67354621162dfde77ad64ecb290ef15f9007a61e3145cb04dd",
+    "src/evaluation/benchmark.py": "53fd65f58b4dbfef2cec0e8b8e53d4fb3029c45f38806b80716182c3efdb2e0b",
+    "src/evaluation/continuation.py": "db7d26cc1fcac05c1dc9f6d9bfcb90115e787824b5aa605cd177d4c937ee9e17",
+    "src/evaluation/controlled.py": "e7f5e90d33cf851395cbb4ff50176b9463a0a5e7ebcfd47ef978c9fefc283ccf",
+    "src/evaluation/evidence_interface.py": "7b44720dc7712400d648d7320a9daebb09cecd1d94c4cc25dc2baa56d3b5b043",
+    "src/evaluation/longitudinal.py": "c69fd1dafd639268cd06e8034b9db463712f01443efbf64ac25b96b1a543d8fe",
+    "src/evaluation/metrics.py": "d80c86f27c5a7fedd76837ca0f09685e48effe24ab7eeecab2026ba242742301",
+    "src/evaluation/runner.py": "3ea824fc7e3bf291e2ecf0b3a411b4b0b746ae62974671d77e8998e5903f34d0",
+    "src/evaluation/staged.py": "34b874247c1348b6b9f30d62b6acc00eb42451f9aea06b4cd31f28856e32b314",
+    "src/llm/__init__.py": "244fdc23623c5f1072d27a4aa1c32a606e5cb5ccafe67a369f22f185ddb2bd8d",
+    "src/llm/client.py": "622bd38b18cb7e472f5021a79f50ad0875fb27d2941456b1538fcff9872f08dc",
+    "src/llm/environment.py": "b8814c5c46a2c5029fe5a7a0aa96464dd09029337a16914a81619dd91eae2ef8",
+    "src/llm/mock.py": "87777148924f953a10cdb89b31d77e1103fee4fef08aeafdf344030567e37968",
+    "src/llm/tokens.py": "36ac67666986d6329ad0ef7df07a9373cafd8ce46d570b67a07bf63f690f53fb",
+    "src/state/__init__.py": "10ebda21c85b5d59cb7dd1f64eb859593f3ddd796e3bd3cb304c2b44056df7f2",
+    "src/state/extractor.py": "20a20490c9a54b50e71cb464bb64ef86edcbe56d81c37e855e002e3454df44a2",
+    "src/state/representation.py": "8012c9a4d65fa8e236f26afaf306f610574fab13804503e410b6a4e999423278",
+    "src/state/v03.py": "58efea5b2567ba5b13a8c91b99cfa59a7798b314f62839051c51f6e79e70af7c",
+    "src/state/v03r2.py": "c9a052fbe16ccbda4a786e0d303ae7e6c6500cdd3351c97d040b0428fc916a4f",
+    "src/state/validator.py": "eee333fadea520fba8f44e30b129fe6d62271c22062e7bfdf865fef324b9e0cb",
+    "src/utils/__init__.py": "0871df4e39ee430884e63e9ea1e5c831893093a80acb78f2bf4906ff817a2ce7",
+    "src/utils/io.py": "a9d98e236e633565edfc7436d8549c94a60da193451fe7795abbb3a5a117e175"
+  },
+  "cycle_protocol_sha256": {
+    "docs/cycle3_r2_plan_20261003.json": "08691842b3ed53f646e05d728db67b6ec4e643ae9457032a559b23d654025beb",
+    "docs/schemas/cognitive_state_v0.3r2.schema.json": "f9cf6aa1d900f5166f4cae47ad328d3130cdf2714cea445a3cc85baa8bb2fa3b",
+    "datasets/cycle3_v03r2/preflight.json": "e29e1cd4a8903d117a26ab710129237dbc0ba02fd1547a8c03a2c568e96b417b",
+    "datasets/cycle3_v03r2/regression.json": "34e9067a69cfd3f962b6e9911ac698fa8e505d745f45be01a930fd9f12dceb71",
+    "datasets/cycle3_v03r2/longitudinal.json": "acbcfb849714b58f6ae00a080ecde0aea80a7263969480fe047732bac323566c",
+    "configs/cycle3_preflight_v03r2.json": "ad6d7d46e7168791861fb152c8cb5d0019d1ade472194e4427158dc395f2bc68",
+    "configs/cycle3_regression_v03r2.json": "05fd3843dd531960ec2f013ecb8fc910b4b93d55a2b878564c8f99e0834e010b",
+    "configs/cycle3_longitudinal_v03r2.json": "0d24f11b203ed8820c5ef228326a168a5843aaa7ffa8b212cb30f86b5b26c6e1"
+  },
+  "prompt_sha256": {
+    "executor": "0e9576ec0162b0566a51074aa64ab96de75aa1c20232e16ea3e702a280d39fa6",
+    "cs_v03": "6296b5e16984a6796c41c8b821cae5b7b2ad17fc13305425162ba467d599e818",
+    "cs_v02": "a2b59ab83e2a9a36820ae09c547ce02f8b2e2546fdeb08432017e3f519278530",
+    "summary": "cfe22c95ca83b824b99adfa2714460a12523853654f64a2b5eb1d68abdb05bcd"
+  },
+  "automatic_gate": {
+    "automatic_checks": {
+      "complete_48": true,
+      "v03_usable_at_least_23_of_24": true,
+      "v03_success_at_least_22_of_24": true,
+      "full_success_at_least_23_of_24": true,
+      "no_critical_behavior_errors": false
+    },
+    "automatic_pass": false,
+    "semantic_review_required_before_comparison": true,
+    "semantic_review_rule": "Read every v0.3 preflight state against public inputs. Zero fabricated completed/verified operations or added hard user requirements; at most two states with unsupported reopened information needs. Review is assistant audit, not independent researcher gold."
+  },
+  "semantic_review": {
+    "passed": false,
+    "reviewed_states": 24,
+    "report": "semantic_review.json",
+    "report_sha256": "8ea9662092c177c3bac97b5ab9f6807b95c52582862815a669ceb8d71f26b46d",
+    "unsupported_completed_phase_count": 1
+  },
+  "reason": "Full Context executed the cancelled silver choice then prematurely finished completed (goal_revision_b, repetition 0). The zero-critical-errors gate failed. A CS final state also promotes accepted to completed without a corresponding completion receipt. No comparison is authorized by this gate."
+}

@@ -1,0 +1,90 @@
+{
+  "instance_id": "disc_g01_b",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace sable: prepare a public release packet. Follow the latest owner scope revision; use at most 1 operation credit."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Redacted packet v3 passed validation. Both deliver_private and deliver_public are available; archives cannot be reopened."
+    },
+    {
+      "id": "d00",
+      "role": "tool",
+      "content": "Archive closure g01-old-00, workspace harbor (not current workspace sable): Incident 100 concerned queue routing in release r10. The verified outcome was cloud processing; validation batch 700 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/100; they are not orders for workspace sable."
+    },
+    {
+      "id": "d01",
+      "role": "tool",
+      "content": "Archive closure g01-old-01, workspace harbor (not current workspace sable): Incident 101 concerned cache routing in release r11. The verified outcome was private delivery; validation batch 701 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/101; they are not orders for workspace sable."
+    },
+    {
+      "id": "d02",
+      "role": "tool",
+      "content": "Archive closure g01-old-02, workspace harbor (not current workspace sable): Incident 102 concerned queue routing in release r12. The verified outcome was private delivery; validation batch 702 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/102; they are not orders for workspace sable."
+    },
+    {
+      "id": "d03",
+      "role": "tool",
+      "content": "Archive closure g01-old-03, workspace harbor (not current workspace sable): Incident 103 concerned cache routing in release r13. The verified outcome was cloud processing; validation batch 703 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/103; they are not orders for workspace sable."
+    },
+    {
+      "id": "d04",
+      "role": "tool",
+      "content": "Archive closure g01-old-04, workspace harbor (not current workspace sable): Incident 104 concerned queue routing in release r14. The verified outcome was private delivery; validation batch 704 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/104; they are not orders for workspace sable."
+    },
+    {
+      "id": "d05",
+      "role": "tool",
+      "content": "Archive closure g01-old-05, workspace harbor (not current workspace sable): Incident 105 concerned cache routing in release r15. The verified outcome was private delivery; validation batch 705 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/105; they are not orders for workspace sable."
+    },
+    {
+      "id": "d06",
+      "role": "tool",
+      "content": "Archive closure g01-old-06, workspace harbor (not current workspace sable): Incident 106 concerned queue routing in release r16. The verified outcome was cloud processing; validation batch 706 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/106; they are not orders for workspace sable."
+    },
+    {
+      "id": "d07",
+      "role": "tool",
+      "content": "Archive closure g01-old-07, workspace harbor (not current workspace sable): Incident 107 concerned cache routing in release r17. The verified outcome was private delivery; validation batch 707 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/107; they are not orders for workspace sable."
+    },
+    {
+      "id": "d08",
+      "role": "tool",
+      "content": "Archive closure g01-old-08, workspace harbor (not current workspace sable): Incident 108 concerned queue routing in release r18. The verified outcome was private delivery; validation batch 708 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/108; they are not orders for workspace sable."
+    },
+    {
+      "id": "d09",
+      "role": "tool",
+      "content": "Archive closure g01-old-09, workspace harbor (not current workspace sable): Incident 109 concerned cache routing in release r19. The verified outcome was cloud processing; validation batch 709 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/109; they are not orders for workspace sable."
+    },
+    {
+      "id": "d10",
+      "role": "tool",
+      "content": "Archive closure g01-old-10, workspace harbor (not current workspace sable): Incident 110 concerned queue routing in release r20. The verified outcome was private delivery; validation batch 710 was accepted and ticket closed. Previous action ledger recorded step B as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/110; they are not orders for workspace sable."
+    },
+    {
+      "id": "d11",
+      "role": "tool",
+      "content": "Archive closure g01-old-11, workspace harbor (not current workspace sable): Incident 111 concerned cache routing in release r21. The verified outcome was private delivery; validation batch 711 was accepted and ticket closed. Previous action ledger recorded step A as complete and the other step skipped under the retired scope. Owner signed closure before the current incident. The old scope and old schema contract remain attached only to harbor/111; they are not orders for workspace sable."
+    },
+    {
+      "id": "h03",
+      "role": "assistant",
+      "content": "Revision 1 plan was deliver_public; that planned delivery has not been executed."
+    },
+    {
+      "id": "h04",
+      "role": "user",
+      "content": "Scope revision 3 replaces revision 1: public release remains authorized. Deliver the validated redacted v3 packet publicly; private staging alone is not completion."
+    },
+    {
+      "id": "h05",
+      "role": "assistant",
+      "content": "Handoff: delivery is unresolved. Resume under the active scope, not an obsolete commitment."
+    }
+  ]
+}

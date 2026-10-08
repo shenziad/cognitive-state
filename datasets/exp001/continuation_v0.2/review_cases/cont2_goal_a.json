@@ -1,0 +1,44 @@
+{
+  "instance_id": "cont2_goal_a",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "dispatch_M"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_strategy": "Always re-fetch the current scope, then dispatch only its authorized recipient.",
+  "no_history_recovery_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/owner_scope"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "dispatch_M"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_expected": {
+    "task_success": true,
+    "credits": 3,
+    "retained_history_credits": 2
+  },
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

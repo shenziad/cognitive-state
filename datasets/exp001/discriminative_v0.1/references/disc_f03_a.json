@@ -1,0 +1,74 @@
+{
+  "instance_id": "disc_f03_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Seal a pack after obtaining both verified labels",
+      "success_criteria": [
+        "Pack matches both verified readings"
+      ],
+      "constraints": [
+        "No guessed labels",
+        "2 credits: one reading + one seal"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "A=blue is verified",
+        "B remains unread",
+        "No pack sealed"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Seal a pack after obtaining both verified labels",
+      "information_needs": [
+        "Value of B"
+      ],
+      "next_action": "observe current/B; choose the matching seal operation after observing its value"
+    }
+  }
+}

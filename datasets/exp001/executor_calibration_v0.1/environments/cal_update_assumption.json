@@ -1,0 +1,32 @@
+{
+  "instance_id": "cal_update_assumption",
+  "environment_type": "continuation",
+  "initial_state": {
+    "parser": "none"
+  },
+  "operations": {
+    "deploy_r30": {
+      "description": "Deploy parser r30.",
+      "effects": {
+        "parser": "r30"
+      },
+      "cost": 1
+    },
+    "deploy_r32": {
+      "description": "Deploy parser r32.",
+      "effects": {
+        "parser": "r32"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {},
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "parser": "r32"
+    },
+    "before_action": [],
+    "finish_status": "completed"
+  }
+}

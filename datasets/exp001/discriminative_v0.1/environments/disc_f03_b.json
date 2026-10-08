@@ -1,0 +1,125 @@
+{
+  "instance_id": "disc_f03_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "known_A": false,
+    "known_B": true,
+    "pack": "none"
+  },
+  "operations": {
+    "seal_blue_green": {
+      "description": "Seal a pack with A=blue, B=green; both input readings must be known.",
+      "effects": {
+        "pack": "blue_green"
+      },
+      "cost": 1
+    },
+    "seal_blue_yellow": {
+      "description": "Seal a pack with A=blue, B=yellow; both input readings must be known.",
+      "effects": {
+        "pack": "blue_yellow"
+      },
+      "cost": 1
+    },
+    "seal_red_green": {
+      "description": "Seal a pack with A=red, B=green; both input readings must be known.",
+      "effects": {
+        "pack": "red_green"
+      },
+      "cost": 1
+    },
+    "seal_red_yellow": {
+      "description": "Seal a pack with A=red, B=yellow; both input readings must be known.",
+      "effects": {
+        "pack": "red_yellow"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {
+    "current/A": {
+      "description": "Read current A label; 1 credit.",
+      "observation": {
+        "content": {
+          "A": "blue"
+        }
+      },
+      "effects": {
+        "known_A": true
+      },
+      "cost": 1
+    },
+    "current/B": {
+      "description": "Read current B label; 1 credit.",
+      "observation": {
+        "content": {
+          "B": "green"
+        }
+      },
+      "effects": {
+        "known_B": true
+      },
+      "cost": 1
+    }
+  },
+  "budget": 2,
+  "rubric": {
+    "target_state": {
+      "known_A": true,
+      "known_B": true,
+      "pack": "blue_green"
+    },
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "seal_blue_green"
+          }
+        },
+        "state": {
+          "known_A": true,
+          "known_B": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "seal_blue_yellow"
+          }
+        },
+        "state": {
+          "known_A": true,
+          "known_B": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "seal_red_green"
+          }
+        },
+        "state": {
+          "known_A": true,
+          "known_B": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "seal_red_yellow"
+          }
+        },
+        "state": {
+          "known_A": true,
+          "known_B": true
+        }
+      }
+    ],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

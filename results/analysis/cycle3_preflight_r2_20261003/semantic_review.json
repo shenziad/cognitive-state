@@ -1,0 +1,4279 @@
+{
+  "reviewer": "assistant_source_audit_not_independent_researcher_gold",
+  "scope": "All 24 final v0.3 states compared with actual public history and interface; no model calls in this review. Initial invalid attempts retained in raw artifacts; not graded as final states.",
+  "passed": false,
+  "reviewed_final_states": 24,
+  "unsupported_completed_phase_count": 1,
+  "added_hard_user_requirement_count": 0,
+  "unsupported_reopened_question_count": 0,
+  "decision": "Semantic zero-unsupported-completion gate not certified. Automatic gate independently failed on Full premature completion.",
+  "limitations": [
+    "Assistant judgement is not an independent annotation study.",
+    "Submission-operation versus asynchronous-job phase scope needs clarification; do not equate this state defect with whole-task fabricated completion.",
+    "Successful behavior does not certify every field or dependency."
+  ],
+  "entries": [
+    {
+      "instance_id": "pre03r2_explicit_verification_b",
+      "repetition": 0,
+      "family": "explicit_verification",
+      "artifact": "instances/pre03r2_explicit_verification_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "36ad24f962f9218773d6c80b2d9c0d1acc0b9eb244b1a413e0ab6e8bbeb6c6e5",
+      "review_note": "p2 supports completed apply only; p3 explicitly adds independent validation. State preserves this remaining obligation.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_gold completed; done=true, selected=gold. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_explicit_verification_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "validate",
+              "description": "Independently validate the completed setting.",
+              "cost": 1,
+              "preconditions": {
+                "done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_explicit_verification_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow with confirmed evidence, including running the independent validation once.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+              "source_refs": [
+                "p1"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Run the independent validation once; keep the completed setting; do not reapply it.",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_gold completed with done=true and selected=gold.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Validation has not been run.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_gold",
+              "phase": "completed",
+              "source_refs": [
+                "p2"
+              ],
+              "target": {
+                "selected": "gold"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_explicit_verification_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Run the independent validation once.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_a",
+      "repetition": 1,
+      "family": "accepted_pending",
+      "artifact": "instances/pre03r2_accepted_pending_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "2dfcc0ee921062d4a47adee464f9a07d0207f9057b1596d8a018f38584c467f8",
+      "review_note": "p3 establishes acceptance, submitted=true and done=false. Pending consumption remains an obligation; the public contract supplies consume semantics.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_silver accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_accepted_pending_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_silver",
+              "description": "Submit another job; forbidden after acceptance.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "consume_silver",
+              "description": "Consume the accepted pending job notice; confirms job done.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "done": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_accepted_pending_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the accepted job willow-17 in workshop willow using confirmed evidence, without unnecessary repeats or resubmission.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete exactly the already accepted job; never submit it a second time.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Do not submit_silver again; acceptance already occurred.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "c2",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Job willow-17 was accepted via submit_silver; submitted=true, done=false.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The accepted identity remains valid; no cancellation or replacement occurred.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The job is not yet complete because done=false.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl4",
+              "text": "consume_silver is the operation that confirms job done, requiring submitted=true.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "submit_silver",
+              "phase": "accepted",
+              "source_refs": [
+                "p3"
+              ],
+              "target": {
+                "job": "willow-17"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_accepted_pending_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute consume_silver to confirm job done, then observe done=true.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "consume_silver"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_already_done_b",
+      "repetition": 1,
+      "family": "already_done",
+      "artifact": "instances/pre03r2_already_done_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "97c59e15c19662b1ca65a705059b69b9a4c174801f38ab3d0d9a9a3f48fd400b",
+      "review_note": "p3 explicitly confirms actual apply and validation effects; empty frontier is supported and no repeat is needed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_gold and validate accepted with confirmed effects: done=true, selected=gold, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":0,\"credit_scope\":\"pre03r2_already_done_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 0,
+        "credit_scope": "pre03r2_already_done_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply gold and validate; do not repeat completed work.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 0 credits.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_gold and validate accepted with confirmed effects: done=true, selected=gold, validated=true.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_gold",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "op2",
+              "operation": "validate",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 0,
+              "scope": "pre03r2_already_done_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [],
+          "open_questions": []
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_b",
+      "repetition": 0,
+      "family": "accepted_pending",
+      "artifact": "instances/pre03r2_accepted_pending_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "ac88a00e71b88bf9defa9c327ab68e7c2b0702f456b84b7d983eb5cce784b5cb",
+      "review_note": "p3 establishes acceptance, submitted=true and done=false. Pending consumption remains an obligation; the public contract supplies consume semantics.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_gold accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_accepted_pending_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_gold",
+              "description": "Submit another job; forbidden after acceptance.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "consume_gold",
+              "description": "Consume the accepted pending job notice; confirms job done.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "done": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_accepted_pending_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the accepted job willow-17 in workshop willow using confirmed evidence, without resubmitting.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete exactly the already accepted job; never submit it a second time.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            },
+            {
+              "id": "c2",
+              "text": "submit_gold is forbidden after acceptance.",
+              "source_refs": [
+                "interface_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Job willow-17 was accepted via submit_gold; submitted=true, done=false.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The accepted identity remains valid; no cancellation or replacement has occurred.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The job is not yet complete because done=false and no completion notice has been observed.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "submit_gold",
+              "phase": "accepted",
+              "source_refs": [
+                "p3"
+              ],
+              "target": {
+                "job": "willow-17"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_accepted_pending_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Consume the accepted pending job notice to confirm job done.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "consume_gold"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_a",
+      "repetition": 1,
+      "family": "assumption_refuted",
+      "artifact": "instances/pre03r2_assumption_refuted_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "33eab6fc819f34c2284d40f02d6dcb9df65db9b7c8e0d4e50a70faf657bfcd6c",
+      "review_note": "p4 measurement overrides the p3 hypothesis. Current choice follows measurement and no apply is recorded as already completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [
+        {
+          "kind": "derived_choice_in_goal",
+          "field": "goal.requirements[0]",
+          "severity": "diagnostic",
+          "note": "Silver is grounded in p4, but the requirement cites only p1/p2. No new user demand was fabricated; goal authority and the evidence determining its current value are conflated. Candidate requires only res1, omitting the measurement claim."
+        }
+      ],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors gold, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms silver, refutes gold. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_assumption_refuted_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_assumption_refuted_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying the setting confirmed by measurement (silver) and observing the successful effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the setting confirmed by measurement (silver) and complete the setting task.",
+              "source_refs": [
+                "p1",
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Measurement confirms silver and refutes gold.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Neither apply operation has run yet.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "basis": "observed",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_assumption_refuted_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [
+              "res1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_goal_revision_a",
+      "repetition": 0,
+      "family": "goal_revision",
+      "artifact": "instances/pre03r2_goal_revision_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "e892b84e190b68e1da1e863bdcf82a057722da1e2df4c9b8b052cfe1eeacd9b7",
+      "review_note": "p3 replaces p2; state retains the revised choice and does not mark an unexecuted apply as completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply silver. The earlier gold choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_goal_revision_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_goal_revision_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Apply the silver setting in workshop willow and complete the checkpoint, using confirmed evidence.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply silver setting.",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the checkpoint only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No setting has been applied yet.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Current remaining credits are 1.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_goal_revision_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_a",
+      "repetition": 0,
+      "family": "accepted_pending",
+      "artifact": "instances/pre03r2_accepted_pending_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "193c1a0a21f5b471fc80b1b2e2d74f935b49a8f49153256165631d940d8ea6ec",
+      "review_note": "p3 establishes acceptance, submitted=true and done=false. Pending consumption remains an obligation; the public contract supplies consume semantics.",
+      "unsupported_completed_phase": true,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [
+        {
+          "kind": "unsupported_operation_phase_promotion",
+          "field": "world.operations[0].phase",
+          "severity": "semantic_gate_failure",
+          "note": "Only accepted is attested by p3, but phase is completed. Claims still correctly retain done=false and executor consumes the pending notice. This is not evidence the model asserted whole-job completion; submission completion versus job completion is insufficiently explicit in this representation. Conservative review does not certify the zero-unsupported-completion gate."
+        },
+        {
+          "kind": "resource_not_structured",
+          "field": "world.resources",
+          "severity": "diagnostic",
+          "note": "Current credit amount is preserved in a claim and constraints, but the dedicated resources list is empty."
+        }
+      ],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_silver accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_accepted_pending_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_silver",
+              "description": "Submit another job; forbidden after acceptance.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "consume_silver",
+              "description": "Consume the accepted pending job notice; confirms job done.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "done": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_accepted_pending_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the accepted job willow-17 in workshop willow using confirmed evidence, without unnecessary repeats or resubmission.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete exactly the already accepted job; never submit it a second time.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit; budget violations are failures.",
+              "source_refs": [
+                "p9",
+                "runtime_1",
+                "interface_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "w1",
+              "text": "Job willow-17 was accepted via submit_silver; submitted=true, done=false.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "w2",
+              "text": "The accepted identity remains valid; no cancellation or replacement has occurred.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "w3",
+              "text": "The public interface defines consume_silver as the operation to confirm job done, with precondition submitted=true and effect done=true.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            },
+            {
+              "id": "w4",
+              "text": "Current remaining credits are 1, scoped to this checkpoint.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "submit_silver",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": []
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute consume_silver to confirm job done, then observe done=true.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "consume_silver"
+            },
+            "requires": [
+              "w1",
+              "w3"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_explicit_verification_a",
+      "repetition": 1,
+      "family": "explicit_verification",
+      "artifact": "instances/pre03r2_explicit_verification_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "7c47311d982dbed2ad2620d81169d2966a39a01c7951d8c46d3413a23b9888fd",
+      "review_note": "p2 supports completed apply only; p3 explicitly adds independent validation. State preserves this remaining obligation.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_silver completed; done=true, selected=silver. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_explicit_verification_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "validate",
+              "description": "Independently validate the completed setting.",
+              "cost": 1,
+              "preconditions": {
+                "done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_explicit_verification_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow with confirmed evidence, including running the independent validation once.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+              "source_refs": [
+                "p1"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Run the independent validation once; keep the completed setting; do not reapply it.",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_silver completed with done=true and selected=silver.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Validation has not been run.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_silver",
+              "phase": "completed",
+              "source_refs": [
+                "p2"
+              ],
+              "target": {
+                "selected": "silver"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_explicit_verification_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Run the independent validation once.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_already_done_b",
+      "repetition": 0,
+      "family": "already_done",
+      "artifact": "instances/pre03r2_already_done_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "0db180ad0498641fcb50d5d488c33aa79cc501ad026dd1c83023197916f2fdf6",
+      "review_note": "p3 explicitly confirms actual apply and validation effects; empty frontier is supported and no repeat is needed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_gold and validate accepted with confirmed effects: done=true, selected=gold, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":0,\"credit_scope\":\"pre03r2_already_done_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 0,
+        "credit_scope": "pre03r2_already_done_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply gold and validate; do not repeat completed work.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 0 credits.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_gold and validate accepted with confirmed effects: done=true, selected=gold, validated=true.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_gold",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "op2",
+              "operation": "validate",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 0,
+              "scope": "pre03r2_already_done_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [],
+          "open_questions": []
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_plan_only_a",
+      "repetition": 1,
+      "family": "plan_only",
+      "artifact": "instances/pre03r2_plan_only_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "9ad8e5a9aed0b8626df392fb1b048b126214e238ed5bfe48ed751a537eef2169",
+      "review_note": "p3 is only a plan; p4 confirms no action occurred. State leaves apply outstanding rather than fabricating completion.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_silver, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_plan_only_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_plan_only_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying silver and confirming the observed effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply silver to complete the setting task.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No action has occurred; checkpoint observation shows done=false and selected=none.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The apply_silver operation costs 1 credit and has no preconditions.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The apply_silver operation's successful effects are done=true and selected=silver.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_plan_only_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_accepted_pending_b",
+      "repetition": 1,
+      "family": "accepted_pending",
+      "artifact": "instances/pre03r2_accepted_pending_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "30f35f8a71bd8f6b1c4588ba5dc11ab5826c61a53e1ee6ea3921c4455d63a070",
+      "review_note": "p3 establishes acceptance, submitted=true and done=false. Pending consumption remains an obligation; the public contract supplies consume semantics.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job willow-17: submit_gold accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_accepted_pending_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "submit_gold",
+              "description": "Submit another job; forbidden after acceptance.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "submitted": true
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "consume_gold",
+              "description": "Consume the accepted pending job notice; confirms job done.",
+              "cost": 1,
+              "preconditions": {
+                "submitted": true
+              },
+              "successful_effects": {
+                "done": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_accepted_pending_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the accepted job willow-17 in workshop willow using confirmed evidence, without unnecessary repeats or resubmission.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete exactly the already accepted job; never submit it a second time.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            },
+            {
+              "id": "c2",
+              "text": "submit_gold is forbidden after acceptance.",
+              "source_refs": [
+                "interface_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Job willow-17 was accepted via submit_gold; submitted=true, done=false.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The accepted identity remains valid; no cancellation or replacement has occurred.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The job is not yet complete because done=false and no completion notice has been observed.",
+              "basis": "inferred",
+              "depends_on": [
+                "cl1"
+              ],
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "submit_gold",
+              "phase": "accepted",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_accepted_pending_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Consume the accepted pending job notice to confirm job done.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "consume_gold"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_explicit_verification_a",
+      "repetition": 0,
+      "family": "explicit_verification",
+      "artifact": "instances/pre03r2_explicit_verification_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "92551bb2a5ac26798db09720c1a03ca1527ad90a8aa73e717a445d6daaf95a8c",
+      "review_note": "p2 supports completed apply only; p3 explicitly adds independent validation. State preserves this remaining obligation.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_silver completed; done=true, selected=silver. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_explicit_verification_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "validate",
+              "description": "Independently validate the completed setting.",
+              "cost": 1,
+              "preconditions": {
+                "done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_explicit_verification_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow with confirmed evidence, including running the independent validation once.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+              "source_refs": [
+                "p1"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Run the independent validation once; keep the completed setting; do not reapply it.",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_silver completed with done=true and selected=silver.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Validation has not been run.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_silver",
+              "phase": "completed",
+              "source_refs": [
+                "p2"
+              ],
+              "target": {
+                "selected": "silver"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_explicit_verification_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Run the independent validation once.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_a",
+      "repetition": 0,
+      "family": "assumption_refuted",
+      "artifact": "instances/pre03r2_assumption_refuted_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "22af0fc2bb241791c84afb662aca92cb5a15c113b50bea5644548122ce272481",
+      "review_note": "p4 measurement overrides the p3 hypothesis. Current choice follows measurement and no apply is recorded as already completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [
+        {
+          "kind": "historical_claim_validity_implicit",
+          "field": "world.claims[2]",
+          "severity": "diagnostic",
+          "note": "The old hypothesis is attributed as historical speech, but has no explicit refuted validity flag; candidate requires=[] despite depending on measured choice."
+        }
+      ],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors gold, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms silver, refutes gold. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_assumption_refuted_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_assumption_refuted_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the setting confirmed by measurement; the initial assumption is not evidence.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the current checkpoint using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Signed measurement confirms silver, refutes gold.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Neither apply operation has run.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "Initial hypothesis favored gold, subjective confidence 0.7; no measurement or execution yet.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_assumption_refuted_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_plan_only_a",
+      "repetition": 0,
+      "family": "plan_only",
+      "artifact": "instances/pre03r2_plan_only_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "eec8e12f3d1e8be55ba14cfc0856834474bf002c12793e576f13195a965e91d8",
+      "review_note": "p3 is only a plan; p4 confirms no action occurred. State leaves apply outstanding rather than fabricating completion.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_silver, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_plan_only_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_plan_only_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying silver and observing the confirmed effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply silver to complete the setting task.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish the checkpoint after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No action has occurred; checkpoint observation shows done=false and selected=none.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The public interface authoritatively defines apply_silver with cost 1 and successful effects done=true and selected=silver.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "Current remaining credits are 1 within scope pre03r2_plan_only_a:checkpoint_1.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_plan_only_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_goal_revision_b",
+      "repetition": 1,
+      "family": "goal_revision",
+      "artifact": "instances/pre03r2_goal_revision_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "027ecc1c410c3ee3c15f5c6d8573301c55ad572747e91fa39dc856c06f9e103d",
+      "review_note": "p3 replaces p2; state retains the revised choice and does not mark an unexecuted apply as completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply gold. The earlier silver choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_goal_revision_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_goal_revision_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Apply the gold setting in workshop willow and complete the checkpoint, using confirmed evidence.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply gold setting.",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the current checkpoint only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No setting has been applied yet.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Current remaining credits are 1.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_goal_revision_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_b",
+      "repetition": 0,
+      "family": "assumption_refuted",
+      "artifact": "instances/pre03r2_assumption_refuted_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "295c2842a9b2a83a9795308301990c38259cb7346018c1c82d83287cadcd325c",
+      "review_note": "p4 measurement overrides the p3 hypothesis. Current choice follows measurement and no apply is recorded as already completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors silver, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms gold, refutes silver. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_assumption_refuted_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_assumption_refuted_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying the setting confirmed by measurement (gold) and observing the required effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the setting confirmed by measurement; the initial assumption is not evidence.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the current checkpoint using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit, replacing any previous allowance.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Measurement confirmed gold and refuted silver.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Neither apply operation has run yet.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "Current remaining credits are 1, scoped to this checkpoint.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_assumption_refuted_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold to apply the confirmed gold setting.",
+              "requirement_ref": "r1"
+            },
+            {
+              "id": "o2",
+              "text": "Observe the successful effects of apply_gold (done:true, selected:gold) before declaring completion.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [
+              "cl1",
+              "cl3"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_plan_only_b",
+      "repetition": 0,
+      "family": "plan_only",
+      "artifact": "instances/pre03r2_plan_only_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "ed150b0be271226f9137cee0d21298a105118828f61d5b44dd9d42fc8768d54c",
+      "review_note": "p3 is only a plan; p4 confirms no action occurred. State leaves apply outstanding rather than fabricating completion.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_gold, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_plan_only_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_plan_only_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying gold and observing the confirmed effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply gold to complete the setting task.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Finish the checkpoint only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "c1",
+              "text": "No action has occurred; done=false and selected=none.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "c2",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "basis": "observed",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_plan_only_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold and observe its successful effects (done=true, selected=gold).",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_explicit_verification_b",
+      "repetition": 1,
+      "family": "explicit_verification",
+      "artifact": "instances/pre03r2_explicit_verification_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "d231303980572387587fd7d2e09169ef345a2f285243e80c7cd03f14bdd62b4b",
+      "review_note": "p2 supports completed apply only; p3 explicitly adds independent validation. State preserves this remaining obligation.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_gold completed; done=true, selected=gold. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_explicit_verification_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "validate",
+              "description": "Independently validate the completed setting.",
+              "cost": 1,
+              "preconditions": {
+                "done": true
+              },
+              "successful_effects": {
+                "validated": true
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_explicit_verification_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow with confirmed evidence, including running the independent validation once.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+              "source_refs": [
+                "p1"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Run the independent validation once; keep the completed setting; do not reapply it.",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_gold operation completed with done=true and selected=gold.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Validation has not been run.",
+              "basis": "observed",
+              "source_refs": [
+                "p2"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_gold",
+              "phase": "completed",
+              "source_refs": [
+                "p2"
+              ],
+              "target": {
+                "selected": "gold"
+              }
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_explicit_verification_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Run the independent validation once.",
+              "requirement_ref": "r2"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate"
+            },
+            "requires": [
+              "cl1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_goal_revision_a",
+      "repetition": 1,
+      "family": "goal_revision",
+      "artifact": "instances/pre03r2_goal_revision_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "195f286c3a8fde4982616014326d679064edf3b8fbd763cc6cdec1bd1952d2cd",
+      "review_note": "p3 replaces p2; state retains the revised choice and does not mark an unexecuted apply as completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply silver. The earlier gold choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_goal_revision_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_goal_revision_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Apply the silver setting in workshop willow and complete the checkpoint with confirmed evidence.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the silver setting.",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the current checkpoint only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No setting has been applied yet.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Current remaining credits are 1.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_goal_revision_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_silver and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_silver"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_already_done_a",
+      "repetition": 1,
+      "family": "already_done",
+      "artifact": "instances/pre03r2_already_done_a_cs_v03_r1_h1.json",
+      "artifact_sha256": "36a86030f17e00011c748a49d7a58167dadef97e1c395738188afe1e8f7a3385",
+      "review_note": "p3 explicitly confirms actual apply and validation effects; empty frontier is supported and no repeat is needed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_silver and validate accepted with confirmed effects: done=true, selected=silver, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":0,\"credit_scope\":\"pre03r2_already_done_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 0,
+        "credit_scope": "pre03r2_already_done_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply silver and validate; do not repeat completed work.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 0 credits; no further paid operations can be attempted.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_silver and validate accepted with confirmed effects: done=true, selected=silver, validated=true.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_silver",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "op2",
+              "operation": "validate",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 0,
+              "scope": "pre03r2_already_done_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [],
+          "open_questions": []
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_goal_revision_b",
+      "repetition": 0,
+      "family": "goal_revision",
+      "artifact": "instances/pre03r2_goal_revision_b_cs_v03_r0_h1.json",
+      "artifact_sha256": "d90d422177440b1b614c4542c83a83f8b5063cc48a94951e6c7d62e0016a12f3",
+      "review_note": "p3 replaces p2; state retains the revised choice and does not mark an unexecuted apply as completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply silver."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply gold. The earlier silver choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_goal_revision_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_goal_revision_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Apply the gold setting in workshop willow and complete the checkpoint only after the successful effect is observed.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the gold setting.",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the checkpoint only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No setting has been applied yet.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "The earlier silver requirement is cancelled.",
+              "basis": "reported",
+              "source_refs": [
+                "p3"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The current checkpoint allowance is 1 credit.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1",
+                "p9"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_goal_revision_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [
+              "res1"
+            ],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_already_done_a",
+      "repetition": 0,
+      "family": "already_done",
+      "artifact": "instances/pre03r2_already_done_a_cs_v03_r0_h1.json",
+      "artifact_sha256": "c36608204faa20142d0c62fa419b01131a8828cb59910c594592e1cb1df5e948",
+      "review_note": "p3 explicitly confirms actual apply and validation effects; empty frontier is supported and no repeat is needed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [
+        {
+          "kind": "overbroad_resource_wording",
+          "field": "goal.constraints[0]",
+          "severity": "diagnostic",
+          "note": "No further operations can be executed is broader than no further paid operations. Free finish/catalog remain available; executor correctly finishes. Validation completion exists in claims but is omitted from operations."
+        }
+      ],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply silver and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_silver and validate accepted with confirmed effects: done=true, selected=silver, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":0,\"credit_scope\":\"pre03r2_already_done_a:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 0,
+        "credit_scope": "pre03r2_already_done_a:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply silver and validate; do not repeat completed work.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 0 credits; no further operations can be executed.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "apply_silver and validate accepted with confirmed effects: done=true, selected=silver, validated=true.",
+              "basis": "observed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "operations": [
+            {
+              "id": "op1",
+              "operation": "apply_silver",
+              "phase": "completed",
+              "source_refs": [
+                "p3"
+              ]
+            }
+          ],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 0,
+              "scope": "pre03r2_already_done_a:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [],
+          "open_questions": []
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_plan_only_b",
+      "repetition": 1,
+      "family": "plan_only",
+      "artifact": "instances/pre03r2_plan_only_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "5c7875da6e6dd7c3714071555e5ef7dc3f70f5e2c81e1587bad539ed21b3b74f",
+      "review_note": "p3 is only a plan; p4 confirms no action occurred. State leaves apply outstanding rather than fabricating completion.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply gold."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_gold, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_plan_only_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_plan_only_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying gold and observing the confirmed effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply gold to complete the setting task.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Finish only after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "No action has occurred; done=false and selected=none.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Remaining credits for this checkpoint is 1.",
+              "basis": "observed",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_plan_only_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "pre03r2_assumption_refuted_b",
+      "repetition": 1,
+      "family": "assumption_refuted",
+      "artifact": "instances/pre03r2_assumption_refuted_b_cs_v03_r1_h1.json",
+      "artifact_sha256": "2df4f3245c53c2b33706010946b016de921bf172966ea42745e6f7c6080968d0",
+      "review_note": "p4 measurement overrides the p3 hypothesis. Current choice follows measurement and no apply is recorded as already completed.",
+      "unsupported_completed_phase": false,
+      "added_hard_user_requirement": false,
+      "unsupported_reopened_question": false,
+      "flags": [
+        {
+          "kind": "missing_decision_dependency",
+          "field": "frontier.candidate_action.requires",
+          "severity": "diagnostic",
+          "note": "The measured choice is retained in cl1, but candidate requires=[] does not encode this decision dependency."
+        }
+      ],
+      "public_history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop willow using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors silver, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms gold, refutes silver. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        },
+        {
+          "id": "runtime_1",
+          "role": "runtime",
+          "content": "{\"remaining_credits\":1,\"credit_scope\":\"pre03r2_assumption_refuted_b:checkpoint_1\"}"
+        },
+        {
+          "id": "interface_1",
+          "role": "tool",
+          "source_type": "public_tool_contract",
+          "content": "The current public_interface supplies the authoritative catalog, operation contracts and receipt semantics for this checkpoint; its preconditions are definitions, not evidence that any action occurred."
+        }
+      ],
+      "public_interface": {
+        "version": "evidence-interface-v0.3",
+        "catalog": {
+          "operations": [
+            {
+              "name": "apply_silver",
+              "description": "Apply the silver setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "silver"
+              },
+              "successful_increments": {}
+            },
+            {
+              "name": "apply_gold",
+              "description": "Apply the gold setting and complete this setting task.",
+              "cost": 1,
+              "preconditions": {},
+              "successful_effects": {
+                "done": true,
+                "selected": "gold"
+              },
+              "successful_increments": {}
+            }
+          ],
+          "resources": [],
+          "catalog_cost": 0
+        },
+        "remaining_credits": 1,
+        "credit_scope": "pre03r2_assumption_refuted_b:checkpoint_1",
+        "receipt_contract": "Successful execute receipts certify listed effects of that operation, not overall task success. No extra verification is required unless the active user requirements or operation contract demand it. Accepted/submitted async jobs are not complete until a completion operation reports completion. Observe values remain unread until observed. Plan descriptions do not certify actions. Paid attempts consume credits even on precondition failure; budget violations remain failures."
+      },
+      "state": {
+        "goal": {
+          "revision": "g1",
+          "objective": "Complete the current checkpoint in workshop willow by applying the setting confirmed by measurement (gold) and observing the successful effects.",
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "Apply the setting confirmed by measurement; the initial assumption is not evidence.",
+              "source_refs": [
+                "p2"
+              ]
+            },
+            {
+              "id": "r2",
+              "text": "Complete the current checkpoint using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed.",
+              "source_refs": [
+                "p1"
+              ]
+            }
+          ],
+          "constraints": [
+            {
+              "id": "c1",
+              "text": "Current checkpoint allowance is 1 credit.",
+              "source_refs": [
+                "p9",
+                "runtime_1"
+              ]
+            }
+          ],
+          "preferences": []
+        },
+        "world": {
+          "claims": [
+            {
+              "id": "cl1",
+              "text": "Measurement confirmed gold and refuted silver.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl2",
+              "text": "Neither apply operation has run.",
+              "basis": "observed",
+              "source_refs": [
+                "p4"
+              ]
+            },
+            {
+              "id": "cl3",
+              "text": "The public interface provides the authoritative catalog and operation contracts.",
+              "basis": "reported",
+              "source_refs": [
+                "interface_1"
+              ]
+            }
+          ],
+          "operations": [],
+          "resources": [
+            {
+              "id": "res1",
+              "kind": "credits",
+              "remaining": 1,
+              "scope": "pre03r2_assumption_refuted_b:checkpoint_1",
+              "source_refs": [
+                "runtime_1"
+              ]
+            }
+          ]
+        },
+        "frontier": {
+          "obligations": [
+            {
+              "id": "o1",
+              "text": "Execute apply_gold and observe its successful effects.",
+              "requirement_ref": "r1"
+            }
+          ],
+          "open_questions": [],
+          "candidate_action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_gold"
+            },
+            "requires": [],
+            "obligation_ref": "o1",
+            "goal_revision": "g1",
+            "known_cost": 1
+          }
+        }
+      }
+    }
+  ]
+}

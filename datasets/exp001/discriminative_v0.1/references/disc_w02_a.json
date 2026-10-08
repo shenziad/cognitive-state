@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_w02_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Repair only after controlled confirmation",
+      "success_criteria": [
+        "Confirmed cause repaired"
+      ],
+      "constraints": [
+        "No repair based on a guess",
+        "3 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "No repair applied",
+        "Controlled diagnostic certified queue"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Repair only after controlled confirmation",
+      "information_needs": [],
+      "next_action": "execute repair_queue"
+    }
+  }
+}

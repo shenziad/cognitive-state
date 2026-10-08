@@ -1,0 +1,563 @@
+{
+  "audit_type": "partial_saved_preparation_projection_ledger_and_generation_replay_only",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\mechanism_v2_20261004",
+  "experiment_id": "cycle5-mechanism-v2",
+  "original_status": "aborted_api_error",
+  "comparison_complete": false,
+  "executor_calls": 0,
+  "source_quality_annotations_performed": false,
+  "frozen_snapshot_asset_hashes_checked": 97,
+  "reused_implementation_asset_hashes_checked": 38,
+  "protected_raw_sha256": {
+    "config.json": "d2c08d187d9c66a6d1c7ed572d195956b820a7302f14f8ba56da1e2cedeceecc",
+    "manifest.json": "cb46eb546db4729b81c3fe39a7189c3b537b5d8347825b12711bff95cd39bf5e",
+    "execution_release.json": "f959c540ca7f0ba9d469c2d06334dc73804d8c386664c9cb4c4135c47bf123ee",
+    "call_ledger.json": "fb1585b68d213dcab3eda67d6cedbaa0d71826364aecebb54dfb5165bb8f3b2b",
+    "prepared.json": "d6a6fb0f26fd75c189a6809a792fed7092192c1f237c27b7adac990e7b4ae418",
+    "task_order.json": "8d26b82124dd65638464bff09978940f9e5da11ec98eeac47f32d3934ee9a75d",
+    "executor_schedule.json": "9f13d2ce0d0694f6d54aa07e78b6c6880c5cac45079cefaac1ab77fe67e3eeec"
+  },
+  "prepared_saved": 31,
+  "prepared_assigned": 72,
+  "prepared_missing": 41,
+  "prepared_condition_counts": {
+    "full_context": 6,
+    "full_planner": 5,
+    "summary_s1": 5,
+    "summary_s2": 5,
+    "cs1": 5,
+    "cs_text": 5
+  },
+  "all_saved_preparations_replayed_exactly": true,
+  "successful_request_indices_covered_once": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "uncovered_request_indices": [
+    25
+  ],
+  "failed_request": {
+    "request_index": 25,
+    "task_id": "hd01_b",
+    "condition": "full_planner",
+    "phase": "prepare",
+    "purpose": "full_planner:planner",
+    "status": "api_error",
+    "error": {
+      "type": "RuntimeError",
+      "category": "provider_request_failed",
+      "http_status": null
+    },
+    "public_request_boundary_replayed_exactly": true,
+    "response_available": false,
+    "usage_known": false,
+    "fabricated_completion": false
+  },
+  "actual_usage": {
+    "request_attempts": 26,
+    "successful_responses": 25,
+    "total_tokens": null,
+    "known_reported_tokens": 78153,
+    "unknown_usage_attempts": 1,
+    "shared_extraction_counted_once": true
+  },
+  "cs_text_lossless_roundtrips": [
+    {
+      "task_id": "hd06_b",
+      "lossless_roundtrip": true,
+      "source_request_indices": [
+        4
+      ],
+      "source_json_sha256": "fcd4b3224496a79cb450624bde00e48180ba6f7ffdb6ef7daa78f958c5c10bbe",
+      "rendered_text_sha256": "eca0ac5a98dfdd733e5fb88c40c6e444c3e3efab8aab0084f0c8e86d910043d4",
+      "source_bytes": 2345,
+      "rendered_bytes": 6649
+    },
+    {
+      "task_id": "hd05_a",
+      "lossless_roundtrip": true,
+      "source_request_indices": [
+        9
+      ],
+      "source_json_sha256": "0d6d3dfcc6c410dc86b4fb5df9e0b572ceabb5353603175515b5b9daddedaa35",
+      "rendered_text_sha256": "2988eacd4ef467099d32a7d354b2fde09069ef766680c7ca10efacd52519bcc6",
+      "source_bytes": 1583,
+      "rendered_bytes": 4516
+    },
+    {
+      "task_id": "hd06_a",
+      "lossless_roundtrip": true,
+      "source_request_indices": [
+        14
+      ],
+      "source_json_sha256": "13c6e5f6c952a271f27daf3c5eea271aef7f209de265bb7581420ca91ac316e3",
+      "rendered_text_sha256": "0895db1796ab921c6aec1204c92ad9e6407c8bfae48c2f8c770edeb6218fce1b",
+      "source_bytes": 2153,
+      "rendered_bytes": 5828
+    },
+    {
+      "task_id": "hd02_b",
+      "lossless_roundtrip": true,
+      "source_request_indices": [
+        19
+      ],
+      "source_json_sha256": "a7a344be21b1adbbd3a306a3e895c7a42f6ac50e4fba8caaaff71d3be2096559",
+      "rendered_text_sha256": "734cd48972e6606edfe65a5a085eb66fc7f17e3c14bf134689243338d0467a1d",
+      "source_bytes": 1819,
+      "rendered_bytes": 5386
+    },
+    {
+      "task_id": "hd03_b",
+      "lossless_roundtrip": true,
+      "source_request_indices": [
+        24
+      ],
+      "source_json_sha256": "9bed87f56cbddf7f46bc7a56126525307d6dfad7774a00d1179362d3aab86b86",
+      "rendered_text_sha256": "324cba48a73615b94434673edaed8b82bf6fe7f8c44428d191721b26cf9a7c89",
+      "source_bytes": 1742,
+      "rendered_bytes": 5254
+    }
+  ],
+  "preparations": [
+    {
+      "task_id": "hd06_b",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "full_planner",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        0
+      ],
+      "source_request_indices": [
+        0
+      ]
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "summary_s1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        1
+      ],
+      "source_request_indices": [
+        1
+      ]
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "summary_s2",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        2,
+        3
+      ],
+      "source_request_indices": [
+        2,
+        3
+      ]
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "cs1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        4
+      ],
+      "source_request_indices": [
+        4
+      ]
+    },
+    {
+      "task_id": "hd06_b",
+      "condition": "cs_text",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": [
+        4
+      ]
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "full_planner",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        5
+      ],
+      "source_request_indices": [
+        5
+      ]
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "summary_s1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        6
+      ],
+      "source_request_indices": [
+        6
+      ]
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "summary_s2",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        7,
+        8
+      ],
+      "source_request_indices": [
+        7,
+        8
+      ]
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "cs1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        9
+      ],
+      "source_request_indices": [
+        9
+      ]
+    },
+    {
+      "task_id": "hd05_a",
+      "condition": "cs_text",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": [
+        9
+      ]
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "full_planner",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        10
+      ],
+      "source_request_indices": [
+        10
+      ]
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "summary_s1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        11
+      ],
+      "source_request_indices": [
+        11
+      ]
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "summary_s2",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        12,
+        13
+      ],
+      "source_request_indices": [
+        12,
+        13
+      ]
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "cs1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        14
+      ],
+      "source_request_indices": [
+        14
+      ]
+    },
+    {
+      "task_id": "hd06_a",
+      "condition": "cs_text",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": [
+        14
+      ]
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "full_planner",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        15
+      ],
+      "source_request_indices": [
+        15
+      ]
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        16
+      ],
+      "source_request_indices": [
+        16
+      ]
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s2",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        17,
+        18
+      ],
+      "source_request_indices": [
+        17,
+        18
+      ]
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "cs1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        19
+      ],
+      "source_request_indices": [
+        19
+      ]
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "cs_text",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": [
+        19
+      ]
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "full_planner",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        20
+      ],
+      "source_request_indices": [
+        20
+      ]
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "summary_s1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        21
+      ],
+      "source_request_indices": [
+        21
+      ]
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "summary_s2",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        22,
+        23
+      ],
+      "source_request_indices": [
+        22,
+        23
+      ]
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "cs1",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [
+        24
+      ],
+      "source_request_indices": [
+        24
+      ]
+    },
+    {
+      "task_id": "hd03_b",
+      "condition": "cs_text",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": [
+        24
+      ]
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "full_context",
+      "projected_source_exact": true,
+      "prepare_replay_exact": true,
+      "all_recorded_calls_consumed": true,
+      "encoding_valid": true,
+      "actual_prepare_request_indices": [],
+      "source_request_indices": []
+    }
+  ],
+  "limits": [
+    "This audit checks exact source projection and preparation generation, not factual quality or future task behavior.",
+    "No source-quality assessments were created and no actor ran.",
+    "The partial preparations do not constitute a completed six-condition comparison.",
+    "Request 25 has no saved response and unknown usage; total Tokens cannot be inferred from the known subtotal.",
+    "CS-text shared source requests are covered once in the actual ledger; each strategy deployment separately includes its source cost."
+  ]
+}

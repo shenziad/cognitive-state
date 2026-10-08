@@ -1,0 +1,338 @@
+[
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  }
+]

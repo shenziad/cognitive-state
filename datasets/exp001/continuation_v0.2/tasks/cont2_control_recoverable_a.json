@@ -1,0 +1,55 @@
+{
+  "instance_id": "cont2_control_recoverable_a",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace lumen: read current/lane_status and route the parcel through its certified open lane. All evidence required for routing is publicly available now. 3 credits remain."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Public tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute route_B: Route the parcel through delta lane. Cost=2. execute route_F: Route the parcel through sigma lane. Cost=2. observe current/lane_status: Read the current certified open lane. Cost=1."
+    },
+    {
+      "id": "h03",
+      "role": "assistant",
+      "content": "Plan: obtain current lane evidence before routing."
+    },
+    {
+      "id": "d000",
+      "role": "tool",
+      "content": "Closed archive control_recoverable-000, workspace vault, unrelated to current workspace lumen. Batch 430 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q80 and S40. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d001",
+      "role": "tool",
+      "content": "Closed archive control_recoverable-001, workspace vault, unrelated to current workspace lumen. Batch 431 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q81 and S41. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d002",
+      "role": "tool",
+      "content": "Closed archive control_recoverable-002, workspace vault, unrelated to current workspace lumen. Batch 432 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q82 and S42. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d003",
+      "role": "tool",
+      "content": "Closed archive control_recoverable-003, workspace vault, unrelated to current workspace lumen. Batch 433 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q83 and S43. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "h04",
+      "role": "tool",
+      "content": "No lane has been checked and no parcel routed."
+    },
+    {
+      "id": "h05",
+      "role": "assistant",
+      "content": "Interruption occurred here. Continue the current workspace under its active requirements and remaining budget; planning statements alone are not tool execution evidence."
+    }
+  ],
+  "recovery_context": "Workspace lumen: read current/lane_status and route the parcel through its certified open lane. All evidence required for routing is publicly available now. 3 credits remain.\nPublic tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute route_B: Route the parcel through delta lane. Cost=2. execute route_F: Route the parcel through sigma lane. Cost=2. observe current/lane_status: Read the current certified open lane. Cost=1.\nAll required evidence can be obtained from current/lane_status; no historical reading is assumed.",
+  "ablation_progress_terms": [
+    "no lane checked",
+    "no parcel routed"
+  ]
+}

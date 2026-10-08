@@ -1,0 +1,173 @@
+{
+  "review_type": "posthoc_independent_trace_interpretation",
+  "run": "results/raw/exp001/ablation_budget_v02_20261002",
+  "scope": "Read-only interpretation of frozen artifacts; existing aggregate statistics are preserved.",
+  "verification_scope": "Root verified all traces and usage; this review inspected effective ablations and the 2200-byte failures without rerunning models.",
+  "effective_ablation_sources": {
+    "budget_utf8_bytes": 1400,
+    "main_assigned_instances": 12,
+    "main_valid_sources": 3,
+    "main_valid_source_ids": [
+      "cont2_goal_b",
+      "cont2_assumption_b",
+      "cont2_completed_b"
+    ],
+    "control_valid_sources": 1,
+    "control_valid_source_ids": [
+      "cont2_control_completed_a"
+    ],
+    "main_representation_failures": {
+      "total": 9,
+      "byte_budget": 8,
+      "schema": 1,
+      "schema_instance": "cont2_assumption_a",
+      "schema_extra_root_field": {
+        "budget_counter": "utf8_bytes"
+      }
+    },
+    "outcome": "Original CS and each ablation succeeded on 2 of 12 assigned main instances; 9 failures were inherited from the same shared extraction. Only 3 main instances reached a field intervention.",
+    "selection_limitation": "The 3 valid sources are a budget-selected subset, not an unbiased sample of all tasks. Equal aggregate success does not establish component irrelevance or behavioral equivalence."
+  },
+  "ablations": [
+    {
+      "condition": "cs_no_frontier",
+      "applied_main": 3,
+      "applied_controls": 1,
+      "changed_runs": 4,
+      "no_op_runs": 0,
+      "removed": "Each source frontier block is replaced with explicit unknown values.",
+      "residuals": [
+        {
+          "instance_id": "cont2_goal_b",
+          "evidence": "goal.objective and goal.success_criteria still explicitly specify dispatch_K; world.facts retain the authoritative review recipient and operation definitions."
+        },
+        {
+          "instance_id": "cont2_assumption_b",
+          "evidence": "goal.success_criteria still explicitly specifies encode_L; world.facts retain the certified rune contract and operation definitions."
+        },
+        {
+          "instance_id": "cont2_completed_b",
+          "evidence": "world.facts retain elm already completed and oak not run. Public catalog can recover the operation mapping. The executor still adds an unaffordable ledger query after calibration, despite removal of Frontier."
+        },
+        {
+          "instance_id": "cont2_control_completed_a",
+          "evidence": "Goal still instructs finish and its constraints explicitly state that both validations are already completed."
+        }
+      ],
+      "behavior_note": "For completed_b, removing Frontier adds a free catalog query and changes the final status, although task success remains false. Equal success rate is not identical behavior."
+    },
+    {
+      "condition": "cs_no_uncertainty",
+      "applied_main": 3,
+      "applied_controls": 1,
+      "changed_runs": 4,
+      "no_op_runs": 0,
+      "removed_items_by_instance": {
+        "cont2_goal_b": 3,
+        "cont2_assumption_b": 2,
+        "cont2_completed_b": 1,
+        "cont2_control_completed_a": 1
+      },
+      "residuals": "Goal and facts retain authoritative recipient, certified contract, or completed-work evidence; Frontier retains its next action.",
+      "coverage_limitation": "These sources do not contain active unresolved beliefs requiring confirmation. The removed entries are repeated confirmations, unchanged-world assumptions, archive relevance, or confusion about finish. This does not test the necessity of active uncertainty information."
+    },
+    {
+      "condition": "cs_no_progress_facts",
+      "applied_main": 3,
+      "applied_controls": 1,
+      "changed_runs": 4,
+      "no_op_runs": 0,
+      "removed_items_by_instance": {
+        "cont2_goal_b": 1,
+        "cont2_assumption_b": 1,
+        "cont2_completed_b": 2,
+        "cont2_control_completed_a": 2
+      },
+      "removed_examples": {
+        "cont2_goal_b": [
+          "Nothing has been dispatched yet"
+        ],
+        "cont2_assumption_b": [
+          "Packet has not yet been encoded."
+        ],
+        "cont2_completed_b": [
+          "Elm calibration completed and validated (signed checkpoint)",
+          "Oak calibration has not run"
+        ],
+        "cont2_control_completed_a": [
+          "Left and right fixtures both validated (signed receipt)",
+          "Only finish remains per receipt"
+        ]
+      },
+      "residuals": "Frontier still specifies dispatch_K, encode_L, or calibrate_J. The completed control retains explicit already-validated evidence in Goal constraints. Therefore this removes matching facts, not all progress semantics."
+    }
+  ],
+  "failures_at_2200": [
+    {
+      "instance_id": "cont2_completed_a",
+      "condition": "cognitive_state",
+      "representation_error": false,
+      "source": "extractions/cont2_completed_a_r0_cognitive_state_b2200.json",
+      "artifact": "instances/cont2_completed_a_r0_cognitive_state_b2200.json",
+      "actions": [
+        "execute calibrate_R",
+        "observe current/calibration_ledger",
+        "finish blocked"
+      ],
+      "credits": 4,
+      "credit_budget": 3,
+      "observation": "The representation correctly preserves oak completed and elm not run. After calibrate_R the environment has both calibrations completed. The added ledger query exceeds the 3-credit budget.",
+      "representation_evidence": {
+        "frontier_next_action": "Execute calibrate_R to calibrate the elm rack, then observe current/calibration_ledger to validate both calibrations.",
+        "goal_added_requirement": "Success criteria add validation recorded in a signed calibration ledger; original h01 only requires both racks calibrated without repeated validated work.",
+        "information_need": "The state suggests confirming progress elsewhere and misstates the resumption credit position as assumed 1 credit left."
+      },
+      "inference": "The representation introduces a stronger completion requirement and an unaffordable verification plan. One trace does not isolate the causal contributions of Goal, Frontier, and executor."
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "condition": "cognitive_state",
+      "representation_error": false,
+      "source": "extractions/cont2_completed_b_r0_cognitive_state_b2200.json",
+      "artifact": "instances/cont2_completed_b_r0_cognitive_state_b2200.json",
+      "actions": [
+        "execute calibrate_J",
+        "observe current/calibration_ledger",
+        "finish blocked"
+      ],
+      "credits": 4,
+      "credit_budget": 3,
+      "observation": "The state correctly preserves elm completed and oak not run. Frontier next_action names only calibrate_J, but information_needs asks for further completion/credit confirmation. The executor adds a ledger query after successful calibration.",
+      "inference": "Known progress was preserved. The observed failure is additional verification inconsistent with the budget, with possible contributions from representation and executor."
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "condition": "summary",
+      "representation_error": false,
+      "source": "extractions/cont2_inflight_b_r0_summary_b2200.json",
+      "artifact": "instances/cont2_inflight_b_r0_summary_b2200.json",
+      "actions": [
+        "execute consume_U",
+        "observe current/reservation_ledger",
+        "finish completed"
+      ],
+      "credits": 4,
+      "credit_budget": 3,
+      "observation": "The summary correctly retains jade accepted and pending, and identifies consume_U. It also suggests optional ledger verification while warning that only 1 credit remains after consumption. The executor nevertheless queries the 2-credit ledger after fulfillment.",
+      "inference": "This is not loss of broker identity. Optional verification wording and executor budget handling are both plausible contributors; the trace is not a causal ablation."
+    }
+  ],
+  "conclusions": [
+    "Strict byte budgets expose a reliability problem in the current automatic extraction protocol: CS main success is 0/12 at 800 bytes, 2/12 at 1400, and 10/12 at 2200, with 12, 9, and 0 representation failures respectively.",
+    "This does not establish that a behavior-preserving Cognitive State cannot fit in the smaller budgets; it measures the current extractor and schema.",
+    "The effective ablations changed fields but did not remove all corresponding semantic information, and only reached 3 main sources plus 1 control.",
+    "Several failures preserve the correct historical facts while adding unnecessary verification that violates a known budget. Grounding information needs and stopping conditions deserves a controlled follow-up.",
+    "Current evidence does not establish which G/W/F components are necessary or that Cognitive State is superior to competitive summarization."
+  ],
+  "caveats": [
+    "Synthetic single-checkpoint tasks, one model and one repetition.",
+    "Budgets share the same full baseline within this run; budget cells are not new independent tasks.",
+    "The 1400-byte ablations reuse one complete automatic state per task, budget and repetition; shared extraction failures are not independent component failures.",
+    "All findings here are posthoc descriptive interpretations, not preregistered causal tests."
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "scenario_id": "archive_workflow",
+  "review_status": "assistant_constructed_pending_independent_review",
+  "public_goal": {
+    "id": "archive_goal",
+    "role": "user",
+    "content": "Complete the archive workflow for workspace cedar across checkpoints. Correct only a source mismatch confirmed by evidence. Remember accepted corrections, submitted jobs, and validated stages; never repeat completed work. Use the confirmed correction to choose the final archive manifest. At each checkpoint execute that checkpoint only, then finish completed."
+  },
+  "initial_state": {
+    "left_confirmed": false,
+    "right_confirmed": false,
+    "left_repaired": false,
+    "right_repaired": false,
+    "job_submitted": false,
+    "backend_ready": false,
+    "job_done": false,
+    "validation_A": false,
+    "validation_B": false,
+    "sealed_branch": "unset"
+  },
+  "handoffs": [
+    {
+      "public_events": [
+        {
+          "id": "archive_1_request",
+          "role": "user",
+          "content": "Checkpoint 1: diagnose the source mismatch and correct its confirmed branch. The current belief favors the left branch with confidence 0.7; it is not confirmed. This checkpoint has 2 credits."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "correct_left": {
+            "description": "Correct the left source branch.",
+            "cost": 1,
+            "effects": {
+              "left_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "left_repaired": true
+              }
+            },
+            "repeat_key": "left_repaired"
+          },
+          "correct_right": {
+            "description": "Correct the right source branch.",
+            "cost": 1,
+            "effects": {
+              "right_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "right_repaired": true
+              }
+            },
+            "repeat_key": "right_repaired"
+          }
+        },
+        "observations": {
+          "current/diagnosis": {
+            "description": "Read the live source mismatch diagnosis.",
+            "cost": 1,
+            "effects": {
+              "left_confirmed": false,
+              "right_confirmed": true
+            },
+            "observation": {
+              "diagnosis_id": "cedar-d1",
+              "confirmed_branch": "right",
+              "left_hypothesis_refuted": true
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "left_repaired": false,
+            "right_repaired": true
+          },
+          "finish_status": "completed",
+          "before_action": [
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "correct_left"
+                }
+              },
+              "state": {
+                "left_confirmed": true
+              }
+            },
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "correct_right"
+                }
+              },
+              "state": {
+                "right_confirmed": true
+              }
+            }
+          ],
+          "forbidden_actions": []
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "archive_2_request",
+          "role": "user",
+          "content": "Checkpoint 2: submit one archive job. Stop after its submission acknowledgment; it will be completed at the next checkpoint. Preserve the accepted source correction. This checkpoint has 1 credit."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "submit_archive": {
+            "description": "Submit an asynchronous archive job; duplicate submission is invalid.",
+            "cost": 1,
+            "effects": {
+              "job_submitted": true
+            },
+            "observation": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "required_state": {
+              "job_submitted": false
+            },
+            "repeat_key": "job_submitted"
+          },
+          "poll_archive": {
+            "description": "Poll the submitted archive job when the backend is ready.",
+            "cost": 1,
+            "effects": {
+              "job_done": true
+            },
+            "observation": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "required_state": {
+              "job_submitted": true,
+              "backend_ready": true
+            },
+            "repeat_key": "job_done"
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "right_repaired": true,
+            "left_repaired": false,
+            "job_submitted": true,
+            "job_done": false
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "poll_archive"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "archive_3_request",
+          "role": "user",
+          "content": "Checkpoint 3: complete the archive job and both validation stages A and B, preserving previous accepted work. This checkpoint has 3 credits."
+        },
+        {
+          "id": "archive_3_ready",
+          "role": "tool",
+          "content": "The archive backend is now ready to return completed results for any job that was submitted. This message does not prove that a job was submitted."
+        }
+      ],
+      "external_state_patch": {
+        "backend_ready": true
+      },
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "submit_archive": {
+            "description": "Submit an asynchronous archive job; duplicate submission is invalid.",
+            "cost": 1,
+            "effects": {
+              "job_submitted": true
+            },
+            "observation": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "required_state": {
+              "job_submitted": false
+            },
+            "repeat_key": "job_submitted"
+          },
+          "poll_archive": {
+            "description": "Poll the submitted archive job when the backend is ready.",
+            "cost": 1,
+            "effects": {
+              "job_done": true
+            },
+            "observation": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "required_state": {
+              "job_submitted": true,
+              "backend_ready": true
+            },
+            "repeat_key": "job_done"
+          },
+          "validate_A": {
+            "description": "Validate archive stage A after the job completes.",
+            "cost": 1,
+            "effects": {
+              "validation_A": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "required_state": {
+              "job_done": true
+            },
+            "repeat_key": "validation_A"
+          },
+          "validate_B": {
+            "description": "Validate archive stage B after the job completes.",
+            "cost": 1,
+            "effects": {
+              "validation_B": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "required_state": {
+              "job_done": true
+            },
+            "repeat_key": "validation_B"
+          }
+        },
+        "observations": {},
+        "budget": 3,
+        "rubric": {
+          "target_state": {
+            "right_repaired": true,
+            "left_repaired": false,
+            "job_submitted": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "archive_4_request",
+          "role": "user",
+          "content": "Checkpoint 4: seal the final archive using the source branch confirmed and corrected earlier. Complete only genuinely pending work; accepted validations must not be repeated. No new source evidence is available. This checkpoint has 1 credit."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "validate_A": {
+            "description": "Validate archive stage A after the job completes.",
+            "cost": 1,
+            "effects": {
+              "validation_A": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "required_state": {
+              "job_done": true
+            },
+            "repeat_key": "validation_A"
+          },
+          "validate_B": {
+            "description": "Validate archive stage B after the job completes.",
+            "cost": 1,
+            "effects": {
+              "validation_B": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "required_state": {
+              "job_done": true
+            },
+            "repeat_key": "validation_B"
+          },
+          "seal_left": {
+            "description": "Seal the archive with a left correction manifest.",
+            "cost": 1,
+            "effects": {
+              "sealed_branch": "left"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "sealed_branch": "left"
+              }
+            },
+            "required_state": {
+              "job_done": true,
+              "validation_A": true,
+              "validation_B": true
+            }
+          },
+          "seal_right": {
+            "description": "Seal the archive with a right correction manifest.",
+            "cost": 1,
+            "effects": {
+              "sealed_branch": "right"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "sealed_branch": "right"
+              }
+            },
+            "required_state": {
+              "job_done": true,
+              "validation_A": true,
+              "validation_B": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "right_repaired": true,
+            "left_repaired": false,
+            "job_submitted": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "seal_left"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

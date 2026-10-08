@@ -1,0 +1,2367 @@
+{
+  "stage": "longitudinal",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\longitudinal_recovery_v1_20261003",
+  "results_sha256": "8c3f85ca192abc48939e1f91a83e6aaa25b1ab30f19e6e530c375a2d53d77343",
+  "review_sha256": "064e077c1425ff1565c634934cc29ce7f4f0f7ad1389d0b5c92f9637223d9388",
+  "audit_sha256": "0f28e0916e0a4ed6e0e2a9c0d23467e6ba22f73a521e9c755588a82431b5d3c9",
+  "review_method": "public_sources_before_behavior; assistant_not_independent_gold; condition_not_blinded",
+  "behavior_linkage_done_after_source_review_saved": true,
+  "source_counts": {
+    "summary": {
+      "reviewed": 8,
+      "concrete_error_states": 2,
+      "ambiguous_states": 0
+    },
+    "cs_v02": {
+      "reviewed": 8,
+      "concrete_error_states": 0,
+      "ambiguous_states": 1
+    },
+    "cs_v031": {
+      "reviewed": 8,
+      "concrete_error_states": 0,
+      "ambiguous_states": 4
+    }
+  },
+  "cases": [
+    {
+      "artifact": "instances/archive_workflow_cs_v02_r0_h1.json",
+      "artifact_sha256": "fda72ea103a830dfb4b7d5c0fca9bb412e85d9546e4671b99633bf77743b7bfd",
+      "condition": "cs_v02",
+      "instance_id": "archive_workflow",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "left_repaired": true,
+          "right_repaired": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2124,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "ambiguous",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "archive_1_request 的 left=0.7 仅信念，表示先读 current/diagnosis(1) 再按证据修复(1)，没有虚构确认或完成。局部成功标准正确，但另一条写 Complete all checkpoints in sequence, then finish，与 archive_goal 每段 finish 的停止范围可能混淆；当前约束又要求仅当前段，因此停止时点标 ambiguous，不能依据后续行为消除歧义。",
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/diagnosis"
+            }
+          },
+          "observation": {
+            "diagnosis_id": "cedar-d1",
+            "confirmed_branch": "right",
+            "left_hypothesis_refuted": true,
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": false,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "right_repaired": true
+              }
+            },
+            "confirmed_effects": {
+              "right_repaired": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h1:correct_right:2",
+                "operation": "correct_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v02_r0_h2.json",
+      "artifact_sha256": "edc25d9759db2142dffe95734e18dfd0b73b705098f77656acd73889971ffc1e",
+      "condition": "cs_v02",
+      "instance_id": "archive_workflow",
+      "handoff": 2,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2098,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h1_o0 明确 right 且推翻 left，h1_o1 支持 right_repaired 成功。archive_2_request 只要求提交即停；表示保留 right，区分 submit_archive 的 submission 契约与 poll 的 job 契约，不声称已提交或已作业成功，费用1并禁止本段 polling。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "submit_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "submit_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "confirmed_effects": {
+              "job_submitted": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "submission",
+                "entity_id": "submit_archive-attempt",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "cedar-job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v02_r0_h3.json",
+      "artifact_sha256": "3541c1f26dad77020879649c923da75848d43ea0eae57f59505f1aa9e8b2e91b",
+      "condition": "cs_v02",
+      "instance_id": "archive_workflow",
+      "handoff": 3,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2719,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h2_o0 给 cedar-job-17、submission completed/accepted 与 job accepted；backend ready 本身不是已提交证据。表示以真实提交回执维持 pending，规划 poll 后用户要求 A/B，费用1+1+1=3，保留旧 right 修复。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "poll_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "poll_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "confirmed_effects": {
+              "job_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_A"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_A",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_A": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_A:2",
+                "operation": "validate_A",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_B"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_B",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_B": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_B:3",
+                "operation": "validate_B",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v02_r0_h4.json",
+      "artifact_sha256": "8ad19c36e852a5ee1a7b7be68ee0e9beab768bd382da89d656ca5ab8b909229c",
+      "condition": "cs_v02",
+      "instance_id": "archive_workflow",
+      "handoff": 4,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true,
+          "sealed_branch": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2390,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h3_o0/o1/o2 支持 job succeeded 与两项验证已成功；archive_4_request 禁止重复已接受验证且无新source证据。表示保留先前 right 诊断/修复的内容，区分历史 submission accepted 与当前 job succeeded，只规划 seal_right(1)。早期依据通过真实保留状态继承，没有恢复丢弃原史。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "seal_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "seal_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "sealed_branch": "right"
+              }
+            },
+            "confirmed_effects": {
+              "sealed_branch": "right"
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h4:seal_right:1",
+                "operation": "seal_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_full_context_r0_h1.json",
+      "artifact_sha256": "d895f49c36e88933914096966f4b192b16340056d05a5b20b2dcd2cc71fcf4fd",
+      "condition": "full_context",
+      "instance_id": "archive_workflow",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "left_repaired": true,
+          "right_repaired": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 980,
+      "source_assessment": null,
+      "source_evidence_notes": null,
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/diagnosis"
+            }
+          },
+          "observation": {
+            "diagnosis_id": "cedar-d1",
+            "confirmed_branch": "right",
+            "left_hypothesis_refuted": true,
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": false,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "right_repaired": true
+              }
+            },
+            "confirmed_effects": {
+              "right_repaired": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h1:correct_right:2",
+                "operation": "correct_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_full_context_r0_h2.json",
+      "artifact_sha256": "fb8d4d8a592767e1accf3283e2787ce62940b47ed49f345675408c350670bb09",
+      "condition": "full_context",
+      "instance_id": "archive_workflow",
+      "handoff": 2,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2244,
+      "source_assessment": null,
+      "source_evidence_notes": null,
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "submit_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "submit_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "confirmed_effects": {
+              "job_submitted": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "submission",
+                "entity_id": "submit_archive-attempt",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "cedar-job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_full_context_r0_h3.json",
+      "artifact_sha256": "82d4709446952c96a2fccac9f84c6d36de301b20776568f8b8f35c4fe0395965",
+      "condition": "full_context",
+      "instance_id": "archive_workflow",
+      "handoff": 3,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 3464,
+      "source_assessment": null,
+      "source_evidence_notes": null,
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "poll_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "poll_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "confirmed_effects": {
+              "job_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_A"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_A",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_A": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_A:2",
+                "operation": "validate_A",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_B"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_B",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_B": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_B:3",
+                "operation": "validate_B",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_full_context_r0_h4.json",
+      "artifact_sha256": "a05a887383d2cfdbdc5a21d0e96cc7aa29f9b132b6ab1f68a3d7fd7f2fd4d634",
+      "condition": "full_context",
+      "instance_id": "archive_workflow",
+      "handoff": 4,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true,
+          "sealed_branch": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 5445,
+      "source_assessment": null,
+      "source_evidence_notes": null,
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "seal_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "seal_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "sealed_branch": "right"
+              }
+            },
+            "confirmed_effects": {
+              "sealed_branch": "right"
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h4:seal_right:1",
+                "operation": "seal_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_summary_r0_h1.json",
+      "artifact_sha256": "021939e5b5e31c82a42b2878d48f661187d10ca1a26d0f42d61695b2e5e73262",
+      "condition": "summary",
+      "instance_id": "archive_workflow",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "left_repaired": true,
+          "right_repaired": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1443,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "archive_1_request 的 left 仅0.7信念，表示保留先观察再按证据修复、1+1=2额度及每段停止，没有把信念提升为事实。它偏重当前段、未重复全局final-manifest措辞；此时尚无已确认分支，不据后续结果追溯判其捏造或缺分支。",
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/diagnosis"
+            }
+          },
+          "observation": {
+            "diagnosis_id": "cedar-d1",
+            "confirmed_branch": "right",
+            "left_hypothesis_refuted": true,
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": false,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "right_repaired": true
+              }
+            },
+            "confirmed_effects": {
+              "right_repaired": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h1:correct_right:2",
+                "operation": "correct_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_summary_r0_h2.json",
+      "artifact_sha256": "0b8119609f8bd382a868878ea9ba9e487ec6452a9643dfd9afb9e3aabd2cf451",
+      "condition": "summary",
+      "instance_id": "archive_workflow",
+      "handoff": 2,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1137,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "h1_o0/o1 支持 cedar-d1 right 与真实修复；表示保留该身份及receipt，archive_2_request 只提交即停，正确区分 submission 与 job、拒绝无依据handle，不重做修复。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "submit_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "submit_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "confirmed_effects": {
+              "job_submitted": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "submission",
+                "entity_id": "submit_archive-attempt",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "cedar-job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_summary_r0_h3.json",
+      "artifact_sha256": "a4e93a74e2174c541867a1c9ae8495db415a889a2554b818000e90deb492bc10",
+      "condition": "summary",
+      "instance_id": "archive_workflow",
+      "handoff": 3,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1374,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_notes": "实际输入 retained_h2 明确保留 cedar-d1/right_repaired，早期公开 archive_goal 已要求用确认修复的分支选择最终manifest；输出仅保留 cedar-job-17 和当前 A/B 工作，丢弃该已确认分支及修复身份。这是跨段依赖信息丢失，不是因为摘要缺图而判错。当前 submission accepted、pending job 和3额度顺序本身正确。只依据公开历史/表示链判断，未读本段执行成绩。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "poll_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "poll_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "confirmed_effects": {
+              "job_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_A"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_A",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_A": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_A:2",
+                "operation": "validate_A",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_B"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_B",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_B": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_B:3",
+                "operation": "validate_B",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_summary_r0_h4.json",
+      "artifact_sha256": "6829d439c8534166786fcb05467e4fae1788d11de4a6475f0111695153102553",
+      "condition": "summary",
+      "instance_id": "archive_workflow",
+      "handoff": 4,
+      "success": false,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.8571428571428571,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true,
+          "sealed_branch": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 0,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2093,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_notes": "archive_4_request 需要此前确认分支选择 seal；当前 retained_h3 的确已不含身份。输出诚实承认缺口、不伪造分支，正确保留 succeeded job/A/B 且不重验，但作为续做表示缺少必要分支，因此 missing_decision_dependency。丢失发生在前次更新，本次提取器无法从当前输入恢复；不把真实缺口误判为无依据重开或当前虚构。",
+      "trace": [
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "blocked"
+            }
+          },
+          "observation": {
+            "finished": "blocked",
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v031_r0_h1.json",
+      "artifact_sha256": "7207ea919ee06d67317aca24dfdadc447327490ef169bc1eea58958971210031",
+      "condition": "cs_v031",
+      "instance_id": "archive_workflow",
+      "handoff": 1,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "left_repaired": true,
+          "right_repaired": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 1686,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "source_evidence_notes": "archive_goal 事先声明确认修复分支决定final manifest，G r3明确保存该未来用途；left=0.7仅reported未确认，F等待current/diagnosis，W无伪造执行，2额度允许诊断后修复。requires为空不直接判缺依赖，公开契约价格与open_question已给必要信息。",
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "current/diagnosis"
+            }
+          },
+          "observation": {
+            "diagnosis_id": "cedar-d1",
+            "confirmed_branch": "right",
+            "left_hypothesis_refuted": true,
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": false,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "right_repaired": true
+              }
+            },
+            "confirmed_effects": {
+              "right_repaired": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h1:correct_right:2",
+                "operation": "correct_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": false,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v031_r0_h2.json",
+      "artifact_sha256": "da918d1ae630c908b8bab0801bf4502fd0580d75306c9bd0358812151111952a",
+      "condition": "cs_v031",
+      "instance_id": "archive_workflow",
+      "handoff": 2,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 2420,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "ambiguous"
+      },
+      "source_evidence_notes": "h1_o0/o1 支持right确认/真实修复，G保存未来manifest用途，F只submit后停止；不会把未提交计划当job成功。W cl1仍称current belief favors left=0.7、未显式标已反驳，但cl2明确left refuted且cl3保留right真实作用；reported旧依据可理解为历史记录也可读成未更新当前信念，标ambiguous，不能从实际行为消除。",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "submit_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "submit_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "submitted",
+              "complete": false
+            },
+            "confirmed_effects": {
+              "job_submitted": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "submission",
+                "entity_id": "submit_archive-attempt",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "cedar-job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": false,
+            "job_done": false,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v031_r0_h3.json",
+      "artifact_sha256": "ff31e381584248ad4b5d6d00ccf3caa396759b27beb13b22e87b8a128dc36331",
+      "condition": "cs_v031",
+      "instance_id": "archive_workflow",
+      "handoff": 3,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 3495,
+      "source_assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "ambiguous"
+      },
+      "source_evidence_notes": "retained_h2 preserves confirmed right diagnosis (cl2), actual right correction (cl3/op1), and the global manifest dependency (r3). h2_o0 certifies only accepted submission; j1 remains accepted and the current frontier correctly requires poll_archive followed by A and B within three credits. cl1 still describes a current left belief although cl2 refutes it; whether this is retained historical reporting or a stale active claim is ambiguous.",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "poll_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "poll_archive",
+            "public_receipt": {
+              "job_id": "cedar-job-17",
+              "status": "complete"
+            },
+            "confirmed_effects": {
+              "job_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "cedar-job-17",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": false,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_A"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_A",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_A": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_A": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_A:2",
+                "operation": "validate_A",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": false,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_B"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_B",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "validation_B": true
+              }
+            },
+            "confirmed_effects": {
+              "validation_B": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h3:validate_B:3",
+                "operation": "validate_B",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "unset"
+          }
+        }
+      ]
+    },
+    {
+      "artifact": "instances/archive_workflow_cs_v031_r0_h4.json",
+      "artifact_sha256": "8794e535516ea82bd0246e189261a6fef6b19e516d5cdd166daf7589c09a1b5f",
+      "condition": "cs_v031",
+      "instance_id": "archive_workflow",
+      "handoff": 4,
+      "success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "right_repaired": true,
+          "left_repaired": true,
+          "job_submitted": true,
+          "job_done": true,
+          "validation_A": true,
+          "validation_B": true,
+          "sealed_branch": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "representation_bytes": 4495,
+      "source_assessment": {
+        "entity_phase_confusion": "ambiguous",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "correct",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "ambiguous"
+      },
+      "source_evidence_notes": "h3_o0 certifies job success and h3_o1/h3_o2 certify A/B success. j1 and typed validation operations are updated correctly; cl13 and the frontier preserve the right correction identity and select seal_right within one credit. However cl1 still calls left the current belief, cl5 says the job is not yet complete, and cl8 says no validation is complete alongside new succeeded records. These unqualified older claims could be historical evidence or stale current claims, so phase/conflict interpretation is ambiguous. No frontier reopens completed work.",
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "seal_right"
+            }
+          },
+          "observation": {
+            "operation_applied": "seal_right",
+            "public_receipt": {
+              "accepted": true,
+              "effects": {
+                "sealed_branch": "right"
+              }
+            },
+            "confirmed_effects": {
+              "sealed_branch": "right"
+            },
+            "incremented_values": {},
+            "remaining_credits": 0,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "archive_workflow:h4:seal_right:1",
+                "operation": "seal_right",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 0
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "left_confirmed": false,
+            "right_confirmed": true,
+            "left_repaired": false,
+            "right_repaired": true,
+            "job_submitted": true,
+            "backend_ready": true,
+            "job_done": true,
+            "validation_A": true,
+            "validation_B": true,
+            "sealed_branch": "right"
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Assistant source review is not independent human gold or condition blinded.",
+    "Known synthetic development tasks; one repetition for these stages.",
+    "Association of source content and behavior is not a randomized causal intervention.",
+    "Goal check booleans indicate agreement with expected values, not raw world values."
+  ]
+}

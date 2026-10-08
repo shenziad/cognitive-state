@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-10-04T03:41:17.286999+00:00",
+  "execution_frozen_assets_verified": 113,
+  "descriptive_supplement_frozen_assets_verified": 3,
+  "actual_model_messages_traces_worlds_scores_cost_indices_replayed": true,
+  "A_complete_cells": 72,
+  "preparation_records": 72,
+  "source_review_entries": 60,
+  "source_review_payload_and_seal_verified": true,
+  "prior_D_incomplete_and_original_gate_failed_preserved": true,
+  "prior_A_interruption_and_unknown_usage_preserved": true,
+  "deployment_shared_cost_identity_verified": true,
+  "campaign_cost_identity_verified": true,
+  "offline_tests_passed": {
+    "mechanism_and_runtime": 20,
+    "substantive_cost_attribution": 9
+  },
+  "sha256": {
+    "results/analysis/research_cycle5_20261004/analysis.md": "3d050759a9af6b4ca9948ac6d200c1bfdb2cc310d82256165e91296f3ef9b203",
+    "results/analysis/research_cycle5_20261004/summary.json": "ff5efe9a410b78b30bd6a1581103d3b1f4562c973b1cfb3ed97c001f5d29a375",
+    "results/analysis/research_cycle5_20261004/campaign.json": "e0a10eecf74e051efc9103eec505a4b63ef9820de9d7ae4e26d6f23fb4472e65",
+    "results/analysis/research_cycle5_20261004/goal_coverage_audit.json": "09d0618f21b89c73210c99db8c209629e314208c7b7dc3567e254da675ff9d50",
+    "results/analysis/cycle5_mechanism_v3_sources_20261004/source_review.json": "79ca7ce8bb69b950049e91e24f736c29cd8c0a375254f80373707c47b06ba23c",
+    "results/analysis/cycle5_mechanism_v3_sources_20261004/source_review_seal.json": "9d0ddeb4fba4f5b5a008e6c8cad145add5f196a4f758c2fc951a652b8e054c5d",
+    "results/analysis/cycle5_mechanism_v3_20261004/summary.json": "80021661c355af9addcebd995754113f74abaca9da171c88a28ca6fe1409563a",
+    "results/analysis/cycle5_mechanism_v3_20261004/audit.json": "10300b04fd78e9ed20a88204f36712bc44fef55acca2f4f469caf34924e3ab10",
+    "results/analysis/cycle5_mechanism_v3_supplement_20261004/cost_and_source.json": "c522401db904d3ae1940c1394f10f2be1ab871fcc197e042807dc06166116dd4"
+  },
+  "gitignore_env_verified": true,
+  "ubuntu_replay_verified": false,
+  "portability_note": "Raw records require transfer, matching dependencies, and a separate mapping for saved Windows source_run paths."
+}

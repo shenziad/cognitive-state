@@ -1,0 +1,42 @@
+{
+  "instance_id": "pilot03_request_timeout",
+  "files": {
+    "config/service.json": {
+      "timeout_ms": 1000,
+      "retry_count": 2,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Measured normal export latency is four seconds; use a five-second timeout.",
+      "recommended_settings": {
+        "timeout_ms": 5000
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "timeout_ms": 1000,
+        "retry_count": 2,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Exports time out after one second; increasing retries previously failed."
+  },
+  "rubric": {
+    "target_settings": {
+      "timeout_ms": 5000
+    },
+    "protected_keys": [
+      "retry_count",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "retry_count",
+        "value": 5
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

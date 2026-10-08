@@ -1,0 +1,4 @@
+Organize the task-relevant information in the supplied public history and interface as a concise intermediate draft. You cannot call tools here.
+A second preparation stage will receive the SAME original history and interface plus this draft, and will write the final strong summary. This draft is an extra information-processing step; it does not replace original evidence and adds no source authority.
+Identify the active requirements and constraints, decisive evidence and source identifiers, uncertainties, actual progress, relevant dependencies, remaining work and resources. Follow the common semantics without a required schema or G/W/F headings. Avoid unnecessary catalog copies.
+Return only the intermediate information draft within this call's output allowance. Do not fabricate events or new requirements and do not emit a tool action.

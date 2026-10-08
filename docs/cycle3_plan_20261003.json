@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-03",
+  "status": "frozen_before_real_calls",
+  "authorization": "User requested implementation, reliability preflight and subsequent comparison; comparison depends on passing preflight.",
+  "stages": [
+    "minimal_v03_and_offline_checks",
+    "independent_preflight",
+    "matched_known_regression_then_four_handoffs"
+  ],
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "representation_budget_utf8_bytes": 6000,
+  "max_output_tokens": 4096,
+  "max_representation_repairs_per_cell": 1,
+  "max_executor_steps": 6,
+  "preflight": {
+    "cases": 12,
+    "families": 6,
+    "variants": 2,
+    "repetitions": 2,
+    "conditions": [
+      "full_context",
+      "cs_v03"
+    ],
+    "assigned_cells": 48,
+    "max_api_calls": 350,
+    "gates": {
+      "v03_valid_at_least": 23,
+      "v03_success_at_least": 22,
+      "full_success_at_least": 23,
+      "per_condition_denominator": 24,
+      "critical_behavior_errors": 0
+    },
+    "semantic_review": {
+      "all_v03_states_reviewed_against_public_input": true,
+      "max_fabricated_completed_operations": 0,
+      "max_added_hard_user_requirements": 0,
+      "max_states_with_unsupported_reopened_questions": 2,
+      "reviewer": "assistant_source_audit_not_independent_human_gold"
+    }
+  },
+  "comparison": {
+    "regression_cases": 14,
+    "conditions": [
+      "full_context",
+      "summary",
+      "cs_v02",
+      "cs_v03"
+    ],
+    "regression_cells": 56,
+    "regression_call_cap": 450,
+    "longitudinal_scenarios": 2,
+    "handoffs": 4,
+    "longitudinal_cells": 32,
+    "longitudinal_call_cap": 260,
+    "repetitions": 1
+  },
+  "interface": "Public execute definitions and actual effect receipts shared by every condition; never expose rubric or unread observation values.",
+  "fairness": "Summary receives matching semantic preservation guidance and same one-repair cap. V0.2 means old representation/extraction prompt under the new common interface, budget and recovery protocol, not replay of old end-to-end system.",
+  "limits": [
+    "Known regression inputs and workflows were previously inspected; no unseen-generalization claim.",
+    "Versions combine multiple design changes; not a causal ablation of an individual field.",
+    "Preflight cases are new short synthetic fixtures; semantic audit is not independent researcher review.",
+    "One repetition outside preflight; no statistical equivalence claims.",
+    "Repair and all execution calls count; protocol errors remain in assigned denominators.",
+    "Raw bytes are not provider tokens, cached inputs and latency are reported separately."
+  ],
+  "failure_policy": "Keep failures; no performance-selective reruns or post-result prompt tuning. Failed gate stops before comparison. Provider errors stop current run with unknown usage distinguished; no incomplete performance claims."
+}

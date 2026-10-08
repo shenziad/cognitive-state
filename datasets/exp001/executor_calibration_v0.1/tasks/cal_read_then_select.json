@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_read_then_select",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: read current/eligibility and apply its eligible option. 2 credits."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "No eligibility measurement has been read and no choice applied. Use the catalog for available operations."
+    }
+  ]
+}

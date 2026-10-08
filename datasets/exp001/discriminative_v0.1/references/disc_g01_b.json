@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_g01_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Deliver validated v3 packet to public channel under revision 3",
+      "success_criteria": [
+        "v3 delivered to public"
+      ],
+      "constraints": [
+        "Latest scope overrides revision 1",
+        "At most 1 operation credit"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "v3 is validated and redacted",
+        "Revision 1 public plan was not executed"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Deliver validated v3 packet to public channel under revision 3",
+      "information_needs": [],
+      "next_action": "execute deliver_public"
+    }
+  }
+}

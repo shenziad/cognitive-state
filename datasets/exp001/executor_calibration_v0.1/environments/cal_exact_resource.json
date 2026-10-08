@@ -1,0 +1,68 @@
+{
+  "instance_id": "cal_exact_resource",
+  "environment_type": "continuation",
+  "initial_state": {
+    "stamp": "none",
+    "read": false
+  },
+  "operations": {
+    "stamp_oak": {
+      "description": "Stamp oak and close the file.",
+      "effects": {
+        "stamp": "oak"
+      },
+      "cost": 1
+    },
+    "stamp_elm": {
+      "description": "Stamp elm and close the file.",
+      "effects": {
+        "stamp": "elm"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {
+    "current/stamp": {
+      "description": "Read authoritative required stamp.",
+      "cost": 1,
+      "effects": {
+        "read": true
+      },
+      "observation": {
+        "required_stamp": "oak"
+      }
+    }
+  },
+  "budget": 2,
+  "rubric": {
+    "target_state": {
+      "stamp": "oak",
+      "read": true
+    },
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "stamp_oak"
+          }
+        },
+        "state": {
+          "read": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "stamp_elm"
+          }
+        },
+        "state": {
+          "read": true
+        }
+      }
+    ],
+    "finish_status": "completed"
+  }
+}

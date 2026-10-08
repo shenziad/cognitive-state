@@ -1,0 +1,17 @@
+{
+  "experiment_id": "cycle4-recovery-v1",
+  "status": "recovery_frozen",
+  "sha256": {
+    "docs/cycle4_recovery_v1.md": "ee10fda196f641a4a2d027c14c373e8edbfa77e6889dad1968d69950b7ae36fe",
+    "docs/cycle4_recovery_v1.json": "3bdc6547537dd931352cfa21e14aaf98a539c3d064c13a99233b9fa1cbcc2470",
+    "docs/freezes/cycle4_execution_v2.json": "166ac4a3bb1e671bf23faa0deb5a5058d66eada4856e8e154fb19d2d521835f4",
+    "docs/freezes/cycle4_protocol_v1.json": "dcc8cae1f375ca41da4a4379ea41fa0e70b180ec721db313fd4e5a2e772b1a96",
+    "results/raw/cycle4/preflight_v2_20261003/manifest.json": "0f0de31dc566b06624f35c532e0a62f521cc93f908dd03d4954bc79a89682fc2",
+    "results/raw/cycle4/preflight_v2_20261003/results.json": "a7d84d438ff045ea208ee5b794a3b955ece5fe161103d81759c32c23c6d6c191",
+    "results/raw/cycle4/preflight_v2_20261003/call_ledger.json": "243c7ad80d25e9a69bf3d74fee9967e488534b26a83caf8264bbd2b3d24da9ad",
+    "results/analysis/cycle4_preflight_v2_interrupted/service_probe.json": "67c49b5e07bdcfc14f723fd7017b2cdf8ac8a6cb4109adab2d9b415fd7a9f6fb",
+    "configs/cycle4_preflight_v1.json": "886758acd416f2cb59ada5cf0e37c33753efd96f2fb131751bddc48b77fb3790",
+    "configs/cycle4_regression_v1.json": "f229ab8c2eb6f28420c8b8661472401c7667d3ae548a5210b2f632ad889446ec",
+    "configs/cycle4_longitudinal_v1.json": "1f8fb2945f728cfa0e79c1dc9f6e3ad8f48244756ff6c70fe574df3b618d97c9"
+  }
+}

@@ -1,0 +1,3 @@
+# Research releases hash exact file bytes. Preserve them on Windows and Linux.
+* -text
+*.zip binary

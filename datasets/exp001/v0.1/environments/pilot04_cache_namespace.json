@@ -1,0 +1,45 @@
+{
+  "instance_id": "pilot04_cache_namespace",
+  "files": {
+    "config/service.json": {
+      "namespace": "shared",
+      "tenant_id": "tenant-b",
+      "ttl_seconds": 600,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "The namespace must equal tenant-b; freshness is not the cause of this incident.",
+      "recommended_settings": {
+        "namespace": "tenant-b"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "namespace": "shared",
+        "tenant_id": "tenant-b",
+        "ttl_seconds": 600,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Cache misses occur for tenant-b; clearing the cache previously did not help."
+  },
+  "rubric": {
+    "target_settings": {
+      "namespace": "tenant-b"
+    },
+    "protected_keys": [
+      "tenant_id",
+      "ttl_seconds",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "ttl_seconds",
+        "value": 60
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

@@ -1,0 +1,1538 @@
+{
+  "version": "cycle4-preflight-v1",
+  "cases": [
+    {
+      "instance_id": "p4_001",
+      "family": "lifecycle_1",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_001",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_job"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_002",
+      "family": "lifecycle_1",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Successfully submit the job and retain its accepted identity. Stop at acceptance; do not wait for the job result."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_002",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "submitted": true,
+            "job_done": false,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_003",
+      "family": "lifecycle_2",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 timed out. It is unknown whether the server accepted it or produced effects; no job handle was received. Use the public idempotency lookup before choosing whether to resubmit or obtain a result."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_003",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false,
+          "lookup_read": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            },
+            "effects": {
+              "lookup_read": true
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "consume_job"
+                }
+              },
+              "state": {
+                "lookup_read": true
+              }
+            }
+          ],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/submission"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_job"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_004",
+      "family": "lifecycle_2",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "After an earlier timeout, idempotency lookup confirmed attempt-1 accepted as job-17, still pending. This is a definitive acceptance record. No resubmission occurred."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_004",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_job"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_005",
+      "family": "lifecycle_3",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred. A matching job-17 terminal receipt confirms succeeded; result v1 saved."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_005",
+        "initial_state": {
+          "submitted": true,
+          "job_done": true,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_006",
+      "family": "lifecycle_3",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 returned accepted, job_id=job-17. Job-17 is accepted; its result is pending. No second submission occurred. A later terminal success receipt is for job-18 only. It does not update job-17."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_006",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_job"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_007",
+      "family": "lifecycle_4",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 accepted as job-17; job-17 subsequently succeeded, result v1 saved. No independent validation has run."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_007",
+        "initial_state": {
+          "submitted": true,
+          "job_done": true,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_008",
+      "family": "lifecycle_4",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete job-17 successfully; never resubmit an accepted job. Independently validate result v1 once; that validation is an explicit acceptance requirement."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Submission attempt-1 accepted as job-17; job-17 subsequently succeeded, result v1 saved. No independent validation has run."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_008",
+        "initial_state": {
+          "submitted": true,
+          "job_done": true,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "submit_job": {
+            "description": "Submit another job; do not repeat an accepted submission.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "increments": {
+              "submissions": 1
+            },
+            "repeat_key": "submitted",
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "attempt-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              },
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "accepted"
+              }
+            ]
+          },
+          "consume_job": {
+            "description": "Obtain the final successful result of accepted job-17.",
+            "effects": {
+              "job_done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            },
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "succeeded",
+                "version": "v1"
+              }
+            ]
+          },
+          "validate_result": {
+            "description": "Independently validate job-17 result v1.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "job_done": true
+            },
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            }
+          }
+        },
+        "observations": {
+          "current/submission": {
+            "description": "Idempotency lookup for attempt-1; resolves whether that attempt was accepted, without resubmission.",
+            "cost": 1,
+            "observation": {
+              "attempt_id": "attempt-1",
+              "accepted": true,
+              "job_id": "job-17",
+              "job_phase": "accepted"
+            }
+          }
+        },
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "job_done": true,
+            "submissions": 1,
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "validate_result"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_009",
+      "family": "lifecycle_5",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_009",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "cancel_job": {
+            "description": "Send another cancellation request for job-17.",
+            "effects": {},
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "cancel-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              }
+            ]
+          },
+          "consume_cancellation": {
+            "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+            "effects": {
+              "cancelled": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "cancelled"
+              }
+            ]
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "cancelled": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "cancel_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_cancellation"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_010",
+      "family": "lifecycle_5",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Cancel job-17 and confirm its terminal cancellation. Do not repeat an accepted cancellation request."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Cancellation request cancel-1 returned accepted for job-17; the job remains running and cancellation is not yet confirmed. A subsequent matching job-17 receipt confirms terminal cancelled."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_010",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": true,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "cancel_job": {
+            "description": "Send another cancellation request for job-17.",
+            "effects": {},
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "submission",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "submission",
+                "entity_id": "cancel-2",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "job-17"
+              }
+            ]
+          },
+          "consume_cancellation": {
+            "description": "Obtain terminal cancellation for job-17 after accepted cancel-1.",
+            "effects": {
+              "cancelled": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "job",
+              "semantics": "A submission response and the asynchronous job phase describe separate objects. Actual returned lifecycle records identify the observed object."
+            },
+            "lifecycle_receipt": [
+              {
+                "kind": "job",
+                "entity_id": "job-17",
+                "phase": "cancelled"
+              }
+            ]
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "cancelled": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "cancel_job"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_011",
+      "family": "lifecycle_6",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Apply setting gold. Do not repeat an already completed application."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Synchronous apply_gold call sync-1 returned confirmed effects: done=true, selected=gold."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_011",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "gold",
+          "done": true
+        },
+        "operations": {
+          "apply_gold": {
+            "description": "Synchronously apply setting gold.",
+            "effects": {
+              "selected": "gold",
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            },
+            "repeat_key": "done"
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_gold"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "p4_012",
+      "family": "lifecycle_6",
+      "control": false,
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Apply setting gold. Do not repeat an already completed application."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "Plan: call apply_gold then finish. No call was made; actual checkpoint observation confirms done=false, selected=unset."
+        },
+        {
+          "id": "p3",
+          "role": "runtime",
+          "content": "Checkpoint allowance: 2 credits. Tool identifiers are the exact catalog names."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "p4_012",
+        "initial_state": {
+          "submitted": true,
+          "job_done": false,
+          "validated": false,
+          "cancelled": false,
+          "submissions": 1,
+          "selected": "unset",
+          "done": false
+        },
+        "operations": {
+          "apply_gold": {
+            "description": "Synchronously apply setting gold.",
+            "effects": {
+              "selected": "gold",
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {},
+            "lifecycle_contract": {
+              "kind": "sync_operation",
+              "semantics": "Actual successful effects certify this synchronous operation."
+            },
+            "repeat_key": "done"
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "gold"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_gold"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ]
+    }
+  ]
+}

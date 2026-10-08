@@ -1,0 +1,143 @@
+{
+  "checkpoint": 2,
+  "instance_id": "iw04:h2",
+  "new_public_events": [
+    {
+      "id": "iw04:h2:u",
+      "role": "user",
+      "content": "Now confirm the portrait job has actually reached terminal cancellation. Do not repeat the accepted cancel request. The portrait release prohibition remains. Earlier obligations continue unless explicitly withdrawn; fulfill any that remain missing. A requirement to preserve an item does not certify it exists: determine previous action success only from this condition's actual receipts."
+    },
+    {
+      "id": "iw04:h2:n5",
+      "role": "assistant",
+      "content": "Office coordination note 2-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:n6",
+      "role": "assistant",
+      "content": "Office coordination note 2-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:n2",
+      "role": "assistant",
+      "content": "Office coordination note 2-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:n1",
+      "role": "assistant",
+      "content": "Office coordination note 2-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:n3",
+      "role": "assistant",
+      "content": "Office coordination note 2-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:e1",
+      "role": "tool",
+      "content": "Another job render-portrait-72 returned cancelled; this receipt does not describe render-portrait-73."
+    },
+    {
+      "id": "iw04:h2:n4",
+      "role": "assistant",
+      "content": "Office coordination note 2-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw04:h2:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "request_portrait_cancel",
+          "description": "Request cancellation of render-portrait-73; acceptance alone does not confirm cancellation.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "cancel_requested": true
+          },
+          "successful_increments": {
+            "cancel_requests": 1
+          },
+          "lifecycle_contract": {
+            "kind": "submission",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "confirm_portrait_cancel",
+          "description": "Obtain the terminal cancellation receipt for render-portrait-73.",
+          "cost": 1,
+          "preconditions": {
+            "cancel_requested": true
+          },
+          "successful_effects": {
+            "portrait_cancelled": true,
+            "portrait_running": false
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "job",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "check_landscape_rights",
+          "description": "Verify the rights of landscape result l4.",
+          "cost": 1,
+          "preconditions": {
+            "landscape_done": true
+          },
+          "successful_effects": {
+            "landscape_rights": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "release_landscape",
+          "description": "Release only landscape l4.",
+          "cost": 1,
+          "preconditions": {
+            "landscape_rights": true,
+            "portrait_cancelled": true
+          },
+          "successful_effects": {
+            "landscape_released": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "release_portrait",
+          "description": "Release the portrait asset.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "portrait_released": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw04:h2",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

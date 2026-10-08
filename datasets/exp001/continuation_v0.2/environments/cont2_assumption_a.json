@@ -1,0 +1,51 @@
+{
+  "instance_id": "cont2_assumption_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "encoding": "none"
+  },
+  "operations": {
+    "encode_L": {
+      "description": "Encode packet with the rune contract.",
+      "effects": {
+        "encoding": "rune"
+      },
+      "cost": 2
+    },
+    "encode_V": {
+      "description": "Encode packet with the tile contract.",
+      "effects": {
+        "encoding": "tile"
+      },
+      "cost": 2
+    }
+  },
+  "observations": {
+    "current/negotiation": {
+      "description": "Repeat receiver negotiation.",
+      "observation": {
+        "content": {
+          "contract": "tile"
+        }
+      },
+      "effects": {},
+      "cost": 1
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "encoding": "tile"
+    },
+    "finish_status": "completed",
+    "before_action": [],
+    "forbidden_actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_L"
+        }
+      }
+    ]
+  }
+}

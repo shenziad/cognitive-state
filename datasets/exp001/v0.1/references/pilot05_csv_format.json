@@ -1,0 +1,67 @@
+{
+  "instance_id": "pilot05_csv_format",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h06"
+    ],
+    "world.facts": [
+      "h03",
+      "h05",
+      "h07"
+    ],
+    "world.beliefs": [
+      "h04"
+    ],
+    "world.assumptions": [
+      "h02"
+    ],
+    "frontier": [
+      "h08"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Restore partner CSV imports",
+      "success_criteria": [
+        "All service checks pass"
+      ],
+      "constraints": [
+        "Preserve skip_errors=false; do not change it.",
+        "Preserve schema_version=1; do not change it.",
+        "No database migration; modify virtual service configuration only."
+      ],
+      "preferences": [
+        "Prefer a small, evidence-based change"
+      ]
+    },
+    "world": {
+      "facts": [
+        "Imported columns are merged and accented names are corrupted.",
+        "Earlier change {\"key\": \"delimiter\", \"value\": \",\"} failed and was reverted",
+        "Legacy runbook is deprecated; current runbook has not been read"
+      ],
+      "beliefs": [
+        {
+          "claim": "Input encoding may also differ from local settings",
+          "confidence": 0.6
+        }
+      ],
+      "assumptions": [
+        "The virtual fixture represents the interrupted service"
+      ]
+    },
+    "frontier": {
+      "current_focus": "Restore partner CSV imports",
+      "information_needs": [
+        "Current settings guidance"
+      ],
+      "next_action": "Read docs/runbook.json, then edit based on evidence and run checks"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "instance_id": "disc_control02_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "done_A": true,
+    "done_B": true,
+    "done_C": true
+  },
+  "operations": {
+    "run_A": {
+      "description": "Repeat stage A; costs 2 credits.",
+      "effects": {
+        "done_A": true
+      },
+      "cost": 2,
+      "repeat_key": "done_A"
+    }
+  },
+  "observations": {},
+  "budget": 0,
+  "rubric": {
+    "target_state": {
+      "done_A": true,
+      "done_B": true,
+      "done_C": true
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

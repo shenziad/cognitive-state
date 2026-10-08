@@ -1,0 +1,94 @@
+{
+  "dataset_version": "exp001-executor-calibration-v0.1",
+  "status": "synthetic_calibration_not_research_evidence",
+  "instances": [
+    {
+      "instance_id": "cal_choose_speed",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_choose_speed.json",
+      "environment": "environments/cal_choose_speed.json",
+      "reference": "references/cal_choose_speed.json",
+      "review": "review_cases/cal_choose_speed.json"
+    },
+    {
+      "instance_id": "cal_choose_constraint",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_choose_constraint.json",
+      "environment": "environments/cal_choose_constraint.json",
+      "reference": "references/cal_choose_constraint.json",
+      "review": "review_cases/cal_choose_constraint.json"
+    },
+    {
+      "instance_id": "cal_read_then_select",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_read_then_select.json",
+      "environment": "environments/cal_read_then_select.json",
+      "reference": "references/cal_read_then_select.json",
+      "review": "review_cases/cal_read_then_select.json"
+    },
+    {
+      "instance_id": "cal_remaining_work",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_remaining_work.json",
+      "environment": "environments/cal_remaining_work.json",
+      "reference": "references/cal_remaining_work.json",
+      "review": "review_cases/cal_remaining_work.json"
+    },
+    {
+      "instance_id": "cal_finish_only",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_finish_only.json",
+      "environment": "environments/cal_finish_only.json",
+      "reference": "references/cal_finish_only.json",
+      "review": "review_cases/cal_finish_only.json"
+    },
+    {
+      "instance_id": "cal_inflight",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_inflight.json",
+      "environment": "environments/cal_inflight.json",
+      "reference": "references/cal_inflight.json",
+      "review": "review_cases/cal_inflight.json"
+    },
+    {
+      "instance_id": "cal_update_assumption",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_update_assumption.json",
+      "environment": "environments/cal_update_assumption.json",
+      "reference": "references/cal_update_assumption.json",
+      "review": "review_cases/cal_update_assumption.json"
+    },
+    {
+      "instance_id": "cal_exact_resource",
+      "pair_id": null,
+      "variant": "a",
+      "primary_component": "control",
+      "control": true,
+      "task": "tasks/cal_exact_resource.json",
+      "environment": "environments/cal_exact_resource.json",
+      "reference": "references/cal_exact_resource.json",
+      "review": "review_cases/cal_exact_resource.json"
+    }
+  ]
+}

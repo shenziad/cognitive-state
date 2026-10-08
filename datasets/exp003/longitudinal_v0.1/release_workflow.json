@@ -1,0 +1,629 @@
+{
+  "scenario_id": "release_workflow",
+  "review_status": "assistant_constructed_pending_independent_review",
+  "public_goal": {
+    "id": "release_goal",
+    "role": "user",
+    "content": "Deliver a verified release for workspace sable. Honor the latest audience and transport requirements. Preserve accepted repairs and validations; never rerun them. An unconfirmed diagnostic hypothesis is not permission to repair. At each checkpoint, execute only that checkpoint, then finish completed."
+  },
+  "initial_state": {
+    "cache_confirmed": true,
+    "queue_confirmed": false,
+    "cache_repaired": false,
+    "queue_repaired": false,
+    "test_A": false,
+    "test_B": false,
+    "bundle_ready": false,
+    "audience": "unset",
+    "route": "unset",
+    "delivery_audience": "unset",
+    "delivery_route": "unset"
+  },
+  "handoffs": [
+    {
+      "public_events": [
+        {
+          "id": "release_1_request",
+          "role": "user",
+          "content": "Checkpoint 1: initial policy is a public release; remote transport is permitted. Fix the confirmed fault. Credit allowance for this checkpoint: 2."
+        },
+        {
+          "id": "release_1_evidence",
+          "role": "tool",
+          "content": "Diagnostic d1 confirms a cache fault. The queue explanation remains an unconfirmed belief with confidence 0.7. No repair has yet been applied."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "repair_cache": {
+            "description": "Apply a cache repair. Costs two credits.",
+            "cost": 2,
+            "effects": {
+              "cache_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "cache_repaired": true
+              }
+            },
+            "repeat_key": "cache_repaired"
+          },
+          "repair_queue": {
+            "description": "Apply a queue repair. Costs two credits.",
+            "cost": 2,
+            "effects": {
+              "queue_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "queue_repaired": true
+              }
+            },
+            "repeat_key": "queue_repaired"
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "cache_repaired": true,
+            "queue_repaired": false
+          },
+          "finish_status": "completed",
+          "before_action": [
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "repair_cache"
+                }
+              },
+              "state": {
+                "cache_confirmed": true
+              }
+            },
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "repair_queue"
+                }
+              },
+              "state": {
+                "queue_confirmed": true
+              }
+            }
+          ],
+          "forbidden_actions": []
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "release_2_request",
+          "role": "user",
+          "content": "Checkpoint 2: resolve the outstanding confirmed fault, then complete test stages A and B. Keep accepted work; this checkpoint has 4 credits."
+        },
+        {
+          "id": "release_2_evidence",
+          "role": "tool",
+          "content": "Corrected diagnostic d2: the cache symptom was secondary; the current root cause is confirmed to be the queue. Any cache repair actually accepted earlier remains valid; this message does not establish whether one was executed. The cache diagnosis is superseded and must not be used as evidence for another cache repair."
+        }
+      ],
+      "external_state_patch": {
+        "cache_confirmed": false,
+        "queue_confirmed": true
+      },
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "repair_cache": {
+            "description": "Apply a cache repair. Costs two credits.",
+            "cost": 2,
+            "effects": {
+              "cache_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "cache_repaired": true
+              }
+            },
+            "repeat_key": "cache_repaired"
+          },
+          "repair_queue": {
+            "description": "Apply a queue repair. Costs two credits.",
+            "cost": 2,
+            "effects": {
+              "queue_repaired": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "queue_repaired": true
+              }
+            },
+            "repeat_key": "queue_repaired"
+          },
+          "validate_A": {
+            "description": "Validate test stage A after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_A": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_A": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_A"
+          },
+          "validate_B": {
+            "description": "Validate test stage B after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_B": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_B": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_B"
+          }
+        },
+        "observations": {},
+        "budget": 4,
+        "rubric": {
+          "target_state": {
+            "cache_repaired": true,
+            "queue_repaired": true,
+            "test_A": true,
+            "test_B": true
+          },
+          "finish_status": "completed",
+          "before_action": [
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "repair_cache"
+                }
+              },
+              "state": {
+                "cache_confirmed": true
+              }
+            },
+            {
+              "action": {
+                "tool": "execute",
+                "arguments": {
+                  "operation": "repair_queue"
+                }
+              },
+              "state": {
+                "queue_confirmed": true
+              }
+            }
+          ],
+          "forbidden_actions": []
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "release_3_revision",
+          "role": "user",
+          "content": "Checkpoint 3: the customer cancels public delivery. From now on the release must be private, and offline transport is a hard constraint. Assemble the bundle and select transport under this revised requirement. Do not repeat accepted tests. This checkpoint has 2 credits."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "validate_A": {
+            "description": "Validate test stage A after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_A": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_A": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_A"
+          },
+          "validate_B": {
+            "description": "Validate test stage B after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_B": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_B": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_B"
+          },
+          "pack_private": {
+            "description": "Assemble a private audience bundle after both tests.",
+            "cost": 1,
+            "effects": {
+              "bundle_ready": true,
+              "audience": "private"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "bundle_ready": true,
+                "audience": "private"
+              }
+            },
+            "required_state": {
+              "test_A": true,
+              "test_B": true
+            },
+            "repeat_key": "bundle_ready"
+          },
+          "pack_public": {
+            "description": "Assemble a public audience bundle after both tests.",
+            "cost": 1,
+            "effects": {
+              "bundle_ready": true,
+              "audience": "public"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "bundle_ready": true,
+                "audience": "public"
+              }
+            },
+            "required_state": {
+              "test_A": true,
+              "test_B": true
+            },
+            "repeat_key": "bundle_ready"
+          },
+          "choose_offline": {
+            "description": "Select offline transport.",
+            "cost": 1,
+            "effects": {
+              "route": "offline"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "route": "offline"
+              }
+            }
+          },
+          "choose_remote": {
+            "description": "Select remote transport.",
+            "cost": 1,
+            "effects": {
+              "route": "remote"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "route": "remote"
+              }
+            }
+          }
+        },
+        "observations": {},
+        "budget": 2,
+        "rubric": {
+          "target_state": {
+            "cache_repaired": true,
+            "queue_repaired": true,
+            "test_A": true,
+            "test_B": true,
+            "bundle_ready": true,
+            "audience": "private",
+            "route": "offline"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "pack_public"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "choose_remote"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "public_events": [
+        {
+          "id": "release_4_request",
+          "role": "user",
+          "content": "Checkpoint 4: finalize the release using the latest approved audience and transport requirements. Preserve previously accepted repairs, tests, and bundle; do not recreate them. No requirements changed. This checkpoint has 1 credit."
+        },
+        {
+          "id": "release_4_evidence",
+          "role": "tool",
+          "content": "Final signing service is ready. The artifact hash is release-9f2. This readiness message does not restate audience or transport policy."
+        }
+      ],
+      "external_state_patch": {},
+      "environment": {
+        "environment_type": "continuation",
+        "initial_state": {},
+        "operations": {
+          "validate_A": {
+            "description": "Validate test stage A after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_A": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_A": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_A"
+          },
+          "validate_B": {
+            "description": "Validate test stage B after both repairs.",
+            "cost": 1,
+            "effects": {
+              "test_B": true
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "test_B": true
+              }
+            },
+            "required_state": {
+              "cache_repaired": true,
+              "queue_repaired": true
+            },
+            "repeat_key": "test_B"
+          },
+          "pack_private": {
+            "description": "Assemble a private audience bundle after both tests.",
+            "cost": 1,
+            "effects": {
+              "bundle_ready": true,
+              "audience": "private"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "bundle_ready": true,
+                "audience": "private"
+              }
+            },
+            "required_state": {
+              "test_A": true,
+              "test_B": true
+            },
+            "repeat_key": "bundle_ready"
+          },
+          "pack_public": {
+            "description": "Assemble a public audience bundle after both tests.",
+            "cost": 1,
+            "effects": {
+              "bundle_ready": true,
+              "audience": "public"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "bundle_ready": true,
+                "audience": "public"
+              }
+            },
+            "required_state": {
+              "test_A": true,
+              "test_B": true
+            },
+            "repeat_key": "bundle_ready"
+          },
+          "choose_offline": {
+            "description": "Select offline transport.",
+            "cost": 1,
+            "effects": {
+              "route": "offline"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "route": "offline"
+              }
+            }
+          },
+          "choose_remote": {
+            "description": "Select remote transport.",
+            "cost": 1,
+            "effects": {
+              "route": "remote"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "route": "remote"
+              }
+            }
+          },
+          "deliver_private_offline": {
+            "description": "Deliver for private audience using offline transport after bundle assembly.",
+            "cost": 1,
+            "effects": {
+              "delivery_audience": "private",
+              "delivery_route": "offline"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "delivery_audience": "private",
+                "delivery_route": "offline"
+              }
+            },
+            "required_state": {
+              "bundle_ready": true,
+              "test_A": true,
+              "test_B": true
+            }
+          },
+          "deliver_private_remote": {
+            "description": "Deliver for private audience using remote transport after bundle assembly.",
+            "cost": 1,
+            "effects": {
+              "delivery_audience": "private",
+              "delivery_route": "remote"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "delivery_audience": "private",
+                "delivery_route": "remote"
+              }
+            },
+            "required_state": {
+              "bundle_ready": true,
+              "test_A": true,
+              "test_B": true
+            }
+          },
+          "deliver_public_offline": {
+            "description": "Deliver for public audience using offline transport after bundle assembly.",
+            "cost": 1,
+            "effects": {
+              "delivery_audience": "public",
+              "delivery_route": "offline"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "delivery_audience": "public",
+                "delivery_route": "offline"
+              }
+            },
+            "required_state": {
+              "bundle_ready": true,
+              "test_A": true,
+              "test_B": true
+            }
+          },
+          "deliver_public_remote": {
+            "description": "Deliver for public audience using remote transport after bundle assembly.",
+            "cost": 1,
+            "effects": {
+              "delivery_audience": "public",
+              "delivery_route": "remote"
+            },
+            "observation": {
+              "accepted": true,
+              "effects": {
+                "delivery_audience": "public",
+                "delivery_route": "remote"
+              }
+            },
+            "required_state": {
+              "bundle_ready": true,
+              "test_A": true,
+              "test_B": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "cache_repaired": true,
+            "queue_repaired": true,
+            "test_A": true,
+            "test_B": true,
+            "audience": "private",
+            "route": "offline",
+            "delivery_audience": "private",
+            "delivery_route": "offline"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "deliver_private_remote"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "deliver_public_offline"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "deliver_public_remote"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "pack_public"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "choose_remote"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

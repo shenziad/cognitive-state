@@ -1,0 +1,15 @@
+{
+  "instance_id": "cal_inflight",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace quartz: send one batch exactly once and verify its receipt. 1 credit remains."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "send_batch was already issued once. q42 is pending. No receipt observed yet."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "instance_id": "disc_f01_a",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/job17"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

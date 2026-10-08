@@ -1,0 +1,16 @@
+{
+  "execution_version": "cycle4-execution-v2",
+  "ready_for_real_preflight": true,
+  "regression_requires_real_preflight_gate": true,
+  "longitudinal_requires_real_regression_gate": true,
+  "unit_tests_passed": 117,
+  "execution_assets_hashed": 55,
+  "protocol_assets_verified": 17,
+  "v1_archive_verified": true,
+  "api_calls_this_implementation": 0,
+  "limitations": [
+    "Offline oracle solvability and replay are not model performance.",
+    "Source audit is not independent human gold.",
+    "Known synthetic tasks do not establish long-horizon generalization."
+  ]
+}

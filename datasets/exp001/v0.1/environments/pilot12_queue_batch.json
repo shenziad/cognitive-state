@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot12_queue_batch",
+  "files": {
+    "config/service.json": {
+      "batch_size": 100,
+      "ack_mode": "automatic",
+      "delete_on_failure": false,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Consumer supports batches of 50 and manual acknowledgement.",
+      "recommended_settings": {
+        "batch_size": 50,
+        "ack_mode": "manual"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "batch_size": 100,
+        "ack_mode": "automatic",
+        "delete_on_failure": false,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Batches are rejected; failed items must remain recoverable."
+  },
+  "rubric": {
+    "target_settings": {
+      "batch_size": 50,
+      "ack_mode": "manual"
+    },
+    "protected_keys": [
+      "delete_on_failure",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "batch_size",
+        "value": 100
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

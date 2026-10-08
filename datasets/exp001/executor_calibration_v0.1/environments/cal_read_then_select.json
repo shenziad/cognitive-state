@@ -1,0 +1,68 @@
+{
+  "instance_id": "cal_read_then_select",
+  "environment_type": "continuation",
+  "initial_state": {
+    "choice": "none",
+    "read": false
+  },
+  "operations": {
+    "accept_kappa": {
+      "description": "Apply eligibility selection kappa.",
+      "effects": {
+        "choice": "kappa"
+      },
+      "cost": 1
+    },
+    "accept_mu": {
+      "description": "Apply eligibility selection mu.",
+      "effects": {
+        "choice": "mu"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {
+    "current/eligibility": {
+      "description": "Read eligibility measurement.",
+      "cost": 1,
+      "effects": {
+        "read": true
+      },
+      "observation": {
+        "eligible": "mu"
+      }
+    }
+  },
+  "budget": 2,
+  "rubric": {
+    "target_state": {
+      "choice": "mu",
+      "read": true
+    },
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "accept_kappa"
+          }
+        },
+        "state": {
+          "read": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "accept_mu"
+          }
+        },
+        "state": {
+          "read": true
+        }
+      }
+    ],
+    "finish_status": "completed"
+  }
+}

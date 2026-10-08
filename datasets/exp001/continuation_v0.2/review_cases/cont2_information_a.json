@@ -1,0 +1,57 @@
+{
+  "instance_id": "cont2_information_a",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/venue_certificate"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "register_R29_P63"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_strategy": "Without trusting or guessing lost certificate values, re-read cargo and venue and register their observed pair.",
+  "no_history_recovery_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/cargo_certificate"
+      }
+    },
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/venue_certificate"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "register_R29_P63"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_expected": {
+    "task_success": false,
+    "credits": 5,
+    "retained_history_credits": 3,
+    "failure": "two evidence readings plus registration exceed 3 credits"
+  },
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

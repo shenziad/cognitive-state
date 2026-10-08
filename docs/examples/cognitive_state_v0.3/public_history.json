@@ -1,0 +1,74 @@
+[
+  {
+    "id": "h01",
+    "role": "user",
+    "content": "Obtain exactly one fulfilled reservation. Once a request is accepted, do not submit another. Finish when public tool evidence supports fulfilment."
+  },
+  {
+    "id": "h02",
+    "role": "tool_contract",
+    "content": {
+      "version": "design-example-v0.3",
+      "scope": "one active reservation",
+      "acceptance_validity": "An accepted request remains accepted unless an explicit cancellation or replacement event is received.",
+      "operations": {
+        "request_H": {
+          "broker": "pearl",
+          "cost": 2,
+          "effect": "Submit a reservation; acceptance is not fulfilment."
+        },
+        "consume_Z": {
+          "broker": "pearl",
+          "cost": 2,
+          "preconditions": [
+            "accepted pearl request",
+            "pending notice"
+          ],
+          "effect": "Consume the pending notice and fulfil that reservation; does not create a second request.",
+          "success_receipt_fields": [
+            "request_id",
+            "broker",
+            "phase",
+            "request_count",
+            "fulfilled",
+            "remaining_credits"
+          ]
+        }
+      },
+      "resources": {
+        "current/reservation_ledger": {
+          "cost": 2,
+          "returns": [
+            "accepted identity",
+            "fulfilment status"
+          ]
+        }
+      },
+      "finish": {
+        "cost": 0,
+        "effect": "Record completed or blocked; no hidden score is returned."
+      }
+    }
+  },
+  {
+    "id": "h03",
+    "role": "tool",
+    "content": {
+      "action": "request_H",
+      "request_id": "reservation-1",
+      "broker": "pearl",
+      "phase": "accepted",
+      "request_count": 1,
+      "fulfilled": false,
+      "notice": "pending"
+    }
+  },
+  {
+    "id": "h04",
+    "role": "runtime",
+    "content": {
+      "credit_scope": "current-checkpoint",
+      "remaining_credits": 3
+    }
+  }
+]

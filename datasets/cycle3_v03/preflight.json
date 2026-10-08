@@ -1,0 +1,1049 @@
+{
+  "version": "preflight-v0.3",
+  "cases": [
+    {
+      "instance_id": "pre03_goal_revision_a",
+      "family": "goal_revision",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply violet."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply amber. The earlier violet choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_goal_revision_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_amber"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_goal_revision_b",
+      "family": "goal_revision",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Earlier requirement: apply amber."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "Replace that requirement: apply violet. The earlier amber choice is cancelled. No setting has been applied."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_goal_revision_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_violet"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_accepted_pending_a",
+      "family": "accepted_pending",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job birch-17: submit_amber accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_accepted_pending_a",
+        "initial_state": {
+          "done": false,
+          "selected": "amber",
+          "submitted": true,
+          "validated": false
+        },
+        "operations": {
+          "submit_amber": {
+            "description": "Submit another job; forbidden after acceptance.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "consume_amber": {
+            "description": "Consume the accepted pending job notice; confirms job done.",
+            "effects": {
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_amber"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_amber"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_accepted_pending_b",
+      "family": "accepted_pending",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Complete exactly the already accepted job; never submit it a second time."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "Job birch-17: submit_violet accepted. submitted=true; done=false. Completion notice pending. Accepted identity remains valid; no cancellation or replacement has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_accepted_pending_b",
+        "initial_state": {
+          "done": false,
+          "selected": "violet",
+          "submitted": true,
+          "validated": false
+        },
+        "operations": {
+          "submit_violet": {
+            "description": "Submit another job; forbidden after acceptance.",
+            "effects": {
+              "submitted": true
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "consume_violet": {
+            "description": "Consume the accepted pending job notice; confirms job done.",
+            "effects": {
+              "done": true
+            },
+            "cost": 1,
+            "required_state": {
+              "submitted": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "submit_violet"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_violet"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_already_done_a",
+      "family": "already_done",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply amber and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_amber and validate accepted with confirmed effects: done=true, selected=amber, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_already_done_a",
+        "initial_state": {
+          "done": true,
+          "selected": "amber",
+          "submitted": false,
+          "validated": true
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 0,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_already_done_b",
+      "family": "already_done",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply violet and validate; do not repeat completed work."
+        },
+        {
+          "id": "p3",
+          "role": "tool",
+          "content": "apply_violet and validate accepted with confirmed effects: done=true, selected=violet, validated=true. These are actual results, not a plan."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 0 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_already_done_b",
+        "initial_state": {
+          "done": true,
+          "selected": "violet",
+          "submitted": false,
+          "validated": true
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 0,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_plan_only_a",
+      "family": "plan_only",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply amber."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_amber, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_plan_only_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_amber"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_plan_only_b",
+      "family": "plan_only",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply violet."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Plan: apply_violet, then finish. No tool was called; this plan proves no completion."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Checkpoint observation: done=false, selected=none. No action has occurred."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_plan_only_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_violet"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_assumption_refuted_a",
+      "family": "assumption_refuted",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors violet, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms amber, refutes violet. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_assumption_refuted_a",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_violet"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_amber"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_assumption_refuted_b",
+      "family": "assumption_refuted",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "user",
+          "content": "Apply the setting confirmed by measurement; the initial assumption is not evidence."
+        },
+        {
+          "id": "p3",
+          "role": "assistant",
+          "content": "Initial hypothesis favors amber, subjective confidence 0.7; no measurement or execution yet."
+        },
+        {
+          "id": "p4",
+          "role": "tool",
+          "content": "Signed measurement confirms violet, refutes amber. Neither apply operation has run."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_assumption_refuted_b",
+        "initial_state": {
+          "done": false,
+          "selected": "none",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet"
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_amber"
+              }
+            }
+          ]
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "apply_violet"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_explicit_verification_a",
+      "family": "explicit_verification",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_amber completed; done=true, selected=amber. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_explicit_verification_a",
+        "initial_state": {
+          "done": true,
+          "selected": "amber",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "validate": {
+            "description": "Independently validate the completed setting.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "done": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "amber",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "validate"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    },
+    {
+      "instance_id": "pre03_explicit_verification_b",
+      "family": "explicit_verification",
+      "history": [
+        {
+          "id": "p1",
+          "role": "user",
+          "content": "Complete the current checkpoint in workshop birch using confirmed evidence; no unnecessary repeats. Only finish completed after all required effects are observed."
+        },
+        {
+          "id": "p2",
+          "role": "tool",
+          "content": "apply_violet completed; done=true, selected=violet. Validation has not been run."
+        },
+        {
+          "id": "p3",
+          "role": "user",
+          "content": "New explicit acceptance requirement: run the independent validation once. Keep the completed setting; do not reapply it. Validation itself is required, not a speculative recheck."
+        },
+        {
+          "id": "p9",
+          "role": "runtime",
+          "content": "Current checkpoint allowance: 1 credits. This replaces any previous allowance."
+        }
+      ],
+      "environment": {
+        "environment_type": "continuation",
+        "instance_id": "pre03_explicit_verification_b",
+        "initial_state": {
+          "done": true,
+          "selected": "violet",
+          "submitted": false,
+          "validated": false
+        },
+        "operations": {
+          "apply_amber": {
+            "description": "Apply the amber setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "amber"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "apply_violet": {
+            "description": "Apply the violet setting and complete this setting task.",
+            "effects": {
+              "done": true,
+              "selected": "violet"
+            },
+            "cost": 1,
+            "required_state": {}
+          },
+          "validate": {
+            "description": "Independently validate the completed setting.",
+            "effects": {
+              "validated": true
+            },
+            "cost": 1,
+            "required_state": {
+              "done": true
+            }
+          }
+        },
+        "observations": {},
+        "budget": 1,
+        "rubric": {
+          "target_state": {
+            "done": true,
+            "selected": "violet",
+            "validated": true
+          },
+          "finish_status": "completed",
+          "before_action": [],
+          "forbidden_actions": []
+        }
+      },
+      "offline_solution": [
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "validate"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        }
+      ],
+      "review_note": "Private solution never enters model input. Author constructed, not independently human reviewed."
+    }
+  ]
+}

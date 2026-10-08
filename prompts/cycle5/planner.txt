@@ -1,0 +1,4 @@
+Prepare a concise execution plan from the complete available public history and interface. You cannot call tools here.
+The executor will receive the ENTIRE unchanged public history and this plan. This stage is additional planning, not compression. Identify the current requirements, supporting or missing evidence, relevant constraints, remaining work and an action sequence feasible under the current public prices and resources.
+Do not treat a planned step as executed, fabricate outcomes, or add verification requirements. If the checkpoint is already satisfied, say that the executor can finish based on its actual evidence. The plan is a nonauthoritative aid; it does not replace the history.
+Return only the plan, within this call's output allowance. Do not attempt to call tools or emit a tool action.

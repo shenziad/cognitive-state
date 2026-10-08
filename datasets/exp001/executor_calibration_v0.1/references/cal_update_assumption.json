@@ -1,0 +1,42 @@
+{
+  "instance_id": "cal_update_assumption",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01"
+    ],
+    "world": [
+      "h02"
+    ],
+    "frontier": [
+      "h01",
+      "h02"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Workspace quartz: deploy the parser matching the authoritative handshake. 1 credit.",
+      "success_criteria": [
+        "Active requirements satisfied"
+      ],
+      "constraints": [],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Earlier default r30 was only an assumption. Current verified handshake is r32; no deployment has occurred."
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Continue from the supplied evidence",
+      "information_needs": [],
+      "next_action": "Use public tools to satisfy the task"
+    }
+  }
+}

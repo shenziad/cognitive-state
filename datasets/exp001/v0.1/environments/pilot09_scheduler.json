@@ -1,0 +1,45 @@
+{
+  "instance_id": "pilot09_scheduler",
+  "files": {
+    "config/service.json": {
+      "timezone": "UTC",
+      "hour": 9,
+      "duplicate_guard": true,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Use Asia/Hong_Kong with the existing hour=9; preserve the duplicate guard.",
+      "recommended_settings": {
+        "timezone": "Asia/Hong_Kong"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "timezone": "UTC",
+        "hour": 9,
+        "duplicate_guard": true,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Billing runs eight hours late; the configured hour is already correct."
+  },
+  "rubric": {
+    "target_settings": {
+      "timezone": "Asia/Hong_Kong"
+    },
+    "protected_keys": [
+      "hour",
+      "duplicate_guard",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "hour",
+        "value": 1
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

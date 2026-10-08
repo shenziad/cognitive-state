@@ -1,0 +1,42 @@
+{
+  "instance_id": "pilot06_tls_bundle",
+  "files": {
+    "config/service.json": {
+      "ca_bundle": "legacy.pem",
+      "verify_tls": true,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "The rotated certificate chains to partner-ca.pem.",
+      "recommended_settings": {
+        "ca_bundle": "partner-ca.pem"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "ca_bundle": "legacy.pem",
+        "verify_tls": true,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Certificate verification fails after partner certificate rotation."
+  },
+  "rubric": {
+    "target_settings": {
+      "ca_bundle": "partner-ca.pem"
+    },
+    "protected_keys": [
+      "verify_tls",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "ca_bundle",
+        "value": "legacy.pem"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "protocol_id": "cycle4-scoped-lifecycle-v1",
+  "frozen_date": "2026-10-03",
+  "status": "protocol_frozen_execution_pending",
+  "model_calls_for_this_revision": 0,
+  "execution_ready": false,
+  "scope": "Protocol specification and protected historical inputs. Full runtime, prompts and instantiated benchmarks require separate execution manifest before model calls.",
+  "protocol_files": [
+    "docs/operation_lifecycle_v0.3.1.md",
+    "docs/cycle4_protocol_20261003.md",
+    "docs/cycle4_plan_20261003.json",
+    "docs/schemas/cognitive_state_v0.3.1.schema.json",
+    "docs/examples/cognitive_state_v0.3.1/conformance_cases.json",
+    "docs/examples/cognitive_state_v0.3.1/gate_cases.json",
+    "prompts/cycle4/lifecycle_common.txt",
+    "configs/cycle4_protocol_v1.json",
+    "scripts/check_cycle4_protocol.py"
+  ],
+  "protected_inputs": [
+    "datasets/cycle3_v03r2/regression.json",
+    "datasets/cycle3_v03r2/longitudinal.json",
+    "prompts/v0.3/cognitive_state.txt",
+    "docs/cycle3_r2_plan_20261003.json",
+    "src/state/v03r2.py",
+    "scripts/run_v03_cycle_r2.py",
+    "results/analysis/research_cycle3_20261003/analysis.md",
+    "results/analysis/cycle3_preflight_r2_20261003/gate.json"
+  ],
+  "sha256": {
+    "docs/operation_lifecycle_v0.3.1.md": "5bc9ba535d887525a90457c78dfc99c4fa18832d7b17f50b5d2c24b02f8efd5d",
+    "docs/cycle4_protocol_20261003.md": "efe3f76e1a0e3e165f07a07f4e3a3969b39ac3bc895d38f4d18e0465b964bb28",
+    "docs/cycle4_plan_20261003.json": "a55297b3c2be397194d6af57cfe269c9a6a3f438005d488c3b218a7b244da7c9",
+    "docs/schemas/cognitive_state_v0.3.1.schema.json": "f3e2c46309994ae854c5e4779e951639d28206442453906b09a6d5ee540987dc",
+    "docs/examples/cognitive_state_v0.3.1/conformance_cases.json": "8d1eb57c42301826da2155df28c259a7568be3f4ac03ec4b342bfc0de7297e8d",
+    "docs/examples/cognitive_state_v0.3.1/gate_cases.json": "36843b4f4ed22e84743f23a591c01339b75d46084a0f3b886318143885b3e736",
+    "prompts/cycle4/lifecycle_common.txt": "86ae8e84f88700e14b0ef1547f9981c2863663101286c9b2031759fad1c70b66",
+    "configs/cycle4_protocol_v1.json": "037f4ab2b9cfe9d1c88c0a8c8f020ed8950c12734d1157a34fde3410a011a8b5",
+    "scripts/check_cycle4_protocol.py": "3e9666e04d5d72df6ac919220b467e78c11a502f8caf5e504f5214522b6c263a",
+    "datasets/cycle3_v03r2/regression.json": "34e9067a69cfd3f962b6e9911ac698fa8e505d745f45be01a930fd9f12dceb71",
+    "datasets/cycle3_v03r2/longitudinal.json": "acbcfb849714b58f6ae00a080ecde0aea80a7263969480fe047732bac323566c",
+    "prompts/v0.3/cognitive_state.txt": "a2b59ab83e2a9a36820ae09c547ce02f8b2e2546fdeb08432017e3f519278530",
+    "docs/cycle3_r2_plan_20261003.json": "08691842b3ed53f646e05d728db67b6ec4e643ae9457032a559b23d654025beb",
+    "src/state/v03r2.py": "c9a052fbe16ccbda4a786e0d303ae7e6c6500cdd3351c97d040b0428fc916a4f",
+    "scripts/run_v03_cycle_r2.py": "8b231589b042d3edd64ed1d63996e6dd8768a6837188762f70501d23e36e0e64",
+    "results/analysis/research_cycle3_20261003/analysis.md": "eacc50599a6a4ed5020c92b07e32e47afeabe1997a4da96e2a2842feaadb7ac4",
+    "results/analysis/cycle3_preflight_r2_20261003/gate.json": "a623f8f5f8eb2817d57e393ff3f7c60f0ec851f0ac3f1ce4ac447e343a29e07e"
+  },
+  "modification_policy": "Do not overwrite this freeze. Create a new protocol version for material study changes; preserve cycle3 failed gate. Future execution manifest must reference the SHA256 of this manifest."
+}

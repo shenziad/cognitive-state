@@ -1,0 +1,115 @@
+{
+  "instance_id": "cont2_inflight_a",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace lumen: obtain exactly one fulfilled reservation using either broker. Do not submit another reservation once one has been accepted. 3 credits remain at resumption."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Public tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute request_D: Submit a reservation to jade broker; creates a new request. Cost=2. execute request_H: Submit a reservation to pearl broker; creates a new request. Cost=2. execute consume_U: Consume the jade broker notice; requires an accepted jade reservation. Cost=2. execute consume_Z: Consume the pearl broker notice; requires an accepted pearl reservation. Cost=2. observe current/reservation_ledger: Recover accepted reservation identity from the ledger. Cost=2."
+    },
+    {
+      "id": "h03",
+      "role": "assistant",
+      "content": "I initially considered request_D, followed by consume_U. This tentative sequence is not an acceptance receipt."
+    },
+    {
+      "id": "d000",
+      "role": "tool",
+      "content": "Closed archive inflight-000, workspace vault, unrelated to current workspace lumen. Batch 430 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q80 and S40. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d001",
+      "role": "tool",
+      "content": "Closed archive inflight-001, workspace vault, unrelated to current workspace lumen. Batch 431 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q81 and S41. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d002",
+      "role": "tool",
+      "content": "Closed archive inflight-002, workspace vault, unrelated to current workspace lumen. Batch 432 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q82 and S42. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d003",
+      "role": "tool",
+      "content": "Closed archive inflight-003, workspace vault, unrelated to current workspace lumen. Batch 433 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q83 and S43. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d004",
+      "role": "tool",
+      "content": "Closed archive inflight-004, workspace vault, unrelated to current workspace lumen. Batch 434 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q84 and S44. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d005",
+      "role": "tool",
+      "content": "Closed archive inflight-005, workspace vault, unrelated to current workspace lumen. Batch 435 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q85 and S45. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d006",
+      "role": "tool",
+      "content": "Closed archive inflight-006, workspace vault, unrelated to current workspace lumen. Batch 436 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q86 and S46. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d007",
+      "role": "tool",
+      "content": "Closed archive inflight-007, workspace vault, unrelated to current workspace lumen. Batch 437 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q87 and S47. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d008",
+      "role": "tool",
+      "content": "Closed archive inflight-008, workspace vault, unrelated to current workspace lumen. Batch 438 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q88 and S48. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d009",
+      "role": "tool",
+      "content": "Closed archive inflight-009, workspace vault, unrelated to current workspace lumen. Batch 439 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q89 and S49. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d010",
+      "role": "tool",
+      "content": "Closed archive inflight-010, workspace vault, unrelated to current workspace lumen. Batch 440 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q90 and S50. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d011",
+      "role": "tool",
+      "content": "Closed archive inflight-011, workspace vault, unrelated to current workspace lumen. Batch 441 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q91 and S51. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d012",
+      "role": "tool",
+      "content": "Closed archive inflight-012, workspace vault, unrelated to current workspace lumen. Batch 442 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q92 and S52. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d013",
+      "role": "tool",
+      "content": "Closed archive inflight-013, workspace vault, unrelated to current workspace lumen. Batch 443 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q93 and S53. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d014",
+      "role": "tool",
+      "content": "Closed archive inflight-014, workspace vault, unrelated to current workspace lumen. Batch 444 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q94 and S54. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d015",
+      "role": "tool",
+      "content": "Closed archive inflight-015, workspace vault, unrelated to current workspace lumen. Batch 445 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q95 and S55. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "h04",
+      "role": "tool",
+      "content": "Broker acknowledgement: exactly one reservation was accepted by pearl; its notice is pending. No reservation has been fulfilled yet and no second request was sent."
+    },
+    {
+      "id": "h05",
+      "role": "assistant",
+      "content": "Interruption occurred here. Continue the current workspace under its active requirements and remaining budget; planning statements alone are not tool execution evidence."
+    }
+  ],
+  "recovery_context": "Workspace lumen: obtain exactly one fulfilled reservation using either broker. Do not submit another reservation once one has been accepted. 3 credits remain at resumption.\nPublic tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute request_D: Submit a reservation to jade broker; creates a new request. Cost=2. execute request_H: Submit a reservation to pearl broker; creates a new request. Cost=2. execute consume_U: Consume the jade broker notice; requires an accepted jade reservation. Cost=2. execute consume_Z: Consume the pearl broker notice; requires an accepted pearl reservation. Cost=2. observe current/reservation_ledger: Recover accepted reservation identity from the ledger. Cost=2.\nAccepted reservation identity can be recovered from the reservation ledger; tool precondition failures also consume operation credits.",
+  "ablation_progress_terms": [
+    "pending reservation",
+    "fulfilled yet"
+  ]
+}

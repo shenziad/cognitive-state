@@ -1,0 +1,64 @@
+{
+  "instance_id": "cont2_assumption_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h04"
+    ],
+    "world.facts": [
+      "h02",
+      "h03",
+      "h04"
+    ],
+    "world.beliefs": [
+      "h03",
+      "h04"
+    ],
+    "world.assumptions": [
+      "h03",
+      "h04"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h04"
+    ]
+  },
+  "provenance_notes": {
+    "operation_names": "Every named action/resource in this candidate occurs in h02.",
+    "checkpoint": "h04 is the current evidence or owner update; h03 is tentative.",
+    "future_observations": "Candidate does not insert any as-yet unread resource value."
+  },
+  "state": {
+    "goal": {
+      "objective": "Encode according to current receiver negotiation",
+      "success_criteria": [
+        "Observed contract is used"
+      ],
+      "constraints": [
+        "Only one encoding attempt",
+        "3 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Negotiation certifies rune; old rune default is superseded",
+        "Packet has not yet been encoded"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Encode according to current receiver negotiation",
+      "information_needs": [],
+      "next_action": "execute encode_L"
+    }
+  }
+}

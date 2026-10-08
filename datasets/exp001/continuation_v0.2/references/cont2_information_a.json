@@ -1,0 +1,67 @@
+{
+  "instance_id": "cont2_information_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h04"
+    ],
+    "world.facts": [
+      "h02",
+      "h03",
+      "h04"
+    ],
+    "world.beliefs": [
+      "h03",
+      "h04"
+    ],
+    "world.assumptions": [
+      "h03",
+      "h04"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h04"
+    ]
+  },
+  "provenance_notes": {
+    "operation_names": "Every named action/resource in this candidate occurs in h02.",
+    "checkpoint": "h04 is the current evidence or owner update; h03 is tentative.",
+    "future_observations": "Candidate does not insert any as-yet unread resource value."
+  },
+  "state": {
+    "goal": {
+      "objective": "Register a pair matching both verified certificates",
+      "success_criteria": [
+        "Both codes verified; matching pair registered"
+      ],
+      "constraints": [
+        "Do not guess unread certificates",
+        "3 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "cargo certificate verified with code R29",
+        "venue certificate has not been read",
+        "No pair registered"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Register a pair matching both verified certificates",
+      "information_needs": [
+        "Value of the venue certificate"
+      ],
+      "next_action": "observe current/venue_certificate; choose the operation matching the retained and newly observed codes"
+    }
+  }
+}

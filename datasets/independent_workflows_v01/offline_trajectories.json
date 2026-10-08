@@ -1,0 +1,978 @@
+{
+  "version": "independent-workflows-development-v01",
+  "visibility": "offline_solvability_only_never_model_input",
+  "workflows": [
+    {
+      "workflow_id": "iw01",
+      "handoffs": [
+        {
+          "instance_id": "iw01:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "build_bundle"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "attach_citations"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw01:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "prepare_embargo_notice"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "set_friday_slot"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw01:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "redact_participant_sheet"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw01:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "publish_archive"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw02",
+      "handoffs": [
+        {
+          "instance_id": "iw02:h1",
+          "actions": [
+            {
+              "tool": "observe",
+              "arguments": {
+                "resource": "incident/current_trace"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "patch_token_cache"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw02:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "run_server_regression"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw02:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "run_mobile_regression"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw02:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "close_incident"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw03",
+      "handoffs": [
+        {
+          "instance_id": "iw03:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_east"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw03:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_west"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw03:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "validate_east"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "validate_west"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw03:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "deliver_pair"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw04",
+      "handoffs": [
+        {
+          "instance_id": "iw04:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "request_portrait_cancel"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw04:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "confirm_portrait_cancel"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw04:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "check_landscape_rights"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw04:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "release_landscape"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw05",
+      "handoffs": [
+        {
+          "instance_id": "iw05:h1",
+          "actions": [
+            {
+              "tool": "observe",
+              "arguments": {
+                "resource": "publisher/B_correction"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "include_study_b"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "extract_study_b"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw05:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "exclude_study_a"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "recalculate_effect"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw05:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "update_narrative"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw05:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "release_review"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw06",
+      "handoffs": [
+        {
+          "instance_id": "iw06:h1",
+          "actions": [
+            {
+              "tool": "observe",
+              "arguments": {
+                "resource": "metrology/unit_notice"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "correct_units"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "apply_calibration_c2"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw06:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "check_reference"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw06:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "check_under_load"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw06:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "release_instrument"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw07",
+      "handoffs": [
+        {
+          "instance_id": "iw07:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "reserve_station_hotel"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw07:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "amend_to_venue_hotel"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "confirm_hotel"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw07:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "arrange_accessible_transfer"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw07:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "send_itinerary"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw08",
+      "handoffs": [
+        {
+          "instance_id": "iw08:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_credit"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw08:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "correct_invoice"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "check_tax"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw08:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "notify_customer"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw08:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "close_ticket"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw09",
+      "handoffs": [
+        {
+          "instance_id": "iw09:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_snapshot_s8"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw09:h2",
+          "actions": [
+            {
+              "tool": "observe",
+              "arguments": {
+                "resource": "backup/s8_manifest"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "verify_snapshot_hash"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "restore_staging_s8"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw09:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "rehearse_recovery"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw09:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "restore_production_s8"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw10",
+      "handoffs": [
+        {
+          "instance_id": "iw10:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "fit_v1"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw10:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "fit_v2"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "validate_v2"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw10:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "build_v2_table"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw10:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "write_v2_report"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw11",
+      "handoffs": [
+        {
+          "instance_id": "iw11:h1",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_new_credential"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "test_new_credential"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw11:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "switch_clients"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw11:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "disable_old_credential"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw11:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "record_rotation"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "workflow_id": "iw12",
+      "handoffs": [
+        {
+          "instance_id": "iw12:h1",
+          "actions": [
+            {
+              "tool": "observe",
+              "arguments": {
+                "resource": "warehouse/pack_notice"
+              }
+            },
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "correct_count"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw12:h2",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "collect_replenishment"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw12:h3",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "reconcile_ledger"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        },
+        {
+          "instance_id": "iw12:h4",
+          "actions": [
+            {
+              "tool": "execute",
+              "arguments": {
+                "operation": "send_stock_report"
+              }
+            },
+            {
+              "tool": "finish",
+              "arguments": {
+                "status": "completed"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

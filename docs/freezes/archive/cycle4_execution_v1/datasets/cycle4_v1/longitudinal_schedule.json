@@ -1,0 +1,194 @@
+[
+  {
+    "instance_id": "release_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "archive_workflow",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 4
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 2
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 3
+  },
+  {
+    "instance_id": "release_workflow",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 4
+  }
+]

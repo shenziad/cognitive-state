@@ -1,0 +1,24 @@
+{
+  "instance_id": "disc_f03_a",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/B"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "seal_blue_green"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

@@ -1,0 +1,329 @@
+{
+  "stage": "regression",
+  "complete": true,
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\regression_recovery_v1_20261003",
+  "evidence_type": "api",
+  "execution_version": "cycle4-execution-v2",
+  "results_sha256": "6ba156748428b7df63bc2d03f4bdb4121b5669fedceffce1961af85c523a0b96",
+  "ledger_sha256": "99aec6496ee2c8ec15f003a0d91eef268197a790d219cbd9f3b60ee12b958207",
+  "actual_usage": {
+    "request_attempts": 165,
+    "successful_responses": 165,
+    "total_tokens": 440988,
+    "known_reported_tokens": 440988,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "assigned": 14,
+      "saved": 14,
+      "successes": 14,
+      "executed": 14,
+      "statuses": {
+        "completed": 14
+      },
+      "final_valid": null,
+      "first_valid": null,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 30,
+        "successful_responses": 30,
+        "total_tokens": 115569,
+        "known_reported_tokens": 115569,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "executor": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 115569,
+          "known_reported_tokens": 115569,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 115150,
+      "output_tokens": 419,
+      "latency_seconds": 48.8245984999885,
+      "cached_input_tokens": 23296
+    },
+    "summary": {
+      "assigned": 14,
+      "saved": 14,
+      "successes": 14,
+      "executed": 14,
+      "statuses": {
+        "completed": 14
+      },
+      "final_valid": 14,
+      "first_valid": 14,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 44,
+        "successful_responses": 44,
+        "total_tokens": 93868,
+        "known_reported_tokens": 93868,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 14,
+          "successful_responses": 14,
+          "total_tokens": 45738,
+          "known_reported_tokens": 45738,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 48130,
+          "known_reported_tokens": 48130,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 90563,
+      "output_tokens": 3305,
+      "latency_seconds": 129.1290902999972,
+      "cached_input_tokens": 3840
+    },
+    "cs_v02": {
+      "assigned": 14,
+      "saved": 14,
+      "successes": 12,
+      "executed": 14,
+      "statuses": {
+        "completed": 14
+      },
+      "final_valid": 14,
+      "first_valid": 14,
+      "premature_completed": 0,
+      "policy_violations": 2,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 47,
+        "successful_responses": 47,
+        "total_tokens": 109928,
+        "known_reported_tokens": 109928,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 14,
+          "successful_responses": 14,
+          "total_tokens": 49683,
+          "known_reported_tokens": 49683,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 33,
+          "successful_responses": 33,
+          "total_tokens": 60245,
+          "known_reported_tokens": 60245,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 103323,
+      "output_tokens": 6605,
+      "latency_seconds": 184.4480642000126,
+      "cached_input_tokens": 9216
+    },
+    "cs_v031": {
+      "assigned": 14,
+      "saved": 14,
+      "successes": 14,
+      "executed": 14,
+      "statuses": {
+        "completed": 14
+      },
+      "final_valid": 14,
+      "first_valid": 14,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 44,
+        "successful_responses": 44,
+        "total_tokens": 121623,
+        "known_reported_tokens": 121623,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 14,
+          "successful_responses": 14,
+          "total_tokens": 64913,
+          "known_reported_tokens": 64913,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 56710,
+          "known_reported_tokens": 56710,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 112737,
+      "output_tokens": 8886,
+      "latency_seconds": 162.50363649997598,
+      "cached_input_tokens": 12288
+    }
+  },
+  "review_counts": {
+    "summary": {
+      "entity_phase_confusion": {
+        "correct": 14
+      },
+      "unsupported_completion": {
+        "correct": 12,
+        "ambiguous": 1,
+        "incorrect": 1
+      },
+      "invented_requirement": {
+        "correct": 14
+      },
+      "missing_pending_job": {
+        "correct": 10,
+        "not_observed": 4
+      },
+      "unsupported_reopened_question": {
+        "correct": 14
+      },
+      "missing_decision_dependency": {
+        "correct": 14
+      }
+    },
+    "cs_v02": {
+      "entity_phase_confusion": {
+        "correct": 14
+      },
+      "unsupported_completion": {
+        "correct": 14
+      },
+      "invented_requirement": {
+        "correct": 12,
+        "incorrect": 1,
+        "ambiguous": 1
+      },
+      "missing_pending_job": {
+        "correct": 10,
+        "not_observed": 4
+      },
+      "unsupported_reopened_question": {
+        "ambiguous": 4,
+        "correct": 8,
+        "incorrect": 2
+      },
+      "missing_decision_dependency": {
+        "correct": 12,
+        "incorrect": 2
+      }
+    },
+    "cs_v031": {
+      "entity_phase_confusion": {
+        "correct": 12,
+        "ambiguous": 2
+      },
+      "unsupported_completion": {
+        "correct": 14
+      },
+      "invented_requirement": {
+        "correct": 14
+      },
+      "missing_pending_job": {
+        "correct": 9,
+        "not_observed": 5
+      },
+      "unsupported_reopened_question": {
+        "correct": 14
+      },
+      "missing_decision_dependency": {
+        "correct": 14
+      }
+    }
+  },
+  "review_sha256": "4964dc230c43bae8846c8fef99ed4b3b46af9efc3cd55e00e7c4559c88c057aa",
+  "audit_sha256": "8de0e9198e4a48212058d32aebdeffe0b4101629e1ee626a77d265127fc20736",
+  "chains": [],
+  "failures": [
+    {
+      "instance_id": "cont2_completed_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "oak_calibrated": true,
+          "elm_calibrated": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/cont2_completed_a_cs_v02_r0_h1.json"
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "oak_calibrated": true,
+          "elm_calibrated": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/cont2_completed_b_cs_v02_r0_h1.json"
+    }
+  ],
+  "limits": [
+    "Small known synthetic development tasks; no unseen generalization claim.",
+    "Assistant content annotations; not independent human gold and not condition blinded.",
+    "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+    "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+  ]
+}

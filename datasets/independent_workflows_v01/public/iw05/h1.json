@@ -1,0 +1,270 @@
+{
+  "checkpoint": 1,
+  "instance_id": "iw05:h1",
+  "new_public_events": [
+    {
+      "id": "iw05:h1:u",
+      "role": "user",
+      "content": "Update the review for the eligibility correction to study B. Read the correction, include B and extract its results. The corpus was already screened once; do not screen it again."
+    },
+    {
+      "id": "iw05:h1:n5",
+      "role": "assistant",
+      "content": "Office coordination note 1-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n6",
+      "role": "assistant",
+      "content": "Office coordination note 1-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n7",
+      "role": "assistant",
+      "content": "Office coordination note 1-7: room Maple has a planning meeting at 15:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n8",
+      "role": "assistant",
+      "content": "Office coordination note 1-8: room Ash has a training session at 16:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n9",
+      "role": "assistant",
+      "content": "Office coordination note 1-9: room Elm has a equipment demonstration at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n10",
+      "role": "assistant",
+      "content": "Office coordination note 1-10: room Maple has a planning meeting at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n11",
+      "role": "assistant",
+      "content": "Office coordination note 1-11: room Ash has a training session at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n12",
+      "role": "assistant",
+      "content": "Office coordination note 1-12: room Elm has a equipment demonstration at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n13",
+      "role": "assistant",
+      "content": "Office coordination note 1-13: room Maple has a planning meeting at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n14",
+      "role": "assistant",
+      "content": "Office coordination note 1-14: room Ash has a training session at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n15",
+      "role": "assistant",
+      "content": "Office coordination note 1-15: room Elm has a equipment demonstration at 15:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n16",
+      "role": "assistant",
+      "content": "Office coordination note 1-16: room Maple has a planning meeting at 16:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n17",
+      "role": "assistant",
+      "content": "Office coordination note 1-17: room Ash has a training session at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n18",
+      "role": "assistant",
+      "content": "Office coordination note 1-18: room Elm has a equipment demonstration at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n19",
+      "role": "assistant",
+      "content": "Office coordination note 1-19: room Maple has a planning meeting at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n20",
+      "role": "assistant",
+      "content": "Office coordination note 1-20: room Ash has a training session at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n21",
+      "role": "assistant",
+      "content": "Office coordination note 1-21: room Elm has a equipment demonstration at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n22",
+      "role": "assistant",
+      "content": "Office coordination note 1-22: room Maple has a planning meeting at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n23",
+      "role": "assistant",
+      "content": "Office coordination note 1-23: room Ash has a training session at 15:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n24",
+      "role": "assistant",
+      "content": "Office coordination note 1-24: room Elm has a equipment demonstration at 16:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n2",
+      "role": "assistant",
+      "content": "Office coordination note 1-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n1",
+      "role": "assistant",
+      "content": "Office coordination note 1-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:n3",
+      "role": "assistant",
+      "content": "Office coordination note 1-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:e1",
+      "role": "tool",
+      "content": "Prior screening receipt: corpus-2026-09 complete, screenings=1; study A included and study B excluded under the now-corrected eligibility text."
+    },
+    {
+      "id": "iw05:h1:n4",
+      "role": "assistant",
+      "content": "Office coordination note 1-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw05:h1:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "screen_corpus",
+          "description": "Screen the complete source corpus again.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "screened": true
+          },
+          "successful_increments": {
+            "screenings": 1
+          },
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "include_study_b",
+          "description": "Include study B after reading its corrected eligibility notice.",
+          "cost": 1,
+          "preconditions": {
+            "correction_read": true
+          },
+          "successful_effects": {
+            "study_b_included": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "extract_study_b",
+          "description": "Extract the corrected study B results.",
+          "cost": 1,
+          "preconditions": {
+            "study_b_included": true
+          },
+          "successful_effects": {
+            "extraction_b": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "exclude_study_a",
+          "description": "Remove retracted study A from the analysis set; preserve completed screening and B extraction.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "study_a_included": false
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "recalculate_effect",
+          "description": "Recalculate the effect estimate from the current included studies.",
+          "cost": 1,
+          "preconditions": {
+            "study_a_included": false,
+            "extraction_b": true
+          },
+          "successful_effects": {
+            "effect_recalculated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "update_narrative",
+          "description": "Update the review narrative to match the corrected analysis.",
+          "cost": 1,
+          "preconditions": {
+            "effect_recalculated": true
+          },
+          "successful_effects": {
+            "narrative_updated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "release_review",
+          "description": "Release the updated living review.",
+          "cost": 1,
+          "preconditions": {
+            "narrative_updated": true
+          },
+          "successful_effects": {
+            "review_released": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [
+        {
+          "name": "publisher/B_correction",
+          "description": "Publisher's versioned eligibility correction for B.",
+          "cost": 1
+        }
+      ],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw05:h1",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

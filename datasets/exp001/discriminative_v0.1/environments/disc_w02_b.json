@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_w02_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "remedy": "none",
+    "evidence_verified": false
+  },
+  "operations": {
+    "repair_cache": {
+      "description": "Apply cache repair; changes require prior confirmed diagnostic evidence.",
+      "effects": {
+        "remedy": "cache"
+      },
+      "cost": 2
+    },
+    "repair_queue": {
+      "description": "Apply queue repair; changes require prior confirmed diagnostic evidence.",
+      "effects": {
+        "remedy": "queue"
+      },
+      "cost": 2
+    }
+  },
+  "observations": {
+    "current/diagnostic": {
+      "description": "Run one current controlled diagnostic; 1 credit.",
+      "observation": {
+        "content": {
+          "confirmed_cause": "queue"
+        }
+      },
+      "effects": {
+        "evidence_verified": true
+      },
+      "cost": 1
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "remedy": "queue",
+      "evidence_verified": true
+    },
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "repair_cache"
+          }
+        },
+        "state": {
+          "evidence_verified": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "repair_queue"
+          }
+        },
+        "state": {
+          "evidence_verified": true
+        }
+      }
+    ],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

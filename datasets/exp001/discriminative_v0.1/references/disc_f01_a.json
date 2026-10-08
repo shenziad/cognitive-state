@@ -1,0 +1,73 @@
+{
+  "instance_id": "disc_f01_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Deliver exactly one packet and verify receipt",
+      "success_criteria": [
+        "Exactly one submission; receipt observed"
+      ],
+      "constraints": [
+        "No duplicate submissions",
+        "3 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Submission issued once; job17 pending",
+        "No receipt observed"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Deliver exactly one packet and verify receipt",
+      "information_needs": [
+        "Delivery receipt"
+      ],
+      "next_action": "observe current/job17"
+    }
+  }
+}

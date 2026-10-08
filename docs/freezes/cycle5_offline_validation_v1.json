@@ -1,0 +1,19 @@
+{
+  "evidence_type": "offline_protocol_validation_not_model_performance",
+  "model_calls": 0,
+  "tests_passed": 20,
+  "checks": [
+    {
+      "pattern": "test_mechanism_conditions_v01.py",
+      "passed": true,
+      "output": "test_api_failure_propagates_without_retry (test_mechanism_conditions_v01.MechanismPreparationTests.test_api_failure_propagates_without_retry) ... ok\ntest_common_semantics_exact_suffix_and_same_executor_string_wrapper (test_mechanism_conditions_v01.MechanismPreparationTests.test_common_semantics_exact_suffix_and_same_executor_string_wrapper) ... ok\ntest_full_is_free_and_full_planner_retains_entire_history (test_mechanism_conditions_v01.MechanismPreparationTests.test_full_is_free_and_full_planner_retains_entire_history) ... ok\ntest_intermediate_failure_is_not_retried_or_passed_to_final (test_mechanism_conditions_v01.MechanismPreparationTests.test_intermediate_failure_is_not_retried_or_passed_to_final) ... ok\ntest_lossless_order_empty_and_all_scalar_types (test_mechanism_conditions_v01.MechanismPreparationTests.test_lossless_order_empty_and_all_scalar_types) ... ok\ntest_lossless_rejects_omitted_reordered_or_wrong_typed_records (test_mechanism_conditions_v01.MechanismPreparationTests.test_lossless_rejects_omitted_reordered_or_wrong_typed_records) ... ok\ntest_missing_source_reference_triggers_encoding_repair (test_mechanism_conditions_v01.MechanismPreparationTests.test_missing_source_reference_triggers_encoding_repair) ... ok\ntest_output_length_does_not_truncate_and_has_one_repair (test_mechanism_conditions_v01.MechanismPreparationTests.test_output_length_does_not_truncate_and_has_one_repair) ... ok\ntest_public_projection_removes_metadata_and_is_idempotent (test_mechanism_conditions_v01.MechanismPreparationTests.test_public_projection_removes_metadata_and_is_idempotent) ... ok\ntest_schema_repair_only_one_then_shared_failure (test_mechanism_conditions_v01.MechanismPreparationTests.test_schema_repair_only_one_then_shared_failure) ... ok\ntest_semantic_error_remains_valid_not_repaired (test_mechanism_conditions_v01.MechanismPreparationTests.test_semantic_error_remains_valid_not_repaired) ... ok\ntest_shared_text_is_same_information_no_cap_and_restorable (test_mechanism_conditions_v01.MechanismPreparationTests.test_shared_text_is_same_information_no_cap_and_restorable) ... ok\ntest_strong_summary_two_stage_keeps_original_input_and_limits (test_mechanism_conditions_v01.MechanismPreparationTests.test_strong_summary_two_stage_keeps_original_input_and_limits) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "pattern": "test_cycle5_runtime_v1.py",
+      "passed": true,
+      "output": "test_actual_no_history_messages_identical_for_all_six_pairs (test_cycle5_runtime_v1.RuntimeTests.test_actual_no_history_messages_identical_for_all_six_pairs) ... ok\ntest_exception_text_is_not_persisted (test_cycle5_runtime_v1.RuntimeTests.test_exception_text_is_not_persisted) ... ok\ntest_mock_run_replays_and_rejects_success_tampering (test_cycle5_runtime_v1.RuntimeTests.test_mock_run_replays_and_rejects_success_tampering) ... ok\ntest_request_cap_stops_before_sending (test_cycle5_runtime_v1.RuntimeTests.test_request_cap_stops_before_sending) ... ok\ntest_source_first_mechanism_replays_shared_cost_and_text (test_cycle5_runtime_v1.RuntimeTests.test_source_first_mechanism_replays_shared_cost_and_text) ... ok\ntest_token_threshold_stops_before_second_send (test_cycle5_runtime_v1.RuntimeTests.test_token_threshold_stops_before_second_send) ... ok\ntest_unknown_usage_is_preserved_and_stops (test_cycle5_runtime_v1.RuntimeTests.test_unknown_usage_is_preserved_and_stops) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.385s\n\nOK\n"
+    }
+  ],
+  "cycle4_unchanged": true,
+  "input_audit_sha256": "94f826b365f4d0e9a7684a41cbf90a410ee7be299a16dd8b1389170bc8f521e2"
+}

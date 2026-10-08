@@ -11,6 +11,9 @@ requires-python = ">=3.10"
 license = {file = "LICENSE"}
 dependencies = []
 
+[project.optional-dependencies]
+api = ["openai>=1.50,<3", "python-dotenv>=1,<2", "tiktoken>=0.7,<1"]
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 

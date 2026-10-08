@@ -1,0 +1,18 @@
+{
+  "status": "descriptive_supplement_frozen_before_A_execution",
+  "created_at_utc": "2026-10-04T03:14:15.930374+00:00",
+  "sha256": {
+    "experiments/exp004_mechanism/reporting.py": "530fb99a0d921ecbf9d815f995a1cbd2b6218af644196d1f3eb64a793a5f47c8",
+    "tests/test_cycle5_reporting.py": "a42992329ae2f2f76537d1b5ccfd5ae4c5c8548504e7af91f833038b2a60d25d",
+    "scripts/report_cycle5_campaign.py": "455f3c6b3ba72b37853a7234b7067077a9cce91c0a9754e91a8880b7321eae0c"
+  },
+  "main_analysis_unchanged": true,
+  "offline_validation": "9 substantive cost attribution tests passed",
+  "current_A_executor_results_exist": false,
+  "prepared_records_at_supplement_freeze": 39,
+  "limits": [
+    "All assigned tasks; no successful-task selection",
+    "Descriptive paired differences; no statistical equivalence claim",
+    "Executor input reduction and deployment total Tokens reported separately"
+  ]
+}

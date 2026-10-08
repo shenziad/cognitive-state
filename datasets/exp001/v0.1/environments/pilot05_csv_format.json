@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot05_csv_format",
+  "files": {
+    "config/service.json": {
+      "delimiter": ",",
+      "encoding": "latin-1",
+      "skip_errors": false,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "The partner format is semicolon-separated UTF-8; reject malformed rows.",
+      "recommended_settings": {
+        "delimiter": ";",
+        "encoding": "utf-8"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "delimiter": ",",
+        "encoding": "latin-1",
+        "skip_errors": false,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Imported columns are merged and accented names are corrupted."
+  },
+  "rubric": {
+    "target_settings": {
+      "delimiter": ";",
+      "encoding": "utf-8"
+    },
+    "protected_keys": [
+      "skip_errors",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "delimiter",
+        "value": ","
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

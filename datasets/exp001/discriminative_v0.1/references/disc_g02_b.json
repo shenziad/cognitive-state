@@ -1,0 +1,72 @@
+{
+  "instance_id": "disc_g02_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Minimize latency subject to hard requirements",
+      "success_criteria": [
+        "Correct plan selected; latency <=3s"
+      ],
+      "constraints": [
+        "At most 1 credit",
+        "Latency <=3s"
+      ],
+      "preferences": [
+        "Offline only as equal-latency tie-break"
+      ]
+    },
+    "world": {
+      "facts": [
+        "Offline: 2.0s, cloud: 0.8s; both correct"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Minimize latency subject to hard requirements",
+      "information_needs": [],
+      "next_action": "execute choose_cloud"
+    }
+  }
+}

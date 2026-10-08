@@ -1,0 +1,20 @@
+{
+  "id": "h05",
+  "role": "tool",
+  "content": {
+    "action": {
+      "tool": "execute",
+      "arguments": {
+        "operation": "consume_Z"
+      }
+    },
+    "receipt": {
+      "request_id": "reservation-1",
+      "broker": "pearl",
+      "phase": "completed",
+      "request_count": 1,
+      "fulfilled": true,
+      "remaining_credits": 1
+    }
+  }
+}

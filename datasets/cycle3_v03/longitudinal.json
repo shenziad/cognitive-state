@@ -1,0 +1,1030 @@
+{
+  "version": "longitudinal-interface-v0.3",
+  "scenarios": [
+    {
+      "scenario_id": "release_workflow",
+      "review_status": "assistant_constructed_pending_independent_review",
+      "public_goal": {
+        "id": "release_goal",
+        "role": "user",
+        "content": "Deliver a verified release for workspace sable. Honor the latest audience and transport requirements. Preserve accepted repairs and validations; never rerun them. An unconfirmed diagnostic hypothesis is not permission to repair. At each checkpoint, execute only that checkpoint, then finish completed."
+      },
+      "initial_state": {
+        "cache_confirmed": true,
+        "queue_confirmed": false,
+        "cache_repaired": false,
+        "queue_repaired": false,
+        "test_A": false,
+        "test_B": false,
+        "bundle_ready": false,
+        "audience": "unset",
+        "route": "unset",
+        "delivery_audience": "unset",
+        "delivery_route": "unset"
+      },
+      "handoffs": [
+        {
+          "public_events": [
+            {
+              "id": "release_1_request",
+              "role": "user",
+              "content": "Checkpoint 1: initial policy is a public release; remote transport is permitted. Fix the confirmed fault. Credit allowance for this checkpoint: 2."
+            },
+            {
+              "id": "release_1_evidence",
+              "role": "tool",
+              "content": "Diagnostic d1 confirms a cache fault. The queue explanation remains an unconfirmed belief with confidence 0.7. No repair has yet been applied."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "repair_cache": {
+                "description": "Apply a cache repair. Costs two credits.",
+                "cost": 2,
+                "effects": {
+                  "cache_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "cache_repaired": true
+                  }
+                },
+                "repeat_key": "cache_repaired"
+              },
+              "repair_queue": {
+                "description": "Apply a queue repair. Costs two credits.",
+                "cost": 2,
+                "effects": {
+                  "queue_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "queue_repaired": true
+                  }
+                },
+                "repeat_key": "queue_repaired"
+              }
+            },
+            "observations": {},
+            "budget": 2,
+            "rubric": {
+              "target_state": {
+                "cache_repaired": true,
+                "queue_repaired": false
+              },
+              "finish_status": "completed",
+              "before_action": [
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "repair_cache"
+                    }
+                  },
+                  "state": {
+                    "cache_confirmed": true
+                  }
+                },
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "repair_queue"
+                    }
+                  },
+                  "state": {
+                    "queue_confirmed": true
+                  }
+                }
+              ],
+              "forbidden_actions": []
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "release_2_request",
+              "role": "user",
+              "content": "Checkpoint 2: resolve the outstanding confirmed fault, then complete test stages A and B. Keep accepted work; this checkpoint has 4 credits."
+            },
+            {
+              "id": "release_2_evidence",
+              "role": "tool",
+              "content": "Corrected diagnostic d2: the cache symptom was secondary; the current root cause is confirmed to be the queue. Any cache repair actually accepted earlier remains valid; this message does not establish whether one was executed. The cache diagnosis is superseded and must not be used as evidence for another cache repair."
+            }
+          ],
+          "external_state_patch": {
+            "cache_confirmed": false,
+            "queue_confirmed": true
+          },
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "repair_cache": {
+                "description": "Apply a cache repair. Costs two credits.",
+                "cost": 2,
+                "effects": {
+                  "cache_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "cache_repaired": true
+                  }
+                },
+                "repeat_key": "cache_repaired"
+              },
+              "repair_queue": {
+                "description": "Apply a queue repair. Costs two credits.",
+                "cost": 2,
+                "effects": {
+                  "queue_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "queue_repaired": true
+                  }
+                },
+                "repeat_key": "queue_repaired"
+              },
+              "validate_A": {
+                "description": "Validate test stage A after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_A": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_A": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_A"
+              },
+              "validate_B": {
+                "description": "Validate test stage B after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_B": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_B": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_B"
+              }
+            },
+            "observations": {},
+            "budget": 4,
+            "rubric": {
+              "target_state": {
+                "cache_repaired": true,
+                "queue_repaired": true,
+                "test_A": true,
+                "test_B": true
+              },
+              "finish_status": "completed",
+              "before_action": [
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "repair_cache"
+                    }
+                  },
+                  "state": {
+                    "cache_confirmed": true
+                  }
+                },
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "repair_queue"
+                    }
+                  },
+                  "state": {
+                    "queue_confirmed": true
+                  }
+                }
+              ],
+              "forbidden_actions": []
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "release_3_revision",
+              "role": "user",
+              "content": "Checkpoint 3: the customer cancels public delivery. From now on the release must be private, and offline transport is a hard constraint. Assemble the bundle and select transport under this revised requirement. Do not repeat accepted tests. This checkpoint has 2 credits."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "validate_A": {
+                "description": "Validate test stage A after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_A": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_A": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_A"
+              },
+              "validate_B": {
+                "description": "Validate test stage B after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_B": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_B": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_B"
+              },
+              "pack_private": {
+                "description": "Assemble a private audience bundle after both tests.",
+                "cost": 1,
+                "effects": {
+                  "bundle_ready": true,
+                  "audience": "private"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "bundle_ready": true,
+                    "audience": "private"
+                  }
+                },
+                "required_state": {
+                  "test_A": true,
+                  "test_B": true
+                },
+                "repeat_key": "bundle_ready"
+              },
+              "pack_public": {
+                "description": "Assemble a public audience bundle after both tests.",
+                "cost": 1,
+                "effects": {
+                  "bundle_ready": true,
+                  "audience": "public"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "bundle_ready": true,
+                    "audience": "public"
+                  }
+                },
+                "required_state": {
+                  "test_A": true,
+                  "test_B": true
+                },
+                "repeat_key": "bundle_ready"
+              },
+              "choose_offline": {
+                "description": "Select offline transport.",
+                "cost": 1,
+                "effects": {
+                  "route": "offline"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "route": "offline"
+                  }
+                }
+              },
+              "choose_remote": {
+                "description": "Select remote transport.",
+                "cost": 1,
+                "effects": {
+                  "route": "remote"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "route": "remote"
+                  }
+                }
+              }
+            },
+            "observations": {},
+            "budget": 2,
+            "rubric": {
+              "target_state": {
+                "cache_repaired": true,
+                "queue_repaired": true,
+                "test_A": true,
+                "test_B": true,
+                "bundle_ready": true,
+                "audience": "private",
+                "route": "offline"
+              },
+              "finish_status": "completed",
+              "before_action": [],
+              "forbidden_actions": [
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "pack_public"
+                  }
+                },
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "choose_remote"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "release_4_request",
+              "role": "user",
+              "content": "Checkpoint 4: finalize the release using the latest approved audience and transport requirements. Preserve previously accepted repairs, tests, and bundle; do not recreate them. No requirements changed. This checkpoint has 1 credit."
+            },
+            {
+              "id": "release_4_evidence",
+              "role": "tool",
+              "content": "Final signing service is ready. The artifact hash is release-9f2. This readiness message does not restate audience or transport policy."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "validate_A": {
+                "description": "Validate test stage A after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_A": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_A": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_A"
+              },
+              "validate_B": {
+                "description": "Validate test stage B after both repairs.",
+                "cost": 1,
+                "effects": {
+                  "test_B": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "test_B": true
+                  }
+                },
+                "required_state": {
+                  "cache_repaired": true,
+                  "queue_repaired": true
+                },
+                "repeat_key": "test_B"
+              },
+              "pack_private": {
+                "description": "Assemble a private audience bundle after both tests.",
+                "cost": 1,
+                "effects": {
+                  "bundle_ready": true,
+                  "audience": "private"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "bundle_ready": true,
+                    "audience": "private"
+                  }
+                },
+                "required_state": {
+                  "test_A": true,
+                  "test_B": true
+                },
+                "repeat_key": "bundle_ready"
+              },
+              "pack_public": {
+                "description": "Assemble a public audience bundle after both tests.",
+                "cost": 1,
+                "effects": {
+                  "bundle_ready": true,
+                  "audience": "public"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "bundle_ready": true,
+                    "audience": "public"
+                  }
+                },
+                "required_state": {
+                  "test_A": true,
+                  "test_B": true
+                },
+                "repeat_key": "bundle_ready"
+              },
+              "choose_offline": {
+                "description": "Select offline transport.",
+                "cost": 1,
+                "effects": {
+                  "route": "offline"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "route": "offline"
+                  }
+                }
+              },
+              "choose_remote": {
+                "description": "Select remote transport.",
+                "cost": 1,
+                "effects": {
+                  "route": "remote"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "route": "remote"
+                  }
+                }
+              },
+              "deliver_private_offline": {
+                "description": "Deliver for private audience using offline transport after bundle assembly.",
+                "cost": 1,
+                "effects": {
+                  "delivery_audience": "private",
+                  "delivery_route": "offline"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "delivery_audience": "private",
+                    "delivery_route": "offline"
+                  }
+                },
+                "required_state": {
+                  "bundle_ready": true,
+                  "test_A": true,
+                  "test_B": true
+                }
+              },
+              "deliver_private_remote": {
+                "description": "Deliver for private audience using remote transport after bundle assembly.",
+                "cost": 1,
+                "effects": {
+                  "delivery_audience": "private",
+                  "delivery_route": "remote"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "delivery_audience": "private",
+                    "delivery_route": "remote"
+                  }
+                },
+                "required_state": {
+                  "bundle_ready": true,
+                  "test_A": true,
+                  "test_B": true
+                }
+              },
+              "deliver_public_offline": {
+                "description": "Deliver for public audience using offline transport after bundle assembly.",
+                "cost": 1,
+                "effects": {
+                  "delivery_audience": "public",
+                  "delivery_route": "offline"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "delivery_audience": "public",
+                    "delivery_route": "offline"
+                  }
+                },
+                "required_state": {
+                  "bundle_ready": true,
+                  "test_A": true,
+                  "test_B": true
+                }
+              },
+              "deliver_public_remote": {
+                "description": "Deliver for public audience using remote transport after bundle assembly.",
+                "cost": 1,
+                "effects": {
+                  "delivery_audience": "public",
+                  "delivery_route": "remote"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "delivery_audience": "public",
+                    "delivery_route": "remote"
+                  }
+                },
+                "required_state": {
+                  "bundle_ready": true,
+                  "test_A": true,
+                  "test_B": true
+                }
+              }
+            },
+            "observations": {},
+            "budget": 1,
+            "rubric": {
+              "target_state": {
+                "cache_repaired": true,
+                "queue_repaired": true,
+                "test_A": true,
+                "test_B": true,
+                "audience": "private",
+                "route": "offline",
+                "delivery_audience": "private",
+                "delivery_route": "offline"
+              },
+              "finish_status": "completed",
+              "before_action": [],
+              "forbidden_actions": [
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "deliver_private_remote"
+                  }
+                },
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "deliver_public_offline"
+                  }
+                },
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "deliver_public_remote"
+                  }
+                },
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "pack_public"
+                  }
+                },
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "choose_remote"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "scenario_id": "archive_workflow",
+      "review_status": "assistant_constructed_pending_independent_review",
+      "public_goal": {
+        "id": "archive_goal",
+        "role": "user",
+        "content": "Complete the archive workflow for workspace cedar across checkpoints. Correct only a source mismatch confirmed by evidence. Remember accepted corrections, submitted jobs, and validated stages; never repeat completed work. Use the confirmed correction to choose the final archive manifest. At each checkpoint execute that checkpoint only, then finish completed."
+      },
+      "initial_state": {
+        "left_confirmed": false,
+        "right_confirmed": false,
+        "left_repaired": false,
+        "right_repaired": false,
+        "job_submitted": false,
+        "backend_ready": false,
+        "job_done": false,
+        "validation_A": false,
+        "validation_B": false,
+        "sealed_branch": "unset"
+      },
+      "handoffs": [
+        {
+          "public_events": [
+            {
+              "id": "archive_1_request",
+              "role": "user",
+              "content": "Checkpoint 1: diagnose the source mismatch and correct its confirmed branch. The current belief favors the left branch with confidence 0.7; it is not confirmed. This checkpoint has 2 credits."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "correct_left": {
+                "description": "Correct the left source branch.",
+                "cost": 1,
+                "effects": {
+                  "left_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "left_repaired": true
+                  }
+                },
+                "repeat_key": "left_repaired"
+              },
+              "correct_right": {
+                "description": "Correct the right source branch.",
+                "cost": 1,
+                "effects": {
+                  "right_repaired": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "right_repaired": true
+                  }
+                },
+                "repeat_key": "right_repaired"
+              }
+            },
+            "observations": {
+              "current/diagnosis": {
+                "description": "Read the live source mismatch diagnosis.",
+                "cost": 1,
+                "effects": {
+                  "left_confirmed": false,
+                  "right_confirmed": true
+                },
+                "observation": {
+                  "diagnosis_id": "cedar-d1",
+                  "confirmed_branch": "right",
+                  "left_hypothesis_refuted": true
+                }
+              }
+            },
+            "budget": 2,
+            "rubric": {
+              "target_state": {
+                "left_repaired": false,
+                "right_repaired": true
+              },
+              "finish_status": "completed",
+              "before_action": [
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "correct_left"
+                    }
+                  },
+                  "state": {
+                    "left_confirmed": true
+                  }
+                },
+                {
+                  "action": {
+                    "tool": "execute",
+                    "arguments": {
+                      "operation": "correct_right"
+                    }
+                  },
+                  "state": {
+                    "right_confirmed": true
+                  }
+                }
+              ],
+              "forbidden_actions": []
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "archive_2_request",
+              "role": "user",
+              "content": "Checkpoint 2: submit one archive job. Stop after its submission acknowledgment; it will be completed at the next checkpoint. Preserve the accepted source correction. This checkpoint has 1 credit."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "submit_archive": {
+                "description": "Submit an asynchronous archive job; duplicate submission is invalid.",
+                "cost": 1,
+                "effects": {
+                  "job_submitted": true
+                },
+                "observation": {
+                  "job_id": "cedar-job-17",
+                  "status": "submitted",
+                  "complete": false
+                },
+                "required_state": {
+                  "job_submitted": false
+                },
+                "repeat_key": "job_submitted"
+              },
+              "poll_archive": {
+                "description": "Poll the submitted archive job when the backend is ready.",
+                "cost": 1,
+                "effects": {
+                  "job_done": true
+                },
+                "observation": {
+                  "job_id": "cedar-job-17",
+                  "status": "complete"
+                },
+                "required_state": {
+                  "job_submitted": true,
+                  "backend_ready": true
+                },
+                "repeat_key": "job_done"
+              }
+            },
+            "observations": {},
+            "budget": 1,
+            "rubric": {
+              "target_state": {
+                "right_repaired": true,
+                "left_repaired": false,
+                "job_submitted": true,
+                "job_done": false
+              },
+              "finish_status": "completed",
+              "before_action": [],
+              "forbidden_actions": [
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "poll_archive"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "archive_3_request",
+              "role": "user",
+              "content": "Checkpoint 3: complete the archive job and both validation stages A and B, preserving previous accepted work. This checkpoint has 3 credits."
+            },
+            {
+              "id": "archive_3_ready",
+              "role": "tool",
+              "content": "The archive backend is now ready to return completed results for any job that was submitted. This message does not prove that a job was submitted."
+            }
+          ],
+          "external_state_patch": {
+            "backend_ready": true
+          },
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "submit_archive": {
+                "description": "Submit an asynchronous archive job; duplicate submission is invalid.",
+                "cost": 1,
+                "effects": {
+                  "job_submitted": true
+                },
+                "observation": {
+                  "job_id": "cedar-job-17",
+                  "status": "submitted",
+                  "complete": false
+                },
+                "required_state": {
+                  "job_submitted": false
+                },
+                "repeat_key": "job_submitted"
+              },
+              "poll_archive": {
+                "description": "Poll the submitted archive job when the backend is ready.",
+                "cost": 1,
+                "effects": {
+                  "job_done": true
+                },
+                "observation": {
+                  "job_id": "cedar-job-17",
+                  "status": "complete"
+                },
+                "required_state": {
+                  "job_submitted": true,
+                  "backend_ready": true
+                },
+                "repeat_key": "job_done"
+              },
+              "validate_A": {
+                "description": "Validate archive stage A after the job completes.",
+                "cost": 1,
+                "effects": {
+                  "validation_A": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "validation_A": true
+                  }
+                },
+                "required_state": {
+                  "job_done": true
+                },
+                "repeat_key": "validation_A"
+              },
+              "validate_B": {
+                "description": "Validate archive stage B after the job completes.",
+                "cost": 1,
+                "effects": {
+                  "validation_B": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "validation_B": true
+                  }
+                },
+                "required_state": {
+                  "job_done": true
+                },
+                "repeat_key": "validation_B"
+              }
+            },
+            "observations": {},
+            "budget": 3,
+            "rubric": {
+              "target_state": {
+                "right_repaired": true,
+                "left_repaired": false,
+                "job_submitted": true,
+                "job_done": true,
+                "validation_A": true,
+                "validation_B": true
+              },
+              "finish_status": "completed",
+              "before_action": [],
+              "forbidden_actions": []
+            }
+          }
+        },
+        {
+          "public_events": [
+            {
+              "id": "archive_4_request",
+              "role": "user",
+              "content": "Checkpoint 4: seal the final archive using the source branch confirmed and corrected earlier. Complete only genuinely pending work; accepted validations must not be repeated. No new source evidence is available. This checkpoint has 1 credit."
+            }
+          ],
+          "external_state_patch": {},
+          "environment": {
+            "environment_type": "continuation",
+            "initial_state": {},
+            "operations": {
+              "validate_A": {
+                "description": "Validate archive stage A after the job completes.",
+                "cost": 1,
+                "effects": {
+                  "validation_A": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "validation_A": true
+                  }
+                },
+                "required_state": {
+                  "job_done": true
+                },
+                "repeat_key": "validation_A"
+              },
+              "validate_B": {
+                "description": "Validate archive stage B after the job completes.",
+                "cost": 1,
+                "effects": {
+                  "validation_B": true
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "validation_B": true
+                  }
+                },
+                "required_state": {
+                  "job_done": true
+                },
+                "repeat_key": "validation_B"
+              },
+              "seal_left": {
+                "description": "Seal the archive with a left correction manifest.",
+                "cost": 1,
+                "effects": {
+                  "sealed_branch": "left"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "sealed_branch": "left"
+                  }
+                },
+                "required_state": {
+                  "job_done": true,
+                  "validation_A": true,
+                  "validation_B": true
+                }
+              },
+              "seal_right": {
+                "description": "Seal the archive with a right correction manifest.",
+                "cost": 1,
+                "effects": {
+                  "sealed_branch": "right"
+                },
+                "observation": {
+                  "accepted": true,
+                  "effects": {
+                    "sealed_branch": "right"
+                  }
+                },
+                "required_state": {
+                  "job_done": true,
+                  "validation_A": true,
+                  "validation_B": true
+                }
+              }
+            },
+            "observations": {},
+            "budget": 1,
+            "rubric": {
+              "target_state": {
+                "right_repaired": true,
+                "left_repaired": false,
+                "job_submitted": true,
+                "job_done": true,
+                "validation_A": true,
+                "validation_B": true,
+                "sealed_branch": "right"
+              },
+              "finish_status": "completed",
+              "before_action": [],
+              "forbidden_actions": [
+                {
+                  "tool": "execute",
+                  "arguments": {
+                    "operation": "seal_left"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

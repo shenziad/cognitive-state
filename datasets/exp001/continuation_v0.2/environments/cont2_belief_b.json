@@ -1,0 +1,78 @@
+{
+  "instance_id": "cont2_belief_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "remedy": "none",
+    "diagnosis_confirmed": true
+  },
+  "operations": {
+    "remedy_N": {
+      "description": "Apply the ion-channel remedy.",
+      "effects": {
+        "remedy": "ion"
+      },
+      "cost": 2
+    },
+    "remedy_T": {
+      "description": "Apply the flux-channel remedy.",
+      "effects": {
+        "remedy": "flux"
+      },
+      "cost": 2
+    }
+  },
+  "observations": {
+    "current/isolation": {
+      "description": "Repeat the controlled sensor isolation.",
+      "observation": {
+        "content": {
+          "confirmed_channel": "flux"
+        }
+      },
+      "effects": {
+        "diagnosis_confirmed": true
+      },
+      "cost": 1
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "remedy": "flux",
+      "diagnosis_confirmed": true
+    },
+    "finish_status": "completed",
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "remedy_N"
+          }
+        },
+        "state": {
+          "diagnosis_confirmed": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "remedy_T"
+          }
+        },
+        "state": {
+          "diagnosis_confirmed": true
+        }
+      }
+    ],
+    "forbidden_actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_N"
+        }
+      }
+    ]
+  }
+}

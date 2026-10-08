@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot10_feature_flag",
+  "files": {
+    "config/service.json": {
+      "pilot_enabled": false,
+      "cohort": "internal",
+      "global_enabled": false,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Enable only pilot-a using pilot_enabled=true; keep global_enabled=false.",
+      "recommended_settings": {
+        "pilot_enabled": true,
+        "cohort": "pilot-a"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "pilot_enabled": false,
+        "cohort": "internal",
+        "global_enabled": false,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Pilot users cannot reach checkout; global rollout is explicitly out of scope."
+  },
+  "rubric": {
+    "target_settings": {
+      "pilot_enabled": true,
+      "cohort": "pilot-a"
+    },
+    "protected_keys": [
+      "global_enabled",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "cohort",
+        "value": "internal"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

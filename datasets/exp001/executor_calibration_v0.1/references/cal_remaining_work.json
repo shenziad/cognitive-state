@@ -1,0 +1,42 @@
+{
+  "instance_id": "cal_remaining_work",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01"
+    ],
+    "world": [
+      "h02"
+    ],
+    "frontier": [
+      "h01",
+      "h02"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Workspace quartz: ensure precheck and packaging are validated, then finish. 1 credit.",
+      "success_criteria": [
+        "Active requirements satisfied"
+      ],
+      "constraints": [],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Certified checkpoint: precheck is validated; packaging has never run."
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Continue from the supplied evidence",
+      "information_needs": [],
+      "next_action": "Use public tools to satisfy the task"
+    }
+  }
+}

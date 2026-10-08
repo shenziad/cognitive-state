@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp001_frontier_case_study",
+  "selection": "posthoc_observed_failure_exploratory",
+  "source_run": "results/raw/exp001/fair_v02_20261002",
+  "source_sha256": {
+    "artifact": "72db01aeaed5c5b6141e25d370ec854f8ed7dbb5e73e91eeb54130bd1013a33e",
+    "config": "d201f5f228ef94a8d3893df0529921bc65eb739ec5fcc7d4f9cbe34fb0a53d13",
+    "task": "b647655c0fa6669a0eaee7d98b92657b6159e04a67b3e8e3f55869dfce33a081",
+    "environment": "5d037440aeb0c1e5baf0bd46778a687542bf46f7e65930a8407563ae45381558",
+    "executor_prompt": "94731e816e020e19eea147fc9b0eb029158e21baf6ff655b2a90949c660a3068",
+    "representation": "1558901a1c55cde53f5c97c5853abd47da5bcd1b5081e10ab9bdd344c07db17d"
+  },
+  "variants": ["original", "remove_ledger_necessity_assumption", "neutral_next_action", "both", "source_supported_next_action"],
+  "repetitions": 1,
+  "prompt_version": "v0.3",
+  "max_steps": 6,
+  "max_api_calls": 30,
+  "provider": "openai_sdk",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0.0,
+  "endpoint": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key_env": "apikey",
+  "output_limit_parameter": "max_tokens",
+  "max_output_tokens": 2048,
+  "timeout_seconds": 60,
+  "extra_body": {"enable_thinking": false}
+}

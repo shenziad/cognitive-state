@@ -1,0 +1,17 @@
+{
+  "instance_id": "cal_inflight",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/q42"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ]
+}

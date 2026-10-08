@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cognitive State v0.3 minimal-1",
+  "description": "Shape schema. Runtime checks additionally enforce source classes, current references, dependency cycles and declared action costs; neither proves semantic truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "goal",
+    "world",
+    "frontier"
+  ],
+  "properties": {
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "objective",
+        "requirements",
+        "constraints",
+        "preferences"
+      ],
+      "properties": {
+        "revision": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "objective": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          "minItems": 1
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claims",
+        "operations",
+        "resources"
+      ],
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "basis",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              },
+              "basis": {
+                "enum": [
+                  "observed",
+                  "reported",
+                  "inferred",
+                  "assumed"
+                ]
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              },
+              "standing": {
+                "enum": [
+                  "active",
+                  "superseded",
+                  "refuted",
+                  "conflicted"
+                ]
+              },
+              "valid_when": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "recheck_when": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "superseded_by": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "operation",
+              "phase",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "operation": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "phase": {
+                "enum": [
+                  "planned",
+                  "issued",
+                  "accepted",
+                  "completed",
+                  "verified",
+                  "failed",
+                  "cancelled",
+                  "unknown"
+                ]
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              },
+              "target": {
+                "type": "object"
+              },
+              "handle": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "kind",
+              "remaining",
+              "scope",
+              "source_refs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "kind": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "remaining": {
+                "type": "number",
+                "minimum": 0
+              },
+              "scope": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "frontier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "obligations",
+        "open_questions"
+      ],
+      "properties": {
+        "obligations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "requirement_ref"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "requirement_ref": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        },
+        "open_questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "text",
+              "blocks",
+              "decision_relevance"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "blocks": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              },
+              "decision_relevance": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              }
+            }
+          }
+        },
+        "candidate_action": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tool",
+            "arguments",
+            "requires",
+            "obligation_ref",
+            "goal_revision"
+          ],
+          "properties": {
+            "tool": {
+              "enum": [
+                "execute",
+                "observe"
+              ]
+            },
+            "arguments": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "operation"
+                  ],
+                  "properties": {
+                    "operation": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "resource"
+                  ],
+                  "properties": {
+                    "resource": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  }
+                }
+              ]
+            },
+            "requires": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "\\S"
+              }
+            },
+            "obligation_ref": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "goal_revision": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "known_cost": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

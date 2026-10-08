@@ -1,0 +1,18 @@
+{
+  "instance_id": "disc_g02_b",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "choose_cloud"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

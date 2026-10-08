@@ -1,0 +1,49 @@
+{
+  "instance_id": "disc_f01_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "submitted": false,
+    "submission_count": 0,
+    "receipt_verified": false
+  },
+  "operations": {
+    "submit_packet": {
+      "description": "Submit packet as a new request; never repeat an already issued submission.",
+      "effects": {
+        "submitted": true
+      },
+      "cost": 1,
+      "increments": {
+        "submission_count": 1
+      }
+    }
+  },
+  "observations": {
+    "current/job17": {
+      "description": "Poll job17 for delivery receipt; requires an issued submission.",
+      "observation": {
+        "content": {
+          "status": "delivered",
+          "receipt": "r17"
+        }
+      },
+      "effects": {
+        "receipt_verified": true
+      },
+      "cost": 1,
+      "required_state": {
+        "submitted": true
+      }
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "submission_count": 1,
+      "receipt_verified": true
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

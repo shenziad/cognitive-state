@@ -1,0 +1,46 @@
+{
+  "input_snapshot_and_current_hashes_checked": 110,
+  "prompt_snapshot_and_current_hashes_checked": 6,
+  "recorded_code_hashes_checked": 25,
+  "additional_posthoc_code": {
+    "scripts/analyze_discriminative.py": "8cff61a0f0f8a269a650df857c99a9ec58f04a1daa340057723ed7127b903dae"
+  },
+  "replayed_instances": 72,
+  "trace_and_final_state_match": true,
+  "all_saved_metrics_match_replay": true,
+  "reported_api_responses": 247,
+  "api_token_totals_by_condition": {
+    "full_context": 108607,
+    "cognitive_state": 85522,
+    "reference_state": 29805,
+    "summary": 68493
+  },
+  "api_total_tokens": 292427,
+  "models_reported": [
+    "deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "reasoning_tokens_reported": 0,
+  "runtime_errors": [],
+  "hash_mismatches": [],
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 34,
+    "failed": 0
+  },
+  "verification_uses_model_calls": false,
+  "raw_results_sha256": "0b14718725b63160edc5cfadf5d64f828306781ee1d79a04434e83732b163bb4",
+  "separate_smoke": {
+    "saved_runs": 24,
+    "status": "completed_with_errors",
+    "reported_api_responses": 76,
+    "api_total_tokens": 90411,
+    "merged_into_full_run": false
+  },
+  "credential_check": {
+    "dotenv_ignored": true,
+    "dotenv_tracked": false,
+    "text_files_scanned": 696,
+    "matches": 0
+  },
+  "status": "passed"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "gate_type": "prospective_A_v2_complete_predeclared_paired_stratum",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\diagnostic_v1_20261004",
+  "original_D_complete": false,
+  "original_D_gate_status": "failed",
+  "complete_scope": true,
+  "complete_scope_cells": 24,
+  "scope_task_ids": [
+    "hd01_a",
+    "hd01_b",
+    "hd02_a",
+    "hd02_b",
+    "hd03_a",
+    "hd03_b",
+    "hd04_a",
+    "hd04_b",
+    "hd05_a",
+    "hd05_b",
+    "hd06_a",
+    "hd06_b"
+  ],
+  "scope_workflows": 6,
+  "behavior_threshold": null,
+  "missing_original_candidate_cells": 3,
+  "all_incurred_requests_verified": 113,
+  "usage": {
+    "request_attempts": 113,
+    "successful_responses": 113,
+    "total_tokens": 502100,
+    "known_reported_tokens": 502100,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "prior_execution_release_sha256": "9790ffbf93ae680676b8882d073ea65a49f174dcd97a7306cf2bd9c6492f7d99",
+  "original_gate_sha256": "709626bcb046855d07d9b6cd3300a7cecef27c1f4510e7e06a8173d9a8f60cd9",
+  "protected_sha256": {
+    "config.json": "100d6a28ea328bd53b26b22f9c77be5a1da33090ad1fe29a14069ee302810dea",
+    "manifest.json": "ef0250d08cb7505b5777cd22222daf8a9593a2e3cb7ea3a6c35d4e3829d0ee8f",
+    "results.json": "fa491d5eb74a1d804994ce4c873fd3f33047df9a1bb299a3533c2f4ce64e275c",
+    "call_ledger.json": "d6621f63c5d024629620210eaa3538c2eb40c266307f8f66b760a03fee28223d",
+    "interrupted_cell.json": "1faf4333c5cdb5251b6a389873a74d69c380e6e657c8cf6373b6fea5f8b831eb"
+  },
+  "limits": [
+    "This gate was amended after D stopped on its measured token budget.",
+    "D remains incomplete; no three-cell fill, concatenation or complete original-stratum claim.",
+    "A task/condition/prompt selection predates D; scope is not selected by success."
+  ]
+}

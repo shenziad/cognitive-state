@@ -1,0 +1,105 @@
+{
+  "version": "history-diagnostics-development-v01",
+  "status": "reviewable_pre_call_diagnostics",
+  "created_on": "2026-10-04",
+  "model_calls_during_build": 0,
+  "authorship": "Assistant-authored development diagnostics; author knows prior mechanisms and study results, but selects no task using new diagnostic model results.",
+  "allocation_selected_before_any_diagnostic_API_calls": true,
+  "selection_rule": "Latest later checkpoint requesting a substantive new parameter/object choice; otherwise h4. Existing selected parameters merely preserved at later stages do not create a new choice.",
+  "original_selection": {
+    "iw01": {
+      "checkpoint": 2,
+      "reason": "New release-slot choice Friday versus Monday."
+    },
+    "iw02": {
+      "checkpoint": 4,
+      "reason": "Fallback: the diagnostic choice is h1, not a later checkpoint."
+    },
+    "iw03": {
+      "checkpoint": 4,
+      "reason": "Fallback: later stages collect/validate fixed exports, then deliver."
+    },
+    "iw04": {
+      "checkpoint": 4,
+      "reason": "Choose the permitted release asset, landscape versus portrait."
+    },
+    "iw05": {
+      "checkpoint": 4,
+      "reason": "Fallback: later stages update or release the fixed review."
+    },
+    "iw06": {
+      "checkpoint": 4,
+      "reason": "Fallback: later stages check or release fixed calibration c2."
+    },
+    "iw07": {
+      "checkpoint": 2,
+      "reason": "New hotel-location choice station versus venue."
+    },
+    "iw08": {
+      "checkpoint": 3,
+      "reason": "New contact-channel choice email versus SMS."
+    },
+    "iw09": {
+      "checkpoint": 4,
+      "reason": "Choose the requested production snapshot, s8 versus archived s7."
+    },
+    "iw10": {
+      "checkpoint": 2,
+      "reason": "New fit-version choice cohort v2 versus v1."
+    },
+    "iw11": {
+      "checkpoint": 4,
+      "reason": "Fallback: later stages switch/revoke/record the fixed rotation."
+    },
+    "iw12": {
+      "checkpoint": 4,
+      "reason": "Fallback: later stages reconcile or report the fixed delivery."
+    }
+  },
+  "mechanism_A_allocation": {
+    "selection": "all 12 counterfactual members",
+    "task_ids": [
+      "hd01_a",
+      "hd01_b",
+      "hd02_a",
+      "hd02_b",
+      "hd03_a",
+      "hd03_b",
+      "hd04_a",
+      "hd04_b",
+      "hd05_a",
+      "hd05_b",
+      "hd06_a",
+      "hd06_b"
+    ],
+    "independent_business_workflow_count": 6,
+    "member_count": 12,
+    "performance_based_selection": false
+  },
+  "source_sha256": {
+    "public_workflows.json": "ff7b2f38788920065d0108ef514a2038c6083d17734b0282cc531100a64a5283",
+    "evaluator_fixtures.json": "ae7bddf48f0b20c7ba666968dcdb95ce11365d11263689dc48862e2ae3194613",
+    "offline_trajectories.json": "6244d73f0754de2da39df26e1c589a20ef8abbe8ea9ec182f225ba8618704d78",
+    "provenance.json": "88a944f2871f29899a85afcaa6c74bda786d2b93ca97d0ae83b3dda191ab6348"
+  },
+  "builder_sha256": "ac8e66083799729cf43450b4a71061087d8aea22d92c4f67f65af669d46766a8",
+  "public_input_projection": [
+    "historical_context (absent in No History)",
+    "current_public_events",
+    "public_interface"
+  ],
+  "metadata_never_model_input": [
+    "task_id",
+    "family",
+    "source_workflow_id",
+    "checkpoint",
+    "pair_id",
+    "variant"
+  ],
+  "sha256": {
+    "fixtures_private.json": "1efd7c29329719ad2503c1f226ac00ada677fdc232073235973944dd00af2fcd",
+    "offline_history_necessity.json": "df31d94c79454820220221faf5e040862c2c0493888dd57ca9eeadfc20766f2f",
+    "README.md": "727c3cd7985d7b250376fb17e258715057ab165705355baf3608443a37a974bb",
+    "tasks_public.json": "3c7779afffc1bcaeaeb8917c0a82e5d7f5097794d6c195accc4d66dd4fd073e9"
+  }
+}

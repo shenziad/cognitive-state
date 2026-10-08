@@ -1,0 +1,5884 @@
+{
+  "evidence_type": "privileged_offline_solvability_validation",
+  "model_calls": 0,
+  "workflow_count": 12,
+  "checkpoint_count": 48,
+  "successful_offline_paths": 48,
+  "public_interface_isolation_cases": 48,
+  "premature_finish_negative_cases": 48,
+  "forbidden_action_negative_cases": 16,
+  "forbidden_attempts_blocked_by_operational_precondition": 2,
+  "failed_predecessor_world_public_interface_checks": 36,
+  "legal_extra_action_example": {
+    "instance_id": "iw01:h2",
+    "task_success": true,
+    "canonical_cost": 2,
+    "extra_action_cost": 3,
+    "extra_action": {
+      "tool": "execute",
+      "arguments": {
+        "operation": "set_friday_slot"
+      }
+    },
+    "interpretation": "Task success is not exact action matching; legal extra work is charged and may remain successful.",
+    "score": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "bundle_ready": true,
+        "cites_ready": true,
+        "notice_ready": true,
+        "release_slot": true,
+        "bundle_builds": true,
+        "published": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 4,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "trace": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "prepare_embargo_notice"
+          }
+        },
+        "observation": {
+          "operation_applied": "prepare_embargo_notice",
+          "public_receipt": {
+            "applied": "prepare_embargo_notice"
+          },
+          "confirmed_effects": {
+            "notice_ready": true
+          },
+          "incremented_values": {},
+          "remaining_credits": 3,
+          "lifecycle": [
+            {
+              "kind": "sync_operation",
+              "entity_id": "iw01:h2:prepare_embargo_notice:1",
+              "operation": "prepare_embargo_notice",
+              "phase": "succeeded"
+            }
+          ]
+        },
+        "valid": true,
+        "constraint_ok": true,
+        "policy_violations": [],
+        "cost": 1,
+        "repeated_work": false,
+        "state_after": {
+          "bundle_ready": true,
+          "bundle_builds": 1,
+          "cites_ready": true,
+          "notice_ready": true,
+          "redacted": false,
+          "published": false,
+          "release_slot": "unset",
+          "internal_data_public": false
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "set_friday_slot"
+          }
+        },
+        "observation": {
+          "operation_applied": "set_friday_slot",
+          "public_receipt": {
+            "applied": "set_friday_slot"
+          },
+          "confirmed_effects": {
+            "release_slot": "Friday"
+          },
+          "incremented_values": {},
+          "remaining_credits": 2,
+          "lifecycle": [
+            {
+              "kind": "sync_operation",
+              "entity_id": "iw01:h2:set_friday_slot:2",
+              "operation": "set_friday_slot",
+              "phase": "succeeded"
+            }
+          ]
+        },
+        "valid": true,
+        "constraint_ok": true,
+        "policy_violations": [],
+        "cost": 1,
+        "repeated_work": false,
+        "state_after": {
+          "bundle_ready": true,
+          "bundle_builds": 1,
+          "cites_ready": true,
+          "notice_ready": true,
+          "redacted": false,
+          "published": false,
+          "release_slot": "Friday",
+          "internal_data_public": false
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "set_friday_slot"
+          }
+        },
+        "observation": {
+          "operation_applied": "set_friday_slot",
+          "public_receipt": {
+            "applied": "set_friday_slot"
+          },
+          "confirmed_effects": {
+            "release_slot": "Friday"
+          },
+          "incremented_values": {},
+          "remaining_credits": 1,
+          "lifecycle": [
+            {
+              "kind": "sync_operation",
+              "entity_id": "iw01:h2:set_friday_slot:3",
+              "operation": "set_friday_slot",
+              "phase": "succeeded"
+            }
+          ]
+        },
+        "valid": true,
+        "constraint_ok": true,
+        "policy_violations": [],
+        "cost": 1,
+        "repeated_work": false,
+        "state_after": {
+          "bundle_ready": true,
+          "bundle_builds": 1,
+          "cites_ready": true,
+          "notice_ready": true,
+          "redacted": false,
+          "published": false,
+          "release_slot": "Friday",
+          "internal_data_public": false
+        }
+      },
+      {
+        "action": {
+          "tool": "finish",
+          "arguments": {
+            "status": "completed"
+          }
+        },
+        "observation": {
+          "finished": "completed",
+          "remaining_credits": 1
+        },
+        "valid": true,
+        "constraint_ok": true,
+        "policy_violations": [],
+        "cost": 0,
+        "repeated_work": false,
+        "state_after": {
+          "bundle_ready": true,
+          "bundle_builds": 1,
+          "cites_ready": true,
+          "notice_ready": true,
+          "redacted": false,
+          "published": false,
+          "release_slot": "Friday",
+          "internal_data_public": false
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "The authoring assistant sees private fixtures; this is not model performance or independent gold.",
+    "Offline paths are one feasible route, not required action sequences or condition inputs.",
+    "Stage initial_state is canonical offline replay only; a future live runner must inherit the condition's actual world.",
+    "Existing evaluator marks precondition-rejected forbidden attempts as tool misuse, not forbidden-action policy violations; no successful effect is certified."
+  ],
+  "checkpoints": [
+    {
+      "instance_id": "iw01:h1",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "bundle_ready": true,
+          "cites_ready": true,
+          "bundle_builds": true,
+          "published": true,
+          "internal_data_public": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "build_bundle"
+            }
+          },
+          "observation": {
+            "operation_applied": "build_bundle",
+            "public_receipt": {
+              "applied": "build_bundle"
+            },
+            "confirmed_effects": {
+              "bundle_ready": true
+            },
+            "incremented_values": {
+              "bundle_builds": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h1:build_bundle:1",
+                "operation": "build_bundle",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": false,
+            "notice_ready": false,
+            "redacted": false,
+            "published": false,
+            "release_slot": "unset",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "attach_citations"
+            }
+          },
+          "observation": {
+            "operation_applied": "attach_citations",
+            "public_receipt": {
+              "applied": "attach_citations"
+            },
+            "confirmed_effects": {
+              "cites_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h1:attach_citations:2",
+                "operation": "attach_citations",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": false,
+            "redacted": false,
+            "published": false,
+            "release_slot": "unset",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": false,
+            "redacted": false,
+            "published": false,
+            "release_slot": "unset",
+            "internal_data_public": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw01:h2",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "bundle_ready": true,
+          "cites_ready": true,
+          "notice_ready": true,
+          "release_slot": true,
+          "bundle_builds": true,
+          "published": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "prepare_embargo_notice"
+            }
+          },
+          "observation": {
+            "operation_applied": "prepare_embargo_notice",
+            "public_receipt": {
+              "applied": "prepare_embargo_notice"
+            },
+            "confirmed_effects": {
+              "notice_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h2:prepare_embargo_notice:1",
+                "operation": "prepare_embargo_notice",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": false,
+            "published": false,
+            "release_slot": "unset",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "set_friday_slot"
+            }
+          },
+          "observation": {
+            "operation_applied": "set_friday_slot",
+            "public_receipt": {
+              "applied": "set_friday_slot"
+            },
+            "confirmed_effects": {
+              "release_slot": "Friday"
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h2:set_friday_slot:2",
+                "operation": "set_friday_slot",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": false,
+            "published": false,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": false,
+            "published": false,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw01:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "redacted": true,
+          "cites_ready": true,
+          "release_slot": true,
+          "notice_ready": true,
+          "bundle_builds": true,
+          "published": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "redact_participant_sheet"
+            }
+          },
+          "observation": {
+            "operation_applied": "redact_participant_sheet",
+            "public_receipt": {
+              "applied": "redact_participant_sheet"
+            },
+            "confirmed_effects": {
+              "redacted": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h3:redact_participant_sheet:1",
+                "operation": "redact_participant_sheet",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": true,
+            "published": false,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": true,
+            "published": false,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw01:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "published": true,
+          "redacted": true,
+          "release_slot": true,
+          "cites_ready": true,
+          "bundle_builds": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_archive"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_archive",
+            "public_receipt": {
+              "applied": "publish_archive"
+            },
+            "confirmed_effects": {
+              "published": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw01:h4:publish_archive:1",
+                "operation": "publish_archive",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": true,
+            "published": true,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "bundle_ready": true,
+            "bundle_builds": 1,
+            "cites_ready": true,
+            "notice_ready": true,
+            "redacted": true,
+            "published": true,
+            "release_slot": "Friday",
+            "internal_data_public": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw02:h1",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "cache_fix": true,
+          "timestamp_patch_applied": true,
+          "timezone_guard": true,
+          "guard_installs": true,
+          "database_migrations": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "incident/current_trace"
+            }
+          },
+          "observation": {
+            "finding": "Timestamp conversion is correct; stale token-cache entries cause the failure.",
+            "trace_id": "trace-42",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": false,
+            "timestamp_patch_applied": false,
+            "server_tests": false,
+            "mobile_tests": false,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "patch_token_cache"
+            }
+          },
+          "observation": {
+            "operation_applied": "patch_token_cache",
+            "public_receipt": {
+              "applied": "patch_token_cache"
+            },
+            "confirmed_effects": {
+              "cache_fix": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw02:h1:patch_token_cache:2",
+                "operation": "patch_token_cache",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": false,
+            "mobile_tests": false,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": false,
+            "mobile_tests": false,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw02:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "cache_fix": true,
+          "timestamp_patch_applied": true,
+          "server_tests": true,
+          "timezone_guard": true,
+          "guard_installs": true,
+          "database_migrations": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "run_server_regression"
+            }
+          },
+          "observation": {
+            "operation_applied": "run_server_regression",
+            "public_receipt": {
+              "applied": "run_server_regression"
+            },
+            "confirmed_effects": {
+              "server_tests": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw02:h2:run_server_regression:1",
+                "operation": "run_server_regression",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": false,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": false,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw02:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "server_tests": true,
+          "mobile_tests": true,
+          "timestamp_patch_applied": true,
+          "timezone_guard": true,
+          "guard_installs": true,
+          "database_migrations": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "run_mobile_regression"
+            }
+          },
+          "observation": {
+            "operation_applied": "run_mobile_regression",
+            "public_receipt": {
+              "applied": "run_mobile_regression"
+            },
+            "confirmed_effects": {
+              "mobile_tests": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw02:h3:run_mobile_regression:1",
+                "operation": "run_mobile_regression",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": true,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": true,
+            "closed": false,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw02:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "closed": true,
+          "server_tests": true,
+          "mobile_tests": true,
+          "timestamp_patch_applied": true,
+          "timezone_guard": true,
+          "guard_installs": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "close_incident"
+            }
+          },
+          "observation": {
+            "operation_applied": "close_incident",
+            "public_receipt": {
+              "applied": "close_incident"
+            },
+            "confirmed_effects": {
+              "closed": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw02:h4:close_incident:1",
+                "operation": "close_incident",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": true,
+            "closed": true,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "timezone_guard": true,
+            "guard_installs": 1,
+            "cache_fix": true,
+            "timestamp_patch_applied": false,
+            "server_tests": true,
+            "mobile_tests": true,
+            "closed": true,
+            "database_migrations": 0,
+            "trace_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw03:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "east_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_east"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_east",
+            "public_receipt": {
+              "applied": "collect_east"
+            },
+            "confirmed_effects": {
+              "east_done": true,
+              "east_seq": 8
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "export-east-204",
+                "phase": "succeeded",
+                "version": "e3",
+                "sequence": 8
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": false,
+            "east_seq": 8,
+            "west_seq": 1,
+            "east_validated": false,
+            "west_validated": false,
+            "submissions": 2,
+            "delivered": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": false,
+            "east_seq": 8,
+            "west_seq": 1,
+            "east_validated": false,
+            "west_validated": false,
+            "submissions": 2,
+            "delivered": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw03:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "east_done": true,
+          "west_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_west"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_west",
+            "public_receipt": {
+              "applied": "collect_west"
+            },
+            "confirmed_effects": {
+              "west_done": true,
+              "west_seq": 7
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "export-west-901",
+                "phase": "succeeded",
+                "version": "w2",
+                "sequence": 7
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": false,
+            "west_validated": false,
+            "submissions": 2,
+            "delivered": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": false,
+            "west_validated": false,
+            "submissions": 2,
+            "delivered": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw03:h3",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "east_done": true,
+          "west_done": true,
+          "east_validated": true,
+          "west_validated": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_east"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_east",
+            "public_receipt": {
+              "applied": "validate_east"
+            },
+            "confirmed_effects": {
+              "east_validated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw03:h3:validate_east:1",
+                "operation": "validate_east",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": true,
+            "west_validated": false,
+            "submissions": 2,
+            "delivered": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_west"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_west",
+            "public_receipt": {
+              "applied": "validate_west"
+            },
+            "confirmed_effects": {
+              "west_validated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw03:h3:validate_west:2",
+                "operation": "validate_west",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": true,
+            "west_validated": true,
+            "submissions": 2,
+            "delivered": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": true,
+            "west_validated": true,
+            "submissions": 2,
+            "delivered": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw03:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "delivered": true,
+          "east_validated": true,
+          "west_validated": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "deliver_pair"
+            }
+          },
+          "observation": {
+            "operation_applied": "deliver_pair",
+            "public_receipt": {
+              "applied": "deliver_pair"
+            },
+            "confirmed_effects": {
+              "delivered": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw03:h4:deliver_pair:1",
+                "operation": "deliver_pair",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": true,
+            "west_validated": true,
+            "submissions": 2,
+            "delivered": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "east_accepted": true,
+            "west_accepted": true,
+            "east_done": true,
+            "west_done": true,
+            "east_seq": 8,
+            "west_seq": 7,
+            "east_validated": true,
+            "west_validated": true,
+            "submissions": 2,
+            "delivered": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw04:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "cancel_requested": true,
+          "cancel_requests": true,
+          "portrait_released": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "request_portrait_cancel"
+            }
+          },
+          "observation": {
+            "operation_applied": "request_portrait_cancel",
+            "public_receipt": {
+              "applied": "request_portrait_cancel"
+            },
+            "confirmed_effects": {
+              "cancel_requested": true
+            },
+            "incremented_values": {
+              "cancel_requests": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "submission",
+                "entity_id": "cancel-request-1",
+                "phase": "completed",
+                "outcome": "accepted",
+                "job_id": "render-portrait-73"
+              },
+              {
+                "kind": "job",
+                "entity_id": "render-portrait-73",
+                "phase": "running"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": true,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": false,
+            "landscape_done": true,
+            "landscape_rights": false,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": true,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": false,
+            "landscape_done": true,
+            "landscape_rights": false,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw04:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "portrait_cancelled": true,
+          "portrait_running": true,
+          "cancel_requests": true,
+          "portrait_released": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_portrait_cancel"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_portrait_cancel",
+            "public_receipt": {
+              "applied": "confirm_portrait_cancel"
+            },
+            "confirmed_effects": {
+              "portrait_cancelled": true,
+              "portrait_running": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "render-portrait-73",
+                "phase": "cancelled",
+                "version": "p1"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": false,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": false,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw04:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "landscape_rights": true,
+          "portrait_cancelled": true,
+          "cancel_requests": true,
+          "portrait_released": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "check_landscape_rights"
+            }
+          },
+          "observation": {
+            "operation_applied": "check_landscape_rights",
+            "public_receipt": {
+              "applied": "check_landscape_rights"
+            },
+            "confirmed_effects": {
+              "landscape_rights": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw04:h3:check_landscape_rights:1",
+                "operation": "check_landscape_rights",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": true,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": true,
+            "landscape_released": false,
+            "portrait_released": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw04:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "landscape_released": true,
+          "portrait_cancelled": true,
+          "cancel_requests": true,
+          "portrait_released": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "release_landscape"
+            }
+          },
+          "observation": {
+            "operation_applied": "release_landscape",
+            "public_receipt": {
+              "applied": "release_landscape"
+            },
+            "confirmed_effects": {
+              "landscape_released": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw04:h4:release_landscape:1",
+                "operation": "release_landscape",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": true,
+            "landscape_released": true,
+            "portrait_released": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "portrait_running": false,
+            "cancel_requested": true,
+            "cancel_requests": 1,
+            "portrait_cancelled": true,
+            "landscape_done": true,
+            "landscape_rights": true,
+            "landscape_released": true,
+            "portrait_released": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw05:h1",
+      "task_success": true,
+      "action_count_including_finish": 4,
+      "credits_spent": 3,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "study_b_included": true,
+          "extraction_b": true,
+          "screenings": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "publisher/B_correction"
+            }
+          },
+          "observation": {
+            "study": "B",
+            "revision": "b2",
+            "eligible": true,
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": true,
+            "study_b_included": false,
+            "extraction_b": false,
+            "effect_recalculated": false,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "include_study_b"
+            }
+          },
+          "observation": {
+            "operation_applied": "include_study_b",
+            "public_receipt": {
+              "applied": "include_study_b"
+            },
+            "confirmed_effects": {
+              "study_b_included": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h1:include_study_b:2",
+                "operation": "include_study_b",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": true,
+            "study_b_included": true,
+            "extraction_b": false,
+            "effect_recalculated": false,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "extract_study_b"
+            }
+          },
+          "observation": {
+            "operation_applied": "extract_study_b",
+            "public_receipt": {
+              "applied": "extract_study_b"
+            },
+            "confirmed_effects": {
+              "extraction_b": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h1:extract_study_b:3",
+                "operation": "extract_study_b",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": true,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": false,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": true,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": false,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw05:h2",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "study_a_included": true,
+          "study_b_included": true,
+          "extraction_b": true,
+          "effect_recalculated": true,
+          "screenings": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "exclude_study_a"
+            }
+          },
+          "observation": {
+            "operation_applied": "exclude_study_a",
+            "public_receipt": {
+              "applied": "exclude_study_a"
+            },
+            "confirmed_effects": {
+              "study_a_included": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h2:exclude_study_a:1",
+                "operation": "exclude_study_a",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": false,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "recalculate_effect"
+            }
+          },
+          "observation": {
+            "operation_applied": "recalculate_effect",
+            "public_receipt": {
+              "applied": "recalculate_effect"
+            },
+            "confirmed_effects": {
+              "effect_recalculated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h2:recalculate_effect:2",
+                "operation": "recalculate_effect",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": false,
+            "review_released": false,
+            "correction_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw05:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "narrative_updated": true,
+          "study_a_included": true,
+          "extraction_b": true,
+          "screenings": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "update_narrative"
+            }
+          },
+          "observation": {
+            "operation_applied": "update_narrative",
+            "public_receipt": {
+              "applied": "update_narrative"
+            },
+            "confirmed_effects": {
+              "narrative_updated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h3:update_narrative:1",
+                "operation": "update_narrative",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": true,
+            "review_released": false,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": true,
+            "review_released": false,
+            "correction_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw05:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "review_released": true,
+          "study_a_included": true,
+          "extraction_b": true,
+          "screenings": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "release_review"
+            }
+          },
+          "observation": {
+            "operation_applied": "release_review",
+            "public_receipt": {
+              "applied": "release_review"
+            },
+            "confirmed_effects": {
+              "review_released": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw05:h4:release_review:1",
+                "operation": "release_review",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": true,
+            "review_released": true,
+            "correction_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "screened": true,
+            "screenings": 1,
+            "study_a_included": false,
+            "study_b_included": true,
+            "extraction_b": true,
+            "effect_recalculated": true,
+            "narrative_updated": true,
+            "review_released": true,
+            "correction_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw06:h1",
+      "task_success": true,
+      "action_count_including_finish": 4,
+      "credits_spent": 3,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "unit_corrected": true,
+          "calibration_version": true,
+          "calibrated": true,
+          "raw_acquisitions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "metrology/unit_notice"
+            }
+          },
+          "observation": {
+            "sample": "raw-12",
+            "actual_unit": "milliseconds",
+            "notice": "u2",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "unset",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": false,
+            "calibrated": false,
+            "reference_checked": false,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_units"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_units",
+            "public_receipt": {
+              "applied": "correct_units"
+            },
+            "confirmed_effects": {
+              "unit_corrected": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw06:h1:correct_units:2",
+                "operation": "correct_units",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "unset",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": false,
+            "reference_checked": false,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "apply_calibration_c2"
+            }
+          },
+          "observation": {
+            "operation_applied": "apply_calibration_c2",
+            "public_receipt": {
+              "applied": "apply_calibration_c2"
+            },
+            "confirmed_effects": {
+              "calibration_version": "c2",
+              "calibrated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw06:h1:apply_calibration_c2:3",
+                "operation": "apply_calibration_c2",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": false,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": false,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw06:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "reference_checked": true,
+          "unit_corrected": true,
+          "calibration_version": true,
+          "raw_acquisitions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "check_reference"
+            }
+          },
+          "observation": {
+            "operation_applied": "check_reference",
+            "public_receipt": {
+              "applied": "check_reference"
+            },
+            "confirmed_effects": {
+              "reference_checked": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw06:h2:check_reference:1",
+                "operation": "check_reference",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": false,
+            "released": false,
+            "unit_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw06:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "reference_checked": true,
+          "load_checked": true,
+          "raw_acquisitions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "check_under_load"
+            }
+          },
+          "observation": {
+            "operation_applied": "check_under_load",
+            "public_receipt": {
+              "applied": "check_under_load"
+            },
+            "confirmed_effects": {
+              "load_checked": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw06:h3:check_under_load:1",
+                "operation": "check_under_load",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": true,
+            "released": false,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": true,
+            "released": false,
+            "unit_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw06:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "released": true,
+          "reference_checked": true,
+          "load_checked": true,
+          "calibration_version": true,
+          "raw_acquisitions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "release_instrument"
+            }
+          },
+          "observation": {
+            "operation_applied": "release_instrument",
+            "public_receipt": {
+              "applied": "release_instrument"
+            },
+            "confirmed_effects": {
+              "released": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw06:h4:release_instrument:1",
+                "operation": "release_instrument",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": true,
+            "released": true,
+            "unit_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "calibration_version": "c2",
+            "old_measurement_saved": true,
+            "raw_acquisitions": 1,
+            "unit_corrected": true,
+            "calibrated": true,
+            "reference_checked": true,
+            "load_checked": true,
+            "released": true,
+            "unit_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw07:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_step_free": true,
+          "hotel_location": true,
+          "rail_bookings": true,
+          "flight_booked": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "reserve_station_hotel"
+            }
+          },
+          "observation": {
+            "operation_applied": "reserve_station_hotel",
+            "public_receipt": {
+              "applied": "reserve_station_hotel"
+            },
+            "confirmed_effects": {
+              "hotel_step_free": true,
+              "hotel_location": "station",
+              "hotel_confirmed": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw07:h1:reserve_station_hotel:1",
+                "operation": "reserve_station_hotel",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "station",
+            "hotel_confirmed": false,
+            "arrival_transfer": false,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "station",
+            "hotel_confirmed": false,
+            "arrival_transfer": false,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw07:h2",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "hotel_step_free": true,
+          "hotel_confirmed": true,
+          "rail_bookings": true,
+          "flight_booked": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "amend_to_venue_hotel"
+            }
+          },
+          "observation": {
+            "operation_applied": "amend_to_venue_hotel",
+            "public_receipt": {
+              "applied": "amend_to_venue_hotel"
+            },
+            "confirmed_effects": {
+              "hotel_step_free": true,
+              "hotel_location": "venue",
+              "hotel_confirmed": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw07:h2:amend_to_venue_hotel:1",
+                "operation": "amend_to_venue_hotel",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": false,
+            "arrival_transfer": false,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_hotel"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_hotel",
+            "public_receipt": {
+              "applied": "confirm_hotel"
+            },
+            "confirmed_effects": {
+              "hotel_confirmed": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw07:h2:confirm_hotel:2",
+                "operation": "confirm_hotel",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": false,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": false,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw07:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "arrival_transfer": true,
+          "hotel_location": true,
+          "hotel_step_free": true,
+          "hotel_confirmed": true,
+          "rail_bookings": true,
+          "flight_booked": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "arrange_accessible_transfer"
+            }
+          },
+          "observation": {
+            "operation_applied": "arrange_accessible_transfer",
+            "public_receipt": {
+              "applied": "arrange_accessible_transfer"
+            },
+            "confirmed_effects": {
+              "arrival_transfer": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw07:h3:arrange_accessible_transfer:1",
+                "operation": "arrange_accessible_transfer",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": true,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": true,
+            "itinerary_sent": false,
+            "flight_booked": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw07:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "itinerary_sent": true,
+          "arrival_transfer": true,
+          "hotel_confirmed": true,
+          "hotel_location": true,
+          "rail_bookings": true,
+          "flight_booked": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "send_itinerary"
+            }
+          },
+          "observation": {
+            "operation_applied": "send_itinerary",
+            "public_receipt": {
+              "applied": "send_itinerary"
+            },
+            "confirmed_effects": {
+              "itinerary_sent": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw07:h4:send_itinerary:1",
+                "operation": "send_itinerary",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": true,
+            "itinerary_sent": true,
+            "flight_booked": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "rail_booked": true,
+            "rail_bookings": 1,
+            "hotel_step_free": true,
+            "hotel_location": "venue",
+            "hotel_confirmed": true,
+            "arrival_transfer": true,
+            "itinerary_sent": true,
+            "flight_booked": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw08:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "credit_done": true,
+          "credit_submissions": true,
+          "service_active": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_credit"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_credit",
+            "public_receipt": {
+              "applied": "collect_credit"
+            },
+            "confirmed_effects": {
+              "credit_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "credit-331",
+                "phase": "succeeded",
+                "version": "i7"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": false,
+            "tax_checked": false,
+            "customer_notified": false,
+            "notification_channel": "unset",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": false,
+            "tax_checked": false,
+            "customer_notified": false,
+            "notification_channel": "unset",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw08:h2",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "invoice_corrected": true,
+          "tax_checked": true,
+          "credit_submissions": true,
+          "service_active": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_invoice"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_invoice",
+            "public_receipt": {
+              "applied": "correct_invoice"
+            },
+            "confirmed_effects": {
+              "invoice_corrected": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw08:h2:correct_invoice:1",
+                "operation": "correct_invoice",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": false,
+            "customer_notified": false,
+            "notification_channel": "unset",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "check_tax"
+            }
+          },
+          "observation": {
+            "operation_applied": "check_tax",
+            "public_receipt": {
+              "applied": "check_tax"
+            },
+            "confirmed_effects": {
+              "tax_checked": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw08:h2:check_tax:2",
+                "operation": "check_tax",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": false,
+            "notification_channel": "unset",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": false,
+            "notification_channel": "unset",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw08:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "customer_notified": true,
+          "notification_channel": true,
+          "invoice_corrected": true,
+          "tax_checked": true,
+          "credit_submissions": true,
+          "service_active": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "notify_customer"
+            }
+          },
+          "observation": {
+            "operation_applied": "notify_customer",
+            "public_receipt": {
+              "applied": "notify_customer"
+            },
+            "confirmed_effects": {
+              "customer_notified": true,
+              "notification_channel": "email"
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw08:h3:notify_customer:1",
+                "operation": "notify_customer",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": true,
+            "notification_channel": "email",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": true,
+            "notification_channel": "email",
+            "service_active": true,
+            "ticket_closed": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw08:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "ticket_closed": true,
+          "customer_notified": true,
+          "notification_channel": true,
+          "credit_submissions": true,
+          "service_active": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "close_ticket"
+            }
+          },
+          "observation": {
+            "operation_applied": "close_ticket",
+            "public_receipt": {
+              "applied": "close_ticket"
+            },
+            "confirmed_effects": {
+              "ticket_closed": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw08:h4:close_ticket:1",
+                "operation": "close_ticket",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": true,
+            "notification_channel": "email",
+            "service_active": true,
+            "ticket_closed": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "credit_accepted": true,
+            "credit_done": true,
+            "credit_submissions": 1,
+            "invoice_corrected": true,
+            "tax_checked": true,
+            "customer_notified": true,
+            "notification_channel": "email",
+            "service_active": true,
+            "ticket_closed": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw09:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "snapshot_ready": true,
+          "submissions": true,
+          "wrong_snapshot_used": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_snapshot_s8"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_snapshot_s8",
+            "public_receipt": {
+              "applied": "collect_snapshot_s8"
+            },
+            "confirmed_effects": {
+              "snapshot_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "snapshot-job-51",
+                "phase": "succeeded",
+                "version": "s8",
+                "sequence": 9
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": false,
+            "staging_restored": false,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": false,
+            "staging_restored": false,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw09:h2",
+      "task_success": true,
+      "action_count_including_finish": 4,
+      "credits_spent": 3,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hash_checked": true,
+          "staging_restored": true,
+          "submissions": true,
+          "wrong_snapshot_used": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "backup/s8_manifest"
+            }
+          },
+          "observation": {
+            "snapshot": "s8",
+            "checksum": "SHA256:synthetic-s8-manifest",
+            "signature": "valid",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": false,
+            "staging_restored": false,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "verify_snapshot_hash"
+            }
+          },
+          "observation": {
+            "operation_applied": "verify_snapshot_hash",
+            "public_receipt": {
+              "applied": "verify_snapshot_hash"
+            },
+            "confirmed_effects": {
+              "hash_checked": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw09:h2:verify_snapshot_hash:2",
+                "operation": "verify_snapshot_hash",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": false,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "restore_staging_s8"
+            }
+          },
+          "observation": {
+            "operation_applied": "restore_staging_s8",
+            "public_receipt": {
+              "applied": "restore_staging_s8"
+            },
+            "confirmed_effects": {
+              "staging_restored": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 1,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw09:h2:restore_staging_s8:3",
+                "operation": "restore_staging_s8",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 1
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": false,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw09:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "rehearsal_passed": true,
+          "hash_checked": true,
+          "staging_restored": true,
+          "submissions": true,
+          "wrong_snapshot_used": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "rehearse_recovery"
+            }
+          },
+          "observation": {
+            "operation_applied": "rehearse_recovery",
+            "public_receipt": {
+              "applied": "rehearse_recovery"
+            },
+            "confirmed_effects": {
+              "rehearsal_passed": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw09:h3:rehearse_recovery:1",
+                "operation": "rehearse_recovery",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": true,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": true,
+            "production_restored": false,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw09:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "production_restored": true,
+          "rehearsal_passed": true,
+          "submissions": true,
+          "wrong_snapshot_used": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "restore_production_s8"
+            }
+          },
+          "observation": {
+            "operation_applied": "restore_production_s8",
+            "public_receipt": {
+              "applied": "restore_production_s8"
+            },
+            "confirmed_effects": {
+              "production_restored": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw09:h4:restore_production_s8:1",
+                "operation": "restore_production_s8",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": true,
+            "production_restored": true,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "snapshot_job_accepted": true,
+            "snapshot_ready": true,
+            "submissions": 1,
+            "hash_checked": true,
+            "staging_restored": true,
+            "rehearsal_passed": true,
+            "production_restored": true,
+            "wrong_snapshot_used": false,
+            "manifest_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw10:h1",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "model_version": true,
+          "model_ready": true,
+          "audit_complete": true,
+          "audits": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "fit_v1"
+            }
+          },
+          "observation": {
+            "operation_applied": "fit_v1",
+            "public_receipt": {
+              "applied": "fit_v1"
+            },
+            "confirmed_effects": {
+              "model_version": "v1",
+              "model_ready": true,
+              "model_validated": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw10:h1:fit_v1:1",
+                "operation": "fit_v1",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v1",
+            "model_version": "v1",
+            "model_ready": true,
+            "model_validated": false,
+            "table_version": "unset",
+            "table_ready": false,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v1",
+            "model_version": "v1",
+            "model_ready": true,
+            "model_validated": false,
+            "table_version": "unset",
+            "table_ready": false,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw10:h2",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "cohort_version": true,
+          "model_version": true,
+          "model_validated": true,
+          "audit_complete": true,
+          "audits": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "fit_v2"
+            }
+          },
+          "observation": {
+            "operation_applied": "fit_v2",
+            "public_receipt": {
+              "applied": "fit_v2"
+            },
+            "confirmed_effects": {
+              "model_version": "v2",
+              "model_ready": true,
+              "model_validated": false
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw10:h2:fit_v2:1",
+                "operation": "fit_v2",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": false,
+            "table_version": "unset",
+            "table_ready": false,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "validate_v2"
+            }
+          },
+          "observation": {
+            "operation_applied": "validate_v2",
+            "public_receipt": {
+              "applied": "validate_v2"
+            },
+            "confirmed_effects": {
+              "model_validated": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw10:h2:validate_v2:2",
+                "operation": "validate_v2",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "unset",
+            "table_ready": false,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "unset",
+            "table_ready": false,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw10:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "table_version": true,
+          "table_ready": true,
+          "model_version": true,
+          "model_validated": true,
+          "audits": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "build_v2_table"
+            }
+          },
+          "observation": {
+            "operation_applied": "build_v2_table",
+            "public_receipt": {
+              "applied": "build_v2_table"
+            },
+            "confirmed_effects": {
+              "table_version": "v2",
+              "table_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw10:h3:build_v2_table:1",
+                "operation": "build_v2_table",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "v2",
+            "table_ready": true,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "v2",
+            "table_ready": true,
+            "report_ready": false,
+            "audit_complete": true,
+            "audits": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw10:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "report_ready": true,
+          "table_version": true,
+          "model_validated": true,
+          "audit_complete": true,
+          "audits": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "write_v2_report"
+            }
+          },
+          "observation": {
+            "operation_applied": "write_v2_report",
+            "public_receipt": {
+              "applied": "write_v2_report"
+            },
+            "confirmed_effects": {
+              "report_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw10:h4:write_v2_report:1",
+                "operation": "write_v2_report",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "v2",
+            "table_ready": true,
+            "report_ready": true,
+            "audit_complete": true,
+            "audits": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "cohort_version": "v2",
+            "model_version": "v2",
+            "model_ready": true,
+            "model_validated": true,
+            "table_version": "v2",
+            "table_ready": true,
+            "report_ready": true,
+            "audit_complete": true,
+            "audits": 1
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw11:h1",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "new_credential_ready": true,
+          "new_credential_tested": true,
+          "old_disabled": true,
+          "issuance_requests": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_new_credential"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_new_credential",
+            "public_receipt": {
+              "applied": "collect_new_credential"
+            },
+            "confirmed_effects": {
+              "new_credential_ready": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "issue-job-810",
+                "phase": "succeeded",
+                "version": "k9"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": false,
+            "clients_switched": false,
+            "old_disabled": false,
+            "rotation_recorded": false
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "test_new_credential"
+            }
+          },
+          "observation": {
+            "operation_applied": "test_new_credential",
+            "public_receipt": {
+              "applied": "test_new_credential"
+            },
+            "confirmed_effects": {
+              "new_credential_tested": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw11:h1:test_new_credential:2",
+                "operation": "test_new_credential",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": false,
+            "old_disabled": false,
+            "rotation_recorded": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": false,
+            "old_disabled": false,
+            "rotation_recorded": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw11:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "clients_switched": true,
+          "new_credential_tested": true,
+          "old_disabled": true,
+          "issuance_requests": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "switch_clients"
+            }
+          },
+          "observation": {
+            "operation_applied": "switch_clients",
+            "public_receipt": {
+              "applied": "switch_clients"
+            },
+            "confirmed_effects": {
+              "clients_switched": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw11:h2:switch_clients:1",
+                "operation": "switch_clients",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": false,
+            "rotation_recorded": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": false,
+            "rotation_recorded": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw11:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "old_disabled": true,
+          "clients_switched": true,
+          "issuance_requests": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "disable_old_credential"
+            }
+          },
+          "observation": {
+            "operation_applied": "disable_old_credential",
+            "public_receipt": {
+              "applied": "disable_old_credential"
+            },
+            "confirmed_effects": {
+              "old_disabled": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw11:h3:disable_old_credential:1",
+                "operation": "disable_old_credential",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": true,
+            "rotation_recorded": false
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": true,
+            "rotation_recorded": false
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw11:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "rotation_recorded": true,
+          "new_credential_tested": true,
+          "clients_switched": true,
+          "old_disabled": true,
+          "issuance_requests": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "record_rotation"
+            }
+          },
+          "observation": {
+            "operation_applied": "record_rotation",
+            "public_receipt": {
+              "applied": "record_rotation"
+            },
+            "confirmed_effects": {
+              "rotation_recorded": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw11:h4:record_rotation:1",
+                "operation": "record_rotation",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": true,
+            "rotation_recorded": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "issuance_accepted": true,
+            "new_credential_ready": true,
+            "issuance_requests": 1,
+            "new_credential_tested": true,
+            "clients_switched": true,
+            "old_disabled": true,
+            "rotation_recorded": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw12:h1",
+      "task_success": true,
+      "action_count_including_finish": 3,
+      "credits_spent": 2,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "count_corrected": true,
+          "physical_transfer_done": true,
+          "transfers": true,
+          "reorders": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "observe",
+            "arguments": {
+              "resource": "warehouse/pack_notice"
+            }
+          },
+          "observation": {
+            "lot": "lot-19",
+            "units_per_carton": 12,
+            "revision": "pack-r2",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": false,
+            "reorder_accepted": true,
+            "reorder_done": false,
+            "reorders": 1,
+            "ledger_reconciled": false,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "correct_count"
+            }
+          },
+          "observation": {
+            "operation_applied": "correct_count",
+            "public_receipt": {
+              "applied": "correct_count"
+            },
+            "confirmed_effects": {
+              "count_corrected": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 2,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw12:h1:correct_count:2",
+                "operation": "correct_count",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": false,
+            "reorders": 1,
+            "ledger_reconciled": false,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 2
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": false,
+            "reorders": 1,
+            "ledger_reconciled": false,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw12:h2",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "reorder_done": true,
+          "count_corrected": true,
+          "transfers": true,
+          "reorders": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "collect_replenishment"
+            }
+          },
+          "observation": {
+            "operation_applied": "collect_replenishment",
+            "public_receipt": {
+              "applied": "collect_replenishment"
+            },
+            "confirmed_effects": {
+              "reorder_done": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "job",
+                "entity_id": "order-job-61",
+                "phase": "succeeded",
+                "version": "delivery-d5"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": false,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": false,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw12:h3",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "ledger_reconciled": true,
+          "count_corrected": true,
+          "physical_transfer_done": true,
+          "transfers": true,
+          "reorders": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "reconcile_ledger"
+            }
+          },
+          "observation": {
+            "operation_applied": "reconcile_ledger",
+            "public_receipt": {
+              "applied": "reconcile_ledger"
+            },
+            "confirmed_effects": {
+              "ledger_reconciled": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw12:h3:reconcile_ledger:1",
+                "operation": "reconcile_ledger",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": true,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": true,
+            "report_sent": false,
+            "count_notice_read": true
+          }
+        }
+      ]
+    },
+    {
+      "instance_id": "iw12:h4",
+      "task_success": true,
+      "action_count_including_finish": 2,
+      "credits_spent": 1,
+      "credit_budget": 4,
+      "world_inherited": true,
+      "public_interface_isolation": true,
+      "premature_finish_rejected": true,
+      "score": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "report_sent": true,
+          "ledger_reconciled": true,
+          "transfers": true,
+          "reorders": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "send_stock_report"
+            }
+          },
+          "observation": {
+            "operation_applied": "send_stock_report",
+            "public_receipt": {
+              "applied": "send_stock_report"
+            },
+            "confirmed_effects": {
+              "report_sent": true
+            },
+            "incremented_values": {},
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "iw12:h4:send_stock_report:1",
+                "operation": "send_stock_report",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": true,
+            "report_sent": true,
+            "count_notice_read": true
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "physical_transfer_done": true,
+            "transfers": 1,
+            "count_corrected": true,
+            "reorder_accepted": true,
+            "reorder_done": true,
+            "reorders": 1,
+            "ledger_reconciled": true,
+            "report_sent": true,
+            "count_notice_read": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "env_ignored": true,
+  "env_tracked": false,
+  "files_checked": 1762,
+  "credential_value_matches": 0,
+  "scan_scope": "Exact configured credential values, including results/raw and source snapshots; excludes .env files, .git, .venv and bytecode. No values recorded."
+}

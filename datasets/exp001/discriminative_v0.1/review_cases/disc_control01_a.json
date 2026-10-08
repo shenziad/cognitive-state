@@ -1,0 +1,24 @@
+{
+  "instance_id": "disc_control01_a",
+  "accepted_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/qualification"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "choose_remote"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

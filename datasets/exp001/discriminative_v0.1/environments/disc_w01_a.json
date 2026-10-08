@@ -1,0 +1,33 @@
+{
+  "instance_id": "disc_w01_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "remedy": "none"
+  },
+  "operations": {
+    "repair_cache": {
+      "description": "Apply one irreversible cache remedy to this incident.",
+      "effects": {
+        "remedy": "cache"
+      },
+      "cost": 1
+    },
+    "repair_queue": {
+      "description": "Apply one irreversible queue remedy to this incident.",
+      "effects": {
+        "remedy": "queue"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {},
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "remedy": "cache"
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

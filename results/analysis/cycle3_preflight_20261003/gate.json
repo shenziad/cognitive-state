@@ -1,0 +1,66 @@
+{
+  "status": "failed",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle3\\preflight_20261003",
+  "results_sha256": "a0292640a2442c0e873e3be60ba2e4e9302dda26319a52fd796bc485b3a532a6",
+  "source_code_sha256": {
+    "scripts/build_v03_cycle.py": "a05d18d726cf9c88537b097c71fd33664fb31b9a82a0c2c8276cfe5c6b750ad9",
+    "scripts/run_v03_cycle.py": "4e28a97c7bba3e34c314fcd6a9dca5f7b4c84729b58c1d46f924e7eba6f450f9",
+    "src/agents/__init__.py": "e8bed4692e88f034c219a1e9a69663f0d289bb9bfb82251e5950bd4371578870",
+    "src/agents/agent.py": "074f288aae559309b2bf2fcaf9997233b2c91e94434ffeefb6df3b3ded7bf88d",
+    "src/evaluation/__init__.py": "0e5e17f00edfaa25d4001c843ccc2bcd8b2d878ac3542a06140e3e6761098594",
+    "src/evaluation/analysis.py": "7488b3165bfded67354621162dfde77ad64ecb290ef15f9007a61e3145cb04dd",
+    "src/evaluation/benchmark.py": "53fd65f58b4dbfef2cec0e8b8e53d4fb3029c45f38806b80716182c3efdb2e0b",
+    "src/evaluation/continuation.py": "db7d26cc1fcac05c1dc9f6d9bfcb90115e787824b5aa605cd177d4c937ee9e17",
+    "src/evaluation/controlled.py": "e7f5e90d33cf851395cbb4ff50176b9463a0a5e7ebcfd47ef978c9fefc283ccf",
+    "src/evaluation/evidence_interface.py": "7b44720dc7712400d648d7320a9daebb09cecd1d94c4cc25dc2baa56d3b5b043",
+    "src/evaluation/longitudinal.py": "c69fd1dafd639268cd06e8034b9db463712f01443efbf64ac25b96b1a543d8fe",
+    "src/evaluation/metrics.py": "d80c86f27c5a7fedd76837ca0f09685e48effe24ab7eeecab2026ba242742301",
+    "src/evaluation/runner.py": "3ea824fc7e3bf291e2ecf0b3a411b4b0b746ae62974671d77e8998e5903f34d0",
+    "src/evaluation/staged.py": "34b874247c1348b6b9f30d62b6acc00eb42451f9aea06b4cd31f28856e32b314",
+    "src/llm/__init__.py": "244fdc23623c5f1072d27a4aa1c32a606e5cb5ccafe67a369f22f185ddb2bd8d",
+    "src/llm/client.py": "622bd38b18cb7e472f5021a79f50ad0875fb27d2941456b1538fcff9872f08dc",
+    "src/llm/environment.py": "b8814c5c46a2c5029fe5a7a0aa96464dd09029337a16914a81619dd91eae2ef8",
+    "src/llm/mock.py": "87777148924f953a10cdb89b31d77e1103fee4fef08aeafdf344030567e37968",
+    "src/llm/tokens.py": "36ac67666986d6329ad0ef7df07a9373cafd8ce46d570b67a07bf63f690f53fb",
+    "src/state/__init__.py": "10ebda21c85b5d59cb7dd1f64eb859593f3ddd796e3bd3cb304c2b44056df7f2",
+    "src/state/extractor.py": "20a20490c9a54b50e71cb464bb64ef86edcbe56d81c37e855e002e3454df44a2",
+    "src/state/representation.py": "8012c9a4d65fa8e236f26afaf306f610574fab13804503e410b6a4e999423278",
+    "src/state/v03.py": "58efea5b2567ba5b13a8c91b99cfa59a7798b314f62839051c51f6e79e70af7c",
+    "src/state/validator.py": "eee333fadea520fba8f44e30b129fe6d62271c22062e7bfdf865fef324b9e0cb",
+    "src/utils/__init__.py": "0871df4e39ee430884e63e9ea1e5c831893093a80acb78f2bf4906ff817a2ce7",
+    "src/utils/io.py": "a9d98e236e633565edfc7436d8549c94a60da193451fe7795abbb3a5a117e175"
+  },
+  "cycle_protocol_sha256": {
+    "docs/cycle3_plan_20261003.json": "aa11e5d2a93ff54056ddc1a728abfb7b7328b8edfc6c88ae9e9cfaaa091b9d8b",
+    "docs/schemas/cognitive_state_v0.3.schema.json": "6540219712ec8d5318fb75a97d815184859019648aadeb9d884128be9f7f3fb6",
+    "datasets/cycle3_v03/preflight.json": "c1a1964201c56c8b4354a7d1c60e222b01f01b393d2795cb61c64c93c95b1d4c",
+    "datasets/cycle3_v03/regression.json": "34e9067a69cfd3f962b6e9911ac698fa8e505d745f45be01a930fd9f12dceb71",
+    "datasets/cycle3_v03/longitudinal.json": "acbcfb849714b58f6ae00a080ecde0aea80a7263969480fe047732bac323566c",
+    "configs/cycle3_preflight_v03.json": "93012fd735c871bfd9fd240843a6f2e9550e7635ca830aacd50e5c6242c2006f",
+    "configs/cycle3_regression_v03.json": "31c7d6707a7500854094f00301350e8708560a83782c6e19f20b804b6226270a",
+    "configs/cycle3_longitudinal_v03.json": "9480a5d705d6448fbfb99918a997fa487810052261be1384e1a8f26f2b12e47d"
+  },
+  "prompt_sha256": {
+    "executor": "0e9576ec0162b0566a51074aa64ab96de75aa1c20232e16ea3e702a280d39fa6",
+    "cs_v03": "46f383a0991d034c5d35796275ce9f4f0270d00637c1bd1269e80449228ef2ca",
+    "cs_v02": "a2b59ab83e2a9a36820ae09c547ce02f8b2e2546fdeb08432017e3f519278530",
+    "summary": "cfe22c95ca83b824b99adfa2714460a12523853654f64a2b5eb1d68abdb05bcd"
+  },
+  "automatic_gate": {
+    "automatic_checks": {
+      "complete_48": true,
+      "v03_usable_at_least_23_of_24": false,
+      "v03_success_at_least_22_of_24": false,
+      "full_success_at_least_23_of_24": true,
+      "no_critical_behavior_errors": true
+    },
+    "automatic_pass": false,
+    "semantic_review_required_before_comparison": true,
+    "semantic_review_rule": "Read every v0.3 preflight state against public inputs. Zero fabricated completed/verified operations or added hard user requirements; at most two states with unsupported reopened information needs. Review is assistant audit, not independent researcher gold."
+  },
+  "semantic_review": {
+    "passed": false,
+    "status": "not_used_to_override_failed_automatic_gate"
+  },
+  "reason": "Final v0.3 usable/successful states 15/24, below 23/24 and 22/24 thresholds."
+}

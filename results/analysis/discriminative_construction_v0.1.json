@@ -1,0 +1,862 @@
+{
+  "evidence_type": "offline_construction_audit_not_model_performance",
+  "dataset_version": "exp001-discriminative-v0.1",
+  "status": "passed",
+  "tasks": 18,
+  "pairs": 8,
+  "controls": 2,
+  "review_status": "pending_independent_researcher_review",
+  "manifest_sha256": "6938e089080f2154482cdffd45c125541c17e8f9dcf0d8e5385565cbd88324a0",
+  "instances": [
+    {
+      "instance_id": "disc_g01_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "destination": true,
+          "packet": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "69e2a7f9b1069bf9e9e228152d405396f74d698525a3e97df74c6c9d36369dc5",
+      "environment_sha256": "678bfc3554a263d0ce95547155b2cea514f293f2bcf378b804357a92d7d5762d"
+    },
+    {
+      "instance_id": "disc_g01_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "destination": true,
+          "packet": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "126a2b2bbb8385cc9b44d73065b2eaf54b056158fb381f64025f4b48484533f6",
+      "environment_sha256": "561ec9cde7dd2581b54924c870a2d07ec1a10fd9bd59aef696bdc3b2b8c94651"
+    },
+    {
+      "instance_id": "disc_g02_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "plan": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "6fcc574e3181b19eff3c72254d2f239932a8ebc925d458d0a9fec0f86b2d6380",
+      "environment_sha256": "16a825c28d0920ba7cc703ad88b243e8b24843a3297ba3a4a79cdee18c4841c9"
+    },
+    {
+      "instance_id": "disc_g02_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "plan": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "538ffdd5a8fc03599cea1871b56db036fb7cdcadba1a7c8bf1180de051465719",
+      "environment_sha256": "c0505c8010311ae2092512204d2abcc1fd64f109fabce59c89162bd0f5ac1a4e"
+    },
+    {
+      "instance_id": "disc_w01_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "dde39fe86084ffab554a060ebf3c02ebf2073ead03d7b7105768fca06110a9ce",
+      "environment_sha256": "a804e753961e19bc07706d804c30da14b27991328a34fe2267daf19dfd7cf5b0"
+    },
+    {
+      "instance_id": "disc_w01_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "c9a664de569e16fd899703aee0afec492666a1846baf9bf6d48323787050bea5",
+      "environment_sha256": "de4c1acdea54ae748c203c381f953b9e11ea54c4172c0f95549980ce65592651"
+    },
+    {
+      "instance_id": "disc_w02_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true,
+          "evidence_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "dcc21f1c62c2a1512b167bab1a5edfd670873fa717e89c1a87bdb9629612ab17",
+      "environment_sha256": "d2721b546a7bddee530ffc6031da0f1ee286e89c1769e64f566c73c27d876121"
+    },
+    {
+      "instance_id": "disc_w02_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true,
+          "evidence_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "38ed5e7dc4ab7f146fecd22790ae17eff32327e69d1ca80258349bb8496b6bd3",
+      "environment_sha256": "69ee25fd18c648af946130ac3b3fd187d47a438685e1e4dc678f5bda9b0bcd38"
+    },
+    {
+      "instance_id": "disc_w03_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "parser": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "0d1b90ca1436324b8a748ea4432b891c4427523b7898536598c55d5a92745945",
+      "environment_sha256": "78ec649df78f84c4ba11c52e9d0e70abde7265c2320b3614e2c358116332737b"
+    },
+    {
+      "instance_id": "disc_w03_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "parser": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "04a93244260a1ff6960420785fe21b71ce781a4971cae9c55a8d3f464baa0ab0",
+      "environment_sha256": "9219ecec38b607f79e4afde9ebfc2443c355debe2a14a8531b7c17e23ccdfc74"
+    },
+    {
+      "instance_id": "disc_f01_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "submission_count": true,
+          "receipt_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "fb12c17fe01606ebe35db255db453760c9c10e200268a1f14709f41256462c1c",
+      "environment_sha256": "dbffb1fea63252cc326ec3966b64901bc944fd94e358f486cf053df44698c2ac"
+    },
+    {
+      "instance_id": "disc_f01_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "submission_count": true,
+          "receipt_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "98929519010c3f191a74ba450c3e71e9951de6eb564d04a097c5cab1b0f99e99",
+      "environment_sha256": "c97072c3279d90a3d7fb81202fda589a3670aa15b2e2d37d4fc2a85b01a57746"
+    },
+    {
+      "instance_id": "disc_f02_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "done_A": true,
+          "done_B": true,
+          "done_C": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "f472d93d7e30591ebf857abe8e5e5ef30131561528aaf82c52b588f7c25e6906",
+      "environment_sha256": "366f2eef5e34c202dc29f43b34e687d649bdc700524e74681997a82e305430a6"
+    },
+    {
+      "instance_id": "disc_f02_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "done_A": true,
+          "done_B": true,
+          "done_C": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "f55ce9b430984a6457895dbaa58ea9d118d25dbeeed036c0b00c232063b1f7a0",
+      "environment_sha256": "fd50035c39cc1a69d3efc71374d07b5e47dca2f05ab7d60bc1a6d5e530f1b4a9"
+    },
+    {
+      "instance_id": "disc_f03_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "known_A": true,
+          "known_B": true,
+          "pack": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "111bc63d2df046e4131c9744baa35e7685830a379a6243d4c8ab8d107b1c403e",
+      "environment_sha256": "d10611c6d6ed58dde7ac8ecd955a6035762933dccd632816ba865655dbdc734e"
+    },
+    {
+      "instance_id": "disc_f03_b",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "known_A": true,
+          "known_B": true,
+          "pack": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "16d8f8e3b1af1e8201e4a64655cdb160a19fe6939f5965e704c5fcd5b0047666",
+      "environment_sha256": "80e4c7796abd79874b57272e228380ffde57b30570005a729db958e1327d0730"
+    },
+    {
+      "instance_id": "disc_control01_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "plan": true,
+          "evidence_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "e15da8fbbd3a999f40ca0c7f0616fd0f86ea2b6543cef8363c468afc492b283a",
+      "environment_sha256": "13fcf3614023062b55655cb65d9878ee73ff6cbb70a750325358c3036b733be3"
+    },
+    {
+      "instance_id": "disc_control02_a",
+      "accepted_example_metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "done_A": true,
+          "done_B": true,
+          "done_C": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 0,
+        "workspace_credit_budget": 0,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "task_sha256": "9806831636de10e131d7043fef02c6a6a5d4850606b42003dca11680525ec46b",
+      "environment_sha256": "a253ae506fe0ad7eea34204160050dc1d60ae13efb6cba73fc022c32066b4ce9"
+    }
+  ],
+  "paired_checks": [
+    {
+      "pair_id": "f01",
+      "instances": [
+        "disc_f01_a",
+        "disc_f01_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": false,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "submission_count": false,
+          "receipt_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 0.5,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "submission_count": false,
+          "receipt_verified": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "f02",
+      "instances": [
+        "disc_f02_a",
+        "disc_f02_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": false,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.6666666666666666,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "done_A": true,
+          "done_B": false,
+          "done_C": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.6666666666666666,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "done_A": false,
+          "done_B": true,
+          "done_C": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 1,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "f03",
+      "instances": [
+        "disc_f03_a",
+        "disc_f03_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": false,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.6666666666666666,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "known_A": true,
+          "known_B": false,
+          "pack": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.6666666666666666,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "known_A": false,
+          "known_B": true,
+          "pack": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "g01",
+      "instances": [
+        "disc_g01_a",
+        "disc_g01_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": true,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "destination": false,
+          "packet": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "destination": false,
+          "packet": true
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "g02",
+      "instances": [
+        "disc_g02_a",
+        "disc_g02_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": true,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "plan": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "plan": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "w01",
+      "instances": [
+        "disc_w01_a",
+        "disc_w01_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": true,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "remedy": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "remedy": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "w02",
+      "instances": [
+        "disc_w02_a",
+        "disc_w02_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": false,
+      "counterpart_on_a": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "remedy": true,
+          "evidence_verified": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "remedy": true,
+          "evidence_verified": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 2,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    },
+    {
+      "pair_id": "w03",
+      "instances": [
+        "disc_w03_a",
+        "disc_w03_b"
+      ],
+      "shared_operation_and_observation_definitions": true,
+      "identical_catalog_and_distractors": true,
+      "initial_world_state_identical": true,
+      "counterpart_on_a": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "parser": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "counterpart_on_b": {
+        "task_success": false,
+        "final_goal_completion": 0.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.6666666666666666,
+        "goal_checks": {
+          "parser": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 1,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      }
+    }
+  ],
+  "claim_limit": "Scripted examples validate fixture consistency; no LLM performance or CS advantage is measured."
+}

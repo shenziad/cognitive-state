@@ -1,0 +1,68 @@
+{
+  "instance_id": "pilot04_cache_namespace",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h06"
+    ],
+    "world.facts": [
+      "h03",
+      "h05",
+      "h07"
+    ],
+    "world.beliefs": [
+      "h04"
+    ],
+    "world.assumptions": [
+      "h02"
+    ],
+    "frontier": [
+      "h08"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Restore tenant-specific cache reads",
+      "success_criteria": [
+        "All service checks pass"
+      ],
+      "constraints": [
+        "Preserve tenant_id=\"tenant-b\"; do not change it.",
+        "Preserve ttl_seconds=600; do not change it.",
+        "Preserve schema_version=1; do not change it.",
+        "No database migration; modify virtual service configuration only."
+      ],
+      "preferences": [
+        "Prefer a small, evidence-based change"
+      ]
+    },
+    "world": {
+      "facts": [
+        "Cache misses occur for tenant-b; clearing the cache previously did not help.",
+        "Earlier change {\"key\": \"ttl_seconds\", \"value\": 60} failed and was reverted",
+        "Legacy runbook is deprecated; current runbook has not been read"
+      ],
+      "beliefs": [
+        {
+          "claim": "Requests may be using an unexpected namespace",
+          "confidence": 0.6
+        }
+      ],
+      "assumptions": [
+        "The virtual fixture represents the interrupted service"
+      ]
+    },
+    "frontier": {
+      "current_focus": "Restore tenant-specific cache reads",
+      "information_needs": [
+        "Current settings guidance"
+      ],
+      "next_action": "Read docs/runbook.json, then edit based on evidence and run checks"
+    }
+  }
+}

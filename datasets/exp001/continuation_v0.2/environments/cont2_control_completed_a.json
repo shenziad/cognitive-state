@@ -1,0 +1,37 @@
+{
+  "instance_id": "cont2_control_completed_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "left_validated": true,
+    "right_validated": true
+  },
+  "operations": {
+    "validate_E": {
+      "description": "Run the left fixture validation.",
+      "effects": {
+        "left_validated": true
+      },
+      "cost": 2,
+      "repeat_key": "left_validated"
+    },
+    "validate_W": {
+      "description": "Run the right fixture validation.",
+      "effects": {
+        "right_validated": true
+      },
+      "cost": 2,
+      "repeat_key": "right_validated"
+    }
+  },
+  "observations": {},
+  "budget": 0,
+  "rubric": {
+    "target_state": {
+      "left_validated": true,
+      "right_validated": true
+    },
+    "finish_status": "completed",
+    "before_action": [],
+    "forbidden_actions": []
+  }
+}

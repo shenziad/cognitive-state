@@ -1,0 +1,45 @@
+{
+  "instance_id": "cont2_completed_b",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "calibrate_J"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_strategy": "Always retrieve the ledger, then calibrate the rack it reports as still unresolved.",
+  "no_history_recovery_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/calibration_ledger"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "calibrate_J"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_expected": {
+    "task_success": false,
+    "credits": 4,
+    "retained_history_credits": 2,
+    "failure": "ledger recovery plus necessary remaining work exceeds 3 credits"
+  },
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

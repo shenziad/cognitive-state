@@ -1,0 +1,45 @@
+{
+  "verified_on": "2026-10-04",
+  "execution_release_unchanged": true,
+  "execution_assets": 55,
+  "exact_dependencies_verified": true,
+  "offline_tests_recorded_before_calls": 117,
+  "tests_rerun_this_check": false,
+  "stages": [
+    {
+      "stage": "preflight",
+      "complete": true,
+      "review_valid": true,
+      "audit_reproduced": true,
+      "gate_reproduced": true,
+      "gate_status": "passed"
+    },
+    {
+      "stage": "regression",
+      "complete": true,
+      "review_valid": true,
+      "audit_reproduced": true,
+      "gate_reproduced": true,
+      "gate_status": "passed"
+    },
+    {
+      "stage": "longitudinal",
+      "complete": true,
+      "review_valid": true,
+      "audit_reproduced": true,
+      "gate_reproduced": true,
+      "gate_status": "passed"
+    }
+  ],
+  "inter_stage_gates_reproduced": true,
+  "independent_workflows_data_hashes_verified": 52,
+  "builder_hash_verified": true,
+  "candidate_data_model_calls": 0,
+  "candidate_data_status": "unfrozen_development_candidates",
+  "campaign_totals_cross_checked": true,
+  "campaign_summary_sha256": "5a0ef7363bd7339ee8cb0d7d03cc9d9693f79cde3a7c9f3641e6242f5fd59734",
+  "env_gitignored_confirmed_separately": true,
+  "limits": [
+    "Offline replay and hash verification do not constitute new model calls or independent semantic gold."
+  ]
+}

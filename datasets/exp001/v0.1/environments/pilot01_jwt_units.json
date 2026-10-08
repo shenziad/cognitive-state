@@ -1,0 +1,42 @@
+{
+  "instance_id": "pilot01_jwt_units",
+  "files": {
+    "config/service.json": {
+      "expiry_unit": "seconds",
+      "clock_skew": 30,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "The current token issuer documents millisecond timestamps; verifier must use the same unit.",
+      "recommended_settings": {
+        "expiry_unit": "milliseconds"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "expiry_unit": "seconds",
+        "clock_skew": 30,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "JWT validation fails for fresh tokens; a restart did not help."
+  },
+  "rubric": {
+    "target_settings": {
+      "expiry_unit": "milliseconds"
+    },
+    "protected_keys": [
+      "schema_version",
+      "clock_skew"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "expiry_unit",
+        "value": "seconds"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "dataset_version": "exp001-continuation-v0.2",
+  "tasks": 14,
+  "pairs": 6,
+  "controls": 2,
+  "instances": [
+    {
+      "instance_id": "cont2_goal_a",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_goal_b",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_belief_a",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_belief_b",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_assumption_a",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_assumption_b",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_completed_a",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 4
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 4
+    },
+    {
+      "instance_id": "cont2_inflight_a",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 4
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "accepted_success": true,
+      "accepted_credits": 2,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 4
+    },
+    {
+      "instance_id": "cont2_information_a",
+      "accepted_success": true,
+      "accepted_credits": 3,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 5
+    },
+    {
+      "instance_id": "cont2_information_b",
+      "accepted_success": true,
+      "accepted_credits": 3,
+      "uniform_recovery_success": false,
+      "uniform_recovery_credits": 5
+    },
+    {
+      "instance_id": "cont2_control_recoverable_a",
+      "accepted_success": true,
+      "accepted_credits": 3,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 3
+    },
+    {
+      "instance_id": "cont2_control_completed_a",
+      "accepted_success": true,
+      "accepted_credits": 0,
+      "uniform_recovery_success": true,
+      "uniform_recovery_credits": 0
+    }
+  ],
+  "swaps": [
+    {
+      "instance_id": "cont2_goal_a",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_goal_b",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_belief_a",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_belief_b",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_assumption_a",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_assumption_b",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_completed_a",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_inflight_a",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "swapped_success": false,
+      "swapped_credits": 2
+    },
+    {
+      "instance_id": "cont2_information_a",
+      "swapped_success": false,
+      "swapped_credits": 3
+    },
+    {
+      "instance_id": "cont2_information_b",
+      "swapped_success": false,
+      "swapped_credits": 3
+    }
+  ],
+  "note": "Scripted recovery paths are illustrative policies, not exhaustive bounds on model performance."
+}

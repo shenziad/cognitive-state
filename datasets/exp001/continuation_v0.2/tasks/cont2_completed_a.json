@@ -1,0 +1,195 @@
+{
+  "instance_id": "cont2_completed_a",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace lumen: ensure both oak and elm racks are calibrated. Do not repeat validated calibrations, which consume scarce vials. There are 3 credits at resumption."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Public tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute calibrate_J: Calibrate oak rack; repeating calibration also costs 2 credits. Cost=2. execute calibrate_R: Calibrate elm rack; repeating calibration also costs 2 credits. Cost=2. observe current/calibration_ledger: Retrieve the signed rack calibration ledger. Cost=2."
+    },
+    {
+      "id": "h03",
+      "role": "assistant",
+      "content": "The initial plan was calibrate_J and calibrate_R. Either order is valid; the plan alone proves no calibration."
+    },
+    {
+      "id": "h04",
+      "role": "tool",
+      "content": "Signed checkpoint: oak calibration completed and validated. elm calibration has not run."
+    },
+    {
+      "id": "d000",
+      "role": "tool",
+      "content": "Closed archive completed-000, workspace vault, unrelated to current workspace lumen. Batch 430 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q80 and S40. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d001",
+      "role": "tool",
+      "content": "Closed archive completed-001, workspace vault, unrelated to current workspace lumen. Batch 431 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q81 and S41. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d002",
+      "role": "tool",
+      "content": "Closed archive completed-002, workspace vault, unrelated to current workspace lumen. Batch 432 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q82 and S42. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d003",
+      "role": "tool",
+      "content": "Closed archive completed-003, workspace vault, unrelated to current workspace lumen. Batch 433 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q83 and S43. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d004",
+      "role": "tool",
+      "content": "Closed archive completed-004, workspace vault, unrelated to current workspace lumen. Batch 434 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q84 and S44. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d005",
+      "role": "tool",
+      "content": "Closed archive completed-005, workspace vault, unrelated to current workspace lumen. Batch 435 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q85 and S45. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d006",
+      "role": "tool",
+      "content": "Closed archive completed-006, workspace vault, unrelated to current workspace lumen. Batch 436 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q86 and S46. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d007",
+      "role": "tool",
+      "content": "Closed archive completed-007, workspace vault, unrelated to current workspace lumen. Batch 437 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q87 and S47. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d008",
+      "role": "tool",
+      "content": "Closed archive completed-008, workspace vault, unrelated to current workspace lumen. Batch 438 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q88 and S48. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d009",
+      "role": "tool",
+      "content": "Closed archive completed-009, workspace vault, unrelated to current workspace lumen. Batch 439 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q89 and S49. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d010",
+      "role": "tool",
+      "content": "Closed archive completed-010, workspace vault, unrelated to current workspace lumen. Batch 440 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q90 and S50. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d011",
+      "role": "tool",
+      "content": "Closed archive completed-011, workspace vault, unrelated to current workspace lumen. Batch 441 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q91 and S51. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d012",
+      "role": "tool",
+      "content": "Closed archive completed-012, workspace vault, unrelated to current workspace lumen. Batch 442 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q92 and S52. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d013",
+      "role": "tool",
+      "content": "Closed archive completed-013, workspace vault, unrelated to current workspace lumen. Batch 443 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q93 and S53. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d014",
+      "role": "tool",
+      "content": "Closed archive completed-014, workspace vault, unrelated to current workspace lumen. Batch 444 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q94 and S54. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d015",
+      "role": "tool",
+      "content": "Closed archive completed-015, workspace vault, unrelated to current workspace lumen. Batch 445 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q95 and S55. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d016",
+      "role": "tool",
+      "content": "Closed archive completed-016, workspace vault, unrelated to current workspace lumen. Batch 446 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q96 and S56. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d017",
+      "role": "tool",
+      "content": "Closed archive completed-017, workspace vault, unrelated to current workspace lumen. Batch 447 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q97 and S57. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d018",
+      "role": "tool",
+      "content": "Closed archive completed-018, workspace vault, unrelated to current workspace lumen. Batch 448 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q98 and S58. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d019",
+      "role": "tool",
+      "content": "Closed archive completed-019, workspace vault, unrelated to current workspace lumen. Batch 449 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q99 and S59. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d020",
+      "role": "tool",
+      "content": "Closed archive completed-020, workspace vault, unrelated to current workspace lumen. Batch 450 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q100 and S60. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d021",
+      "role": "tool",
+      "content": "Closed archive completed-021, workspace vault, unrelated to current workspace lumen. Batch 451 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q101 and S61. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d022",
+      "role": "tool",
+      "content": "Closed archive completed-022, workspace vault, unrelated to current workspace lumen. Batch 452 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q102 and S62. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d023",
+      "role": "tool",
+      "content": "Closed archive completed-023, workspace vault, unrelated to current workspace lumen. Batch 453 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q103 and S63. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d024",
+      "role": "tool",
+      "content": "Closed archive completed-024, workspace vault, unrelated to current workspace lumen. Batch 454 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q104 and S64. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d025",
+      "role": "tool",
+      "content": "Closed archive completed-025, workspace vault, unrelated to current workspace lumen. Batch 455 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q105 and S65. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d026",
+      "role": "tool",
+      "content": "Closed archive completed-026, workspace vault, unrelated to current workspace lumen. Batch 456 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q106 and S66. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d027",
+      "role": "tool",
+      "content": "Closed archive completed-027, workspace vault, unrelated to current workspace lumen. Batch 457 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q107 and S67. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d028",
+      "role": "tool",
+      "content": "Closed archive completed-028, workspace vault, unrelated to current workspace lumen. Batch 458 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q108 and S68. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d029",
+      "role": "tool",
+      "content": "Closed archive completed-029, workspace vault, unrelated to current workspace lumen. Batch 459 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q109 and S69. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d030",
+      "role": "tool",
+      "content": "Closed archive completed-030, workspace vault, unrelated to current workspace lumen. Batch 460 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q110 and S70. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d031",
+      "role": "tool",
+      "content": "Closed archive completed-031, workspace vault, unrelated to current workspace lumen. Batch 461 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q111 and S71. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "h05",
+      "role": "assistant",
+      "content": "Interruption occurred here. Continue the current workspace under its active requirements and remaining budget; planning statements alone are not tool execution evidence."
+    }
+  ],
+  "recovery_context": "Workspace lumen: ensure both oak and elm racks are calibrated. Do not repeat validated calibrations, which consume scarce vials. There are 3 credits at resumption.\nPublic tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute calibrate_J: Calibrate oak rack; repeating calibration also costs 2 credits. Cost=2. execute calibrate_R: Calibrate elm rack; repeating calibration also costs 2 credits. Cost=2. observe current/calibration_ledger: Retrieve the signed rack calibration ledger. Cost=2.\nCalibration progress can be recovered from the signed ledger at its listed cost.",
+  "ablation_progress_terms": [
+    "calibration completed",
+    "calibration has not run"
+  ]
+}

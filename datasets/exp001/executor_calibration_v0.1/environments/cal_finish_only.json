@@ -1,0 +1,36 @@
+{
+  "instance_id": "cal_finish_only",
+  "environment_type": "continuation",
+  "initial_state": {
+    "precheck": true,
+    "pack": true
+  },
+  "operations": {
+    "run_precheck": {
+      "description": "Run precheck; repeating validated work costs 1.",
+      "effects": {
+        "precheck": true
+      },
+      "cost": 1,
+      "repeat_key": "precheck"
+    },
+    "run_pack": {
+      "description": "Run packaging.",
+      "effects": {
+        "pack": true
+      },
+      "cost": 1,
+      "repeat_key": "pack"
+    }
+  },
+  "observations": {},
+  "budget": 0,
+  "rubric": {
+    "target_state": {
+      "precheck": true,
+      "pack": true
+    },
+    "before_action": [],
+    "finish_status": "completed"
+  }
+}

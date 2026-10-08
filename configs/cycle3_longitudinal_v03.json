@@ -1,0 +1,42 @@
+{
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "provider": "openai_sdk",
+  "endpoint": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key_env": "apikey",
+  "output_limit_parameter": "max_tokens",
+  "max_output_tokens": 4096,
+  "timeout_seconds": 60,
+  "extra_body": {
+    "enable_thinking": false
+  },
+  "seed": 20261003,
+  "max_steps": 6,
+  "representation_budget": 6000,
+  "repair_attempts": 1,
+  "state_schema": "v0.3-minimal-1",
+  "interface_version": "evidence-interface-v0.3",
+  "prompts": {
+    "executor": "prompts/state_v03/executor.txt",
+    "cs_v03": "prompts/state_v03/cognitive_state.txt",
+    "cs_v02": "prompts/v0.3/cognitive_state.txt",
+    "summary": "prompts/state_v03/summary.txt"
+  },
+  "stage": "longitudinal",
+  "dataset": "datasets/cycle3_v03/longitudinal.json",
+  "max_api_calls": 260,
+  "conditions": [
+    "full_context",
+    "summary",
+    "cs_v02",
+    "cs_v03"
+  ],
+  "repetitions": 1,
+  "gate": {
+    "v03_usable": 23,
+    "v03_success": 22,
+    "full_success": 23,
+    "critical_errors": 0,
+    "denominator_per_condition": 24
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "instance_id": "cont2_inflight_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "pending_jade": false,
+    "pending_pearl": true,
+    "request_count": 1,
+    "fulfilled": false
+  },
+  "operations": {
+    "request_D": {
+      "description": "Submit a reservation to jade broker; creates a new request.",
+      "effects": {
+        "pending_jade": true
+      },
+      "cost": 2,
+      "increments": {
+        "request_count": 1
+      }
+    },
+    "request_H": {
+      "description": "Submit a reservation to pearl broker; creates a new request.",
+      "effects": {
+        "pending_pearl": true
+      },
+      "cost": 2,
+      "increments": {
+        "request_count": 1
+      }
+    },
+    "consume_U": {
+      "description": "Consume the jade broker notice; requires an accepted jade reservation.",
+      "effects": {
+        "fulfilled": true
+      },
+      "cost": 2,
+      "required_state": {
+        "pending_jade": true
+      }
+    },
+    "consume_Z": {
+      "description": "Consume the pearl broker notice; requires an accepted pearl reservation.",
+      "effects": {
+        "fulfilled": true
+      },
+      "cost": 2,
+      "required_state": {
+        "pending_pearl": true
+      }
+    }
+  },
+  "observations": {
+    "current/reservation_ledger": {
+      "description": "Recover accepted reservation identity from the ledger.",
+      "observation": {
+        "content": {
+          "accepted_broker": "pearl"
+        }
+      },
+      "effects": {},
+      "cost": 2
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "request_count": 1,
+      "fulfilled": true
+    },
+    "finish_status": "completed",
+    "before_action": [],
+    "forbidden_actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "request_D"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "request_H"
+        }
+      }
+    ]
+  }
+}

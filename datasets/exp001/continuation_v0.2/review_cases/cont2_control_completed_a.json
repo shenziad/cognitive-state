@@ -1,0 +1,27 @@
+{
+  "instance_id": "cont2_control_completed_a",
+  "accepted_example": [
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_strategy": "A finish-only probe is shown for review; it does not establish that a history-free agent can justify completion.",
+  "no_history_recovery_example": [
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_expected": {
+    "task_success": true,
+    "credits": 0,
+    "retained_history_credits": 0,
+    "limitation": "world is already complete; finish can succeed without retained proof"
+  },
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

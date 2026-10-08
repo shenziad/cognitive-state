@@ -1,0 +1,140 @@
+{
+  "protocol_id": "cycle4-scoped-lifecycle-v1",
+  "date": "2026-10-03",
+  "status": "protocol_frozen_execution_pending",
+  "prior_results_unchanged": true,
+  "state_schema": "v0.3.1",
+  "execution_ready": false,
+  "freeze_scope": "Study rules, lifecycle schema, common semantic appendix, normative cases, sizes, settings, gate criteria, analysis and execution-release requirements. Exact execution datasets, full prompts and new runtime are not yet frozen.",
+  "conditions": [
+    "full_context",
+    "summary",
+    "cs_v02",
+    "cs_v031"
+  ],
+  "settings": {
+    "provider": "openai_sdk",
+    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "endpoint": "/chat/completions",
+    "api_key_env": "apikey",
+    "temperature": 0,
+    "extra_body": {
+      "enable_thinking": false
+    },
+    "max_output_tokens": 4096,
+    "timeout_seconds": 60,
+    "seed": 20261004,
+    "representation_budget_utf8_bytes": 6000,
+    "max_representation_repairs": 1,
+    "max_executor_calls": 6,
+    "hidden_client_retries": 0
+  },
+  "stages": {
+    "preflight": {
+      "cases": 12,
+      "conditions": 4,
+      "repetitions": 2,
+      "assigned_cells": 96,
+      "max_api_calls": 720
+    },
+    "regression": {
+      "cases": 14,
+      "conditions": 4,
+      "repetitions": 1,
+      "assigned_cells": 56,
+      "max_api_calls": 420
+    },
+    "longitudinal": {
+      "scenarios": 2,
+      "conditions": 4,
+      "handoffs": 4,
+      "repetitions": 1,
+      "assigned_cells": 32,
+      "max_api_calls": 240
+    }
+  },
+  "total_api_call_cap": 1380,
+  "gates": {
+    "execution_manifest_required": true,
+    "integrity_defects_allowed": 0,
+    "unknown_usage_requests_allowed": 0,
+    "complete_assignment_required": true,
+    "compressed_final_valid_min_per_condition": 23,
+    "preflight_denominator_per_condition": 24,
+    "task_success_threshold": null,
+    "semantic_error_threshold": null,
+    "critical_behavior_error_threshold": null,
+    "full_context_success_threshold": null,
+    "semantic_review_complete_required": true
+  },
+  "blocking_integrity_checks": [
+    "no_hidden_input_leakage",
+    "equal_public_interface",
+    "scoring_replay_matches",
+    "world_and_history_boundaries_match",
+    "snapshot_hashes_match",
+    "source_authority_preserved",
+    "all_requests_accounted_once",
+    "no_unresolved_provider_error"
+  ],
+  "scored_not_blocking": [
+    "wrong_goal",
+    "premature_completion",
+    "repeated_work",
+    "constraint_violation",
+    "blocked",
+    "step_limit",
+    "unsupported_job_success",
+    "entity_scope_confusion",
+    "invented_requirement",
+    "unsupported_reopened_question",
+    "missing_pending_job",
+    "missing_decision_dependency"
+  ],
+  "preflight_families": [
+    "accepted_pending_vs_submit_only",
+    "unknown_acceptance_vs_resolved_idempotency",
+    "matching_vs_other_job_success",
+    "job_success_without_vs_with_required_validation",
+    "cancel_request_vs_job_cancellation",
+    "sync_success_vs_plan_only"
+  ],
+  "comparison_base_inputs": [
+    "datasets/cycle3_v03r2/regression.json",
+    "datasets/cycle3_v03r2/longitudinal.json"
+  ],
+  "repair_scope": [
+    "JSON_and_shape",
+    "allowed_kind_phase_combinations",
+    "required_fields",
+    "unique_IDs",
+    "resolvable_active_refs",
+    "byte_budget",
+    "normal_response_stop"
+  ],
+  "repair_exclusions": [
+    "hidden_answer",
+    "semantic_annotation",
+    "candidate_plan_quality",
+    "candidate_budget_feasibility",
+    "unsupported_completion_truth_judgement"
+  ],
+  "required_before_execution": [
+    "new_runner_and_validator",
+    "public_contract_adapter",
+    "complete_preflight_and_comparison_fixtures",
+    "full_prompts_all_conditions",
+    "frozen_schedule",
+    "offline_integrity_and_lifecycle_report",
+    "execution_manifest_hashing_all_runtime_assets_and_protocol_manifest"
+  ],
+  "stop_policy": "No within-cycle prompt tuning or selective reruns. Infrastructure/provider failure stops the affected run; representation gate failure stops scaling. Behavior/semantic errors are reported outcomes and do not stop comparison. New protocol required for rule changes.",
+  "analysis": {
+    "primary": "success_all_assigned",
+    "chain_primary": "all_handoffs_success",
+    "review": "all_final_compressed_states_public_sources_first_then_behavior; ambiguous allowed; assistant_not_independent_gold",
+    "cost": "all_actual_attempts_including_repairs_failures; input_cached_output_latency_separate",
+    "claims": "exploratory_known_synthetic_regression_not_equivalence_or_generalization"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "protocol_id": "cycle4-scoped-lifecycle-v1",
+  "freeze_files_verified": 17,
+  "normative_cases_checked": 12,
+  "gate_decision_cases_checked": 20,
+  "example_check_scope": "encoding/reference consistency; semantic expectations authored, not model validated",
+  "execution_ready": false,
+  "model_calls": 0,
+  "manifest_sha256": "dcc8cae1f375ca41da4a4379ea41fa0e70b180ec721db313fd4e5a2e772b1a96",
+  "scope_note": "No runtime implementation or model performance claim; normative expectations are authored protocol examples."
+}

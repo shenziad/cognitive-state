@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_control01_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "plan": "none",
+    "evidence_verified": false
+  },
+  "operations": {
+    "choose_local": {
+      "description": "Choose plan local; 1 credit.",
+      "effects": {
+        "plan": "local"
+      },
+      "cost": 1
+    },
+    "choose_remote": {
+      "description": "Choose plan remote; 1 credit.",
+      "effects": {
+        "plan": "remote"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {
+    "current/qualification": {
+      "description": "Read current measured plan qualification, publicly re-observable.",
+      "observation": {
+        "content": {
+          "qualified_plan": "remote"
+        }
+      },
+      "effects": {
+        "evidence_verified": true
+      },
+      "cost": 1
+    }
+  },
+  "budget": 2,
+  "rubric": {
+    "target_state": {
+      "plan": "remote",
+      "evidence_verified": true
+    },
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "choose_local"
+          }
+        },
+        "state": {
+          "evidence_verified": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "choose_remote"
+          }
+        },
+        "state": {
+          "evidence_verified": true
+        }
+      }
+    ],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

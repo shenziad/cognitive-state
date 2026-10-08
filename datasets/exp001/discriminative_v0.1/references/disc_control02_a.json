@@ -1,0 +1,60 @@
+{
+  "instance_id": "disc_control02_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Close already validated workflow",
+      "success_criteria": [
+        "Finish without additional operations"
+      ],
+      "constraints": [
+        "0 credits; no additional work"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "A, B, C validated",
+        "Only finish remains"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Close already validated workflow",
+      "information_needs": [],
+      "next_action": "finish completed"
+    }
+  }
+}

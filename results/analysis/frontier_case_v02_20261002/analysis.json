@@ -1,0 +1,525 @@
+{
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\exp001\\frontier_case_v02_20261002",
+  "source_manifest_sha256": "eaf0ee6b2b5479b80380d19f70aec258716a6b25f364eb86ee1edbfd65a1ae90",
+  "complete": true,
+  "selection": "posthoc_observed_failure_exploratory",
+  "model": [
+    "deepseek-ai/DeepSeek-V4-Flash"
+  ],
+  "variants": 5,
+  "repetitions": 1,
+  "successful_variants": 0,
+  "actual_usage": {
+    "request_attempts": 16,
+    "successful_responses": 16,
+    "input_tokens": 15822,
+    "output_tokens": 247,
+    "total_tokens": 16069,
+    "unknown_usage_attempts": 0
+  },
+  "source_locks": {
+    "artifact": "72db01aeaed5c5b6141e25d370ec854f8ed7dbb5e73e91eeb54130bd1013a33e",
+    "config": "d201f5f228ef94a8d3893df0529921bc65eb739ec5fcc7d4f9cbe34fb0a53d13",
+    "task": "b647655c0fa6669a0eaee7d98b92657b6159e04a67b3e8e3f55869dfce33a081",
+    "environment": "5d037440aeb0c1e5baf0bd46778a687542bf46f7e65930a8407563ae45381558",
+    "executor_prompt": "94731e816e020e19eea147fc9b0eb029158e21baf6ff655b2a90949c660a3068",
+    "representation": "1558901a1c55cde53f5c97c5853abd47da5bcd1b5081e10ab9bdd344c07db17d"
+  },
+  "verified": {
+    "locked_original_and_copied_sources": true,
+    "frozen_source_hashes": true,
+    "source_public_h02_h04": true,
+    "five_predeclared_diffs_only": true,
+    "valid_state_schema": true,
+    "common_frozen_prompt_and_transport": true,
+    "actual_model_messages_and_context": true,
+    "no_hidden_fixture_in_model_payload": true,
+    "trace_observations_and_state_replay": true,
+    "metrics_and_diagnostics_replay": true,
+    "each_request_accounted_once": true,
+    "provider_usage_details": true,
+    "complete_five_variant_grid": true
+  },
+  "diagnostics": [
+    {
+      "variant": "original",
+      "diff": [],
+      "representation_sha256": "1558901a1c55cde53f5c97c5853abd47da5bcd1b5081e10ab9bdd344c07db17d",
+      "utf8_bytes": 1921,
+      "actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_Z"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "content": {
+            "accepted_broker": "pearl"
+          }
+        },
+        {
+          "error": "Workspace credit budget exhausted"
+        },
+        {
+          "finished": "blocked"
+        }
+      ],
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.0,
+        "goal_checks": {
+          "request_count": true,
+          "fulfilled": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "diagnostics": {
+        "first_action": {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        "goal_first_attained_step": null,
+        "queries_after_goal_attained": [],
+        "query_count_after_goal_attained": 0,
+        "steps": 3
+      },
+      "input_tokens": 2934,
+      "output_tokens": 46,
+      "total_tokens": 2980,
+      "artifact": "instances/original.json",
+      "artifact_sha256": "b6789328b6c029015f07ec6e1c1b8d2131ceb706b304d10166751f74d60f7d7f"
+    },
+    {
+      "variant": "remove_ledger_necessity_assumption",
+      "diff": [
+        {
+          "path": "world.assumptions",
+          "before": [
+            "The pending pearl notice corresponds to the accepted reservation and consuming it will fulfill the reservation.",
+            "The ledger observation is necessary to confirm acceptance before consuming."
+          ],
+          "after": [
+            "The pending pearl notice corresponds to the accepted reservation and consuming it will fulfill the reservation."
+          ]
+        }
+      ],
+      "representation_sha256": "8b4a88e1066d86c8e9070b2e81c40775ad6b7e823b12aa85547a334e450664e2",
+      "utf8_bytes": 1843,
+      "actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_Z"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "content": {
+            "accepted_broker": "pearl"
+          }
+        },
+        {
+          "error": "Workspace credit budget exhausted"
+        },
+        {
+          "finished": "blocked"
+        }
+      ],
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.0,
+        "goal_checks": {
+          "request_count": true,
+          "fulfilled": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "diagnostics": {
+        "first_action": {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        "goal_first_attained_step": null,
+        "queries_after_goal_attained": [],
+        "query_count_after_goal_attained": 0,
+        "steps": 3
+      },
+      "input_tokens": 2895,
+      "output_tokens": 46,
+      "total_tokens": 2941,
+      "artifact": "instances/remove_ledger_necessity_assumption.json",
+      "artifact_sha256": "1268e2f9bb1cdad6c77db2ed8a176f6fee369955ecc934667383ed1b1c0d7ee8"
+    },
+    {
+      "variant": "neutral_next_action",
+      "diff": [
+        {
+          "path": "frontier.next_action",
+          "before": "Observe current/reservation_ledger (cost 2) to recover the accepted reservation identity, then decide whether to consume_Z (cost 2) if credits allow, or adjust plan.",
+          "after": "unknown"
+        }
+      ],
+      "representation_sha256": "fe73c58b0bb83050da95ee7bde90061722753488cd6e4d3b9d056e01769c0836",
+      "utf8_bytes": 1763,
+      "actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "workspace/catalog.json"
+          }
+        },
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_Z"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "content": {
+            "operations": [
+              {
+                "name": "request_D",
+                "description": "Submit a reservation to jade broker; creates a new request.",
+                "cost": 2
+              },
+              {
+                "name": "request_H",
+                "description": "Submit a reservation to pearl broker; creates a new request.",
+                "cost": 2
+              },
+              {
+                "name": "consume_U",
+                "description": "Consume the jade broker notice; requires an accepted jade reservation.",
+                "cost": 2
+              },
+              {
+                "name": "consume_Z",
+                "description": "Consume the pearl broker notice; requires an accepted pearl reservation.",
+                "cost": 2
+              }
+            ],
+            "resources": [
+              {
+                "name": "current/reservation_ledger",
+                "description": "Recover accepted reservation identity from the ledger.",
+                "cost": 2
+              }
+            ],
+            "catalog_cost": 0
+          }
+        },
+        {
+          "content": {
+            "accepted_broker": "pearl"
+          }
+        },
+        {
+          "error": "Workspace credit budget exhausted"
+        },
+        {
+          "finished": "blocked"
+        }
+      ],
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.0,
+        "goal_checks": {
+          "request_count": true,
+          "fulfilled": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "diagnostics": {
+        "first_action": {
+          "tool": "observe",
+          "arguments": {
+            "resource": "workspace/catalog.json"
+          }
+        },
+        "goal_first_attained_step": null,
+        "queries_after_goal_attained": [],
+        "query_count_after_goal_attained": 0,
+        "steps": 4
+      },
+      "input_tokens": 4365,
+      "output_tokens": 63,
+      "total_tokens": 4428,
+      "artifact": "instances/neutral_next_action.json",
+      "artifact_sha256": "d7a0cb5685c2eeecc70eedfae930fa381eac1f5bcbb0332d6a3b5e822a76e588"
+    },
+    {
+      "variant": "both",
+      "diff": [
+        {
+          "path": "world.assumptions",
+          "before": [
+            "The pending pearl notice corresponds to the accepted reservation and consuming it will fulfill the reservation.",
+            "The ledger observation is necessary to confirm acceptance before consuming."
+          ],
+          "after": [
+            "The pending pearl notice corresponds to the accepted reservation and consuming it will fulfill the reservation."
+          ]
+        },
+        {
+          "path": "frontier.next_action",
+          "before": "Observe current/reservation_ledger (cost 2) to recover the accepted reservation identity, then decide whether to consume_Z (cost 2) if credits allow, or adjust plan.",
+          "after": "unknown"
+        }
+      ],
+      "representation_sha256": "245deb495040aa0896981427e73d592a0e1331e1d2841b49187b78a762a2adb8",
+      "utf8_bytes": 1685,
+      "actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_Z"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "content": {
+            "accepted_broker": "pearl"
+          }
+        },
+        {
+          "error": "Workspace credit budget exhausted"
+        },
+        {
+          "finished": "blocked"
+        }
+      ],
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.0,
+        "goal_checks": {
+          "request_count": true,
+          "fulfilled": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "diagnostics": {
+        "first_action": {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        "goal_first_attained_step": null,
+        "queries_after_goal_attained": [],
+        "query_count_after_goal_attained": 0,
+        "steps": 3
+      },
+      "input_tokens": 2781,
+      "output_tokens": 46,
+      "total_tokens": 2827,
+      "artifact": "instances/both.json",
+      "artifact_sha256": "eae6ae3e5f688b970fee3718359d517d7df8941e8e1915077c96d2945f673240"
+    },
+    {
+      "variant": "source_supported_next_action",
+      "diff": [
+        {
+          "path": "frontier.next_action",
+          "before": "Observe current/reservation_ledger (cost 2) to recover the accepted reservation identity, then decide whether to consume_Z (cost 2) if credits allow, or adjust plan.",
+          "after": "Execute consume_Z to consume the pending pearl notice."
+        }
+      ],
+      "representation_sha256": "c72eb133d0c1d3ffc657161b83d832b534383c2bc3ba7151a4a814003b75f286",
+      "utf8_bytes": 1810,
+      "actions": [
+        {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        {
+          "tool": "execute",
+          "arguments": {
+            "operation": "consume_Z"
+          }
+        },
+        {
+          "tool": "finish",
+          "arguments": {
+            "status": "blocked"
+          }
+        }
+      ],
+      "observations": [
+        {
+          "content": {
+            "accepted_broker": "pearl"
+          }
+        },
+        {
+          "error": "Workspace credit budget exhausted"
+        },
+        {
+          "finished": "blocked"
+        }
+      ],
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 0.5,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.0,
+        "goal_checks": {
+          "request_count": true,
+          "fulfilled": false
+        },
+        "decision_checks": {
+          "final_requirements_met": false,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 4,
+        "workspace_credit_budget": 3,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "diagnostics": {
+        "first_action": {
+          "tool": "observe",
+          "arguments": {
+            "resource": "current/reservation_ledger"
+          }
+        },
+        "goal_first_attained_step": null,
+        "queries_after_goal_attained": [],
+        "query_count_after_goal_attained": 0,
+        "steps": 3
+      },
+      "input_tokens": 2847,
+      "output_tokens": 46,
+      "total_tokens": 2893,
+      "artifact": "instances/source_supported_next_action.json",
+      "artifact_sha256": "ec69394b2fed3b9eb38212b3385ecfee181adcba30c442e3790dbff0151c6831"
+    }
+  ],
+  "observations": [
+    "All five variants queried the ledger before consuming and failed at 4 credits against budget 3.",
+    "neutral_next_action first queried the free catalog, then followed the same paid ledger-first path.",
+    "source_supported_next_action retained a correct consume_Z instruction but still queried the ledger first.",
+    "No variant successfully consumed the notice or attained the complete goal; post-goal query count zero does not establish correct stopping."
+  ],
+  "interpretation": [
+    "The tested local edits were insufficient to change the harmful paid-action order in this selected frozen state.",
+    "Other Frontier focus/information_needs and World beliefs still request or suggest confirmation. The edits do not remove all contradictory information.",
+    "The supported-action variant retains the explicit World necessity assumption, so its failure cannot be solely attributed to ignoring Frontier.",
+    "These one-shot observations cannot identify a single causal field or prove superiority/inferiority of Cognitive State."
+  ],
+  "limitations": [
+    "Selected after observing a failure; one synthetic case and one execution per variant, not a confirmatory test.",
+    "The common v0.2 consume contract does not explicitly say successful notice consumption fulfils the reservation, and its default acknowledgment is applied only.",
+    "All five executions fail before successful consumption, so the effect of an explicit fulfillment acknowledgment was not tested here.",
+    "Original World facts preserve pearl acceptance; harmful behavior cannot be explained as simply losing that historical fact.",
+    "No fresh state extraction occurred; all tokens here are executor-only and must not be compared as end-to-end compression savings.",
+    "Fixed variant order and unseeded provider sampling permit variation; no statistical significance or broad mechanism conclusion."
+  ],
+  "scientific_conclusion": null
+}

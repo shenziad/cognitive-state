@@ -1,0 +1,428 @@
+{
+  "stage": "preflight",
+  "complete": true,
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\preflight_recovery_v1_20261003",
+  "evidence_type": "api",
+  "execution_version": "cycle4-execution-v2",
+  "results_sha256": "260ba07c5b8a49ffbf60b9484e1cddd8b1c5731ad44548b5cea432de6927888a",
+  "ledger_sha256": "7e66bf32a74a34160b6583ec42a65c768343d72ba1db6e54f25cdd353c820d60",
+  "actual_usage": {
+    "request_attempts": 294,
+    "successful_responses": 294,
+    "total_tokens": 511423,
+    "known_reported_tokens": 511423,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "assigned": 24,
+      "saved": 24,
+      "successes": 23,
+      "executed": 24,
+      "statuses": {
+        "completed": 24
+      },
+      "final_valid": null,
+      "first_valid": null,
+      "premature_completed": 0,
+      "policy_violations": 1,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 57,
+        "successful_responses": 57,
+        "total_tokens": 91743,
+        "known_reported_tokens": 91743,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "executor": {
+          "request_attempts": 57,
+          "successful_responses": 57,
+          "total_tokens": 91743,
+          "known_reported_tokens": 91743,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 90957,
+      "output_tokens": 786,
+      "latency_seconds": 85.87274810000963,
+      "cached_input_tokens": 8192
+    },
+    "summary": {
+      "assigned": 24,
+      "saved": 24,
+      "successes": 24,
+      "executed": 24,
+      "statuses": {
+        "completed": 24
+      },
+      "final_valid": 24,
+      "first_valid": 24,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 77,
+        "successful_responses": 77,
+        "total_tokens": 114718,
+        "known_reported_tokens": 114718,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 24,
+          "successful_responses": 24,
+          "total_tokens": 30055,
+          "known_reported_tokens": 30055,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 53,
+          "successful_responses": 53,
+          "total_tokens": 84663,
+          "known_reported_tokens": 84663,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 109318,
+      "output_tokens": 5400,
+      "latency_seconds": 195.98559730005218,
+      "cached_input_tokens": 4608
+    },
+    "cs_v02": {
+      "assigned": 24,
+      "saved": 24,
+      "successes": 22,
+      "executed": 24,
+      "statuses": {
+        "completed": 24
+      },
+      "final_valid": 24,
+      "first_valid": 24,
+      "premature_completed": 0,
+      "policy_violations": 2,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 83,
+        "successful_responses": 83,
+        "total_tokens": 142598,
+        "known_reported_tokens": 142598,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 24,
+          "successful_responses": 24,
+          "total_tokens": 36126,
+          "known_reported_tokens": 36126,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 59,
+          "successful_responses": 59,
+          "total_tokens": 106472,
+          "known_reported_tokens": 106472,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 132243,
+      "output_tokens": 10355,
+      "latency_seconds": 288.25519519999943,
+      "cached_input_tokens": 11264
+    },
+    "cs_v031": {
+      "assigned": 24,
+      "saved": 24,
+      "successes": 22,
+      "executed": 24,
+      "statuses": {
+        "completed": 24
+      },
+      "final_valid": 24,
+      "first_valid": 24,
+      "premature_completed": 0,
+      "policy_violations": 2,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 77,
+        "successful_responses": 77,
+        "total_tokens": 162364,
+        "known_reported_tokens": 162364,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 24,
+          "successful_responses": 24,
+          "total_tokens": 62712,
+          "known_reported_tokens": 62712,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 53,
+          "successful_responses": 53,
+          "total_tokens": 99652,
+          "known_reported_tokens": 99652,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 147613,
+      "output_tokens": 14751,
+      "latency_seconds": 291.1862714000017,
+      "cached_input_tokens": 17152
+    }
+  },
+  "review_counts": {
+    "summary": {
+      "entity_phase_confusion": {
+        "correct": 19,
+        "incorrect": 3,
+        "ambiguous": 2
+      },
+      "unsupported_completion": {
+        "correct": 24
+      },
+      "invented_requirement": {
+        "incorrect": 7,
+        "correct": 16,
+        "ambiguous": 1
+      },
+      "missing_pending_job": {
+        "correct": 12,
+        "not_observed": 11,
+        "ambiguous": 1
+      },
+      "unsupported_reopened_question": {
+        "correct": 19,
+        "incorrect": 5
+      },
+      "missing_decision_dependency": {
+        "correct": 18,
+        "incorrect": 5,
+        "ambiguous": 1
+      }
+    },
+    "cs_v02": {
+      "entity_phase_confusion": {
+        "correct": 19,
+        "ambiguous": 1,
+        "incorrect": 4
+      },
+      "unsupported_completion": {
+        "correct": 24
+      },
+      "invented_requirement": {
+        "incorrect": 12,
+        "correct": 12
+      },
+      "missing_pending_job": {
+        "correct": 16,
+        "not_observed": 8
+      },
+      "unsupported_reopened_question": {
+        "correct": 14,
+        "ambiguous": 4,
+        "incorrect": 6
+      },
+      "missing_decision_dependency": {
+        "correct": 18,
+        "incorrect": 3,
+        "ambiguous": 3
+      }
+    },
+    "cs_v031": {
+      "entity_phase_confusion": {
+        "correct": 19,
+        "incorrect": 2,
+        "ambiguous": 3
+      },
+      "unsupported_completion": {
+        "correct": 24
+      },
+      "invented_requirement": {
+        "correct": 17,
+        "incorrect": 7
+      },
+      "missing_pending_job": {
+        "not_observed": 9,
+        "correct": 15
+      },
+      "unsupported_reopened_question": {
+        "correct": 22,
+        "incorrect": 2
+      },
+      "missing_decision_dependency": {
+        "correct": 22,
+        "incorrect": 2
+      }
+    }
+  },
+  "review_sha256": "5516389a23977ac431b03c7a10e96d938f02c89f2c104cddee5bb640a1fe5d4b",
+  "audit_sha256": "134babd47569d47eb14f2c63df213438a5393def8947d3323d3a58cb35da4050",
+  "chains": [],
+  "failures": [
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v02",
+      "repetition": 1,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "job_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/p4_003_cs_v02_r1_h1.json"
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "job_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/p4_003_cs_v02_r0_h1.json"
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v031",
+      "repetition": 1,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "job_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/p4_003_cs_v031_r1_h1.json"
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "full_context",
+      "repetition": 1,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "job_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/p4_003_full_context_r1_h1.json"
+    },
+    {
+      "instance_id": "p4_003",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "status": "completed",
+      "error": null,
+      "metrics": {
+        "task_success": false,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 0.3333333333333333,
+        "goal_checks": {
+          "job_done": true,
+          "submissions": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": false,
+          "completion_status_correct": false
+        },
+        "workspace_credits_spent": 3,
+        "workspace_credit_budget": 2,
+        "policy_violation_count": 1,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "artifact": "instances/p4_003_cs_v031_r0_h1.json"
+    }
+  ],
+  "limits": [
+    "Small known synthetic development tasks; no unseen generalization claim.",
+    "Assistant content annotations; not independent human gold and not condition blinded.",
+    "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+    "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+  ]
+}

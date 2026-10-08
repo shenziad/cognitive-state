@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot02_api_endpoint",
+  "files": {
+    "config/service.json": {
+      "api_base": "/v1/invoices",
+      "api_version": "v1",
+      "region": "eu",
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Both endpoint path and version header must match v2.",
+      "recommended_settings": {
+        "api_base": "/v2/invoices",
+        "api_version": "v2"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "api_base": "/v1/invoices",
+        "api_version": "v1",
+        "region": "eu",
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "The service receives HTTP 404; credentials were already checked."
+  },
+  "rubric": {
+    "target_settings": {
+      "api_base": "/v2/invoices",
+      "api_version": "v2"
+    },
+    "protected_keys": [
+      "region",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "api_base",
+        "value": "/v1/invoices"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

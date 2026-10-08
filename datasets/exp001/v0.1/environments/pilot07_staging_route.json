@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot07_staging_route",
+  "files": {
+    "config/service.json": {
+      "route": "production",
+      "model_revision": "r1",
+      "production_route": "stable",
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Staging uses route=staging and model_revision=r2. Production routing is outside this task.",
+      "recommended_settings": {
+        "route": "staging",
+        "model_revision": "r2"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "route": "production",
+        "model_revision": "r1",
+        "production_route": "stable",
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Staging requests hit the production service; previous DNS flush had no effect."
+  },
+  "rubric": {
+    "target_settings": {
+      "route": "staging",
+      "model_revision": "r2"
+    },
+    "protected_keys": [
+      "production_route",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "route",
+        "value": "production"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

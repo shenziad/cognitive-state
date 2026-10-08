@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp001_context_equivalence",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0.0,
+  "benchmark": "exp001-executor-calibration-v0.1",
+  "dataset": "datasets/exp001/executor_calibration_v0.1",
+  "prompt_version": "v0.3",
+  "conditions": [
+    "full_context"
+  ],
+  "instance_ids": null,
+  "repetitions": 2,
+  "randomization_seed": 20261001,
+  "max_steps": 6,
+  "representation_counter": "utf8_bytes",
+  "representation_budget": 2200,
+  "provider": "openai_sdk",
+  "endpoint": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key_env": "apikey",
+  "output_limit_parameter": "max_tokens",
+  "max_output_tokens": 2048,
+  "timeout_seconds": 60,
+  "max_api_calls": 96,
+  "extra_body": {
+    "enable_thinking": false
+  }
+}

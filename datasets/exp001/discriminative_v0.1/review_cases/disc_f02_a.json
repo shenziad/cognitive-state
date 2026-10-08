@@ -1,0 +1,24 @@
+{
+  "instance_id": "disc_f02_a",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "run_B"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "run_C"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

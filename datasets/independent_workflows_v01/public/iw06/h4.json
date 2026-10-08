@@ -1,0 +1,158 @@
+{
+  "checkpoint": 4,
+  "instance_id": "iw06:h4",
+  "new_public_events": [
+    {
+      "id": "iw06:h4:u",
+      "role": "user",
+      "content": "Release the instrument only with both c2 checks satisfied and the saved sample preserved. Earlier obligations continue unless explicitly withdrawn; fulfill any that remain missing. A requirement to preserve an item does not certify it exists: determine previous action success only from this condition's actual receipts."
+    },
+    {
+      "id": "iw06:h4:n3",
+      "role": "assistant",
+      "content": "Office coordination note 4-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:n4",
+      "role": "assistant",
+      "content": "Office coordination note 4-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:n5",
+      "role": "assistant",
+      "content": "Office coordination note 4-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:n6",
+      "role": "assistant",
+      "content": "Office coordination note 4-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:n1",
+      "role": "assistant",
+      "content": "Office coordination note 4-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:n2",
+      "role": "assistant",
+      "content": "Office coordination note 4-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw06:h4:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "reacquire_raw",
+          "description": "Acquire the raw sample again.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "old_measurement_saved": true
+          },
+          "successful_increments": {
+            "raw_acquisitions": 1
+          },
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "correct_units",
+          "description": "Apply the unit interpretation specified in the already-read signed notice to the saved raw sample; preserve the acquisition. The directory does not supply the notice value.",
+          "cost": 1,
+          "preconditions": {
+            "unit_notice_read": true
+          },
+          "successful_effects": {
+            "unit_corrected": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "apply_calibration_c2",
+          "description": "Apply calibration c2 to the corrected raw sample.",
+          "cost": 1,
+          "preconditions": {
+            "unit_corrected": true
+          },
+          "successful_effects": {
+            "calibration_version": "c2",
+            "calibrated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "check_reference",
+          "description": "Check calibration c2 against the reference standard.",
+          "cost": 1,
+          "preconditions": {
+            "calibrated": true,
+            "calibration_version": "c2"
+          },
+          "successful_effects": {
+            "reference_checked": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "check_under_load",
+          "description": "Check calibration c2 under production load.",
+          "cost": 1,
+          "preconditions": {
+            "calibrated": true,
+            "calibration_version": "c2"
+          },
+          "successful_effects": {
+            "load_checked": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "release_instrument",
+          "description": "Release the instrument for production.",
+          "cost": 1,
+          "preconditions": {
+            "reference_checked": true,
+            "load_checked": true
+          },
+          "successful_effects": {
+            "released": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw06:h4",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

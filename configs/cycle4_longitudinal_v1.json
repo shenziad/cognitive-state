@@ -1,0 +1,38 @@
+{
+  "protocol_id": "cycle4-scoped-lifecycle-v1",
+  "execution_version": "cycle4-execution-v2",
+  "stage": "longitudinal",
+  "dataset": "datasets/cycle4_v1/longitudinal.json",
+  "schedule": "datasets/cycle4_v1/longitudinal_schedule.json",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "temperature": 0,
+  "provider": "openai_sdk",
+  "endpoint": "https://api.siliconflow.cn/v1/chat/completions",
+  "api_key_env": "apikey",
+  "output_limit_parameter": "max_tokens",
+  "max_output_tokens": 4096,
+  "timeout_seconds": 60,
+  "extra_body": {
+    "enable_thinking": false
+  },
+  "seed": 20261004,
+  "max_steps": 6,
+  "representation_budget": 6000,
+  "repair_attempts": 1,
+  "state_schema": "v0.3.1",
+  "interface_version": "lifecycle-interface-v1",
+  "conditions": [
+    "full_context",
+    "summary",
+    "cs_v02",
+    "cs_v031"
+  ],
+  "repetitions": 1,
+  "max_api_calls": 240,
+  "prompts": {
+    "cs_v031": "prompts/cycle4/cs_v031.txt",
+    "summary": "prompts/cycle4/summary.txt",
+    "cs_v02": "prompts/cycle4/cs_v02.txt",
+    "executor": "prompts/cycle4/executor.txt"
+  }
+}

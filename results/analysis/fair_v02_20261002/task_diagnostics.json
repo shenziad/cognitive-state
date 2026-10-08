@@ -1,0 +1,3654 @@
+[
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 4712,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3193,
+      "total_tokens": 3193,
+      "initial_executor_input_tokens": 1559,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_M"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1498,
+    "deployment_token_usage": {
+      "extraction_tokens": 1699,
+      "executor_tokens": 1799,
+      "total_tokens": 3498,
+      "initial_executor_input_tokens": 862,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_goal_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_M"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 622,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3102,
+      "total_tokens": 3102,
+      "initial_executor_input_tokens": 608,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/owner_scope"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_M"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 969,
+    "deployment_token_usage": {
+      "extraction_tokens": 1416,
+      "executor_tokens": 1437,
+      "total_tokens": 2853,
+      "initial_executor_input_tokens": 681,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_goal_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_M"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 808,
+    "deployment_token_usage": {
+      "extraction_tokens": 1388,
+      "executor_tokens": 1381,
+      "total_tokens": 2769,
+      "initial_executor_input_tokens": 653,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_goal_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_K"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1514,
+    "deployment_token_usage": {
+      "extraction_tokens": 1758,
+      "executor_tokens": 1777,
+      "total_tokens": 3535,
+      "initial_executor_input_tokens": 851,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_goal_b_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_K"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 4712,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3193,
+      "total_tokens": 3193,
+      "initial_executor_input_tokens": 1559,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_K"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_goal_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "recipient": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 622,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3100,
+      "total_tokens": 3100,
+      "initial_executor_input_tokens": 608,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_goal_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/owner_scope"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "dispatch_K"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 599,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3012,
+      "total_tokens": 3012,
+      "initial_executor_input_tokens": 589,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/isolation"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_N"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 11890,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 6359,
+      "total_tokens": 6359,
+      "initial_executor_input_tokens": 3138,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_N"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1318,
+    "deployment_token_usage": {
+      "extraction_tokens": 3268,
+      "executor_tokens": 1659,
+      "total_tokens": 4927,
+      "initial_executor_input_tokens": 788,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_belief_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_N"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1376,
+    "deployment_token_usage": {
+      "extraction_tokens": 3040,
+      "executor_tokens": 1569,
+      "total_tokens": 4609,
+      "initial_executor_input_tokens": 743,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_belief_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_N"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 599,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3012,
+      "total_tokens": 3012,
+      "initial_executor_input_tokens": 589,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/isolation"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_T"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1604,
+    "deployment_token_usage": {
+      "extraction_tokens": 3326,
+      "executor_tokens": 1795,
+      "total_tokens": 5121,
+      "initial_executor_input_tokens": 856,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_belief_b_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_T"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 11891,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 6359,
+      "total_tokens": 6359,
+      "initial_executor_input_tokens": 3138,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_T"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_belief_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "remedy": true,
+        "diagnosis_confirmed": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1428,
+    "deployment_token_usage": {
+      "extraction_tokens": 3049,
+      "executor_tokens": 1587,
+      "total_tokens": 4636,
+      "initial_executor_input_tokens": 752,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_belief_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_belief_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "remedy_T"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1208,
+    "deployment_token_usage": {
+      "extraction_tokens": 2060,
+      "executor_tokens": 1621,
+      "total_tokens": 3681,
+      "initial_executor_input_tokens": 773,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_assumption_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_V"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 6572,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3969,
+      "total_tokens": 3969,
+      "initial_executor_input_tokens": 1947,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_V"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1818,
+    "deployment_token_usage": {
+      "extraction_tokens": 1964,
+      "executor_tokens": 1777,
+      "total_tokens": 3741,
+      "initial_executor_input_tokens": 851,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_assumption_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_V"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 600,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 1990,
+      "total_tokens": 1990,
+      "initial_executor_input_tokens": 595,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/negotiation"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_V"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 600,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 1990,
+      "total_tokens": 1990,
+      "initial_executor_input_tokens": 595,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/negotiation"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_L"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1122,
+    "deployment_token_usage": {
+      "extraction_tokens": 1823,
+      "executor_tokens": 1481,
+      "total_tokens": 3304,
+      "initial_executor_input_tokens": 703,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_assumption_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_L"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 6572,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3971,
+      "total_tokens": 3971,
+      "initial_executor_input_tokens": 1948,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_L"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_assumption_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "encoding": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1471,
+    "deployment_token_usage": {
+      "extraction_tokens": 2064,
+      "executor_tokens": 1759,
+      "total_tokens": 3823,
+      "initial_executor_input_tokens": 842,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_assumption_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_assumption_b_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "encode_L"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 691,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3238,
+      "total_tokens": 3238,
+      "initial_executor_input_tokens": 622,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/calibration_ledger"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_R"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 15643,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 8001,
+      "total_tokens": 8001,
+      "initial_executor_input_tokens": 3959,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_R"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1373,
+    "deployment_token_usage": {
+      "extraction_tokens": 3873,
+      "executor_tokens": 1609,
+      "total_tokens": 5482,
+      "initial_executor_input_tokens": 763,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_completed_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_R"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1899,
+    "deployment_token_usage": {
+      "extraction_tokens": 4127,
+      "executor_tokens": 1913,
+      "total_tokens": 6040,
+      "initial_executor_input_tokens": 915,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_completed_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_R"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 505,
+    "deployment_token_usage": {
+      "extraction_tokens": 3692,
+      "executor_tokens": 2175,
+      "total_tokens": 5867,
+      "initial_executor_input_tokens": 581,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_completed_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_J"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.0,
+      "goal_checks": {
+        "oak_calibrated": false,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 691,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3236,
+      "total_tokens": 3236,
+      "initial_executor_input_tokens": 622,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/calibration_ledger"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_J"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "oak_calibrated": true,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 15643,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 8001,
+      "total_tokens": 8001,
+      "initial_executor_input_tokens": 3959,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "calibrate_J"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_completed_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "representation_budget",
+    "error": {
+      "stage": "representation",
+      "type": "ValueError",
+      "message": "Representation exceeds the configured budget; no truncation performed"
+    },
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 0.0,
+      "decision_consistency": 0.3333333333333333,
+      "goal_checks": {
+        "oak_calibrated": false,
+        "elm_calibrated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": true,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": null,
+      "credits": null,
+      "invalid_actions": null,
+      "unavailable_resources": null,
+      "repeat_attempts": null
+    },
+    "representation_size": null,
+    "deployment_token_usage": {
+      "extraction_tokens": 4424,
+      "executor_tokens": 0,
+      "total_tokens": 4424,
+      "initial_executor_input_tokens": null,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_completed_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_completed_b_r0_cognitive_state_b2200.json",
+    "actions": [],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "policy_violation",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.3333333333333333,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 8676,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 7486,
+      "total_tokens": 7486,
+      "initial_executor_input_tokens": 2425,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_Z"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/reservation_ledger"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.6666666666666666,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 951,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 2540,
+      "total_tokens": 2540,
+      "initial_executor_input_tokens": 661,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/reservation_ledger"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.0,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1921,
+    "deployment_token_usage": {
+      "extraction_tokens": 2685,
+      "executor_tokens": 2980,
+      "total_tokens": 5665,
+      "initial_executor_input_tokens": 917,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_inflight_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/reservation_ledger"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_Z"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 2016,
+    "deployment_token_usage": {
+      "extraction_tokens": 2464,
+      "executor_tokens": 1835,
+      "total_tokens": 4299,
+      "initial_executor_input_tokens": 878,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_inflight_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_Z"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1705,
+    "deployment_token_usage": {
+      "extraction_tokens": 2645,
+      "executor_tokens": 1839,
+      "total_tokens": 4484,
+      "initial_executor_input_tokens": 880,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_inflight_b_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_U"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "policy_violation",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.3333333333333333,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 8675,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 7489,
+      "total_tokens": 7489,
+      "initial_executor_input_tokens": 2426,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_U"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/reservation_ledger"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1999,
+    "deployment_token_usage": {
+      "extraction_tokens": 2477,
+      "executor_tokens": 1857,
+      "total_tokens": 4334,
+      "initial_executor_input_tokens": 889,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_inflight_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "consume_U"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_inflight_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.5,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.6666666666666666,
+      "goal_checks": {
+        "request_count": true,
+        "fulfilled": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 2,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 2,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 951,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 2540,
+      "total_tokens": 2540,
+      "initial_executor_input_tokens": 661,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_inflight_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/reservation_ledger"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.3333333333333333,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": false,
+        "registered_pair": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1074,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3910,
+      "total_tokens": 3910,
+      "initial_executor_input_tokens": 706,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/certificate_index"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/cargo_certificate"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": true,
+        "registered_pair": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 19733,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 14746,
+      "total_tokens": 14746,
+      "initial_executor_input_tokens": 4839,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/venue_certificate"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "register_R29_P63"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.3333333333333333,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.3333333333333333,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": false,
+        "registered_pair": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": true,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 3
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 0,
+      "invalid_actions": 0,
+      "unavailable_resources": 3,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 931,
+    "deployment_token_usage": {
+      "extraction_tokens": 4664,
+      "executor_tokens": 3186,
+      "total_tokens": 7850,
+      "initial_executor_input_tokens": 681,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_information_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "lumen/current/venue_certificate"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "lumen/current/certificate_index"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "lumen/catalog.json"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": true,
+        "registered_pair": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1547,
+    "deployment_token_usage": {
+      "extraction_tokens": 5009,
+      "executor_tokens": 2791,
+      "total_tokens": 7800,
+      "initial_executor_input_tokens": 854,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_information_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/venue_certificate"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "register_R29_P63"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": true,
+        "registered_pair": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 19733,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 14748,
+      "total_tokens": 14748,
+      "initial_executor_input_tokens": 4839,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_b_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/cargo_certificate"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "register_R29_P63"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": true,
+        "registered_pair": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1523,
+    "deployment_token_usage": {
+      "extraction_tokens": 5017,
+      "executor_tokens": 2814,
+      "total_tokens": 7831,
+      "initial_executor_input_tokens": 861,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_b_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_information_b_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/cargo_certificate"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "register_R29_P63"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": false,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "cargo_verified": true,
+        "venue_verified": true,
+        "registered_pair": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1231,
+    "deployment_token_usage": {
+      "extraction_tokens": 4728,
+      "executor_tokens": 2478,
+      "total_tokens": 7206,
+      "initial_executor_input_tokens": 749,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_b_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_information_b_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/cargo_certificate"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "register_R29_P63"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_information_b",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": false,
+    "category": "unfinished_requirements",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 0.3333333333333333,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.0,
+      "goal_checks": {
+        "cargo_verified": false,
+        "venue_verified": true,
+        "registered_pair": false
+      },
+      "decision_checks": {
+        "final_requirements_met": false,
+        "constraints_respected": false,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 4,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 1,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 4,
+      "credits": 4,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1074,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3908,
+      "total_tokens": 3908,
+      "initial_executor_input_tokens": 706,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_information_b_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/certificate_index"
+        }
+      },
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/venue_certificate"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "lane_checked": true,
+        "lane": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1506,
+    "deployment_token_usage": {
+      "extraction_tokens": 1326,
+      "executor_tokens": 2721,
+      "total_tokens": 4047,
+      "initial_executor_input_tokens": 838,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_recoverable_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_control_recoverable_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/lane_status"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "route_F"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "lane_checked": true,
+        "lane": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 819,
+    "deployment_token_usage": {
+      "extraction_tokens": 965,
+      "executor_tokens": 2151,
+      "total_tokens": 3116,
+      "initial_executor_input_tokens": 648,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_recoverable_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_control_recoverable_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/lane_status"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "route_F"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "lane_checked": true,
+        "lane": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 643,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 2016,
+      "total_tokens": 2016,
+      "initial_executor_input_tokens": 603,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_recoverable_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/lane_status"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "route_F"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_recoverable_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "lane_checked": true,
+        "lane": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 3,
+      "workspace_credit_budget": 3,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 3,
+      "credits": 3,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 2868,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 3618,
+      "total_tokens": 3618,
+      "initial_executor_input_tokens": 1137,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_recoverable_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "current/lane_status"
+        }
+      },
+      {
+        "tool": "execute",
+        "arguments": {
+          "operation": "route_F"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "cognitive_state",
+    "budget": 2200,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "left_validated": true,
+        "right_validated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 0,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 0,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1761,
+    "deployment_token_usage": {
+      "extraction_tokens": 1265,
+      "executor_tokens": 1882,
+      "total_tokens": 3147,
+      "initial_executor_input_tokens": 869,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_completed_a_r0_cognitive_state_b2200.json",
+    "extraction_artifact": "extractions/cont2_control_completed_a_r0_cognitive_state_b2200.json",
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "summary",
+    "budget": 2200,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "left_validated": true,
+        "right_validated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 0,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 1,
+      "credits": 0,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 1461,
+    "deployment_token_usage": {
+      "extraction_tokens": 1039,
+      "executor_tokens": 766,
+      "total_tokens": 1805,
+      "initial_executor_input_tokens": 753,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_completed_a_r0_summary_b2200.json",
+    "extraction_artifact": "extractions/cont2_control_completed_a_r0_summary_b2200.json",
+    "actions": [
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "full_context",
+    "budget": null,
+    "repetition": 0,
+    "control": true,
+    "category": "success",
+    "error": null,
+    "metrics": {
+      "task_success": true,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 1.0,
+      "goal_checks": {
+        "left_validated": true,
+        "right_validated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": true
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 0,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 1,
+      "credits": 0,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 2773,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 1125,
+      "total_tokens": 1125,
+      "initial_executor_input_tokens": 1112,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_completed_a_r0_full_context_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "completed"
+        }
+      }
+    ],
+    "ablation_rule": null
+  },
+  {
+    "instance_id": "cont2_control_completed_a",
+    "condition": "no_history",
+    "budget": null,
+    "repetition": 0,
+    "control": true,
+    "category": "wrong_finish_status",
+    "error": null,
+    "metrics": {
+      "task_success": false,
+      "final_goal_completion": 1.0,
+      "tool_usage_correctness": 1.0,
+      "decision_consistency": 0.6666666666666666,
+      "goal_checks": {
+        "left_validated": true,
+        "right_validated": true
+      },
+      "decision_checks": {
+        "final_requirements_met": true,
+        "constraints_respected": true,
+        "completion_status_correct": false
+      },
+      "workspace_credits_spent": 0,
+      "workspace_credit_budget": 0,
+      "policy_violation_count": 0,
+      "repeated_work_count": 0,
+      "unavailable_observation_count": 0
+    },
+    "diagnostics": {
+      "steps": 2,
+      "credits": 0,
+      "invalid_actions": 0,
+      "unavailable_resources": 0,
+      "repeat_attempts": 0,
+      "repeat_scope": "Configured repeat_key only, including budget-blocked attempts; not all redundant queries"
+    },
+    "representation_size": 539,
+    "deployment_token_usage": {
+      "extraction_tokens": 0,
+      "executor_tokens": 1299,
+      "total_tokens": 1299,
+      "initial_executor_input_tokens": 577,
+      "scope": "Independent deployment equivalent, including entire shared extraction"
+    },
+    "artifact": "instances/cont2_control_completed_a_r0_no_history_bnone.json",
+    "extraction_artifact": null,
+    "actions": [
+      {
+        "tool": "observe",
+        "arguments": {
+          "resource": "workspace/catalog.json"
+        }
+      },
+      {
+        "tool": "finish",
+        "arguments": {
+          "status": "blocked"
+        }
+      }
+    ],
+    "ablation_rule": null
+  }
+]

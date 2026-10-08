@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "evidence_type": "api",
+  "stage": "mechanism",
+  "results_sha256": "dd36116a465b88d2dbb567f6fc8df01e26547d9793efd0baf971c66d8daf80b2",
+  "ledger_sha256": "4df8daa59f901c8eebabe40d774d0690449adcae27160de68f506c184e663e7c",
+  "usage": {
+    "request_attempts": 204,
+    "successful_responses": 204,
+    "total_tokens": 618444,
+    "known_reported_tokens": 618444,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "verification": "public input, exact executor messages, world/trace/score and cost indices replayed"
+}

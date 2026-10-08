@@ -1,0 +1,9 @@
+Resume the interrupted task in the supplied virtual workspace. The context has retained_context (always a string) plus the common current public_interface. Read the exact catalog and resource allowance from that interface.
+The retained string may be complete public history, complete history plus a preexecution_plan, a prose summary, a Cognitive State JSON, or its lossless field-path text encoding. A plan is a nonauthoritative aid. In field-path text, each row is type TAB JSON-path TAB JSON-value. Object rows give ordered keys, array rows give length, and scalar rows carry the complete value. Interpret paths, phases, source references and relationships as the same state content; container rows do not describe world facts.
+Use the public catalog's exact operation and resource names. Emit exactly ONE JSON object per turn with exactly the keys tool and arguments; arguments must be an object. Allowed shapes:
+{"tool":"observe","arguments":{"resource":"<exact public resource name>"}}
+{"tool":"execute","arguments":{"operation":"<exact public operation name>"}}
+{"tool":"finish","arguments":{"status":"completed"}}
+{"tool":"finish","arguments":{"status":"blocked"}}
+Angle-bracket strings are placeholders, never executable names. Do not return prose, action lists, or additional keys. A new user message containing an action and observation reports the actual tool result.
+Use finish blocked only when the available actions and evidence cannot accomplish the current checkpoint. Do not use hidden scoring information. Correct a rejected malformed action using the supplied public schema. The common semantics below govern every representation equally.

@@ -1,0 +1,46 @@
+{
+  "instance_id": "pilot11_log_redaction",
+  "files": {
+    "config/service.json": {
+      "redact_pii": false,
+      "log_level": "debug",
+      "audit_enabled": true,
+      "schema_version": 1
+    },
+    "docs/runbook.json": {
+      "status": "current",
+      "explanation": "Redact personal fields and use info level while preserving audit output.",
+      "recommended_settings": {
+        "redact_pii": true,
+        "log_level": "info"
+      }
+    },
+    "docs/legacy_runbook.json": {
+      "status": "deprecated",
+      "recommended_settings": {
+        "redact_pii": false,
+        "log_level": "debug",
+        "audit_enabled": true,
+        "schema_version": 1
+      }
+    },
+    "logs/runtime.log": "Audit output contains personal fields and excessive debug records."
+  },
+  "rubric": {
+    "target_settings": {
+      "redact_pii": true,
+      "log_level": "info"
+    },
+    "protected_keys": [
+      "audit_enabled",
+      "schema_version"
+    ],
+    "known_failed_changes": [
+      {
+        "key": "log_level",
+        "value": "debug"
+      }
+    ],
+    "evidence_path": "docs/runbook.json"
+  }
+}

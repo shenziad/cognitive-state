@@ -1,0 +1,92 @@
+{
+  "dataset_version": "exp001-pilot-v0.1",
+  "synthetic": true,
+  "split": "pilot",
+  "reference_review_status": "pending",
+  "instances": [
+    {
+      "instance_id": "pilot01_jwt_units",
+      "title": "修复 JWT 时间单位",
+      "task": "tasks/pilot01_jwt_units.json",
+      "environment": "environments/pilot01_jwt_units.json",
+      "reference": "references/pilot01_jwt_units.json"
+    },
+    {
+      "instance_id": "pilot02_api_endpoint",
+      "title": "更新 API 地址",
+      "task": "tasks/pilot02_api_endpoint.json",
+      "environment": "environments/pilot02_api_endpoint.json",
+      "reference": "references/pilot02_api_endpoint.json"
+    },
+    {
+      "instance_id": "pilot03_request_timeout",
+      "title": "调整请求超时",
+      "task": "tasks/pilot03_request_timeout.json",
+      "environment": "environments/pilot03_request_timeout.json",
+      "reference": "references/pilot03_request_timeout.json"
+    },
+    {
+      "instance_id": "pilot04_cache_namespace",
+      "title": "修复缓存命名空间",
+      "task": "tasks/pilot04_cache_namespace.json",
+      "environment": "environments/pilot04_cache_namespace.json",
+      "reference": "references/pilot04_cache_namespace.json"
+    },
+    {
+      "instance_id": "pilot05_csv_format",
+      "title": "修复 CSV 格式",
+      "task": "tasks/pilot05_csv_format.json",
+      "environment": "environments/pilot05_csv_format.json",
+      "reference": "references/pilot05_csv_format.json"
+    },
+    {
+      "instance_id": "pilot06_tls_bundle",
+      "title": "修复 TLS 信任链",
+      "task": "tasks/pilot06_tls_bundle.json",
+      "environment": "environments/pilot06_tls_bundle.json",
+      "reference": "references/pilot06_tls_bundle.json"
+    },
+    {
+      "instance_id": "pilot07_staging_route",
+      "title": "纠正测试环境路由",
+      "task": "tasks/pilot07_staging_route.json",
+      "environment": "environments/pilot07_staging_route.json",
+      "reference": "references/pilot07_staging_route.json"
+    },
+    {
+      "instance_id": "pilot08_pagination",
+      "title": "修复分页兼容性",
+      "task": "tasks/pilot08_pagination.json",
+      "environment": "environments/pilot08_pagination.json",
+      "reference": "references/pilot08_pagination.json"
+    },
+    {
+      "instance_id": "pilot09_scheduler",
+      "title": "纠正定时任务时区",
+      "task": "tasks/pilot09_scheduler.json",
+      "environment": "environments/pilot09_scheduler.json",
+      "reference": "references/pilot09_scheduler.json"
+    },
+    {
+      "instance_id": "pilot10_feature_flag",
+      "title": "恢复灰度开关",
+      "task": "tasks/pilot10_feature_flag.json",
+      "environment": "environments/pilot10_feature_flag.json",
+      "reference": "references/pilot10_feature_flag.json"
+    },
+    {
+      "instance_id": "pilot11_log_redaction",
+      "title": "恢复日志脱敏",
+      "task": "tasks/pilot11_log_redaction.json",
+      "environment": "environments/pilot11_log_redaction.json",
+      "reference": "references/pilot11_log_redaction.json"
+    },
+    {
+      "instance_id": "pilot12_queue_batch",
+      "title": "修复队列批量限制",
+      "task": "tasks/pilot12_queue_batch.json",
+      "environment": "environments/pilot12_queue_batch.json",
+      "reference": "references/pilot12_queue_batch.json"
+    }
+  ]
+}

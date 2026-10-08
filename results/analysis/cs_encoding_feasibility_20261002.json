@@ -1,0 +1,40 @@
+{
+  "evidence_type": "offline_assistant_authored_encoding_example_not_model_result",
+  "instance": "cont2_completed_b",
+  "state": {
+    "goal": {
+      "objective": "Calibrate both racks.",
+      "success_criteria": [
+        "Oak and elm validated."
+      ],
+      "constraints": [
+        "No repeat of validated work. Budget 3; operations and ledger cost 2."
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Elm validated; oak not run.",
+        "calibrate_J=oak; calibrate_R=elm."
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Oak calibration.",
+      "information_needs": [],
+      "next_action": "Execute calibrate_J, then finish."
+    }
+  },
+  "canonical_utf8_bytes": 433,
+  "budget": 800,
+  "schema_valid": true,
+  "sources": [
+    "h01",
+    "h02",
+    "h04"
+  ],
+  "scripted_path_success": true,
+  "gold_state": false,
+  "limit": "One legal source-supported encoding and scripted path do not prove automatic extraction or general behavioral equivalence."
+}

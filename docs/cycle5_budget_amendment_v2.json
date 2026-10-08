@@ -1,0 +1,185 @@
+{
+  "version": "cycle5-budget-amendment-v2",
+  "status": "prospective_A_v2_amendment_requires_new_freeze_and_gate",
+  "amendment_type": "post_D_budget_related_engineering_gate_change;not_retroactive_D_completion",
+  "reason": "D stopped at frozen500000providerTokens;complete prespecified counterfactual layer permits separate A-v2 without repeating or patching D",
+  "unchanged": [
+    "A12task allocation fixed before D",
+    "A6conditions",
+    "condition prompts",
+    "data and score definitions",
+    "source-first60review entries",
+    "400request cap",
+    "750000token stop threshold"
+  ],
+  "changed": [
+    "new A-v2 execution/config/release identity",
+    "incoming gate now requires complete prespecified24counterfactual D cells plus full original ledger/partial integrity instead of all48Dcells"
+  ],
+  "forbidden": [
+    "passing oldDgate",
+    "completing oldDdenominator by patching",
+    "selective task inclusion using behavior",
+    "changing prompts or state semantics after D",
+    "excluding failed counterfactual cells",
+    "duplicating shared CS source cost in actual ledger"
+  ],
+  "metadata_review": {
+    "verified_at_utc": "2026-10-03T18:05:00.207008+00:00",
+    "scope": "Only allocation, metadata, attempt IDs, source hashes and interrupted-call coverage; no success/score fields read or disclosed.",
+    "old_frozen_assets_unchanged": 81,
+    "diagnostic_status": "aborted_token_threshold",
+    "assigned_cells": 48,
+    "completed_cells": 45,
+    "real_attempts": 113,
+    "known_provider_tokens": 502100,
+    "unknown_usage_attempts": 0,
+    "api_error_attempts": 0,
+    "missing_cells": [
+      {
+        "task_id": "original_iw02_h4",
+        "condition": "no_history"
+      },
+      {
+        "task_id": "original_iw06_h4",
+        "condition": "no_history"
+      },
+      {
+        "task_id": "original_iw10_h2",
+        "condition": "no_history"
+      }
+    ],
+    "a_task_ids_selected_before_d": [
+      "hd01_a",
+      "hd01_b",
+      "hd02_a",
+      "hd02_b",
+      "hd03_a",
+      "hd03_b",
+      "hd04_a",
+      "hd04_b",
+      "hd05_a",
+      "hd05_b",
+      "hd06_a",
+      "hd06_b"
+    ],
+    "a_conditions_unchanged": [
+      "full_context",
+      "full_planner",
+      "summary_s1",
+      "summary_s2",
+      "cs1",
+      "cs_text"
+    ],
+    "predeclared_counterfactual_d_cells": 24,
+    "predeclared_counterfactual_d_cells_complete": true,
+    "counterfactual_attempt_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18,
+      19,
+      25,
+      26,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      42,
+      43,
+      44,
+      45,
+      46,
+      51,
+      52,
+      53,
+      54,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      81,
+      82,
+      89,
+      90,
+      95,
+      96,
+      102,
+      103,
+      108,
+      109
+    ],
+    "completed_rows_request_coverage": 110,
+    "interrupted_request_indices": [
+      110,
+      111,
+      112
+    ],
+    "interrupted_call_coverage_checked": true,
+    "a_v1_budget": {
+      "max_api_calls": 400,
+      "token_stop_threshold": 750000
+    },
+    "evidence_sha256": {
+      "docs/freezes/cycle5_execution_v1.json": "9790ffbf93ae680676b8882d073ea65a49f174dcd97a7306cf2bd9c6492f7d99",
+      "configs/cycle5_mechanism_v1.json": "4d7e151b74e9de1167eff817cd4e5078dacfaf8b356f5cd1d4884805ec01fce3",
+      "datasets/history_diagnostics_v01/provenance.json": "b02afc7b9460b9f78d570ac4489097e121a81a85c147155e617be3c89ace5313",
+      "results\\raw\\cycle5\\diagnostic_v1_20261004\\manifest.json": "ef0250d08cb7505b5777cd22222daf8a9593a2e3cb7ea3a6c35d4e3829d0ee8f",
+      "results\\raw\\cycle5\\diagnostic_v1_20261004\\results.json": "fa491d5eb74a1d804994ce4c873fd3f33047df9a1bb299a3533c2f4ce64e275c",
+      "results\\raw\\cycle5\\diagnostic_v1_20261004\\schedule.json": "f3a1b01d27217be95425eb97c8502c694228031dbc0f8deb60708e9250c51bd7",
+      "results\\raw\\cycle5\\diagnostic_v1_20261004\\call_ledger.json": "d6621f63c5d024629620210eaa3538c2eb40c266307f8f66b760a03fee28223d",
+      "results\\raw\\cycle5\\diagnostic_v1_20261004\\interrupted_cell.json": "1faf4333c5cdb5251b6a389873a74d69c380e6e657c8cf6373b6fea5f8b831eb"
+    },
+    "saved_schedule_matches_frozen_seed_rule": true,
+    "old_actual_gate_failed_verified": true,
+    "new_gate_reports_old_D_incomplete_verified": true,
+    "new_gate_matches_pre_D_A_allocation_verified": true,
+    "root_bridge_reports_all113_replayed": true,
+    "old_actual_gate_sha256": "709626bcb046855d07d9b6cd3300a7cecef27c1f4510e7e06a8173d9a8f60cd9",
+    "new_scope_gate_sha256": "310ca6651269ee6606ef040772d58b96cc602bf887e0efcfcae4bdccc78b0fb8"
+  },
+  "required_gate_checks": [
+    "oldDgate remains failed",
+    "v1 release81assets unchanged",
+    "all113old ledger attempts covered including interrupted partial",
+    "24predeclared counterfactual cells exactly all allocated",
+    "noAPI/unknown usage",
+    "input/message/world/score replay performed separately by root auditor",
+    "noA requests before v2 freeze",
+    "new runtimev2 cannot claim oldgate passed"
+  ],
+  "interpretation": "New exploratory A-v2 inherits predeclared contrasts but its amended gate is post-D and must be disclosed. D original48cell comparison remains incomplete.",
+  "actual_v2_asset_paths": {
+    "runtime": "experiments/exp004_mechanism/runtime_v2.py",
+    "bridge": "experiments/exp004_mechanism/budget_bridge.py",
+    "run": "scripts/run_cycle5_v2.py",
+    "analyze": "scripts/analyze_cycle5_v2.py",
+    "config": "configs/cycle5_mechanism_v2.json",
+    "release": "docs/freezes/cycle5_execution_v2.json",
+    "gate": "results/analysis/cycle5_diagnostic_v1_20261004/paired_scope_gate_v2.json",
+    "freeze_builder": "scripts/freeze_cycle5_v2.py"
+  },
+  "config_changes_exactly": [
+    "config_path",
+    "execution_version",
+    "experiment_id",
+    "incoming_diagnostic_gate"
+  ],
+  "amendment_review": "Scientifically acceptable as disclosed post-D exploratory A-v2; original full-D gate remains failed. Runtime-v2 gate/release changes and new bridge were read, no success/score fields viewed."
+}

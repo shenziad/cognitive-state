@@ -1,0 +1,62 @@
+{
+  "instance_id": "pilot09_scheduler",
+  "title": "纠正定时任务时区",
+  "cutoff": "after:h08",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Restore the daily billing schedule. Success means all service checks pass. Preserve hour=9; do not change it. Preserve duplicate_guard=true; do not change it. Preserve schema_version=1; do not change it. No database migration; modify virtual service configuration only."
+    },
+    {
+      "id": "h02",
+      "role": "assistant",
+      "content": "I will investigate the virtual service configuration. Working assumption: the virtual fixture represents the interrupted service; this has not independently been checked."
+    },
+    {
+      "id": "h03",
+      "role": "tool",
+      "content": "Billing runs eight hours late; the configured hour is already correct. Current config/service.json: {\"timezone\": \"UTC\", \"hour\": 9, \"duplicate_guard\": true, \"schema_version\": 1}"
+    },
+    {
+      "id": "h04",
+      "role": "assistant",
+      "content": "Unconfirmed belief: Timezone handling may be wrong. Confidence: 0.6. This is not established."
+    },
+    {
+      "id": "h05",
+      "role": "tool",
+      "content": "Earlier unsuccessful change: {\"key\": \"hour\", \"value\": 1}. It did not solve the incident and was reverted."
+    },
+    {
+      "id": "h06",
+      "role": "user",
+      "content": "Continue the original repair. Preserve hour=9; do not change it. Preserve duplicate_guard=true; do not change it. Preserve schema_version=1; do not change it. No database migration; modify virtual service configuration only. Prefer a small, evidence-based change."
+    },
+    {
+      "id": "h07",
+      "role": "tool",
+      "content": "docs/legacy_runbook.json is explicitly deprecated; it recommends the old configuration. Use docs/runbook.json for current guidance; its contents have not been read yet."
+    },
+    {
+      "id": "d00",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "d01",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "d02",
+      "role": "user",
+      "content": "Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. Unrelated archived meeting note: the dashboard theme, weekly demo agenda, team lunch and documentation spelling were discussed. No service configuration or task constraint changed. This note belongs to an older completed activity. "
+    },
+    {
+      "id": "h08",
+      "role": "assistant",
+      "content": "Current focus: Restore the daily billing schedule. Need the current settings guidance. Next action: read docs/runbook.json before editing; then test and report completion."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle3\\preflight_20261003",
+  "status": "gate_failed",
+  "conditions": {
+    "full_context": {
+      "saved": 24,
+      "successes": 24,
+      "executed": 24,
+      "representation_errors": 0,
+      "skipped": 0,
+      "first_attempt_valid": 0,
+      "repair_calls": 0,
+      "usage": {
+        "request_attempts": 44,
+        "successful_responses": 44,
+        "total_tokens": 55646,
+        "known_reported_tokens": 55646,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    },
+    "cs_v03": {
+      "saved": 24,
+      "successes": 15,
+      "executed": 15,
+      "representation_errors": 9,
+      "skipped": 0,
+      "first_attempt_valid": 5,
+      "repair_calls": 19,
+      "usage": {
+        "request_attempts": 69,
+        "successful_responses": 69,
+        "total_tokens": 113072,
+        "known_reported_tokens": 113072,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    }
+  },
+  "failure_categories": {
+    "source_class_false_rejection_of_grounded_contract_constraint": 1,
+    "candidate_action_at_root": 5,
+    "target_string_instead_of_object": 1,
+    "frontier_nested_in_world": 1,
+    "malformed_json": 1
+  },
+  "failures": [
+    {
+      "case": "pre03_accepted_pending_a",
+      "repetition": 1,
+      "classification": "source_class_false_rejection_of_grounded_contract_constraint",
+      "artifact": "instances/pre03_accepted_pending_a_cs_v03_r1_h1.json",
+      "last_error": "Source class does not support this kind of claim"
+    },
+    {
+      "case": "pre03_plan_only_a",
+      "repetition": 1,
+      "classification": "candidate_action_at_root",
+      "artifact": "instances/pre03_plan_only_a_cs_v03_r1_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    },
+    {
+      "case": "pre03_explicit_verification_a",
+      "repetition": 0,
+      "classification": "target_string_instead_of_object",
+      "artifact": "instances/pre03_explicit_verification_a_cs_v03_r0_h1.json",
+      "last_error": "Operation target must be an object"
+    },
+    {
+      "case": "pre03_assumption_refuted_a",
+      "repetition": 0,
+      "classification": "candidate_action_at_root",
+      "artifact": "instances/pre03_assumption_refuted_a_cs_v03_r0_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    },
+    {
+      "case": "pre03_plan_only_a",
+      "repetition": 0,
+      "classification": "frontier_nested_in_world",
+      "artifact": "instances/pre03_plan_only_a_cs_v03_r0_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    },
+    {
+      "case": "pre03_assumption_refuted_b",
+      "repetition": 0,
+      "classification": "malformed_json",
+      "artifact": "instances/pre03_assumption_refuted_b_cs_v03_r0_h1.json",
+      "last_error": "Expecting ',' delimiter: line 1 column 1439 (char 1438)"
+    },
+    {
+      "case": "pre03_plan_only_b",
+      "repetition": 0,
+      "classification": "candidate_action_at_root",
+      "artifact": "instances/pre03_plan_only_b_cs_v03_r0_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    },
+    {
+      "case": "pre03_plan_only_b",
+      "repetition": 1,
+      "classification": "candidate_action_at_root",
+      "artifact": "instances/pre03_plan_only_b_cs_v03_r1_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    },
+    {
+      "case": "pre03_assumption_refuted_b",
+      "repetition": 1,
+      "classification": "candidate_action_at_root",
+      "artifact": "instances/pre03_assumption_refuted_b_cs_v03_r1_h1.json",
+      "last_error": "Expected keys ['frontier', 'goal', 'world']; optional []"
+    }
+  ],
+  "interpretation": "Valid executed v0.3 states succeeded 15/15, but final usable states were only 15/24. This selected subset is not unconditional capability evidence. Main failures concern wire shape and one overly restrictive provenance rule, not byte capacity.",
+  "revision_policy": "Preserve this failed cohort. Revision 2 changes explicit nesting examples, path-aware feedback and contract-constraint source handling; full new-label preflight, unchanged thresholds. No regression/chain model calls occurred during debugging."
+}

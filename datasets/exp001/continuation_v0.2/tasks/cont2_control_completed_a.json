@@ -1,0 +1,55 @@
+{
+  "instance_id": "cont2_control_completed_a",
+  "history": [
+    {
+      "id": "h01",
+      "role": "user",
+      "content": "Workspace lumen: validate the left and right fixtures, then finish. Do not repeat validated work. 0 credits remain at resumption."
+    },
+    {
+      "id": "h02",
+      "role": "tool",
+      "content": "Public tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute validate_E: Run the left fixture validation. Cost=2. execute validate_W: Run the right fixture validation. Cost=2."
+    },
+    {
+      "id": "h03",
+      "role": "assistant",
+      "content": "Initial plan was to validate both fixtures."
+    },
+    {
+      "id": "h04",
+      "role": "tool",
+      "content": "Signed validation receipt: left and right fixtures both validated. Only finish remains."
+    },
+    {
+      "id": "d000",
+      "role": "tool",
+      "content": "Closed archive control_completed-000, workspace vault, unrelated to current workspace lumen. Batch 430 used a glass holder; its recipient was retention and its encoding was tile. The signed closure lists rack elm as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q80 and S40. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d001",
+      "role": "tool",
+      "content": "Closed archive control_completed-001, workspace vault, unrelated to current workspace lumen. Batch 431 used a ceramic holder; its recipient was review and its encoding was rune. The signed closure lists rack oak as calibrated and broker jade as acknowledged. The former certificate identifiers were Q81 and S41. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d002",
+      "role": "tool",
+      "content": "Closed archive control_completed-002, workspace vault, unrelated to current workspace lumen. Batch 432 used a glass holder; its recipient was review and its encoding was tile. The signed closure lists rack elm as calibrated and broker jade as acknowledged. The former certificate identifiers were Q82 and S42. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "d003",
+      "role": "tool",
+      "content": "Closed archive control_completed-003, workspace vault, unrelated to current workspace lumen. Batch 433 used a ceramic holder; its recipient was retention and its encoding was rune. The signed closure lists rack oak as calibrated and broker pearl as acknowledged. The former certificate identifiers were Q83 and S43. These are finished records of other workspaces, with no live instruction, evidence, or progress for lumen."
+    },
+    {
+      "id": "h05",
+      "role": "assistant",
+      "content": "Interruption occurred here. Continue the current workspace under its active requirements and remaining budget; planning statements alone are not tool execution evidence."
+    }
+  ],
+  "recovery_context": "Workspace lumen: validate the left and right fixtures, then finish. Do not repeat validated work. 0 credits remain at resumption.\nPublic tool record: execute accepts an operation name; observe accepts a resource name. workspace/catalog.json can be observed for free and returns only these definitions. execute validate_E: Run the left fixture validation. Cost=2. execute validate_W: Run the right fixture validation. Cost=2.\nOnly original requirements and public tool definitions are retained; no historical validation receipt is supplied.",
+  "ablation_progress_terms": [
+    "both validated",
+    "only finish remains"
+  ]
+}

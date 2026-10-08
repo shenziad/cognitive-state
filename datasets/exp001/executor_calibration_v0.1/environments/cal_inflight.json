@@ -1,0 +1,45 @@
+{
+  "instance_id": "cal_inflight",
+  "environment_type": "continuation",
+  "initial_state": {
+    "sent": true,
+    "count": 1,
+    "receipt": false
+  },
+  "operations": {
+    "send_batch": {
+      "description": "Send a new batch; duplicates consume credit.",
+      "effects": {
+        "sent": true
+      },
+      "cost": 1,
+      "increments": {
+        "count": 1
+      }
+    }
+  },
+  "observations": {
+    "current/q42": {
+      "description": "Read delivery receipt of issued q42.",
+      "cost": 1,
+      "required_state": {
+        "sent": true
+      },
+      "effects": {
+        "receipt": true
+      },
+      "observation": {
+        "receipt": "delivered"
+      }
+    }
+  },
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "count": 1,
+      "receipt": true
+    },
+    "before_action": [],
+    "finish_status": "completed"
+  }
+}

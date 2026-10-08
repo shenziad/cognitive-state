@@ -1,0 +1,281 @@
+{
+  "review_type": "independent_read_only_trace_retention_scoring_usage_audit_with_manual_failure_interpretation",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\exp003\\longitudinal_v01_20261002",
+  "source_manifest_sha256": "7bed951f8f1eb7f8d11b83aa44c7f169864d8cfc4bf2480ad7c6c146bb3260c3",
+  "verification": {
+    "raw_or_source_modified": false,
+    "model_calls_made_by_review": 0,
+    "env_read_by_review": false,
+    "input_prompt_source_snapshot_hashes_match": true,
+    "assigned_grid_unique_32": true,
+    "actual_world_carry_and_external_event_patches_match": true,
+    "compressed_update_boundary_matches_retained_plus_last_real_actions_observations_plus_new_events": true,
+    "full_history_cumulative_and_no_history_current_event_only_policy_match": true,
+    "all_saved_tool_traces_replay": true,
+    "primary_scores_independently_match_rubric_and_actual_world": true,
+    "no_rubric_or_target_state_fields_in_saved_model_messages": true,
+    "unique_response_ids": 102,
+    "request_attempts": 102,
+    "reported_responses": 102,
+    "provider_or_transport_failures": 0,
+    "unreported_request_costs": 0,
+    "all_responses_model": "deepseek-ai/DeepSeek-V4-Flash",
+    "all_finish_reason_stop": true,
+    "input_tokens": 110191,
+    "output_tokens": 4191,
+    "total_tokens": 114382,
+    "cached_input_tokens": 29696,
+    "uncached_input_tokens": 80495,
+    "reasoning_tokens": 0,
+    "representation_update_responses": 10,
+    "executor_responses": 92,
+    "attempted_handoffs": 26,
+    "executed_handoffs": 23,
+    "representation_errors": 3,
+    "skipped_handoffs": 6,
+    "successful_handoffs": 17
+  },
+  "condition_usage": {
+    "full_context": {
+      "responses": 27,
+      "input_tokens": 41183,
+      "output_tokens": 387,
+      "total_tokens": 41570,
+      "update_tokens": 0,
+      "executor_tokens": 41570,
+      "cached_input_tokens": 14080,
+      "uncached_input_tokens": 27103
+    },
+    "summary": {
+      "responses": 36,
+      "input_tokens": 31150,
+      "output_tokens": 2685,
+      "total_tokens": 33835,
+      "update_tokens": 8284,
+      "executor_tokens": 25551,
+      "cached_input_tokens": 4096,
+      "uncached_input_tokens": 27054
+    },
+    "cognitive_state": {
+      "responses": 2,
+      "input_tokens": 864,
+      "output_tokens": 543,
+      "total_tokens": 1407,
+      "update_tokens": 1407,
+      "executor_tokens": 0,
+      "cached_input_tokens": 0,
+      "uncached_input_tokens": 864
+    },
+    "no_history": {
+      "responses": 37,
+      "input_tokens": 36994,
+      "output_tokens": 576,
+      "total_tokens": 37570,
+      "update_tokens": 0,
+      "executor_tokens": 37570,
+      "cached_input_tokens": 11520,
+      "uncached_input_tokens": 25474
+    }
+  },
+  "performance": {
+    "full_context": {
+      "successful_handoffs": 5,
+      "assigned_handoffs": 8,
+      "executed_handoffs": 8,
+      "successful_chains": 1,
+      "assigned_chains": 2
+    },
+    "summary": {
+      "successful_handoffs": 7,
+      "assigned_handoffs": 8,
+      "executed_handoffs": 7,
+      "successful_chains": 1,
+      "assigned_chains": 2
+    },
+    "cognitive_state": {
+      "successful_handoffs": 0,
+      "assigned_handoffs": 8,
+      "attempted_extractions": 2,
+      "valid_representations": 0,
+      "executed_handoffs": 0,
+      "successful_chains": 0,
+      "assigned_chains": 2
+    },
+    "no_history": {
+      "successful_handoffs": 5,
+      "assigned_handoffs": 8,
+      "executed_handoffs": 8,
+      "successful_chains": 0,
+      "assigned_chains": 2,
+      "repeated_submission_attempts": 2
+    }
+  },
+  "critical_interpretations": [
+    "CS 0/8 is the assigned-protocol outcome of two invalid first extractions plus six skipped continuations. No CS executor ever ran; state drift and four-handoff behavioral capability were not observed.",
+    "The missing brace and extra metadata field are real generation/protocol reliability failures under the frozen config, not evidence that the G/W/F information model failed.",
+    "Summary preserves right-branch evidence, submission acknowledgment, completed validations and next pending seal across the complete archive chain, demonstrating feasibility of serial continuation from genuinely compressed retained information in this one scenario.",
+    "Summary release h4 preserved current private/offline goal and actual progress in text but failed the byte budget. This is a representation-budget compliance failure, not observed loss of goal information.",
+    "Full release h2 ends before required tests, and later failures inherit the real incomplete world. They are correlated downstream consequences, not three independent historical-memory failures.",
+    "No-history fails after losing previous public goal changes and tool progress. Repeated submissions are an observed behavioral cost of that policy, but catalogs and precondition feedback permit alternative adaptive strategies; failure here does not prove history-free recovery impossible.",
+    "The only matched fully successful chain cost comparison is archive Summary vs Full. The 23.77% total-token reduction is not a measured monetary or latency improvement."
+  ],
+  "matched_successful_archive_comparison": {
+    "full_context": {
+      "total_tokens": 24060,
+      "input_tokens": 23843,
+      "output_tokens": 217,
+      "cached_input_tokens": 11008,
+      "uncached_input_tokens": 12835,
+      "responses": 15,
+      "summed_api_latency_seconds": 20.713443099979486
+    },
+    "summary": {
+      "total_tokens": 18341,
+      "input_tokens": 16959,
+      "output_tokens": 1382,
+      "cached_input_tokens": 2304,
+      "uncached_input_tokens": 14655,
+      "responses": 19,
+      "update_tokens": 4136,
+      "executor_tokens": 14205,
+      "summed_api_latency_seconds": 45.38953669999319
+    },
+    "total_token_reduction": 0.23769742310889444,
+    "token_difference": 5719,
+    "uncached_input_increase": 1820,
+    "output_token_increase": 1165,
+    "monetary_cost_reduction": null,
+    "monetary_cost_reason": "No billed monetary amount or cache/input/output pricing weights measured; cached-input distributions differ substantially.",
+    "latency_interpretation": "Single-run sum of observed request latencies; Summary is slower in this observed chain. No population latency claim."
+  },
+  "failure_cases": [
+    {
+      "scenario": "release_workflow",
+      "condition": "cognitive_state",
+      "handoff": 1,
+      "classification": "first_extraction_missing_root_closing_brace",
+      "stage": "representation",
+      "executor_observed": false,
+      "raw_bytes": 1239,
+      "budget": 2200,
+      "evidence": "API finish_reason stop; raw root object misses its final closing brace. Appending one brace parses locally, but no repair or model rerun was performed.",
+      "artifact": "chains/release_workflow_cognitive_state/handoff_1.json",
+      "artifact_sha256": "e5e569345eb61cd9c3e669adf857e97b7e52c6d99a6a66d7a6637914a84a8c0d"
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "cognitive_state",
+      "handoff": 1,
+      "classification": "first_extraction_extra_root_field",
+      "stage": "representation",
+      "executor_observed": false,
+      "raw_bytes": 1500,
+      "budget": 2200,
+      "evidence": "JSON is syntactically valid but root keys include budget_counter beyond goal/world/frontier. Strict schema rejects it before executor.",
+      "artifact": "chains/archive_workflow_cognitive_state/handoff_1.json",
+      "artifact_sha256": "2c10b93d52dd1ccec16ad25eeb60b1eeb23298a212ea6bfc07b627ba244e63f5"
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "summary",
+      "handoff": 4,
+      "classification": "representation_budget_violation",
+      "stage": "representation",
+      "executor_observed": false,
+      "raw_bytes": 2461,
+      "budget": 2200,
+      "excess_bytes": 261,
+      "evidence": "The response explicitly retains private audience, hard offline constraint and accepted repairs/tests/bundle, but exceeds the configured UTF-8 byte ceiling. It was not passed to executor. No evidence of goal forgetting here.",
+      "artifact": "chains/release_workflow_summary/handoff_4.json",
+      "artifact_sha256": "bbe8c21c4f39d1274d684142f89ed3ff40aca30bbc6204eaafee1a75e99fd53f"
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "full_context",
+      "handoff": 2,
+      "classification": "premature_finish_with_unperformed_validations",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "initiating_execution_failure",
+      "evidence": "Agent executes repair_queue then finish completed. Requested validate_A and validate_B remain false despite the full request being visible.",
+      "artifact": "chains/release_workflow_full_context/handoff_2.json",
+      "artifact_sha256": "7516d759a66f600795b57368564a359dd53c00002c38aa4cdb154f1d889a52aa"
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "full_context",
+      "handoff": 3,
+      "classification": "downstream_incomplete_progress_and_recovery_budget",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "dependent_on_h2",
+      "evidence": "pack_private fails because A/B were not validated. Recovery performs A, then B exceeds the two-credit stage budget; no bundle or audience/route selection completes.",
+      "artifact": "chains/release_workflow_full_context/handoff_3.json",
+      "artifact_sha256": "c891c148c183e7dedb1feb156c30b86acdf569f7a7d515bf02cd78f21283f238"
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "full_context",
+      "handoff": 4,
+      "classification": "downstream_incomplete_backlog_and_premature_finish",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "dependent_on_h2_h3",
+      "evidence": "choose_offline consumes the only credit, then finish completed. B, bundle/audience, and final delivery remain missing. This is not an independent proof of historical goal loss.",
+      "artifact": "chains/release_workflow_full_context/handoff_4.json",
+      "artifact_sha256": "d099673763f3b77ade7e8656586555f8353fe176dc10eb18c457a411dc43ce1d"
+    },
+    {
+      "scenario": "release_workflow",
+      "condition": "no_history",
+      "handoff": 4,
+      "classification": "catalog_loop_without_required_historical_policy",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "historical_information_absent_by_design",
+      "evidence": "Six observe catalog calls; no delivery. Input lacks prior private/offline change and actual bundle observations. Catalog lists options but does not disclose current policy. Goal and progress are both removed, so this is not a W/F-only finding.",
+      "artifact": "chains/release_workflow_no_history/handoff_4.json",
+      "artifact_sha256": "e2e040ea96b3ada99718e02b8688fda1ba2f384ddab99f52d9848578a9976b1e"
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "no_history",
+      "handoff": 3,
+      "classification": "repeated_submission_attempts_without_retained_submission_evidence",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "initiating_execution_failure",
+      "repeat_attempts": 2,
+      "evidence": "Agent attempts submit_archive twice; both fail because the previous real world already has job_submitted=true. Each costs a credit. It never polls or validates, and spends remaining turns observing catalog. A history-free poll-first strategy could theoretically succeed; this is the observed policy, not impossibility proof.",
+      "artifact": "chains/archive_workflow_no_history/handoff_3.json",
+      "artifact_sha256": "45e2ed02e10e9e8984480597dcb73c526b59a3bbd83606c0943dd072f6c2d323"
+    },
+    {
+      "scenario": "archive_workflow",
+      "condition": "no_history",
+      "handoff": 4,
+      "classification": "catalog_loop_with_missing_confirmed_branch_and_incomplete_world",
+      "stage": "executor",
+      "executor_observed": true,
+      "causal_role": "dependent_on_h3_and_missing_prior_branch_evidence",
+      "evidence": "Six catalog calls; prior h3 left job and validations incomplete, and input also lacks confirmed/corrected right branch. Therefore h4 cannot isolate which missing memory item caused failure.",
+      "artifact": "chains/archive_workflow_no_history/handoff_4.json",
+      "artifact_sha256": "ed5e5be5f568c219dd5a6c17d32b966ea0dc949b6533fee1aa82542ccd194fd7"
+    }
+  ],
+  "limitations": [
+    "Two synthetic scenarios, four handoffs, one repetition, and fixed final targets; no statistical or natural long-horizon generalization.",
+    "23 executed segments are not independent observations: each chain inherits previous successes/failures and learned facts.",
+    "No-history deliberately removes earlier user goal revisions as well as evidence/progress; its comparison is not a component-specific ablation.",
+    "Valid-state conditional CS behavior is unavailable, so no conclusion about automatic CS vs Summary behavioral quality in serial handoffs.",
+    "Summary and CS fail under the same 2200 UTF-8 byte ceiling; local bytes are not provider tokenization.",
+    "Task success can include recovery from a well-shaped unknown operation, e.g. Summary release h2 test_stage_A, whose invalid attempt consumed an API response but zero workspace credit.",
+    "Catalog loops consume API tokens and turns even when workspace credit cost is zero; recorded repeat-work counts cover configured completed-operation markers, not all redundant queries.",
+    "No post-hoc repaired states were executed, no prompts/data/scorers changed, and no raw output overwritten by this review."
+  ],
+  "next_measurement_priorities": [
+    "Calibrate syntactic/schema and representation-budget compliance separately before another serial CS performance comparison.",
+    "Preserve actual accepted-action evidence separately from self-reported finish claims when diagnosing phase completion.",
+    "Repeat successful matched full chains with cache-aware usage breakdown and recorded bill weights before claiming API cost savings."
+  ]
+}

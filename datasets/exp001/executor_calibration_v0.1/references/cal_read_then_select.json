@@ -1,0 +1,42 @@
+{
+  "instance_id": "cal_read_then_select",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01"
+    ],
+    "world": [
+      "h02"
+    ],
+    "frontier": [
+      "h01",
+      "h02"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Workspace quartz: read current/eligibility and apply its eligible option. 2 credits.",
+      "success_criteria": [
+        "Active requirements satisfied"
+      ],
+      "constraints": [],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "No eligibility measurement has been read and no choice applied. Use the catalog for available operations."
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Continue from the supplied evidence",
+      "information_needs": [],
+      "next_action": "Use public tools to satisfy the task"
+    }
+  }
+}

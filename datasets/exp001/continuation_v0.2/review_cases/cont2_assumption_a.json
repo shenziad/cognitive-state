@@ -1,0 +1,44 @@
+{
+  "instance_id": "cont2_assumption_a",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "encode_V"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_strategy": "Always negotiate again, then encode under the observed contract.",
+  "no_history_recovery_example": [
+    {
+      "tool": "observe",
+      "arguments": {
+        "resource": "current/negotiation"
+      }
+    },
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "encode_V"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ],
+  "no_history_recovery_expected": {
+    "task_success": true,
+    "credits": 3,
+    "retained_history_credits": 2
+  },
+  "candidate_status": "assistant_authored_not_independent_gold"
+}

@@ -1,0 +1,33 @@
+{
+  "instance_id": "disc_w03_b",
+  "environment_type": "continuation",
+  "initial_state": {
+    "parser": "none"
+  },
+  "operations": {
+    "apply_parser_v1": {
+      "description": "Select parser for schema v1; one irreversible deployment.",
+      "effects": {
+        "parser": "v1"
+      },
+      "cost": 1
+    },
+    "apply_parser_v2": {
+      "description": "Select parser for schema v2; one irreversible deployment.",
+      "effects": {
+        "parser": "v2"
+      },
+      "cost": 1
+    }
+  },
+  "observations": {},
+  "budget": 1,
+  "rubric": {
+    "target_state": {
+      "parser": "v2"
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

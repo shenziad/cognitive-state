@@ -1,0 +1,71 @@
+{
+  "instance_id": "cont2_control_recoverable_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "lane_checked": false,
+    "lane": "none"
+  },
+  "operations": {
+    "route_B": {
+      "description": "Route the parcel through delta lane.",
+      "effects": {
+        "lane": "delta"
+      },
+      "cost": 2
+    },
+    "route_F": {
+      "description": "Route the parcel through sigma lane.",
+      "effects": {
+        "lane": "sigma"
+      },
+      "cost": 2
+    }
+  },
+  "observations": {
+    "current/lane_status": {
+      "description": "Read the current certified open lane.",
+      "observation": {
+        "content": {
+          "open_lane": "sigma"
+        }
+      },
+      "effects": {
+        "lane_checked": true
+      },
+      "cost": 1
+    }
+  },
+  "budget": 3,
+  "rubric": {
+    "target_state": {
+      "lane_checked": true,
+      "lane": "sigma"
+    },
+    "finish_status": "completed",
+    "before_action": [
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "route_B"
+          }
+        },
+        "state": {
+          "lane_checked": true
+        }
+      },
+      {
+        "action": {
+          "tool": "execute",
+          "arguments": {
+            "operation": "route_F"
+          }
+        },
+        "state": {
+          "lane_checked": true
+        }
+      }
+    ],
+    "forbidden_actions": []
+  }
+}

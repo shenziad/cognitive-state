@@ -1,0 +1,66 @@
+{
+  "instance_id": "cont2_inflight_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h04"
+    ],
+    "world.facts": [
+      "h02",
+      "h03",
+      "h04"
+    ],
+    "world.beliefs": [
+      "h03",
+      "h04"
+    ],
+    "world.assumptions": [
+      "h03",
+      "h04"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h04"
+    ]
+  },
+  "provenance_notes": {
+    "operation_names": "Every named action/resource in this candidate occurs in h02.",
+    "checkpoint": "h04 is the current evidence or owner update; h03 is tentative.",
+    "future_observations": "Candidate does not insert any as-yet unread resource value."
+  },
+  "state": {
+    "goal": {
+      "objective": "Fulfil exactly one accepted reservation",
+      "success_criteria": [
+        "One request total; accepted reservation fulfilled"
+      ],
+      "constraints": [
+        "Do not submit another request after acceptance",
+        "3 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "Exactly one pending reservation was accepted by pearl",
+        "No reservation has been fulfilled yet"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Fulfil exactly one accepted reservation",
+      "information_needs": [
+        "Fulfilment notice for the accepted reservation"
+      ],
+      "next_action": "execute consume_Z"
+    }
+  }
+}

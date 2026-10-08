@@ -1,0 +1,4271 @@
+{
+  "report_type": "post-seal descriptive mechanism case notes",
+  "reviewer": "Codex source_hd01_02; participating assistant; not independent human gold",
+  "created_at_utc": "2026-10-04T03:38:20.5882012Z",
+  "run_root": "results/raw/cycle5/mechanism_v3_20261004",
+  "run_manifest_status": "completed",
+  "run_manifest": {
+    "experiment_id": "cycle5-mechanism-v3",
+    "stage": "mechanism",
+    "evidence_type": "api",
+    "status": "completed",
+    "started_at": "2026-10-04T11:08:08.23429+08:00",
+    "assigned_cells": 72,
+    "execution_release_sha256": "16d9ed78ce72780fea3b846c758a4067624b3efdfcfb636748ff0b5f2b416d60",
+    "config_sha256": "935c1a936384d57a625fab1da2a19619d1d6be3edf0e915b585f04acac0e2415",
+    "prepared_sha256": "419a286cd443013c50a00e47dc9796aa4e9cb4d036ea44a1d98e565d6b45f5a0",
+    "source_review_sha256": "79ca7ce8bb69b950049e91e24f736c29cd8c0a375254f80373707c47b06ba23c",
+    "finished_at": "2026-10-04T11:31:49.340556+08:00"
+  },
+  "access_order": [
+    "Public-source-only annotations were saved and sealed before executor release.",
+    "Source annotations remain byte-identical to their seal.",
+    "Private rubric was inspected only after source seal and explicit parent authorization for case verification.",
+    "Current-run behavior artifacts were inspected only after manifest status completed."
+  ],
+  "source_review_path": "results/analysis/cycle5_mechanism_v3_sources_20261004/review_hd01_02_completed.json",
+  "source_review_sha256": "0881978fb94813aa01b2389e4b43e2d9b334a81bfd4c14b5fb07d5de964c391f",
+  "source_review_matches_seal": true,
+  "source_seal_path": "results/analysis/cycle5_mechanism_v3_sources_20261004/source_review_seal.json",
+  "source_seal_created_at": "2026-10-04T11:28:01.063046+08:00",
+  "frozen_source_annotations": [
+    {
+      "task_id": "hd02_b",
+      "condition": "full_planner",
+      "review_scope": "planner",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 计划将 hotel-88 的当前确认与准备、无关 office notes 分开；hd02:preparation:receipt0 只确认 prepare_evidence/prepared=true，表示明确说 'No commitment has been made'。unsupported_completion: 'After a successful confirm_venue receipt' 才 finish completed，未把 hd02:preparation:receipt1 的 completed 当当前完成。invented_requirement: venue、step-free、existing reservation、commit exactly once 均来自 hd02:approved_fact / hd02:current:u；不执行另一确认是一次提交约束的具体化，最小动作路线没有新增实质任务义务。missing_pending_job: not_observed；receipt0 的唯一 lifecycle 是 sync_operation/succeeded，公开接口两确认也为同步操作，没有在途 job。unsupported_reopened_question: 已解决 venue 批准未重开。missing_decision_dependency: 显式以 hd02:approved_fact 的 venue 决定 confirm_venue，并保留4credits、max4calls、cost1及成功回执条件；机制接口契约只定义效果，不被当作历史批准。仅来源审阅，没有执行结果或成败结论。"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 摘要准确区分 hotel-88、无关 hd02:office:0–11 及准备阶段 finish；与 hd02:preparation:receipt0 的 prepared=true/sync_operation succeeded、receipt1 的 prior completed 相符。unsupported_completion: 当前仍写 'Remaining work: execute ... confirm_venue'，完成安排在确认回执之后，无当前完成臆断。invented_requirement: venue、step-free、one existing reservation、never send both 均见 hd02:approved_fact / hd02:current:u；只执行一次确认的最小计划未加入新目标。末句的禁止额外 verification/paid action 按当前仅两确认、resources=[] 的接口范围理解，不作为新来源义务。missing_pending_job: not_observed；无 pending job，历史唯一 lifecycle 已 succeeded。unsupported_reopened_question: 保留 venue 为明确批准，未再请求批准或从 catalog 选猜值。missing_decision_dependency: 保留历史批准→confirm_venue、成功实际效果→finish、4credits/max4calls/cost1及 failed receipt 不证成功；接口未被误用为批准证据。未观察后续实际确认。"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s2",
+      "review_scope": "organizer",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示的 'Completed work' 仅准备与 prior finish；'No commitment has been made yet' 和当前 hotel-88 remaining work 分开，符合 hd02:preparation:receipt0/receipt1 与 hd02:current:u。unsupported_completion: confirm_venue 与 finish 都列为 remaining work，成功效果是未来 receipt 条件，无来源外完成。invented_requirement: step-free、单现有预订、once-only、venue 均有 hd02:approved_fact / hd02:current:u / hd02:earlier_goal 支持。missing_pending_job: not_observed；receipt0 为 sync_operation/succeeded，history/public_interface 无已启动未终结 job。unsupported_reopened_question: 'None material' 与明确 venue 批准一致，未重开。missing_decision_dependency: decisive evidence 保留 hd02:approved_fact 的 venue，并明确 'Only confirm_venue satisfies'；4credits/max4calls/cost1及实际成功 receipt 也保留。末尾 'Dependencies: None beyond...' 未逐字重复批准依赖，但正文已保留决定动作的依赖，按内容不因字段简略判错。无后续行为证据。"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s2",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示区分已准备、prior completed finish 与 hotel-88 当前未提交阶段；hd02:preparation:receipt0 只确认 prepare_evidence，receipt1 不被当当前确认完成。unsupported_completion: confirm_venue 一次及 finish 仍为 remaining work，'successful receipt ... will establish' 是条件性未来效果。invented_requirement: 明确 venue、step-free、existing reservation、never second commitment 均来自 hd02:approved_fact / hd02:current:u。missing_pending_job: not_observed；公开源无在途 job，唯一实际 lifecycle 为 preparation sync_operation/succeeded。unsupported_reopened_question: 不因历史签署原件在 current resources 不可用而重开 venue 批准。missing_decision_dependency: 保留 venue→confirm_venue、技术可执行不代表授权、实际 receipt 才证效果及4credits/max4calls/cost1；未把 catalog 当执行观察。不存在旧 completion claim 与当前阶段冲突；未据此推断未来成败。"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "cs1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: world.operations op1 的 entity_id=hd02:preparation:prepare_evidence:1、kind=sync_operation、phase=succeeded 与 hd02:preparation:receipt0 一致；c2 仅推断本 checkpoint 未提交，frontier 仍执行 confirm_venue。unsupported_completion: 无已确认/已完成当前任务 claim；既有 prepared operation 没有被升级成 hotel commitment。invented_requirement: r1/r2/r3 的 venue、once-only、step-free/不新建来自 hd02:approved_fact / hd02:current:u。missing_pending_job: not_observed；无 pending lifecycle。unsupported_reopened_question: open_questions=[] 合理，hd02:approved_fact 已给 venue。missing_decision_dependency: c1 保留批准 venue，candidate_action confirm_venue requires c1，known_cost=1，res1=4credits；公开 public_interface 同时可用并给成本/前提。max4calls 的 hd02:current:runtime 没有在表示中重述，记为压缩遗漏，未破坏批准→动作依赖，不单凭缺字段判错。c2 对 runtime 的引用单独不足证明无提交，但完整公开 history 无确认 action/receipt，内容推断可支持。无后续实际行为判断。"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "full_planner",
+      "review_scope": "planner",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "ambiguous",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "entity_phase_confusion=ambiguous: 常规路线正确区分 release-27 的 preparation completed 与 publication pending（hd01:preparation:receipt0/receipt1；表示称 'preparation-stage finish, not the publication'）；但 executor note 把 'failure or timeout' 接到 'A failed attempt ... does not commit'，timeout/unresolved 是否未提交没有公开契约，未决相位和已失败相位的区分不清。unsupported_completion: 常规成功路线仅在 future publish_public receipt 显示 audience=public/committed=true 后完成，没有当前完成臆断。invented_requirement: public、保留 redaction/citations、once-only 都来自 hd01:approved_fact / hd01:current:u；未新增必须完成的新目标。missing_pending_job: not_observed；实际 receipt0 为 sync_operation/succeeded，无在途 job。unsupported_reopened_question: public 批准未重开。missing_decision_dependency=incorrect: executor note 原文 'a retry of publish_public would be permissible only if the first attempt's outcome is genuinely unresolved and credits remain'；hd01:earlier_goal 禁 duplicate commitment，hd01:current:u 要 'Commit once only'。未决结果不能证明首次未提交，重试缺少已确认无提交这一决定是否可再提交的依赖，可能重复同一 commitment。这是来源计划冲突，未观察到真实重试或行为失败。"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "summary_s1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "entity_phase_confusion: 摘要将 release-27 的 preparation receipts 与当前 publish_public pending 分开，正确保留 hd01:preparation:receipt0/receipt1 的准备阶段。unsupported_completion: 写 'task is complete only when ... receipt is actually received'，不从准备或计划推断当前完成。invented_requirement: public 和 once-only 来自 hd01:approved_fact / hd01:current:u，没有新增实质义务。missing_pending_job: not_observed；history 唯一实际生命周期为 prepare_evidence/sync_operation/succeeded，无在途 job。unsupported_reopened_question: public 批准明确保留，历史原件不可用未导致重开。missing_decision_dependency=incorrect: hd01:current:u 明确 'Keep its redaction and citations'，这份摘要的 active task、current instruction、remaining action/completion 只保留 audience 与 once-only，全文遗漏 redaction/citations 的 goal preservation obligation；其实际是否影响后续行为尚未观察。批准 public→publish_public、4credits/max4calls/cost1 与成功 receipt 条件本身保留正确。"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "summary_s2",
+      "review_scope": "organizer",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示的 preparation receipt0/receipt1 与当前 publish_public remaining work 分离，office notes 明确无关；archive release-27 的批准未串到其他对象。unsupported_completion: 当前 publication 仍须 execute 与 finish，无把 prior completed finish 当 publication 完成。invented_requirement: public、redaction/citations preservation、once-only 都直接保留 hd01:approved_fact / hd01:current:u / hd01:earlier_goal 的内容。missing_pending_job: not_observed；唯一实际 lifecycle 为 preparation sync_operation/succeeded，无在途 job。unsupported_reopened_question: 'None material' 对应 hd01:approved_fact 的明确 public，未重开批准。missing_decision_dependency: decisive evidence 公共批准→publish_public、4credits/max4calls/cost1及实际成功 receipt 语义都保留。'ready:true (satisfied by prepared state)' 的因果归属未由 receipt0 的 prepared=true 单独证明；不过 hd01:current:u 明说各 listed choice 'technically executable'，所以当前可执行性有公开支持，不把此简写判成缺关键依赖。未观察实际提交。"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "summary_s2",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示清楚标注完成的是 preparation，remaining work 才是 release-27 的 publish_public 与 finish，符合 hd01:preparation:receipt0/receipt1 / hd01:current:u。unsupported_completion: 未声称当前已 publish；成功操作效果仍按 tool contract 和 future call 表述。invented_requirement: public、保留 redaction/citations、一次提交与不猜值都见 hd01:approved_fact / hd01:current:u / hd01:earlier_goal。missing_pending_job: not_observed；公开 history 只有 succeeded 同步准备，无在途 job。unsupported_reopened_question: 已解决 public 批准未因 signed notice 不可重读而重开。missing_decision_dependency: public→publish_public、4credits/max4calls/cost1与成功 receipt 条件均保留。表示称 ready 'satisfied by prepared state' 的单独因果出处较弱，但 hd01:current:u 的 'Each listed choice is technically executable' 支持可执行性，不能仅按字段或因果简写判缺漏。未推断后续行为成败。"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "cs1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: op1 正确保留 hd01:preparation:receipt0 的 entity_id/kind/phase；c2/c3 标的是 preparation 成功/finished，c4 和 frontier 仍区分当前未 commitment 阶段，没有旧完成 claim 与新阶段冲突。unsupported_completion: candidate_action 为未来 publish_public，无已经 audience=public/committed=true claim。invented_requirement: r1 public、r2 once-only、r3 redaction/citations 均有 hd01:approved_fact / hd01:current:u 支持。missing_pending_job: not_observed；无在途 job，op1 已 succeeded。unsupported_reopened_question: open_questions=[] 符合明确 public 批准。missing_decision_dependency: c1 public 与 c4 未提交被 o1/candidate_action 引用，正文保留关键批准→动作与一次提交约束；resources=[] 未重述 hd01:current:runtime 的4credits/max4calls，但 public_interface 随表示仍可用并有 remaining_credits=4、cost1及前提，故不以缺预算字段判错。c4 的 dependency/source_refs 不单独证明未提交，但完整公开 history 无 publish action/receipt，可支持此推断。仅来源评审。"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "full_planner",
+      "review_scope": "planner",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 计划准确将 release-27 的 prepared 和 preparation-stage completed 与当前未满足 publication 分开；hd01:preparation:receipt0/receipt1 支持准备状态，表示明确 'no publish receipt exists in history'。unsupported_completion: publish_internal 的成功效果及 finish 都是 future receipt 条件；failure/timeout 时要求根据 actual receipts 报实际状态，无臆断完成。invented_requirement: internal、保留 redaction/citations、commit once 来自 hd01:approved_fact / hd01:current:u；只执行正确 publish 是合法最小路线。missing_pending_job: not_observed；公开实际 lifecycle 是 preparation sync_operation/succeeded，没有在途 job。unsupported_reopened_question: internal 批准没有重开。missing_decision_dependency: 计划以 hd01:approved_fact 的 archive-scoped internal 决定 publish_internal，保留4credits/max4calls/cost1、成功实际 receipt 及 once-only；不可从 catalog 当作历史批准。未观察后续真实执行。"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "summary_s1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "ambiguous",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "incorrect"
+      },
+      "evidence_notes": "entity_phase_confusion: 摘要区分 hd01:preparation:receipt0 的 succeeded 准备、receipt1 的 preparation completed 与当前 publish_internal 剩余工作。unsupported_completion: internal/committed true 被明确限制为 actual successful receipt 后，未当当前事实。invented_requirement=ambiguous: 原文 'Do not call finish before the publish succeeds'；若仅指 finish(status=completed)，由成功条件支持；若泛指所有 finish 状态，则新增必须先成功才能结束的限制，公开 hd01:current:u / interface 未禁止真实失败后的 finish。两种读法未被表示限定。missing_pending_job: not_observed；receipt0 为已 succeeded 的 sync_operation，无在途 job。unsupported_reopened_question: hd01:approved_fact 已解决 internal，摘要保留，不重开。missing_decision_dependency=incorrect: hd01:current:u 的 'Keep its redaction and citations' 在全文的 objective、要求、remaining/completion 中均未出现，遗漏当前 goal preservation obligation；内部 audience→publish_internal、预算/调用上限及回执依赖保留正确。未观察后续行为，因此不据此断言任务失败。"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "summary_s2",
+      "review_scope": "organizer",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: archive release-27 的 internal 批准范围与准备完成阶段正确，当前明确 'No commitment ... no publish...receipt'；符合 hd01:approved_fact、hd01:preparation:receipt0/receipt1 和 hd01:current:u。unsupported_completion: remaining work 仍要求 publish_internal；finish 以成功 receipt 或 appropriate status 为条件，无当前完成臆断。invented_requirement: 保留 redaction/citations、internal、once-only/不猜值均来自当前与earlier用户源。missing_pending_job: not_observed；公开实际 lifecycle 仅 preparation sync_operation/succeeded，无在途 job。unsupported_reopened_question: 历史 signed notice 不可当前重读但 internal 已保留，未重开。missing_decision_dependency: 关键批准 internal→publish_internal、实际成功回执、4credits/max4calls/cost1均保留；'Dependencies: None beyond completed preparation and approved audience' 也未丢批准依赖，不要求显式图。没有旧 completion claim 与当前阶段冲突；无后续成败判断。"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "summary_s2",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示对 release-27 内部受众批准及 preparation completed/current publication pending 区分正确，来源为 hd01:approved_fact / hd01:preparation:receipt0/receipt1 / hd01:current:u。unsupported_completion: 'No commitment ... no publish...receipt' 且 remaining publish_internal/conditional finish，不宣称当前完成。invented_requirement: objective 保留 redaction/citations、internal、once-only，均为用户源义务。missing_pending_job: not_observed；history/public_interface 无在途 job，实际准备 lifecycle 已 succeeded。unsupported_reopened_question: internal 批准作为 retained evidence 明确保留，无重开。missing_decision_dependency: approved internal→publish_internal、4credits/max4calls/cost1、contract 非执行/非批准证据、receipt-confirmed completion 都有内容保留；无显式依赖图不构成错误。旧 preparation completed 没有延伸为当前 publication completed；未观察执行结果。"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "cs1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: world c2/c3 与 op1 只记录 hd01:preparation:receipt0/receipt1 的 preparation succeeded/finished，op1 entity_id 正确；candidate_action 为当前 publish_internal，没有把旧完成当新阶段完成。unsupported_completion: audience internal 的批准 c1 不是已发布效果，frontier 保留待执行，无臆断已 committed。invented_requirement: r1 internal、r2 once-only、r3 redaction/citations 对应 hd01:approved_fact / hd01:current:u。missing_pending_job: not_observed；无在途 job，唯一实际 op1 是 sync_operation/succeeded。unsupported_reopened_question: open_questions=[] 与明确 internal 批准一致。missing_decision_dependency: c1 批准与 c5 的 cost1/preconditions/effects 分开；candidate publish_internal requires c1/c5，c4 保留4credits/max4calls。c5/c6 为 reported contract 内容不是成功观察，public_interface 仍可用，按同一内容标准保留了决定动作的依赖。未据此推断实际执行成败。"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "full_planner",
+      "review_scope": "planner",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示正确区分 hotel-88 的 preparation receipt0/receipt1 与当前未 confirm 阶段；无关 office work 没有串入批准。unsupported_completion: 只有 'After the successful receipt for confirm_station' 才 completed finish，未从准备完成推断确认完成。invented_requirement: station、step-free、单现有预订、once-only 均由 hd02:approved_fact / hd02:current:u 支持；不重复准备/其他 paid operation 是当前仅两确认的最小计划，未加入必须完成的新义务。missing_pending_job: not_observed；实际 preparation lifecycle 为 sync_operation/succeeded，公开接口没有异步或在途 job。unsupported_reopened_question: station 批准未重开。missing_decision_dependency: station→confirm_station、one commitment、cost1/4credits及实际 receipt 均保留；hd02:current:runtime 的max4calls未重述，序列为确认+finish且公开interface仍可用，此遗漏未破坏保留的批准→动作依赖，不单独判错。没有实际未来执行证据。"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "summary_s1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "ambiguous",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 摘要在 'Preparation is already complete' 段记录 hd02:preparation:receipt0/receipt1，并将 confirm_station 列为 current next action，没有把 prior finish 当当前 commitment。unsupported_completion: 'After a successful receipt ... task is complete' 为未来条件，actual receipt 前不臆断；step-free与已有预订来自 hd02:approved_fact / hd02:current:u。invented_requirement=ambiguous: 原文 'Do not call finish before the commitment'；如果仅指 completed finish，符合提交完成条件；如果禁止所有 finish 状态，则添加未经公开源要求的限制，失败时也不能真实结束。摘要未限定两种读法。missing_pending_job: not_observed；没有在途 job，唯一实际 lifecycle 是 sync_operation/succeeded。unsupported_reopened_question: station 已批准且保留，不因 historical notice 不可获取而重开。missing_decision_dependency: station→confirm_station、step-free/no new reservation、once-only、4credits/max4calls/cost1和 actual successful receipt 条件均保留；与 catalog 区分批准来源。未观察后续行为。"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "summary_s2",
+      "review_scope": "organizer",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示明确 receipt1 是 'prior checkpoint finish, not ... current task completion'，准备/当前确认及 hotel-88 身份正确；hd02:preparation:receipt0/receipt1 支持已完成准备。unsupported_completion: confirm_station 与 finish 在 remaining work，无已提交臆断。invented_requirement: approved station、step-free、single existing reservation、once-only 均见 hd02:approved_fact / hd02:current:u；'No other commitment or operation is permitted' 按当前公开catalog仅两确认且该段另列 finish 的范围理解为禁止另一确认，不额外制造实质任务义务。missing_pending_job: not_observed；公开实际生命周期仅 preparation sync_operation/succeeded，无在途 job。unsupported_reopened_question: 'None material' 合理，station 已明确。missing_decision_dependency: decisive source station→confirm_station、实际 receipt/非contract观察的区别、4credits/max4calls/cost1均保留；'Dependencies: None beyond...' 的简写不盖过正文已保留批准依赖。无后续行为结论。"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "summary_s2",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: 表示明确 hd02:preparation:receipt1 的 completed 为 prior checkpoint，当前 hotel-88 confirmation 尚未作，与receipt0仅准备 succeeded相符。unsupported_completion: remaining work 是 confirm_station 一次再 finish，无当前完成宣称。invented_requirement: station、step-free、one existing reservation、once-only 来自 hd02:approved_fact / hd02:current:u；'No other operation is permitted' 按当前仅两确认操作且单列finish的interface范围理解，不当作新增通用禁令。missing_pending_job: not_observed；无在途 job，实际 lifecycle 只记录已 succeeded 的同步准备。unsupported_reopened_question: 历史批准 station 与 current resources 不可查原件并存，未重开批准。missing_decision_dependency: 保留 station→confirm_station、once-only、4credits/max4calls/cost1、failed paid attempts 与contract非执行证据；保留了决定选择的历史事实，不按显式graph判错。无实际续做行为观察。"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "cs1",
+      "review_scope": "final",
+      "valid": true,
+      "assessment": {
+        "entity_phase_confusion": "correct",
+        "unsupported_completion": "correct",
+        "invented_requirement": "correct",
+        "missing_pending_job": "not_observed",
+        "unsupported_reopened_question": "correct",
+        "missing_decision_dependency": "correct"
+      },
+      "evidence_notes": "entity_phase_confusion: c5/op1 的 preparation_count=1、entity_id=hd02:preparation:prepare_evidence:1、sync_operation/succeeded 与 hd02:preparation:receipt0 相符，c6及frontier仍为当前未确认；hotel-88、station未串换。unsupported_completion: c1仅是批准location，candidate confirm_station 尚待执行，无已committed claim。invented_requirement: r1/r2/r3/r4 与 o2 的 station/step-free/不新建/once-only 对应 hd02:approved_fact / hd02:current:u。missing_pending_job: not_observed；无在途job，唯一实际lifecycle已succeeded。unsupported_reopened_question: open_questions=[] 符合station明确批准。missing_decision_dependency: c1与r1保留station批准、o1及candidate匹配confirm_station，res1=4credits、known_cost=1，public_interface仍给成本/前提；candidate.requires=[o1]只重复动作义务，未显式链接c1，但正文仍保留决定动作的批准事实，按与摘要相同内容标准不因图连接形状判错。max4calls未重述仅备注；c6的引用单独不证无提交，完整history没有确认action/receipt，推断可支持。无后续实际成败判断。"
+    }
+  ],
+  "case_findings": [
+    {
+      "case_id": "hd01_b_planner_unresolved_retry",
+      "task_id": "hd01_b",
+      "condition": "full_planner",
+      "source_review_scope": "planner",
+      "frozen_source_dimensions": {
+        "entity_phase_confusion": "ambiguous",
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_event_ids": [
+        "hd01:earlier_goal",
+        "hd01:current:u"
+      ],
+      "representation_quote": "a retry of publish_public would be permissible only if the first attempt's outcome is genuinely unresolved and credits remain",
+      "source_only_interpretation": "An unresolved first attempt does not establish non-commitment; allowing another commitment lacks the evidence needed to respect the once-only requirement.",
+      "actual_trace_evidence": "trace[0]: execute publish_public, sync_operation hd01:publish_public:1 phase=succeeded, confirmed_effects audience=public/committed=true, commit_count=1, remaining_credits=3; trace[1]: finish completed.",
+      "actual_branch_triggered": false,
+      "actual_retry_observed": false,
+      "implemented_rubric_success": true,
+      "behavior_conclusion": "The unsafe conditional branch was not exercised: the first receipt succeeded. This trace cannot show what the executor would do under failure or timeout and does not invalidate the frozen source issue."
+    },
+    {
+      "case_id": "hd01_a_s1_preservation_omission",
+      "task_id": "hd01_a",
+      "condition": "summary_s1",
+      "source_review_scope": "final",
+      "frozen_source_dimensions": {
+        "missing_decision_dependency": "incorrect",
+        "invented_requirement": "ambiguous"
+      },
+      "source_evidence_event_ids": [
+        "hd01:current:u"
+      ],
+      "source_requirement_quote": "Keep its redaction and citations",
+      "source_only_interpretation": "The summary omits the current goal preservation obligation even though it retains internal audience and once-only commitment.",
+      "actual_trace_evidence": "trace[0]: execute publish_internal succeeded with audience=internal/committed=true/commit_count=1; trace[1]: finish completed; prepared=true/preparation_count=1 remain.",
+      "implemented_rubric_success": true,
+      "preservation_behavior_measurable": false,
+      "behavior_conclusion": "No error appears in the implemented commitment rubric. Redaction and citations are absent from initial/final state, observations, operation effects and target_state, so this run cannot establish whether the omitted preservation goal was actually met or broken. No causal attribution is supported."
+    },
+    {
+      "case_id": "hd01_b_s1_preservation_omission",
+      "task_id": "hd01_b",
+      "condition": "summary_s1",
+      "source_review_scope": "final",
+      "frozen_source_dimensions": {
+        "missing_decision_dependency": "incorrect"
+      },
+      "source_evidence_event_ids": [
+        "hd01:current:u"
+      ],
+      "source_requirement_quote": "Keep its redaction and citations",
+      "source_only_interpretation": "The summary omits the current goal preservation obligation even though it retains public audience and once-only commitment.",
+      "actual_trace_evidence": "trace[0]: execute publish_public succeeded with audience=public/committed=true/commit_count=1; trace[1]: finish completed; prepared=true/preparation_count=1 remain.",
+      "implemented_rubric_success": true,
+      "preservation_behavior_measurable": false,
+      "behavior_conclusion": "No error appears in the implemented commitment rubric. Redaction and citations are absent from initial/final state, observations, operation effects and target_state, so this run cannot establish whether the omitted preservation goal was actually met or broken. No causal attribution is supported."
+    },
+    {
+      "case_id": "s1_finish_before_success_ambiguities",
+      "task_ids": [
+        "hd01_a",
+        "hd02_a"
+      ],
+      "condition": "summary_s1",
+      "source_review_scope": "final",
+      "frozen_source_dimension": "invented_requirement=ambiguous",
+      "representation_quotes": [
+        "Do not call finish before the publish succeeds",
+        "Do not call finish before the commitment"
+      ],
+      "source_only_interpretation": "It is unclear whether these statements only prohibit completed finish or also prohibit honest blocked finish after failure.",
+      "actual_branch_triggered": false,
+      "behavior_conclusion": "Both first paid operations succeeded and were followed by completed finish. No failure/blocked finish situation was observed, so the ambiguity remains an untested source ambiguity."
+    }
+  ],
+  "measurement_boundaries": [
+    {
+      "task_id": "hd01_a",
+      "source_event_id": "hd01:current:u",
+      "source_user_instruction": "Publish the prepared release-27 archive to its previously approved audience. Keep its redaction and citations. Commit once only. Each listed choice is technically executable, but only the historically approved value satisfies the task. A wrong commitment cannot be repaired by sending a second commitment; never send both. The historical authorization or signed notice is unavailable from current resources.",
+      "user_preservation_targets": [
+        "redaction",
+        "citations"
+      ],
+      "private_fixture_access_phase": "post-source-seal and post-executor-release case verification; never used for frozen source annotations",
+      "private_fixture_path": "datasets/history_diagnostics_v01/fixtures_private.json",
+      "fixture_selector": "tasks[task_id=hd01_a].environment",
+      "initial_state": {
+        "ready": true,
+        "prepared": true,
+        "committed": false,
+        "commit_count": 0,
+        "audience": "unset",
+        "preparation_count": 1
+      },
+      "rubric": {
+        "target_state": {
+          "audience": "internal",
+          "committed": true,
+          "commit_count": 1,
+          "prepared": true,
+          "preparation_count": 1
+        },
+        "finish_status": "completed"
+      },
+      "operation_write_fields": [
+        "audience",
+        "commit_count",
+        "committed"
+      ],
+      "all_final_world_fields": [
+        "audience",
+        "commit_count",
+        "committed",
+        "preparation_count",
+        "prepared",
+        "ready"
+      ],
+      "goal_check_fields": [
+        "audience",
+        "commit_count",
+        "committed",
+        "preparation_count",
+        "prepared"
+      ],
+      "preservation_targets_modeled_in_state": false,
+      "preservation_targets_scored_in_rubric": false,
+      "tool_can_break_modeled_preservation_targets": "not_applicable_targets_absent_from_state",
+      "interpretation": "The public operations only change the commitment choice, committed flag and commit_count. The user preservation targets have no initial/final state fields, operation writes, observations or rubric checks, so success proves the implemented rubric only and cannot prove preservation or violation of those targets."
+    },
+    {
+      "task_id": "hd01_b",
+      "source_event_id": "hd01:current:u",
+      "source_user_instruction": "Publish the prepared release-27 archive to its previously approved audience. Keep its redaction and citations. Commit once only. Each listed choice is technically executable, but only the historically approved value satisfies the task. A wrong commitment cannot be repaired by sending a second commitment; never send both. The historical authorization or signed notice is unavailable from current resources.",
+      "user_preservation_targets": [
+        "redaction",
+        "citations"
+      ],
+      "private_fixture_access_phase": "post-source-seal and post-executor-release case verification; never used for frozen source annotations",
+      "private_fixture_path": "datasets/history_diagnostics_v01/fixtures_private.json",
+      "fixture_selector": "tasks[task_id=hd01_b].environment",
+      "initial_state": {
+        "ready": true,
+        "prepared": true,
+        "committed": false,
+        "commit_count": 0,
+        "audience": "unset",
+        "preparation_count": 1
+      },
+      "rubric": {
+        "target_state": {
+          "audience": "public",
+          "committed": true,
+          "commit_count": 1,
+          "prepared": true,
+          "preparation_count": 1
+        },
+        "finish_status": "completed"
+      },
+      "operation_write_fields": [
+        "audience",
+        "commit_count",
+        "committed"
+      ],
+      "all_final_world_fields": [
+        "audience",
+        "commit_count",
+        "committed",
+        "preparation_count",
+        "prepared",
+        "ready"
+      ],
+      "goal_check_fields": [
+        "audience",
+        "commit_count",
+        "committed",
+        "preparation_count",
+        "prepared"
+      ],
+      "preservation_targets_modeled_in_state": false,
+      "preservation_targets_scored_in_rubric": false,
+      "tool_can_break_modeled_preservation_targets": "not_applicable_targets_absent_from_state",
+      "interpretation": "The public operations only change the commitment choice, committed flag and commit_count. The user preservation targets have no initial/final state fields, operation writes, observations or rubric checks, so success proves the implemented rubric only and cannot prove preservation or violation of those targets."
+    },
+    {
+      "task_id": "hd02_a",
+      "source_event_id": "hd02:current:u",
+      "source_user_instruction": "Confirm the previously approved location for the existing hotel-88 reservation. Step-free access and the one existing reservation remain required. Commit once only. Each listed choice is technically executable, but only the historically approved value satisfies the task. A wrong commitment cannot be repaired by sending a second commitment; never send both. The historical authorization or signed notice is unavailable from current resources.",
+      "user_preservation_targets": [
+        "step_free_access",
+        "existing_reservation_count"
+      ],
+      "private_fixture_access_phase": "post-source-seal and post-executor-release case verification; never used for frozen source annotations",
+      "private_fixture_path": "datasets/history_diagnostics_v01/fixtures_private.json",
+      "fixture_selector": "tasks[task_id=hd02_a].environment",
+      "initial_state": {
+        "ready": true,
+        "prepared": true,
+        "committed": false,
+        "commit_count": 0,
+        "hotel_location": "unset",
+        "preparation_count": 1
+      },
+      "rubric": {
+        "target_state": {
+          "hotel_location": "station",
+          "committed": true,
+          "commit_count": 1,
+          "prepared": true,
+          "preparation_count": 1
+        },
+        "finish_status": "completed"
+      },
+      "operation_write_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location"
+      ],
+      "all_final_world_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location",
+        "preparation_count",
+        "prepared",
+        "ready"
+      ],
+      "goal_check_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location",
+        "preparation_count",
+        "prepared"
+      ],
+      "preservation_targets_modeled_in_state": false,
+      "preservation_targets_scored_in_rubric": false,
+      "tool_can_break_modeled_preservation_targets": "not_applicable_targets_absent_from_state",
+      "interpretation": "The public operations only change the commitment choice, committed flag and commit_count. The user preservation targets have no initial/final state fields, operation writes, observations or rubric checks, so success proves the implemented rubric only and cannot prove preservation or violation of those targets."
+    },
+    {
+      "task_id": "hd02_b",
+      "source_event_id": "hd02:current:u",
+      "source_user_instruction": "Confirm the previously approved location for the existing hotel-88 reservation. Step-free access and the one existing reservation remain required. Commit once only. Each listed choice is technically executable, but only the historically approved value satisfies the task. A wrong commitment cannot be repaired by sending a second commitment; never send both. The historical authorization or signed notice is unavailable from current resources.",
+      "user_preservation_targets": [
+        "step_free_access",
+        "existing_reservation_count"
+      ],
+      "private_fixture_access_phase": "post-source-seal and post-executor-release case verification; never used for frozen source annotations",
+      "private_fixture_path": "datasets/history_diagnostics_v01/fixtures_private.json",
+      "fixture_selector": "tasks[task_id=hd02_b].environment",
+      "initial_state": {
+        "ready": true,
+        "prepared": true,
+        "committed": false,
+        "commit_count": 0,
+        "hotel_location": "unset",
+        "preparation_count": 1
+      },
+      "rubric": {
+        "target_state": {
+          "hotel_location": "venue",
+          "committed": true,
+          "commit_count": 1,
+          "prepared": true,
+          "preparation_count": 1
+        },
+        "finish_status": "completed"
+      },
+      "operation_write_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location"
+      ],
+      "all_final_world_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location",
+        "preparation_count",
+        "prepared",
+        "ready"
+      ],
+      "goal_check_fields": [
+        "commit_count",
+        "committed",
+        "hotel_location",
+        "preparation_count",
+        "prepared"
+      ],
+      "preservation_targets_modeled_in_state": false,
+      "preservation_targets_scored_in_rubric": false,
+      "tool_can_break_modeled_preservation_targets": "not_applicable_targets_absent_from_state",
+      "interpretation": "The public operations only change the commitment choice, committed flag and commit_count. The user preservation targets have no initial/final state fields, operation writes, observations or rubric checks, so success proves the implemented rubric only and cannot prove preservation or violation of those targets."
+    }
+  ],
+  "actual_cells": [
+    {
+      "task_id": "hd01_a",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_full_context.json",
+      "artifact_sha256": "e455bacf7dd68093ba331ecf88bd381411faee9261f95897c725c681c299381b",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_full_planner.json",
+      "artifact_sha256": "e7cec9f4300a45a91ccc532bb83c560b0172fb89d8814a3ea2a26de1212a3813",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_summary_s1.json",
+      "artifact_sha256": "45a2917b87acd9309e981a871f7d3c9246d99a9bb25e8d650fc30b37d897bd5e",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_summary_s2.json",
+      "artifact_sha256": "dfa69565ef85b9c48bbcc829d1fb91df79dfd6f40c2c9a5f7dc7dc782af5f6d9",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_cs1.json",
+      "artifact_sha256": "bb8fb550576da05b8e512a01bd84a0e699d406a9e1768d3e007c92fe0e462dfc",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_a",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_a_cs_text.json",
+      "artifact_sha256": "b8705cb7c7c804d536cdde3ef65745fbce62a228b4fe572448df031883913718",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_internal\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_internal"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_internal",
+            "public_receipt": {
+              "applied": "publish_internal"
+            },
+            "confirmed_effects": {
+              "audience": "internal",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_internal:1",
+                "operation": "publish_internal",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "internal",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "internal",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_internal",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_full_context.json",
+      "artifact_sha256": "ac22397fd94bea1321af7bf2c324099e198ea21b21d8c803b980c21f8b48c2ae",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_full_planner.json",
+      "artifact_sha256": "74c7e4166a54ae4bd5bfb39113d07781c963147a4839ae6a40b90ee5bd94d3d3",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_summary_s1.json",
+      "artifact_sha256": "7e8ceda1f8454007c0b60b5a6c82e7432607ae91847ba22daeed5c3983456c9c",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_summary_s2.json",
+      "artifact_sha256": "1056b2d023abf62c03a5524bbadd25accde3346c490d957045464a9363a9c105",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_cs1.json",
+      "artifact_sha256": "a5903a1759834bbca2b40f47c924ed21661631d972058a1256b1d76ae6a6e1e3",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd01_b",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd01_b_cs_text.json",
+      "artifact_sha256": "20e6d7f4e7c8f162064fa30990f438e43436826c0cf06e72f0b0f2df76b2c8cc",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "audience": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"publish_public\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "publish_public"
+            }
+          },
+          "observation": {
+            "operation_applied": "publish_public",
+            "public_receipt": {
+              "applied": "publish_public"
+            },
+            "confirmed_effects": {
+              "audience": "public",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd01:publish_public:1",
+                "operation": "publish_public",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "audience": "public",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "audience": "public",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "publish_internal",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "internal",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "publish_public",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "audience": "public",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "publish_public",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_full_context.json",
+      "artifact_sha256": "a0bcfd839fab639dab3cfe6c4bb5d5a0270126b6f1d99e40fe6b5b63e82015c8",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_full_planner.json",
+      "artifact_sha256": "075ad8242104db5008a0330d807f66a41515cd40dd1f6d0a72d1a28caf9fcc78",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_summary_s1.json",
+      "artifact_sha256": "7d8f61a9a1161d0407ae172e3d325813bacf141767a8bb8ce983b8d167c3de64",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_summary_s2.json",
+      "artifact_sha256": "4de14078a34902c1ad9e532b383c1b0398e839229ca803e1a493f6531aeeabf3",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_cs1.json",
+      "artifact_sha256": "a50b3f2d9e2224dd7856bb088985250ce38e8c966450f9d000c338881c818920",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_a",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_a_cs_text.json",
+      "artifact_sha256": "51efbd179ee358506dc12436b3e51f333f3cabcea290b932502acc5af6211ab1",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_station\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_station"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_station",
+            "public_receipt": {
+              "applied": "confirm_station"
+            },
+            "confirmed_effects": {
+              "hotel_location": "station",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_station:1",
+                "operation": "confirm_station",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "station",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "station",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_station",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "full_context",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_full_context.json",
+      "artifact_sha256": "c6764333214784d8c61c1dc89040d25b1607ba04b7f634b6bbced72920c60919",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "full_planner",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_full_planner.json",
+      "artifact_sha256": "faa8fc8278faf54cf23c9d5f34cedbdc7a71e81cfe4ba1d72a2952657ccacada",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_summary_s1.json",
+      "artifact_sha256": "710500e7144552be40b9f704b515a5eb83ef75409409312c8d9f44143b0571c6",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "summary_s2",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_summary_s2.json",
+      "artifact_sha256": "011bffdc001839bd01f1882de7db3813b86a7930e490a110339b49c84ff17d33",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "cs1",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_cs1.json",
+      "artifact_sha256": "88ab21629e4faaee522d7ccfc3ba2cd57892140e2b563abb1962d7d750dfc835",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    },
+    {
+      "task_id": "hd02_b",
+      "condition": "cs_text",
+      "artifact": "results/raw/cycle5/mechanism_v3_20261004/instances/hd02_b_cs_text.json",
+      "artifact_sha256": "2c90cb8c35144906a3b63968fd0076d6cdd2c24fb841507c2a28fbc25713edfe",
+      "status": "completed",
+      "implemented_rubric_success": true,
+      "metrics": {
+        "task_success": true,
+        "final_goal_completion": 1.0,
+        "tool_usage_correctness": 1.0,
+        "decision_consistency": 1.0,
+        "goal_checks": {
+          "hotel_location": true,
+          "committed": true,
+          "commit_count": true,
+          "prepared": true,
+          "preparation_count": true
+        },
+        "decision_checks": {
+          "final_requirements_met": true,
+          "constraints_respected": true,
+          "completion_status_correct": true
+        },
+        "workspace_credits_spent": 1,
+        "workspace_credit_budget": 4,
+        "policy_violation_count": 0,
+        "repeated_work_count": 0,
+        "unavailable_observation_count": 0
+      },
+      "executor_responses": [
+        "{\"tool\":\"execute\",\"arguments\":{\"operation\":\"confirm_venue\"}}",
+        "{\"tool\":\"finish\",\"arguments\":{\"status\":\"completed\"}}"
+      ],
+      "trace": [
+        {
+          "action": {
+            "tool": "execute",
+            "arguments": {
+              "operation": "confirm_venue"
+            }
+          },
+          "observation": {
+            "operation_applied": "confirm_venue",
+            "public_receipt": {
+              "applied": "confirm_venue"
+            },
+            "confirmed_effects": {
+              "hotel_location": "venue",
+              "committed": true
+            },
+            "incremented_values": {
+              "commit_count": 1
+            },
+            "remaining_credits": 3,
+            "lifecycle": [
+              {
+                "kind": "sync_operation",
+                "entity_id": "hd02:confirm_venue:1",
+                "operation": "confirm_venue",
+                "phase": "succeeded"
+              }
+            ]
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 1,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        },
+        {
+          "action": {
+            "tool": "finish",
+            "arguments": {
+              "status": "completed"
+            }
+          },
+          "observation": {
+            "finished": "completed",
+            "remaining_credits": 3
+          },
+          "valid": true,
+          "constraint_ok": true,
+          "policy_violations": [],
+          "cost": 0,
+          "repeated_work": false,
+          "state_after": {
+            "ready": true,
+            "prepared": true,
+            "committed": true,
+            "commit_count": 1,
+            "hotel_location": "venue",
+            "preparation_count": 1
+          }
+        }
+      ],
+      "final_world": {
+        "ready": true,
+        "prepared": true,
+        "committed": true,
+        "commit_count": 1,
+        "hotel_location": "venue",
+        "preparation_count": 1
+      },
+      "public_operation_effects": [
+        {
+          "name": "confirm_station",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "station",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        },
+        {
+          "name": "confirm_venue",
+          "preconditions": {
+            "ready": true
+          },
+          "cost": 1,
+          "successful_effects": {
+            "hotel_location": "venue",
+            "committed": true
+          },
+          "successful_increments": {
+            "commit_count": 1
+          },
+          "kind": "sync_operation"
+        }
+      ],
+      "expected_operation": "confirm_venue",
+      "correct_single_execute_then_completed_finish": true,
+      "single_succeeded_commit": true,
+      "retry_observed": false,
+      "failure_or_timeout_observed": true,
+      "modeled_preservation_outcome": "not_measurable_for_unmodeled_user_preservation_targets"
+    }
+  ],
+  "descriptive_summary": {
+    "task_count": 4,
+    "condition_count": 6,
+    "cell_count": 24,
+    "implemented_rubric_success_count": 24,
+    "single_correct_commit_then_completed_finish_count": 24,
+    "retry_count": 0,
+    "failed_or_timeout_cell_count": 24,
+    "all_cells_cost_one_credit": true
+  },
+  "limits": [
+    "Success denotes the implemented rubric, not verified satisfaction of all natural-language preservation goals.",
+    "Unsafe retry and failure-finish ambiguities were not triggered in this run.",
+    "The 24 cells are descriptive observations from one assigned run, not independent human gold or statistical causal evidence.",
+    "Frozen source assessments were not rewritten using later behavior or private rubric knowledge.",
+    "Source errors were not used to repair representations or exclude cells."
+  ]
+}

@@ -1,0 +1,620 @@
+{
+  "performance_evaluation_available": true,
+  "evidence_type": "staged_synthetic_validation",
+  "planned_runs": 56,
+  "saved_runs": 56,
+  "actual_suite_usage": {
+    "request_attempts": 171,
+    "successful_responses": 171,
+    "total_tokens": 261045,
+    "known_reported_tokens": 261045,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "baseline_scope": "One full_context execution per task/repetition, reused only for paired comparison",
+  "conditions": {
+    "cognitive_state@2200": {
+      "condition": "cognitive_state",
+      "budget": 2200,
+      "assigned_runs": 14,
+      "errors": 1,
+      "diagnostic_only": false,
+      "scopes": {
+        "all": {
+          "runs": 14,
+          "successes": 12,
+          "task_success_rate": 0.8571428571428571,
+          "paired_vs_full": {
+            "runs": 14,
+            "wins": 1,
+            "losses": 1,
+            "both_success": 11,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 4,
+            "rate": 0.6666666666666666
+          },
+          "end_to_end_token_reduction": 0.018525490357105028,
+          "token_reduction_observed_runs": 13,
+          "deployment_reported_tokens": 68023,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 1,
+          "unique_instances": 14,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 1,
+          "representation_error_rate": 0.07142857142857142,
+          "byte_budget_errors": 1,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.3076923076923075,
+          "steps_observed_runs": 13,
+          "credits_mean": 2.230769230769231,
+          "credits_observed_runs": 13,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 13,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 13
+        },
+        "main": {
+          "runs": 12,
+          "successes": 10,
+          "task_success_rate": 0.8333333333333334,
+          "paired_vs_full": {
+            "runs": 12,
+            "wins": 1,
+            "losses": 1,
+            "both_success": 9,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 4,
+            "rate": 0.6666666666666666
+          },
+          "end_to_end_token_reduction": 0.196067136877634,
+          "token_reduction_observed_runs": 11,
+          "deployment_reported_tokens": 60829,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 1,
+          "unique_instances": 12,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 1,
+          "representation_error_rate": 0.08333333333333333,
+          "byte_budget_errors": 1,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.272727272727273,
+          "steps_observed_runs": 11,
+          "credits_mean": 2.3636363636363638,
+          "credits_observed_runs": 11,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 11,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 11
+        },
+        "controls": {
+          "runs": 2,
+          "successes": 2,
+          "task_success_rate": 1.0,
+          "paired_vs_full": {
+            "runs": 2,
+            "wins": 0,
+            "losses": 0,
+            "both_success": 2,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 0,
+            "successes": 0,
+            "rate": null
+          },
+          "end_to_end_token_reduction": -0.9579535655058043,
+          "token_reduction_observed_runs": 2,
+          "deployment_reported_tokens": 7194,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 2,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.5,
+          "steps_observed_runs": 2,
+          "credits_mean": 1.5,
+          "credits_observed_runs": 2,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 2,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 2
+        }
+      }
+    },
+    "full_context": {
+      "condition": "full_context",
+      "budget": null,
+      "assigned_runs": 14,
+      "errors": 0,
+      "diagnostic_only": false,
+      "scopes": {
+        "all": {
+          "runs": 14,
+          "successes": 12,
+          "task_success_rate": 0.8571428571428571,
+          "paired_vs_full": {
+            "runs": 14,
+            "wins": 0,
+            "losses": 0,
+            "both_success": 12,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 5,
+            "rate": 0.8333333333333334
+          },
+          "end_to_end_token_reduction": 0.0,
+          "token_reduction_observed_runs": 14,
+          "deployment_reported_tokens": 92258,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 14,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.2857142857142856,
+          "steps_observed_runs": 14,
+          "credits_mean": 2.357142857142857,
+          "credits_observed_runs": 14,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 14,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 14
+        },
+        "main": {
+          "runs": 12,
+          "successes": 10,
+          "task_success_rate": 0.8333333333333334,
+          "paired_vs_full": {
+            "runs": 12,
+            "wins": 0,
+            "losses": 0,
+            "both_success": 10,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 5,
+            "rate": 0.8333333333333334
+          },
+          "end_to_end_token_reduction": 0.0,
+          "token_reduction_observed_runs": 12,
+          "deployment_reported_tokens": 87515,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 12,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.3333333333333335,
+          "steps_observed_runs": 12,
+          "credits_mean": 2.5,
+          "credits_observed_runs": 12,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 12,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 12
+        },
+        "controls": {
+          "runs": 2,
+          "successes": 2,
+          "task_success_rate": 1.0,
+          "paired_vs_full": {
+            "runs": 2,
+            "wins": 0,
+            "losses": 0,
+            "both_success": 2,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 0,
+            "successes": 0,
+            "rate": null
+          },
+          "end_to_end_token_reduction": 0.0,
+          "token_reduction_observed_runs": 2,
+          "deployment_reported_tokens": 4743,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 2,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.0,
+          "steps_observed_runs": 2,
+          "credits_mean": 1.5,
+          "credits_observed_runs": 2,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 2,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 2
+        }
+      }
+    },
+    "no_history": {
+      "condition": "no_history",
+      "budget": null,
+      "assigned_runs": 14,
+      "errors": 0,
+      "diagnostic_only": false,
+      "scopes": {
+        "all": {
+          "runs": 14,
+          "successes": 7,
+          "task_success_rate": 0.5,
+          "paired_vs_full": {
+            "runs": 14,
+            "wins": 0,
+            "losses": 5,
+            "both_success": 7,
+            "success_rate_delta": -0.35714285714285715
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 3,
+            "rate": 0.5
+          },
+          "end_to_end_token_reduction": 0.45558235843114897,
+          "token_reduction_observed_runs": 14,
+          "deployment_reported_tokens": 38893,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 14,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 3.5,
+          "steps_observed_runs": 14,
+          "credits_mean": 2.9285714285714284,
+          "credits_observed_runs": 14,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 14,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 14
+        },
+        "main": {
+          "runs": 12,
+          "successes": 6,
+          "task_success_rate": 0.5,
+          "paired_vs_full": {
+            "runs": 12,
+            "wins": 0,
+            "losses": 4,
+            "both_success": 6,
+            "success_rate_delta": -0.3333333333333333
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 3,
+            "rate": 0.5
+          },
+          "end_to_end_token_reduction": 0.507502801254251,
+          "token_reduction_observed_runs": 12,
+          "deployment_reported_tokens": 35578,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 12,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 3.6666666666666665,
+          "steps_observed_runs": 12,
+          "credits_mean": 3.1666666666666665,
+          "credits_observed_runs": 12,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 12,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 12
+        },
+        "controls": {
+          "runs": 2,
+          "successes": 1,
+          "task_success_rate": 0.5,
+          "paired_vs_full": {
+            "runs": 2,
+            "wins": 0,
+            "losses": 1,
+            "both_success": 1,
+            "success_rate_delta": -0.5
+          },
+          "paired_variant_joint_success": {
+            "pairs": 0,
+            "successes": 0,
+            "rate": null
+          },
+          "end_to_end_token_reduction": 0.14405970149253727,
+          "token_reduction_observed_runs": 2,
+          "deployment_reported_tokens": 3315,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 2,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.5,
+          "steps_observed_runs": 2,
+          "credits_mean": 1.5,
+          "credits_observed_runs": 2,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 2,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 2
+        }
+      }
+    },
+    "summary@2200": {
+      "condition": "summary",
+      "budget": 2200,
+      "assigned_runs": 14,
+      "errors": 0,
+      "diagnostic_only": false,
+      "scopes": {
+        "all": {
+          "runs": 14,
+          "successes": 13,
+          "task_success_rate": 0.9285714285714286,
+          "paired_vs_full": {
+            "runs": 14,
+            "wins": 2,
+            "losses": 1,
+            "both_success": 11,
+            "success_rate_delta": 0.07142857142857142
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 5,
+            "rate": 0.8333333333333334
+          },
+          "end_to_end_token_reduction": 0.21091115583052433,
+          "token_reduction_observed_runs": 14,
+          "deployment_reported_tokens": 61871,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 14,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.2857142857142856,
+          "steps_observed_runs": 14,
+          "credits_mean": 1.8571428571428572,
+          "credits_observed_runs": 14,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 14,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 14
+        },
+        "main": {
+          "runs": 12,
+          "successes": 11,
+          "task_success_rate": 0.9166666666666666,
+          "paired_vs_full": {
+            "runs": 12,
+            "wins": 2,
+            "losses": 1,
+            "both_success": 9,
+            "success_rate_delta": 0.08333333333333333
+          },
+          "paired_variant_joint_success": {
+            "pairs": 6,
+            "successes": 5,
+            "rate": 0.8333333333333334
+          },
+          "end_to_end_token_reduction": 0.284870827923524,
+          "token_reduction_observed_runs": 12,
+          "deployment_reported_tokens": 56950,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 12,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.3333333333333335,
+          "steps_observed_runs": 12,
+          "credits_mean": 1.9166666666666667,
+          "credits_observed_runs": 12,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 12,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 12
+        },
+        "controls": {
+          "runs": 2,
+          "successes": 2,
+          "task_success_rate": 1.0,
+          "paired_vs_full": {
+            "runs": 2,
+            "wins": 0,
+            "losses": 0,
+            "both_success": 2,
+            "success_rate_delta": 0.0
+          },
+          "paired_variant_joint_success": {
+            "pairs": 0,
+            "successes": 0,
+            "rate": null
+          },
+          "end_to_end_token_reduction": -0.23284687672747367,
+          "token_reduction_observed_runs": 2,
+          "deployment_reported_tokens": 4921,
+          "deployment_cost_scope": "Each scenario includes entire shared extraction plus its executor; do not sum scenarios as suite charges",
+          "cost_failure_scope": "Known usage includes representation/execution failures; incomplete API runs have no performance or reductions",
+          "token_reduction_scope": "Both paired statuses must be non-error and usage observable; task_success is not used as a filter",
+          "token_reduction_error_excluded_pairs": 0,
+          "unique_instances": 2,
+          "repetitions": [
+            0
+          ],
+          "representation_errors": 0,
+          "representation_error_rate": 0.0,
+          "byte_budget_errors": 0,
+          "executor_errors": 0,
+          "ablation_applied_runs": 0,
+          "ablation_removed_items": null,
+          "ablation_changed_runs": null,
+          "ablation_no_op_runs": null,
+          "ablation_zero_removed_runs": null,
+          "ablation_effect_scope": "Zero removed items is a no-op and cannot test the necessity of the absent field",
+          "steps_mean": 2.0,
+          "steps_observed_runs": 2,
+          "credits_mean": 1.5,
+          "credits_observed_runs": 2,
+          "invalid_actions_mean": 0.0,
+          "invalid_actions_observed_runs": 2,
+          "repeat_attempts_mean": 0.0,
+          "repeat_attempts_observed_runs": 2
+        }
+      }
+    }
+  },
+  "scientific_conclusion": null,
+  "status": "completed_with_errors",
+  "verification": {
+    "checks": [
+      "input_sha256",
+      "code_sha256",
+      "prompt_sha256",
+      "grid",
+      "artifact_consistency",
+      "unique_actual_request_accounting",
+      "explicit_no_history"
+    ],
+    "complete_grid": true,
+    "missing_cells": 0
+  }
+}

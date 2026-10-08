@@ -1,0 +1,17 @@
+{
+  "dataset_version": "exp003-longitudinal-v0.1",
+  "review_status": "assistant_constructed_pending_independent_review",
+  "handoffs_per_chain": 4,
+  "scenarios": [
+    {
+      "scenario_id": "release_workflow",
+      "path": "release_workflow.json"
+    },
+    {
+      "scenario_id": "archive_workflow",
+      "path": "archive_workflow.json"
+    }
+  ],
+  "reference_state_used": false,
+  "scope": "two synthetic workflow chains; one repetition; not a real long-horizon benchmark"
+}

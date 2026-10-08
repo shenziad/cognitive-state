@@ -1,0 +1,85 @@
+{
+  "stages": [
+    {
+      "stage": "D-v1",
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\diagnostic_v1_20261004",
+      "status": "aborted_token_threshold",
+      "assigned_cells": 48,
+      "saved_behavior_cells": 45,
+      "saved_preparations": 0,
+      "usage": {
+        "request_attempts": 113,
+        "successful_responses": 113,
+        "total_tokens": 502100,
+        "known_reported_tokens": 502100,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "source_sha256": {
+        "manifest.json": "ef0250d08cb7505b5777cd22222daf8a9593a2e3cb7ea3a6c35d4e3829d0ee8f",
+        "call_ledger.json": "d6621f63c5d024629620210eaa3538c2eb40c266307f8f66b760a03fee28223d"
+      }
+    },
+    {
+      "stage": "A-v2 interrupted",
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\mechanism_v2_20261004",
+      "status": "aborted_api_error",
+      "assigned_cells": 72,
+      "saved_behavior_cells": 0,
+      "saved_preparations": 31,
+      "usage": {
+        "request_attempts": 26,
+        "successful_responses": 25,
+        "total_tokens": null,
+        "known_reported_tokens": 78153,
+        "unknown_usage_attempts": 1,
+        "shared_extraction_counted_once": true
+      },
+      "source_sha256": {
+        "manifest.json": "cb46eb546db4729b81c3fe39a7189c3b537b5d8347825b12711bff95cd39bf5e",
+        "call_ledger.json": "fb1585b68d213dcab3eda67d6cedbaa0d71826364aecebb54dfb5165bb8f3b2b"
+      }
+    },
+    {
+      "stage": "A-v3 bounded recovery",
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\mechanism_v3_20261004",
+      "status": "completed",
+      "assigned_cells": 72,
+      "saved_behavior_cells": 72,
+      "saved_preparations": 72,
+      "usage": {
+        "request_attempts": 204,
+        "successful_responses": 204,
+        "total_tokens": 618444,
+        "known_reported_tokens": 618444,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "source_sha256": {
+        "manifest.json": "05369a4d2f49f5b33467024eddb253d6ce87da5498c95f41267869e3a700e1bb",
+        "call_ledger.json": "4df8daa59f901c8eebabe40d774d0690449adcae27160de68f506c184e663e7c"
+      }
+    }
+  ],
+  "service_probe": {
+    "source": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle5\\service_probe_20261004.json",
+    "sha256": "6286ac3f6a7809bdfa29632cab05f54060a1b1421ca19359655b320b911d0412",
+    "usage": {
+      "request_attempts": 1,
+      "successful_responses": 1,
+      "known_reported_tokens": 10,
+      "unknown_usage_attempts": 0
+    },
+    "is_experimental_cell": false
+  },
+  "campaign_usage": {
+    "request_attempts": 344,
+    "successful_responses": 343,
+    "known_reported_tokens": 1198707,
+    "unknown_usage_attempts": 1,
+    "total_tokens": null
+  },
+  "cost_scope": "all incurred actual attempts; shared CS extraction counted once per run",
+  "unknown_usage_policy": "total unknown; known_reported_tokens is a lower bound, never fill unknown with zero",
+  "sample_policy": "Do not concatenate D, interrupted A-v2, or recovery A-v3 behavior/preparations."
+}

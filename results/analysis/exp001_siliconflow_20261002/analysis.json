@@ -1,0 +1,123 @@
+{
+  "status": "blocked_or_incomplete",
+  "performance_evaluation_available": false,
+  "evidence_type": "api_interruption",
+  "run_status": "aborted_api_error",
+  "planned_runs": 8,
+  "saved_runs": 1,
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "provider": "openai_sdk",
+  "benchmark": "exp001-pilot-v0.1",
+  "representation_counter": "utf8_bytes",
+  "representation_budget": 2200,
+  "reported_api_responses": 0,
+  "source": {
+    "run_directory": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\exp001\\siliconflow_smoke_20261002",
+    "manifest_sha256": "ea36018932eac16537b9388e2580baa7725f672eaf0ead98e13c5560fab3da5a",
+    "results_sha256": "21facd01aed22a89f150baf47792a8bc271fd17a4b7c8cb249941b63a4dcf898"
+  },
+  "conditions": {
+    "full_context": {
+      "recorded_runs": 1,
+      "task_success_rate": null,
+      "errors": 1,
+      "reported_api_responses": 0,
+      "mean_representation_size": 3185,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "final_goal_completion": null,
+      "final_goal_completion_observed_runs": 0,
+      "tool_usage_correctness": null,
+      "tool_usage_correctness_observed_runs": 0,
+      "decision_consistency": null,
+      "decision_consistency_observed_runs": 0,
+      "token_reduction": null,
+      "token_reduction_observed_runs": 0,
+      "end_to_end_token_reduction": null,
+      "end_to_end_token_reduction_observed_runs": 0
+    },
+    "summary": {
+      "recorded_runs": 0,
+      "task_success_rate": null,
+      "errors": 0,
+      "reported_api_responses": 0,
+      "mean_representation_size": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "final_goal_completion": null,
+      "final_goal_completion_observed_runs": 0,
+      "tool_usage_correctness": null,
+      "tool_usage_correctness_observed_runs": 0,
+      "decision_consistency": null,
+      "decision_consistency_observed_runs": 0,
+      "token_reduction": null,
+      "token_reduction_observed_runs": 0,
+      "end_to_end_token_reduction": null,
+      "end_to_end_token_reduction_observed_runs": 0
+    },
+    "cognitive_state": {
+      "recorded_runs": 0,
+      "task_success_rate": null,
+      "errors": 0,
+      "reported_api_responses": 0,
+      "mean_representation_size": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "final_goal_completion": null,
+      "final_goal_completion_observed_runs": 0,
+      "tool_usage_correctness": null,
+      "tool_usage_correctness_observed_runs": 0,
+      "decision_consistency": null,
+      "decision_consistency_observed_runs": 0,
+      "token_reduction": null,
+      "token_reduction_observed_runs": 0,
+      "end_to_end_token_reduction": null,
+      "end_to_end_token_reduction_observed_runs": 0
+    },
+    "reference_state": {
+      "recorded_runs": 0,
+      "task_success_rate": null,
+      "errors": 0,
+      "reported_api_responses": 0,
+      "mean_representation_size": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "final_goal_completion": null,
+      "final_goal_completion_observed_runs": 0,
+      "tool_usage_correctness": null,
+      "tool_usage_correctness_observed_runs": 0,
+      "decision_consistency": null,
+      "decision_consistency_observed_runs": 0,
+      "token_reduction": null,
+      "token_reduction_observed_runs": 0,
+      "end_to_end_token_reduction": null,
+      "end_to_end_token_reduction_observed_runs": 0
+    }
+  },
+  "paired_outcomes": {},
+  "errors": [
+    {
+      "instance_id": "pilot01_jwt_units",
+      "condition": "full_context",
+      "stage": "executor",
+      "type": "RuntimeError",
+      "message": "SDK APIStatusError; HTTP=402; usage unknown"
+    }
+  ],
+  "limits": [
+    "12 个合成配置修复场景；不能外推到长期真实 Agent 任务",
+    "相同表示上限不保证实际长度相同，字节不等于 DeepSeek Token",
+    "候选参考状态尚未经过研究者审核，人工制作成本未测量",
+    "一次重复只能做描述性分析，不能证明行为等价或方法优越"
+  ],
+  "hypotheses_confirmed": [],
+  "connection_diagnostic": {
+    "status": "blocked",
+    "sanitized_error": "SDK APIStatusError; HTTP=402; category=insufficient_balance; provider_code=30001; usage unknown",
+    "scientific_conclusion": null
+  }
+}

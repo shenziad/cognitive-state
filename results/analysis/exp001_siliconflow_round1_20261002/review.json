@@ -1,0 +1,1050 @@
+{
+  "reviewer": "assistant",
+  "review_status": "descriptive_analysis_not_independent_gold",
+  "run_directory": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\exp001\\siliconflow_round1_20261002",
+  "conditions": {
+    "full_context": {
+      "initial_input_tokens_total": 13181,
+      "initial_input_tokens_range": [
+        941,
+        1257
+      ],
+      "total_tokens": 68715,
+      "extraction_tokens": 0,
+      "executor_tokens": 68715,
+      "aggregate_initial_input_reduction": 0.0,
+      "aggregate_end_to_end_reduction": 0.0,
+      "representation_bytes_range": [
+        2734,
+        4301
+      ],
+      "mean_steps": 4.583333333333333,
+      "cached_input_tokens": 19456,
+      "end_to_end_saving_task_count": 0,
+      "end_to_end_reduction_range": [
+        0.0,
+        0.0
+      ]
+    },
+    "summary": {
+      "initial_input_tokens_total": 6016,
+      "initial_input_tokens_range": [
+        466,
+        593
+      ],
+      "total_tokens": 49456,
+      "extraction_tokens": 13609,
+      "executor_tokens": 35847,
+      "aggregate_initial_input_reduction": 0.543585463925347,
+      "aggregate_end_to_end_reduction": 0.28027359382958594,
+      "representation_bytes_range": [
+        831,
+        1456
+      ],
+      "mean_steps": 4.583333333333333,
+      "cached_input_tokens": 2048,
+      "end_to_end_saving_task_count": 12,
+      "end_to_end_reduction_range": [
+        0.1920649233543733,
+        0.37859447327815965
+      ]
+    },
+    "cognitive_state": {
+      "initial_input_tokens_total": 7700,
+      "initial_input_tokens_range": [
+        607,
+        666
+      ],
+      "total_tokens": 62069,
+      "extraction_tokens": 16509,
+      "executor_tokens": 45560,
+      "aggregate_initial_input_reduction": 0.41582580987785445,
+      "aggregate_end_to_end_reduction": 0.09671832933129598,
+      "representation_bytes_range": [
+        1167,
+        1543
+      ],
+      "mean_steps": 4.75,
+      "cached_input_tokens": 7168,
+      "end_to_end_saving_task_count": 11,
+      "end_to_end_reduction_range": [
+        -0.05077851031000136,
+        0.1990312010257872
+      ]
+    },
+    "reference_state": {
+      "initial_input_tokens_total": 6507,
+      "initial_input_tokens_range": [
+        533,
+        561
+      ],
+      "total_tokens": 44729,
+      "extraction_tokens": 0,
+      "executor_tokens": 44729,
+      "aggregate_initial_input_reduction": 0.5063348759578181,
+      "aggregate_end_to_end_reduction": null,
+      "representation_bytes_range": [
+        924,
+        1001
+      ],
+      "mean_steps": 5.166666666666667,
+      "cached_input_tokens": 7168,
+      "end_to_end_saving_task_count": 0,
+      "end_to_end_reduction_range": null
+    }
+  },
+  "total_provider_tokens": 224969,
+  "reported_api_responses": 253,
+  "identical_core_three_traces": 10,
+  "small_change_preference_under_constraints_count": 10,
+  "per_task": [
+    {
+      "instance_id": "pilot01_jwt_units",
+      "conditions": {
+        "full_context": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 3185,
+          "extraction_tokens": 0,
+          "executor_tokens": 4678,
+          "total_tokens": 4678,
+          "initial_executor_input_tokens": 1041,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1353,
+          "extraction_tokens": 1311,
+          "executor_tokens": 3066,
+          "total_tokens": 4377,
+          "initial_executor_input_tokens": 638,
+          "initial_input_reduction": 0.3871277617675313,
+          "end_to_end_reduction": 0.06434373663958959
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 924,
+          "extraction_tokens": 0,
+          "executor_tokens": 2678,
+          "total_tokens": 2678,
+          "initial_executor_input_tokens": 541,
+          "initial_input_reduction": 0.48030739673390965,
+          "end_to_end_reduction": null
+        },
+        "summary": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1160,
+          "extraction_tokens": 1104,
+          "executor_tokens": 2602,
+          "total_tokens": 3706,
+          "initial_executor_input_tokens": 522,
+          "initial_input_reduction": 0.49855907780979825,
+          "end_to_end_reduction": 0.20778110303548525
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Timezone conversion may be wrong",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Read docs/runbook.json for current configuration guidance before editing",
+          "information_needs": [
+            "Current runbook guidance on JWT expiration validation",
+            "What configuration key or value is missing or incorrect in service.json"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a small evidence-based change to service.json, test, and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "full_context": "instances/pilot01_jwt_units_r0_full_context.json",
+        "cognitive_state": "instances/pilot01_jwt_units_r0_cognitive_state.json",
+        "reference_state": "instances/pilot01_jwt_units_r0_reference_state.json",
+        "summary": "instances/pilot01_jwt_units_r0_summary.json"
+      }
+    },
+    {
+      "instance_id": "pilot02_api_endpoint",
+      "conditions": {
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 903,
+          "extraction_tokens": 1165,
+          "executor_tokens": 3248,
+          "total_tokens": 4413,
+          "initial_executor_input_tokens": 483,
+          "initial_input_reduction": 0.5821799307958477,
+          "end_to_end_reduction": 0.3326780583698775
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1167,
+          "extraction_tokens": 1383,
+          "executor_tokens": 3923,
+          "total_tokens": 5306,
+          "initial_executor_input_tokens": 618,
+          "initial_input_reduction": 0.46539792387543255,
+          "end_to_end_reduction": 0.1976410101315591
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 3722,
+          "extraction_tokens": 0,
+          "executor_tokens": 6613,
+          "total_tokens": 6613,
+          "initial_executor_input_tokens": 1156,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 932,
+          "extraction_tokens": 0,
+          "executor_tokens": 3553,
+          "total_tokens": 3553,
+          "initial_executor_input_tokens": 544,
+          "initial_input_reduction": 0.5294117647058824,
+          "end_to_end_reduction": null
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "API may require a different version header",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "Virtual fixture represents the interrupted service (unchecked)"
+        ],
+        "frontier": {
+          "current_focus": "Read docs/runbook.json for current guidance before editing",
+          "information_needs": [
+            "Contents of docs/runbook.json",
+            "What configuration change will resolve 404"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a small evidence-based config change, test, and report"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "summary": "instances/pilot02_api_endpoint_r0_summary.json",
+        "cognitive_state": "instances/pilot02_api_endpoint_r0_cognitive_state.json",
+        "full_context": "instances/pilot02_api_endpoint_r0_full_context.json",
+        "reference_state": "instances/pilot02_api_endpoint_r0_reference_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot03_request_timeout",
+      "conditions": {
+        "reference_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 940,
+          "extraction_tokens": 0,
+          "executor_tokens": 2657,
+          "total_tokens": 2657,
+          "initial_executor_input_tokens": 540,
+          "initial_input_reduction": 0.5616883116883117,
+          "end_to_end_reduction": null
+        },
+        "full_context": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 4197,
+          "extraction_tokens": 0,
+          "executor_tokens": 5425,
+          "total_tokens": 5425,
+          "initial_executor_input_tokens": 1232,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1394,
+          "extraction_tokens": 1506,
+          "executor_tokens": 3021,
+          "total_tokens": 4527,
+          "initial_executor_input_tokens": 631,
+          "initial_input_reduction": 0.4878246753246753,
+          "end_to_end_reduction": 0.16552995391705072
+        },
+        "summary": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 906,
+          "extraction_tokens": 1256,
+          "executor_tokens": 2421,
+          "total_tokens": 3677,
+          "initial_executor_input_tokens": 481,
+          "initial_input_reduction": 0.609577922077922,
+          "end_to_end_reduction": 0.3222119815668203
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Upstream export may have slower-than-usual latency",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "Virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Read docs/runbook.json for current configuration guidance before editing",
+          "information_needs": [
+            "Current recommended timeout or other virtual service settings from docs/runbook.json",
+            "Whether timeout_ms is the appropriate lever given retry_count is fixed"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a small evidence-based change to virtual service configuration (likely timeout_ms), then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": false,
+      "source_artifacts": {
+        "reference_state": "instances/pilot03_request_timeout_r0_reference_state.json",
+        "full_context": "instances/pilot03_request_timeout_r0_full_context.json",
+        "cognitive_state": "instances/pilot03_request_timeout_r0_cognitive_state.json",
+        "summary": "instances/pilot03_request_timeout_r0_summary.json"
+      }
+    },
+    {
+      "instance_id": "pilot04_cache_namespace",
+      "conditions": {
+        "reference_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1001,
+          "extraction_tokens": 0,
+          "executor_tokens": 3630,
+          "total_tokens": 3630,
+          "initial_executor_input_tokens": 561,
+          "initial_input_reduction": 0.4316109422492401,
+          "end_to_end_reduction": null
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1489,
+          "extraction_tokens": 1274,
+          "executor_tokens": 3152,
+          "total_tokens": 4426,
+          "initial_executor_input_tokens": 666,
+          "initial_input_reduction": 0.32522796352583583,
+          "end_to_end_reduction": 0.0022542831379621653
+        },
+        "full_context": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 2839,
+          "extraction_tokens": 0,
+          "executor_tokens": 4436,
+          "total_tokens": 4436,
+          "initial_executor_input_tokens": 987,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "summary": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1045,
+          "extraction_tokens": 1032,
+          "executor_tokens": 2552,
+          "total_tokens": 3584,
+          "initial_executor_input_tokens": 516,
+          "initial_input_reduction": 0.4772036474164134,
+          "end_to_end_reduction": 0.1920649233543733
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Requests may be using an unexpected namespace",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Use docs/runbook.json (current guidance) over deprecated docs/legacy_runbook.json"
+        ],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Read current settings guidance before editing",
+          "information_needs": [
+            "docs/runbook.json contents regarding tenant-specific cache configuration",
+            "Whether namespace should be tenant-specific or per-tenant key prefix"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a small config change (likely namespace or key structure) and run service checks"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "reference_state": "instances/pilot04_cache_namespace_r0_reference_state.json",
+        "cognitive_state": "instances/pilot04_cache_namespace_r0_cognitive_state.json",
+        "full_context": "instances/pilot04_cache_namespace_r0_full_context.json",
+        "summary": "instances/pilot04_cache_namespace_r0_summary.json"
+      }
+    },
+    {
+      "instance_id": "pilot05_csv_format",
+      "conditions": {
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1368,
+          "extraction_tokens": 1366,
+          "executor_tokens": 4044,
+          "total_tokens": 5410,
+          "initial_executor_input_tokens": 643,
+          "initial_input_reduction": 0.38409961685823757,
+          "end_to_end_reduction": 0.10563729542073075
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 3213,
+          "extraction_tokens": 0,
+          "executor_tokens": 6049,
+          "total_tokens": 6049,
+          "initial_executor_input_tokens": 1044,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1107,
+          "extraction_tokens": 1094,
+          "executor_tokens": 3424,
+          "total_tokens": 4518,
+          "initial_executor_input_tokens": 519,
+          "initial_input_reduction": 0.5028735632183908,
+          "end_to_end_reduction": 0.25309968589849563
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 925,
+          "extraction_tokens": 0,
+          "executor_tokens": 4476,
+          "total_tokens": 4476,
+          "initial_executor_input_tokens": 537,
+          "initial_input_reduction": 0.48563218390804597,
+          "end_to_end_reduction": null
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Input encoding may differ from local settings",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Restore partner CSV imports",
+          "information_needs": [
+            "Current settings guidance from docs/runbook.json",
+            "Evidence of the correct encoding or delimiter to fix column merging and accented names"
+          ],
+          "next_action": "Read docs/runbook.json before editing; then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "cognitive_state": "instances/pilot05_csv_format_r0_cognitive_state.json",
+        "full_context": "instances/pilot05_csv_format_r0_full_context.json",
+        "summary": "instances/pilot05_csv_format_r0_summary.json",
+        "reference_state": "instances/pilot05_csv_format_r0_reference_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot06_tls_bundle",
+      "conditions": {
+        "reference_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 937,
+          "extraction_tokens": 0,
+          "executor_tokens": 2661,
+          "total_tokens": 2661,
+          "initial_executor_input_tokens": 536,
+          "initial_input_reduction": 0.5265017667844523,
+          "end_to_end_reduction": null
+        },
+        "summary": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1101,
+          "extraction_tokens": 1180,
+          "executor_tokens": 2565,
+          "total_tokens": 3745,
+          "initial_executor_input_tokens": 512,
+          "initial_input_reduction": 0.5477031802120141,
+          "end_to_end_reduction": 0.25768087215064417
+        },
+        "full_context": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 3705,
+          "extraction_tokens": 0,
+          "executor_tokens": 5045,
+          "total_tokens": 5045,
+          "initial_executor_input_tokens": 1132,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1224,
+          "extraction_tokens": 1422,
+          "executor_tokens": 2945,
+          "total_tokens": 4367,
+          "initial_executor_input_tokens": 607,
+          "initial_input_reduction": 0.46378091872791516,
+          "end_to_end_reduction": 0.13439048562933598
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "preferences",
+        "beliefs": [
+          {
+            "claim": "The configured CA bundle may be outdated",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Prefer a small, evidence-based change"
+        ],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Restore verified TLS connections",
+          "information_needs": [
+            "Current settings guidance from docs/runbook.json"
+          ],
+          "next_action": "Read docs/runbook.json before editing; then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "reference_state": "instances/pilot06_tls_bundle_r0_reference_state.json",
+        "summary": "instances/pilot06_tls_bundle_r0_summary.json",
+        "full_context": "instances/pilot06_tls_bundle_r0_full_context.json",
+        "cognitive_state": "instances/pilot06_tls_bundle_r0_cognitive_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot07_staging_route",
+      "conditions": {
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 983,
+          "extraction_tokens": 0,
+          "executor_tokens": 4554,
+          "total_tokens": 4554,
+          "initial_executor_input_tokens": 547,
+          "initial_input_reduction": 0.5648369132856006,
+          "end_to_end_reduction": null
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 4301,
+          "extraction_tokens": 0,
+          "executor_tokens": 7129,
+          "total_tokens": 7129,
+          "initial_executor_input_tokens": 1257,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 886,
+          "extraction_tokens": 1251,
+          "executor_tokens": 3179,
+          "total_tokens": 4430,
+          "initial_executor_input_tokens": 467,
+          "initial_input_reduction": 0.6284805091487669,
+          "end_to_end_reduction": 0.37859447327815965
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 7,
+          "representation_bytes": 1261,
+          "extraction_tokens": 1494,
+          "executor_tokens": 5997,
+          "total_tokens": 7491,
+          "initial_executor_input_tokens": 630,
+          "initial_input_reduction": 0.49880668257756566,
+          "end_to_end_reduction": -0.05077851031000136
+        }
+      },
+      "core_three_traces_identical": false,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Route config may point at wrong environment",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Use current docs/runbook.json, not deprecated legacy_runbook.json"
+        ],
+        "assumptions": [
+          "Virtual fixture represents interrupted service (unchecked)"
+        ],
+        "frontier": {
+          "current_focus": "Read current runbook guidance before editing config",
+          "information_needs": [
+            "Contents of docs/runbook.json",
+            "Correct route value for staging per runbook"
+          ],
+          "next_action": "Read docs/runbook.json, then apply small config change and verify checks"
+        }
+      },
+      "summary_explicitly_marks_belief": false,
+      "source_artifacts": {
+        "reference_state": "instances/pilot07_staging_route_r0_reference_state.json",
+        "full_context": "instances/pilot07_staging_route_r0_full_context.json",
+        "summary": "instances/pilot07_staging_route_r0_summary.json",
+        "cognitive_state": "instances/pilot07_staging_route_r0_cognitive_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot08_pagination",
+      "conditions": {
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 831,
+          "extraction_tokens": 950,
+          "executor_tokens": 3125,
+          "total_tokens": 4075,
+          "initial_executor_input_tokens": 467,
+          "initial_input_reduction": 0.5058201058201058,
+          "end_to_end_reduction": 0.260838019227281
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 938,
+          "extraction_tokens": 0,
+          "executor_tokens": 4430,
+          "total_tokens": 4430,
+          "initial_executor_input_tokens": 538,
+          "initial_input_reduction": 0.4306878306878307,
+          "end_to_end_reduction": null
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 2734,
+          "extraction_tokens": 0,
+          "executor_tokens": 5513,
+          "total_tokens": 5513,
+          "initial_executor_input_tokens": 945,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1414,
+          "extraction_tokens": 1220,
+          "executor_tokens": 4005,
+          "total_tokens": 5225,
+          "initial_executor_input_tokens": 643,
+          "initial_input_reduction": 0.3195767195767196,
+          "end_to_end_reduction": 0.05224015962271
+        }
+      },
+      "core_three_traces_identical": false,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "A proxy issue may truncate results",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Restore complete inventory pagination",
+          "information_needs": [
+            "Current settings guidance from docs/runbook.json",
+            "Whether cursor_mode should be changed or another parameter is relevant"
+          ],
+          "next_action": "Read docs/runbook.json before editing; then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "summary": "instances/pilot08_pagination_r0_summary.json",
+        "reference_state": "instances/pilot08_pagination_r0_reference_state.json",
+        "full_context": "instances/pilot08_pagination_r0_full_context.json",
+        "cognitive_state": "instances/pilot08_pagination_r0_cognitive_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot09_scheduler",
+      "conditions": {
+        "full_context": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 3273,
+          "extraction_tokens": 0,
+          "executor_tokens": 4768,
+          "total_tokens": 4768,
+          "initial_executor_input_tokens": 1060,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 959,
+          "extraction_tokens": 0,
+          "executor_tokens": 2716,
+          "total_tokens": 2716,
+          "initial_executor_input_tokens": 547,
+          "initial_input_reduction": 0.48396226415094334,
+          "end_to_end_reduction": null
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 1543,
+          "extraction_tokens": 1367,
+          "executor_tokens": 3188,
+          "total_tokens": 4555,
+          "initial_executor_input_tokens": 665,
+          "initial_input_reduction": 0.37264150943396224,
+          "end_to_end_reduction": 0.04467281879194629
+        },
+        "summary": {
+          "success": true,
+          "steps": 4,
+          "representation_bytes": 898,
+          "extraction_tokens": 1068,
+          "executor_tokens": 2392,
+          "total_tokens": 3460,
+          "initial_executor_input_tokens": 466,
+          "initial_input_reduction": 0.560377358490566,
+          "end_to_end_reduction": 0.2743288590604027
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Timezone handling may be wrong",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Use docs/runbook.json (current guidance), not deprecated legacy_runbook.json"
+        ],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)",
+          "The fix lies in configuration, not code or database"
+        ],
+        "frontier": {
+          "current_focus": "Determine correct configuration from current runbook to fix eight-hour lateness",
+          "information_needs": [
+            "Contents of docs/runbook.json regarding timezone or schedule settings",
+            "Whether timezone should be changed (e.g., to a non-UTC zone) to align schedule"
+          ],
+          "next_action": "Read docs/runbook.json to obtain current guidance, then apply a small evidence-based config change and run service checks"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "full_context": "instances/pilot09_scheduler_r0_full_context.json",
+        "reference_state": "instances/pilot09_scheduler_r0_reference_state.json",
+        "cognitive_state": "instances/pilot09_scheduler_r0_cognitive_state.json",
+        "summary": "instances/pilot09_scheduler_r0_summary.json"
+      }
+    },
+    {
+      "instance_id": "pilot10_feature_flag",
+      "conditions": {
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1494,
+          "extraction_tokens": 1431,
+          "executor_tokens": 4139,
+          "total_tokens": 5570,
+          "initial_executor_input_tokens": 660,
+          "initial_input_reduction": 0.42307692307692313,
+          "end_to_end_reduction": 0.15078518066778468
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 3749,
+          "extraction_tokens": 0,
+          "executor_tokens": 6559,
+          "total_tokens": 6559,
+          "initial_executor_input_tokens": 1144,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1456,
+          "extraction_tokens": 1266,
+          "executor_tokens": 3804,
+          "total_tokens": 5070,
+          "initial_executor_input_tokens": 593,
+          "initial_input_reduction": 0.48164335664335667,
+          "end_to_end_reduction": 0.22701631346241802
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 950,
+          "extraction_tokens": 0,
+          "executor_tokens": 4511,
+          "total_tokens": 4511,
+          "initial_executor_input_tokens": 542,
+          "initial_input_reduction": 0.5262237762237763,
+          "end_to_end_reduction": null
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "The cohort selector may be stale",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Read docs/runbook.json for current guidance before editing",
+          "information_needs": [
+            "Current recommended configuration for pilot_enabled and cohort",
+            "Whether pilot_enabled should be true and what cohort value is correct"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a small evidence-based change to service.json, then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "cognitive_state": "instances/pilot10_feature_flag_r0_cognitive_state.json",
+        "full_context": "instances/pilot10_feature_flag_r0_full_context.json",
+        "summary": "instances/pilot10_feature_flag_r0_summary.json",
+        "reference_state": "instances/pilot10_feature_flag_r0_reference_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot11_log_redaction",
+      "conditions": {
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 945,
+          "extraction_tokens": 0,
+          "executor_tokens": 4474,
+          "total_tokens": 4474,
+          "initial_executor_input_tokens": 541,
+          "initial_input_reduction": 0.5644122383252819,
+          "end_to_end_reduction": null
+        },
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 4239,
+          "extraction_tokens": 0,
+          "executor_tokens": 7019,
+          "total_tokens": 7019,
+          "initial_executor_input_tokens": 1242,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 885,
+          "extraction_tokens": 1247,
+          "executor_tokens": 3159,
+          "total_tokens": 4406,
+          "initial_executor_input_tokens": 470,
+          "initial_input_reduction": 0.6215780998389694,
+          "end_to_end_reduction": 0.3722752528850264
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1414,
+          "extraction_tokens": 1523,
+          "executor_tokens": 4099,
+          "total_tokens": 5622,
+          "initial_executor_input_tokens": 658,
+          "initial_input_reduction": 0.47020933977455714,
+          "end_to_end_reduction": 0.1990312010257872
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "constraints",
+        "beliefs": [
+          {
+            "claim": "Logger may be using pre-redaction settings",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Use current docs/runbook.json guidance, not deprecated legacy_runbook.json"
+        ],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Read current docs/runbook.json for configuration guidance",
+          "information_needs": [
+            "What settings does docs/runbook.json recommend for redaction and log level?",
+            "Which config keys affect redaction and log verbosity?"
+          ],
+          "next_action": "Read docs/runbook.json, then apply a minimal evidence-based config change and verify service checks"
+        }
+      },
+      "summary_explicitly_marks_belief": false,
+      "source_artifacts": {
+        "reference_state": "instances/pilot11_log_redaction_r0_reference_state.json",
+        "full_context": "instances/pilot11_log_redaction_r0_full_context.json",
+        "summary": "instances/pilot11_log_redaction_r0_summary.json",
+        "cognitive_state": "instances/pilot11_log_redaction_r0_cognitive_state.json"
+      }
+    },
+    {
+      "instance_id": "pilot12_queue_batch",
+      "conditions": {
+        "full_context": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 2741,
+          "extraction_tokens": 0,
+          "executor_tokens": 5481,
+          "total_tokens": 5481,
+          "initial_executor_input_tokens": 941,
+          "initial_input_reduction": 0.0,
+          "end_to_end_reduction": 0.0
+        },
+        "cognitive_state": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1408,
+          "extraction_tokens": 1212,
+          "executor_tokens": 3981,
+          "total_tokens": 5193,
+          "initial_executor_input_tokens": 641,
+          "initial_input_reduction": 0.31880977683315626,
+          "end_to_end_reduction": 0.0525451559934319
+        },
+        "summary": {
+          "success": true,
+          "steps": 5,
+          "representation_bytes": 1129,
+          "extraction_tokens": 996,
+          "executor_tokens": 3376,
+          "total_tokens": 4372,
+          "initial_executor_input_tokens": 520,
+          "initial_input_reduction": 0.44739638682252925,
+          "end_to_end_reduction": 0.20233534026637479
+        },
+        "reference_state": {
+          "success": true,
+          "steps": 6,
+          "representation_bytes": 942,
+          "extraction_tokens": 0,
+          "executor_tokens": 4389,
+          "total_tokens": 4389,
+          "initial_executor_input_tokens": 533,
+          "initial_input_reduction": 0.4335812964930924,
+          "end_to_end_reduction": null
+        }
+      },
+      "core_three_traces_identical": true,
+      "cognitive_state_review": {
+        "small_change_preference_location": "preferences",
+        "beliefs": [
+          {
+            "claim": "Consumer acknowledgement mode may have changed",
+            "confidence": 0.6
+          }
+        ],
+        "preferences": [
+          "Prefer a small, evidence-based change"
+        ],
+        "assumptions": [
+          "The virtual fixture represents the interrupted service (not independently checked)"
+        ],
+        "frontier": {
+          "current_focus": "Restore successful queue consumption",
+          "information_needs": [
+            "Current settings guidance from docs/runbook.json",
+            "Whether ack_mode should be changed to manual or another value"
+          ],
+          "next_action": "Read docs/runbook.json before editing; then test and report completion"
+        }
+      },
+      "summary_explicitly_marks_belief": true,
+      "source_artifacts": {
+        "full_context": "instances/pilot12_queue_batch_r0_full_context.json",
+        "cognitive_state": "instances/pilot12_queue_batch_r0_cognitive_state.json",
+        "summary": "instances/pilot12_queue_batch_r0_summary.json",
+        "reference_state": "instances/pilot12_queue_batch_r0_reference_state.json"
+      }
+    }
+  ]
+}

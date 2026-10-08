@@ -1,0 +1,17 @@
+{
+  "instance_id": "cal_choose_speed",
+  "accepted_example": [
+    {
+      "tool": "execute",
+      "arguments": {
+        "operation": "select_violet"
+      }
+    },
+    {
+      "tool": "finish",
+      "arguments": {
+        "status": "completed"
+      }
+    }
+  ]
+}

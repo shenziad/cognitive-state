@@ -1,0 +1,698 @@
+{
+  "complete": true,
+  "evidence_type": "api",
+  "stage": "regression",
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\regression_recovery_v1_20261003",
+  "results_sha256": "6ba156748428b7df63bc2d03f4bdb4121b5669fedceffce1961af85c523a0b96",
+  "ledger_sha256": "99aec6496ee2c8ec15f003a0d91eef268197a790d219cbd9f3b60ee12b958207",
+  "manifest_sha256": "4b9e2dcdac86df0a8e67a37ab2290f7e8aa674deaf660a3b42a0d3068c20e12d",
+  "artifact_sha256": {
+    "instances/cont2_control_recoverable_a_summary_r0_h1.json": "19933cf348c44c5e6f54ed7b84cfb7cedb6e6df4ceaef1bdaae8524e3e3d42e4",
+    "instances/cont2_information_a_cs_v031_r0_h1.json": "3efe84da6fdc29f69750a5cb7ed7bb046f099e244d35251d94c1890c98f5e481",
+    "instances/cont2_control_completed_a_cs_v02_r0_h1.json": "14922bd5110d6d5e1c909c64deb2f7bd71c7022519185406ec55213fe6ac3a90",
+    "instances/cont2_inflight_a_full_context_r0_h1.json": "78ea05d4cb32b4a00de6414922b076166f60b94e61e03f13cbe872af65e3dfff",
+    "instances/cont2_assumption_a_cs_v02_r0_h1.json": "6ec95a36ab260b2f1fe1cce7157e6ed7b3805cb27b60d4d47703dc5496977723",
+    "instances/cont2_control_completed_a_full_context_r0_h1.json": "49932782f46a37b2bbed59f6e44f1528180b1f5b2fe8b879d3481c00eb6046b6",
+    "instances/cont2_completed_b_cs_v031_r0_h1.json": "39597636a053cfbc9a68a97b1bdf1ed83885572ada72c4634498e4e87863f7f9",
+    "instances/cont2_belief_a_cs_v02_r0_h1.json": "b1490c82f65c2de3c471e0e2e4e9320a9604f07af0c7e04544a7ec09f5749c62",
+    "instances/cont2_inflight_a_cs_v031_r0_h1.json": "e757094c2c51868c28db8bf40f82cf53336d502f93d83594d6005e10402eedb2",
+    "instances/cont2_goal_a_full_context_r0_h1.json": "017dd0537237a182b852ca9e984624751394c2d7e3da32fc4efc309f76b1ac88",
+    "instances/cont2_goal_b_summary_r0_h1.json": "4e6fe561fc417bf0141a300de08e6508dd6b1a410039188f14c8174913386545",
+    "instances/cont2_information_b_cs_v02_r0_h1.json": "8d628b1224a119daeaa70dbfdfa356104b5bfddf8f82ac3014c828b984b6e2c9",
+    "instances/cont2_belief_b_cs_v02_r0_h1.json": "9bc6c675fdfd859a5e5ac2420bab285bd48bd261cbe54eef02b37718523bcff9",
+    "instances/cont2_completed_a_full_context_r0_h1.json": "623c7a2f55ac4ada90a6c2f52db0d3ca29dd9f034c49ab19bf763092ff5aa7c0",
+    "instances/cont2_assumption_b_cs_v02_r0_h1.json": "5579ea053c2487cb887814e3e8c0a534cf7121c8e7fb79ab79db86991b8f3c18",
+    "instances/cont2_completed_b_full_context_r0_h1.json": "d945bf0846e130c34002b7bcc8e1f58ff4705f9ee7c41b7fc7fd7b46f65be74d",
+    "instances/cont2_control_completed_a_summary_r0_h1.json": "715ac2264b02ca59d8b0f28cf3d7cc7d05edeba3284aa83f57e9ea4ba957d20e",
+    "instances/cont2_information_b_full_context_r0_h1.json": "39b0cf0d291834545b7b1ec02a7037473962f5171dd4534b58c749192e9e752d",
+    "instances/cont2_assumption_b_summary_r0_h1.json": "d945e6a0f1c6606aa8d13ef16e762962b0d21bcad02d535c8f336251628fad80",
+    "instances/cont2_goal_a_summary_r0_h1.json": "e1e61a2cd8548e76a3fb6d2aefe3c3490f718fdf32af6975e37af213829632f7",
+    "instances/cont2_inflight_a_cs_v02_r0_h1.json": "d0fb1320c516e5169d75b81940ae99a34f3dba2790d2082596525c8bcfaf87d8",
+    "instances/cont2_completed_a_cs_v031_r0_h1.json": "2cf3eb94484c4241388fffd294eeef335d41f320111e5d714d74345bd29e7d21",
+    "instances/cont2_inflight_b_cs_v031_r0_h1.json": "0ba594b1dd6948d97c3278000e59d57fce1de2bd3f102e51a14547d0c8eb4b6c",
+    "instances/cont2_inflight_b_summary_r0_h1.json": "2dd9788b84c1ce522d5db594c329e861d4bbb19bb54bffd0f880edda9eff7f8f",
+    "instances/cont2_completed_b_summary_r0_h1.json": "ec25d888928605d5562362c6f54cbea7d632a586cc5f1b26d9dd513a98e27fa2",
+    "instances/cont2_goal_a_cs_v02_r0_h1.json": "19549a5a9ec15111724e14dbaee33df6d39b33324830643b45b7760547292f78",
+    "instances/cont2_completed_a_cs_v02_r0_h1.json": "c1782aaca7adccf0202870bfd364da8375bdf1d1fd9b3b50b0e15c920bea6659",
+    "instances/cont2_goal_b_cs_v031_r0_h1.json": "673a367bafce9dc52bca5de5debb936c7fdad7d8f1271f7f1271bc3da0cab09e",
+    "instances/cont2_assumption_b_full_context_r0_h1.json": "1ec8e76bf8ee1c65a97970a0553b637f894ec987007aff7c18443805be82d84b",
+    "instances/cont2_goal_b_full_context_r0_h1.json": "6c7dd20c767f89f3592038b1722c340675c297146a2bb322fcacc1cdd4f658c9",
+    "instances/cont2_inflight_b_full_context_r0_h1.json": "a7b804a570046eeb1cfa4d4a4f5135b6b9ecd06aed5a928b5175b103fad8c55e",
+    "instances/cont2_assumption_a_full_context_r0_h1.json": "fb7473ee4881b9666e4affd6a314e63e0a7315924f9dda4e2a05003345f443d6",
+    "instances/cont2_information_a_summary_r0_h1.json": "cd07334f4ecebb63cd81763584956e907ecfcc1a0903d0ce4f0210e01f09be7f",
+    "instances/cont2_control_recoverable_a_cs_v02_r0_h1.json": "63e98a889b515b016e093be3b2a797db62cdb6a34253490fac88f9d1df0afa7c",
+    "instances/cont2_control_completed_a_cs_v031_r0_h1.json": "091ddf0e980155bcf4a2ebee8c75eb9e7e41ba4e9fef4b0e452d777008c27425",
+    "instances/cont2_belief_b_cs_v031_r0_h1.json": "b56d4f437f9ee510b741e8e9ef087cedcf25abbd80ac52d92b23a88eb090b4ab",
+    "instances/cont2_goal_b_cs_v02_r0_h1.json": "95fd37b4c10cfeca67d781aacf2e0c84fce838f16db79f02425d7f79aa1780bc",
+    "instances/cont2_information_a_full_context_r0_h1.json": "318847df7e0df1bc496924a7362dc0aed59545fb81db88128875012b686c6756",
+    "instances/cont2_belief_b_summary_r0_h1.json": "d129e53553a2649d17b63e30dc719aeeee7d69336b4b8d0a291cc2c28ba575d5",
+    "instances/cont2_assumption_b_cs_v031_r0_h1.json": "dc5997b8114a13b46ccfdf4425d8a416c7f199643d86d2adad19afe1cf46883d",
+    "instances/cont2_inflight_b_cs_v02_r0_h1.json": "bc8881a97687705361c8a604eadf229ff128ccc95c6b6ce25a0c0c5bb4583276",
+    "instances/cont2_control_recoverable_a_cs_v031_r0_h1.json": "628ba7719f6bc3f02c76f464a7bbbfe0fcea25757ab7f2d9aa3962cec6cb681b",
+    "instances/cont2_belief_a_summary_r0_h1.json": "b60e5b4da02c510046e739e7cad51b434b2936a9dec0aa3e153041c07e8b3b28",
+    "instances/cont2_completed_b_cs_v02_r0_h1.json": "99727bfa31ada880738d8797ea2c4f3ac174d51cb3215c840b471f93aea257a6",
+    "instances/cont2_belief_a_full_context_r0_h1.json": "76751994fcf5b7eed5446eb75ccac8454d461c35e8164fbc9078e57471f6eefc",
+    "instances/cont2_information_a_cs_v02_r0_h1.json": "b3c84b4c58e4b05ca182781a7a08487c394be358dbff54170d97e082205fbe8a",
+    "instances/cont2_information_b_summary_r0_h1.json": "c4b1e3c36637d999f81618b4379057e57e9c855e12dfcc69c1751adee290c0a8",
+    "instances/cont2_information_b_cs_v031_r0_h1.json": "ce4e3a4614acef4d1cc35f7fe5205822357dcea6d5ebffa948fb4c46378a1633",
+    "instances/cont2_belief_b_full_context_r0_h1.json": "524ed06f31aaa2bc80f1c90fe838b7fb219aad53845c834ca0bc4b596195ec69",
+    "instances/cont2_inflight_a_summary_r0_h1.json": "6f83a2ffbdc9f3b9a3a893983fcfdcbba341e194139134dbd11d7399082e5963",
+    "instances/cont2_assumption_a_summary_r0_h1.json": "3fdb419d3cf2f2856540e27675d0c3497a45a294d680cee7dee1e0c96595a9c0",
+    "instances/cont2_completed_a_summary_r0_h1.json": "1d7250c9fad3c12068ae6a26c5b6dc839e0661ff2040003ae55d48b3c4a3cfaa",
+    "instances/cont2_assumption_a_cs_v031_r0_h1.json": "16d486f74eeddf476d935bb349dd2a1606585fa2958a9c6443d85474ceef6cf2",
+    "instances/cont2_control_recoverable_a_full_context_r0_h1.json": "aa5831f96ca650215fe9e55fb6254708301f83d45feb3ce6724937518227dbf8",
+    "instances/cont2_goal_a_cs_v031_r0_h1.json": "bc7eb8db34c236d6a5f335682d43a02fd555c83fb7bfbdb164105e205f96b13b",
+    "instances/cont2_belief_a_cs_v031_r0_h1.json": "183f7833fd987b116671e5f76ebb081368506121edffb13bede03e0361540656"
+  },
+  "usage": {
+    "request_attempts": 165,
+    "successful_responses": 165,
+    "total_tokens": 440988,
+    "known_reported_tokens": 440988,
+    "unknown_usage_attempts": 0,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "all": {
+        "saved": 14,
+        "successes": 14,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 30,
+          "successful_responses": 30,
+          "total_tokens": 115569,
+          "known_reported_tokens": 115569,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 115150,
+        "output_tokens": 419,
+        "cached_input_tokens": 23296,
+        "response_latency_seconds": 48.8245984999885,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 12,
+        "successes": 12,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 26,
+          "successful_responses": 26,
+          "total_tokens": 107450,
+          "known_reported_tokens": 107450,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 107086,
+        "output_tokens": 364,
+        "cached_input_tokens": 23296,
+        "response_latency_seconds": 40.505521199986106,
+        "first_valid": 0,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 2,
+        "successes": 2,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 4,
+          "successful_responses": 4,
+          "total_tokens": 8119,
+          "known_reported_tokens": 8119,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 8064,
+        "output_tokens": 55,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 8.319077300002391,
+        "first_valid": 0,
+        "repair_calls": 0
+      }
+    },
+    "summary": {
+      "all": {
+        "saved": 14,
+        "successes": 14,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 44,
+          "successful_responses": 44,
+          "total_tokens": 93868,
+          "known_reported_tokens": 93868,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 90563,
+        "output_tokens": 3305,
+        "cached_input_tokens": 3840,
+        "response_latency_seconds": 129.1290902999972,
+        "first_valid": 14,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 12,
+        "successes": 12,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 38,
+          "successful_responses": 38,
+          "total_tokens": 84875,
+          "known_reported_tokens": 84875,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 81893,
+        "output_tokens": 2982,
+        "cached_input_tokens": 2304,
+        "response_latency_seconds": 118.66217189999588,
+        "first_valid": 12,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 2,
+        "successes": 2,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 6,
+          "successful_responses": 6,
+          "total_tokens": 8993,
+          "known_reported_tokens": 8993,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 8670,
+        "output_tokens": 323,
+        "cached_input_tokens": 1536,
+        "response_latency_seconds": 10.466918400001305,
+        "first_valid": 2,
+        "repair_calls": 0
+      }
+    },
+    "cs_v02": {
+      "all": {
+        "saved": 14,
+        "successes": 12,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 47,
+          "successful_responses": 47,
+          "total_tokens": 109928,
+          "known_reported_tokens": 109928,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 103323,
+        "output_tokens": 6605,
+        "cached_input_tokens": 9216,
+        "response_latency_seconds": 184.4480642000126,
+        "first_valid": 14,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 12,
+        "successes": 10,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 41,
+          "successful_responses": 41,
+          "total_tokens": 99497,
+          "known_reported_tokens": 99497,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 93686,
+        "output_tokens": 5811,
+        "cached_input_tokens": 7680,
+        "response_latency_seconds": 157.98873420000746,
+        "first_valid": 12,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 2,
+        "successes": 2,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 6,
+          "successful_responses": 6,
+          "total_tokens": 10431,
+          "known_reported_tokens": 10431,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 9637,
+        "output_tokens": 794,
+        "cached_input_tokens": 1536,
+        "response_latency_seconds": 26.45933000000514,
+        "first_valid": 2,
+        "repair_calls": 0
+      }
+    },
+    "cs_v031": {
+      "all": {
+        "saved": 14,
+        "successes": 14,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 44,
+          "successful_responses": 44,
+          "total_tokens": 121623,
+          "known_reported_tokens": 121623,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 112737,
+        "output_tokens": 8886,
+        "cached_input_tokens": 12288,
+        "response_latency_seconds": 162.50363649997598,
+        "first_valid": 14,
+        "repair_calls": 0
+      },
+      "main": {
+        "saved": 12,
+        "successes": 12,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 38,
+          "successful_responses": 38,
+          "total_tokens": 108470,
+          "known_reported_tokens": 108470,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 100765,
+        "output_tokens": 7705,
+        "cached_input_tokens": 12288,
+        "response_latency_seconds": 150.50550199997087,
+        "first_valid": 12,
+        "repair_calls": 0
+      },
+      "controls": {
+        "saved": 2,
+        "successes": 2,
+        "representation_errors": 0,
+        "skipped": 0,
+        "premature_completed": 0,
+        "usage": {
+          "request_attempts": 6,
+          "successful_responses": 6,
+          "total_tokens": 13153,
+          "known_reported_tokens": 13153,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "input_tokens": 11972,
+        "output_tokens": 1181,
+        "cached_input_tokens": 0,
+        "response_latency_seconds": 11.998134500005108,
+        "first_valid": 2,
+        "repair_calls": 0
+      }
+    }
+  },
+  "chains": [],
+  "paired_costs": [
+    {
+      "instance_id": "cont2_control_recoverable_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.01080993868989999
+    },
+    {
+      "instance_id": "cont2_information_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.29196636051787095
+    },
+    {
+      "instance_id": "cont2_control_completed_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.7308693388859968
+    },
+    {
+      "instance_id": "cont2_assumption_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.07462161210841245
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.06345620700277232
+    },
+    {
+      "instance_id": "cont2_belief_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.11222718253968256
+    },
+    {
+      "instance_id": "cont2_inflight_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.227253900317548
+    },
+    {
+      "instance_id": "cont2_goal_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.014634146341463428
+    },
+    {
+      "instance_id": "cont2_information_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.30864129232131
+    },
+    {
+      "instance_id": "cont2_belief_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.10887896825396826
+    },
+    {
+      "instance_id": "cont2_assumption_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.05489092188599587
+    },
+    {
+      "instance_id": "cont2_control_completed_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.48984903695991666
+    },
+    {
+      "instance_id": "cont2_assumption_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.030084447572132356
+    },
+    {
+      "instance_id": "cont2_goal_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.01605364763259498
+    },
+    {
+      "instance_id": "cont2_inflight_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.016567720557779886
+    },
+    {
+      "instance_id": "cont2_completed_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.06253850893407276
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.27577639751552785
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.05907522429261558
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.21737344696580763
+    },
+    {
+      "instance_id": "cont2_goal_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.1396057711847185
+    },
+    {
+      "instance_id": "cont2_completed_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.0271102895871842
+    },
+    {
+      "instance_id": "cont2_goal_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4428861788617886
+    },
+    {
+      "instance_id": "cont2_information_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.389952417837778
+    },
+    {
+      "instance_id": "cont2_control_recoverable_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.14649887060342048
+    },
+    {
+      "instance_id": "cont2_control_completed_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -1.3690786048932848
+    },
+    {
+      "instance_id": "cont2_belief_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.03831845238095233
+    },
+    {
+      "instance_id": "cont2_goal_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.5831300813008131
+    },
+    {
+      "instance_id": "cont2_belief_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.20027281746031744
+    },
+    {
+      "instance_id": "cont2_assumption_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.38142153413089375
+    },
+    {
+      "instance_id": "cont2_inflight_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.0066252587991717515
+    },
+    {
+      "instance_id": "cont2_control_recoverable_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3878670538883511
+    },
+    {
+      "instance_id": "cont2_belief_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.16902281746031744
+    },
+    {
+      "instance_id": "cont2_completed_b",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.032036143341205525
+    },
+    {
+      "instance_id": "cont2_information_a",
+      "condition": "cs_v02",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.3113311939803032
+    },
+    {
+      "instance_id": "cont2_information_b",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.4018588183226377
+    },
+    {
+      "instance_id": "cont2_information_b",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.2776609869440142
+    },
+    {
+      "instance_id": "cont2_inflight_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.037691564268949374
+    },
+    {
+      "instance_id": "cont2_assumption_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.025343189017951406
+    },
+    {
+      "instance_id": "cont2_completed_a",
+      "condition": "summary",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": 0.23649620045183817
+    },
+    {
+      "instance_id": "cont2_assumption_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.3537486800422387
+    },
+    {
+      "instance_id": "cont2_goal_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.4149563096931519
+    },
+    {
+      "instance_id": "cont2_belief_a",
+      "condition": "cs_v031",
+      "repetition": 0,
+      "handoff": 1,
+      "comparable": true,
+      "token_reduction": -0.023685515873015817
+    }
+  ],
+  "gate_evidence": {
+    "integrity": {
+      "no_hidden_input_leakage": true,
+      "equal_public_interface": true,
+      "scoring_replay_matches": true,
+      "world_and_history_boundaries_match": true,
+      "snapshot_hashes_match": true,
+      "source_authority_preserved": true,
+      "all_requests_accounted_once": true,
+      "no_unresolved_provider_error": true
+    },
+    "completed_cells": 56,
+    "unknown_usage_requests": 0,
+    "execution_manifest_verified": true,
+    "semantic_review_complete": false,
+    "final_valid": {
+      "summary": 14,
+      "cs_v02": 14,
+      "cs_v031": 14
+    }
+  },
+  "verification": "public inputs, authority, world carry, messages, scores and unique requests replayed"
+}

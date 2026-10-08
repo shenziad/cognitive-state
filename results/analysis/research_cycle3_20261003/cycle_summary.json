@@ -1,0 +1,257 @@
+{
+  "date": "2026-10-03",
+  "status": "stopped_at_preflight_gate",
+  "steps": {
+    "minimal_implementation": "implemented_offline_checked",
+    "reliability_preflight": "two_complete_runs_reviewed",
+    "four_condition_regression": "prepared_not_run_gate_failed",
+    "four_handoffs": "prepared_not_run_gate_failed"
+  },
+  "runs": [
+    {
+      "revision": "minimal-1",
+      "analysis": "results\\analysis\\cycle3_preflight_20261003\\analysis.json",
+      "analysis_sha256": "be1e139404186de66cbeae5bf3dbfbea9955e10ddfd0a4aef82829aff6b76ec3",
+      "conditions": {
+        "full_context": {
+          "all": {
+            "assigned": 24,
+            "successes": 24,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 55646,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 55058,
+            "output_tokens": 588,
+            "cached_input_tokens": 5120,
+            "latency_seconds": 57.77568849999989,
+            "repeated_attempts": 0
+          },
+          "main": {
+            "assigned": 24,
+            "successes": 24,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 55646,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 55058,
+            "output_tokens": 588,
+            "cached_input_tokens": 5120,
+            "latency_seconds": 57.77568849999989,
+            "repeated_attempts": 0
+          },
+          "controls": {
+            "assigned": 0,
+            "successes": 0,
+            "executed": 0,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 0,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "latency_seconds": 0,
+            "repeated_attempts": 0
+          }
+        },
+        "cs_v03": {
+          "all": {
+            "assigned": 24,
+            "successes": 15,
+            "executed": 15,
+            "representation_errors": 9,
+            "skipped": 0,
+            "first_valid": 5,
+            "repair_calls": 19,
+            "tokens": 113072,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 98122,
+            "output_tokens": 14950,
+            "cached_input_tokens": 6912,
+            "latency_seconds": 326.5602727000005,
+            "repeated_attempts": 0
+          },
+          "main": {
+            "assigned": 24,
+            "successes": 15,
+            "executed": 15,
+            "representation_errors": 9,
+            "skipped": 0,
+            "first_valid": 5,
+            "repair_calls": 19,
+            "tokens": 113072,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 98122,
+            "output_tokens": 14950,
+            "cached_input_tokens": 6912,
+            "latency_seconds": 326.5602727000005,
+            "repeated_attempts": 0
+          },
+          "controls": {
+            "assigned": 0,
+            "successes": 0,
+            "executed": 0,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 0,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "latency_seconds": 0,
+            "repeated_attempts": 0
+          }
+        }
+      },
+      "usage": {
+        "request_attempts": 113,
+        "successful_responses": 113,
+        "total_tokens": 168718,
+        "known_reported_tokens": 168718,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    },
+    {
+      "revision": "minimal-2",
+      "analysis": "results\\analysis\\cycle3_preflight_r2_20261003\\analysis.json",
+      "analysis_sha256": "c573fdc1b8a4bbc7f573b8a20e1b08918cb8400a4e14cb10da74973695892d7a",
+      "conditions": {
+        "full_context": {
+          "all": {
+            "assigned": 24,
+            "successes": 23,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 56483,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 55895,
+            "output_tokens": 588,
+            "cached_input_tokens": 10240,
+            "latency_seconds": 48.42673139999715,
+            "repeated_attempts": 0
+          },
+          "main": {
+            "assigned": 24,
+            "successes": 23,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 56483,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 55895,
+            "output_tokens": 588,
+            "cached_input_tokens": 10240,
+            "latency_seconds": 48.42673139999715,
+            "repeated_attempts": 0
+          },
+          "controls": {
+            "assigned": 0,
+            "successes": 0,
+            "executed": 0,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 0,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "latency_seconds": 0,
+            "repeated_attempts": 0
+          }
+        },
+        "cs_v03": {
+          "all": {
+            "assigned": 24,
+            "successes": 24,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 22,
+            "repair_calls": 2,
+            "tokens": 124023,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 109677,
+            "output_tokens": 14346,
+            "cached_input_tokens": 4608,
+            "latency_seconds": 279.1935250000097,
+            "repeated_attempts": 0
+          },
+          "main": {
+            "assigned": 24,
+            "successes": 24,
+            "executed": 24,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 22,
+            "repair_calls": 2,
+            "tokens": 124023,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 109677,
+            "output_tokens": 14346,
+            "cached_input_tokens": 4608,
+            "latency_seconds": 279.1935250000097,
+            "repeated_attempts": 0
+          },
+          "controls": {
+            "assigned": 0,
+            "successes": 0,
+            "executed": 0,
+            "representation_errors": 0,
+            "skipped": 0,
+            "first_valid": 0,
+            "repair_calls": 0,
+            "tokens": 0,
+            "tokens_scope": "reported known tokens, not complete cost if a request usage is unknown",
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cached_input_tokens": 0,
+            "latency_seconds": 0,
+            "repeated_attempts": 0
+          }
+        }
+      },
+      "usage": {
+        "request_attempts": 115,
+        "successful_responses": 115,
+        "total_tokens": 180506,
+        "known_reported_tokens": 180506,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      }
+    }
+  ],
+  "total_actual_usage": {
+    "request_attempts": 228,
+    "successful_responses": 228,
+    "total_tokens": 349224,
+    "unknown_usage_attempts": 0
+  },
+  "semantic_review": {
+    "report": "results\\analysis\\cycle3_preflight_r2_20261003\\semantic_review.json",
+    "sha256": "8ea9662092c177c3bac97b5ab9f6807b95c52582862815a669ceb8d71f26b46d",
+    "passed": false
+  },
+  "regression_model_calls": 0,
+  "longitudinal_model_calls": 0,
+  "scientific_claim": "Improved usability on these short preflight templates only; no summary comparison, long-horizon advantage, statistical equivalence, or token-saving conclusion.",
+  "gate_design_limitation": "The frozen zero-critical-errors rule also applies to Full, so one baseline task failure stops progression even with CS success. It is followed unchanged; a future protocol should distinguish engineering validity from measured behavioral errors before new calls."
+}

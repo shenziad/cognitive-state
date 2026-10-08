@@ -1,0 +1,178 @@
+{
+  "checkpoint": 3,
+  "instance_id": "iw03:h3",
+  "new_public_events": [
+    {
+      "id": "iw03:h3:u",
+      "role": "user",
+      "content": "Validate both current results e3 and w2. Final delivery still requires both validations. Earlier obligations continue unless explicitly withdrawn; fulfill any that remain missing. A requirement to preserve an item does not certify it exists: determine previous action success only from this condition's actual receipts."
+    },
+    {
+      "id": "iw03:h3:n5",
+      "role": "assistant",
+      "content": "Office coordination note 3-5: room Ash has a training session at 13:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:n6",
+      "role": "assistant",
+      "content": "Office coordination note 3-6: room Elm has a equipment demonstration at 14:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:n2",
+      "role": "assistant",
+      "content": "Office coordination note 3-2: room Ash has a training session at 10:00; coordinator group 2 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:n1",
+      "role": "assistant",
+      "content": "Office coordination note 3-1: room Maple has a planning meeting at 9:00; coordinator group 1 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:n3",
+      "role": "assistant",
+      "content": "Office coordination note 3-3: room Elm has a equipment demonstration at 11:00; coordinator group 3 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:e1",
+      "role": "tool",
+      "content": "Delayed callback for export-east-204 says running, seq=2. Public broker contract: per-job sequence numbers are monotone; a lower sequence cannot replace a newer status for that same job."
+    },
+    {
+      "id": "iw03:h3:n4",
+      "role": "assistant",
+      "content": "Office coordination note 3-4: room Maple has a planning meeting at 12:00; coordinator group 4 updated the attendance sheet."
+    },
+    {
+      "id": "iw03:h3:runtime",
+      "role": "runtime",
+      "content": "This checkpoint has 4 credits. Operations cost the public catalog amount; a failed paid attempt also consumes credits. Preserve actual prior actions and receipts across handoffs."
+    }
+  ],
+  "public_interface": {
+    "version": "lifecycle-interface-v1",
+    "catalog": {
+      "operations": [
+        {
+          "name": "resubmit_east",
+          "description": "Submit another east export; the accepted job is export-east-204.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "east_accepted": true
+          },
+          "successful_increments": {
+            "submissions": 1
+          },
+          "lifecycle_contract": {
+            "kind": "submission",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "resubmit_west",
+          "description": "Submit another west export; the accepted job is export-west-901.",
+          "cost": 1,
+          "preconditions": {},
+          "successful_effects": {
+            "west_accepted": true
+          },
+          "successful_increments": {
+            "submissions": 1
+          },
+          "lifecycle_contract": {
+            "kind": "submission",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "collect_east",
+          "description": "Collect the successful result of export-east-204, result e3.",
+          "cost": 1,
+          "preconditions": {
+            "east_accepted": true
+          },
+          "successful_effects": {
+            "east_done": true,
+            "east_seq": 8
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "job",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "collect_west",
+          "description": "Collect the successful result of export-west-901, result w2.",
+          "cost": 1,
+          "preconditions": {
+            "west_accepted": true
+          },
+          "successful_effects": {
+            "west_done": true,
+            "west_seq": 7
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "job",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "validate_east",
+          "description": "Validate east result e3.",
+          "cost": 1,
+          "preconditions": {
+            "east_done": true
+          },
+          "successful_effects": {
+            "east_validated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "validate_west",
+          "description": "Validate west result w2.",
+          "cost": 1,
+          "preconditions": {
+            "west_done": true
+          },
+          "successful_effects": {
+            "west_validated": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        },
+        {
+          "name": "deliver_pair",
+          "description": "Deliver the east and west export pair.",
+          "cost": 1,
+          "preconditions": {
+            "east_validated": true,
+            "west_validated": true
+          },
+          "successful_effects": {
+            "delivered": true
+          },
+          "successful_increments": {},
+          "lifecycle_contract": {
+            "kind": "sync_operation",
+            "semantics": "Success certifies only this operation's actual listed effects. Match object identity and result version; request acceptance is not job success."
+          }
+        }
+      ],
+      "resources": [],
+      "catalog_cost": 0
+    },
+    "remaining_credits": 4,
+    "credit_scope": "iw03:h3",
+    "receipt_contract": "Catalog effects and lifecycle contracts are definitions, never observations. Successful execute receipts certify actual listed effects and the returned lifecycle records. A completed accepted submission is not a succeeded job. Match entity identity and version. Goal completion depends on current requirements, including any explicit verification. Observe values remain hidden until read. Paid failed attempts consume credits. A failed operational precondition or budget check does not certify successful effects."
+  }
+}

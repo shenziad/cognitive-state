@@ -1,0 +1,14 @@
+{
+  "stage": "mechanism",
+  "complete": false,
+  "evidence_type": "api",
+  "usage": {
+    "request_attempts": 26,
+    "successful_responses": 25,
+    "total_tokens": null,
+    "known_reported_tokens": 78153,
+    "unknown_usage_attempts": 1,
+    "shared_extraction_counted_once": true
+  },
+  "verification": "preparation interrupted; full execution replay unavailable"
+}

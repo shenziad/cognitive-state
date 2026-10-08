@@ -1,0 +1,2366 @@
+{
+  "experiment_id": "cycle4-recovery-v1",
+  "execution_version": "cycle4-execution-v2",
+  "recovery_plan_sha256": "677e8f6e9acebdac6fb2f21c72afa32bbdedf1625f97e6897b95700d206c3453",
+  "stages": [
+    {
+      "stage": "preflight",
+      "complete": true,
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\preflight_recovery_v1_20261003",
+      "evidence_type": "api",
+      "execution_version": "cycle4-execution-v2",
+      "results_sha256": "260ba07c5b8a49ffbf60b9484e1cddd8b1c5731ad44548b5cea432de6927888a",
+      "ledger_sha256": "7e66bf32a74a34160b6583ec42a65c768343d72ba1db6e54f25cdd353c820d60",
+      "actual_usage": {
+        "request_attempts": 294,
+        "successful_responses": 294,
+        "total_tokens": 511423,
+        "known_reported_tokens": 511423,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "conditions": {
+        "full_context": {
+          "assigned": 24,
+          "saved": 24,
+          "successes": 23,
+          "executed": 24,
+          "statuses": {
+            "completed": 24
+          },
+          "final_valid": null,
+          "first_valid": null,
+          "premature_completed": 0,
+          "policy_violations": 1,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 57,
+            "successful_responses": 57,
+            "total_tokens": 91743,
+            "known_reported_tokens": 91743,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "executor": {
+              "request_attempts": 57,
+              "successful_responses": 57,
+              "total_tokens": 91743,
+              "known_reported_tokens": 91743,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 90957,
+          "output_tokens": 786,
+          "latency_seconds": 85.87274810000963,
+          "cached_input_tokens": 8192
+        },
+        "summary": {
+          "assigned": 24,
+          "saved": 24,
+          "successes": 24,
+          "executed": 24,
+          "statuses": {
+            "completed": 24
+          },
+          "final_valid": 24,
+          "first_valid": 24,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 77,
+            "successful_responses": 77,
+            "total_tokens": 114718,
+            "known_reported_tokens": 114718,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 24,
+              "successful_responses": 24,
+              "total_tokens": 30055,
+              "known_reported_tokens": 30055,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 53,
+              "successful_responses": 53,
+              "total_tokens": 84663,
+              "known_reported_tokens": 84663,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 109318,
+          "output_tokens": 5400,
+          "latency_seconds": 195.98559730005218,
+          "cached_input_tokens": 4608
+        },
+        "cs_v02": {
+          "assigned": 24,
+          "saved": 24,
+          "successes": 22,
+          "executed": 24,
+          "statuses": {
+            "completed": 24
+          },
+          "final_valid": 24,
+          "first_valid": 24,
+          "premature_completed": 0,
+          "policy_violations": 2,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 83,
+            "successful_responses": 83,
+            "total_tokens": 142598,
+            "known_reported_tokens": 142598,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 24,
+              "successful_responses": 24,
+              "total_tokens": 36126,
+              "known_reported_tokens": 36126,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 59,
+              "successful_responses": 59,
+              "total_tokens": 106472,
+              "known_reported_tokens": 106472,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 132243,
+          "output_tokens": 10355,
+          "latency_seconds": 288.25519519999943,
+          "cached_input_tokens": 11264
+        },
+        "cs_v031": {
+          "assigned": 24,
+          "saved": 24,
+          "successes": 22,
+          "executed": 24,
+          "statuses": {
+            "completed": 24
+          },
+          "final_valid": 24,
+          "first_valid": 24,
+          "premature_completed": 0,
+          "policy_violations": 2,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 77,
+            "successful_responses": 77,
+            "total_tokens": 162364,
+            "known_reported_tokens": 162364,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 24,
+              "successful_responses": 24,
+              "total_tokens": 62712,
+              "known_reported_tokens": 62712,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 53,
+              "successful_responses": 53,
+              "total_tokens": 99652,
+              "known_reported_tokens": 99652,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 147613,
+          "output_tokens": 14751,
+          "latency_seconds": 291.1862714000017,
+          "cached_input_tokens": 17152
+        }
+      },
+      "review_counts": {
+        "summary": {
+          "entity_phase_confusion": {
+            "correct": 19,
+            "incorrect": 3,
+            "ambiguous": 2
+          },
+          "unsupported_completion": {
+            "correct": 24
+          },
+          "invented_requirement": {
+            "incorrect": 7,
+            "correct": 16,
+            "ambiguous": 1
+          },
+          "missing_pending_job": {
+            "correct": 12,
+            "not_observed": 11,
+            "ambiguous": 1
+          },
+          "unsupported_reopened_question": {
+            "correct": 19,
+            "incorrect": 5
+          },
+          "missing_decision_dependency": {
+            "correct": 18,
+            "incorrect": 5,
+            "ambiguous": 1
+          }
+        },
+        "cs_v02": {
+          "entity_phase_confusion": {
+            "correct": 19,
+            "ambiguous": 1,
+            "incorrect": 4
+          },
+          "unsupported_completion": {
+            "correct": 24
+          },
+          "invented_requirement": {
+            "incorrect": 12,
+            "correct": 12
+          },
+          "missing_pending_job": {
+            "correct": 16,
+            "not_observed": 8
+          },
+          "unsupported_reopened_question": {
+            "correct": 14,
+            "ambiguous": 4,
+            "incorrect": 6
+          },
+          "missing_decision_dependency": {
+            "correct": 18,
+            "incorrect": 3,
+            "ambiguous": 3
+          }
+        },
+        "cs_v031": {
+          "entity_phase_confusion": {
+            "correct": 19,
+            "incorrect": 2,
+            "ambiguous": 3
+          },
+          "unsupported_completion": {
+            "correct": 24
+          },
+          "invented_requirement": {
+            "correct": 17,
+            "incorrect": 7
+          },
+          "missing_pending_job": {
+            "not_observed": 9,
+            "correct": 15
+          },
+          "unsupported_reopened_question": {
+            "correct": 22,
+            "incorrect": 2
+          },
+          "missing_decision_dependency": {
+            "correct": 22,
+            "incorrect": 2
+          }
+        }
+      },
+      "review_sha256": "5516389a23977ac431b03c7a10e96d938f02c89f2c104cddee5bb640a1fe5d4b",
+      "audit_sha256": "134babd47569d47eb14f2c63df213438a5393def8947d3323d3a58cb35da4050",
+      "chains": [],
+      "failures": [
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "job_done": true,
+              "submissions": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 3,
+            "workspace_credit_budget": 2,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/p4_003_cs_v02_r1_h1.json"
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "job_done": true,
+              "submissions": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 3,
+            "workspace_credit_budget": 2,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/p4_003_cs_v02_r0_h1.json"
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "job_done": true,
+              "submissions": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 3,
+            "workspace_credit_budget": 2,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/p4_003_cs_v031_r1_h1.json"
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "full_context",
+          "repetition": 1,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "job_done": true,
+              "submissions": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 3,
+            "workspace_credit_budget": 2,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/p4_003_full_context_r1_h1.json"
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "job_done": true,
+              "submissions": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 3,
+            "workspace_credit_budget": 2,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/p4_003_cs_v031_r0_h1.json"
+        }
+      ],
+      "limits": [
+        "Small known synthetic development tasks; no unseen generalization claim.",
+        "Assistant content annotations; not independent human gold and not condition blinded.",
+        "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+        "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+      ],
+      "status": "completed",
+      "source_review": {
+        "entries": 72,
+        "observed_representations": 72,
+        "with_concrete_error": 35,
+        "with_ambiguity": 15,
+        "by_condition": {
+          "summary": {
+            "entries": 24,
+            "observed_representations": 24,
+            "with_concrete_error": 11
+          },
+          "cs_v02": {
+            "entries": 24,
+            "observed_representations": 24,
+            "with_concrete_error": 15
+          },
+          "cs_v031": {
+            "entries": 24,
+            "observed_representations": 24,
+            "with_concrete_error": 9
+          }
+        }
+      },
+      "gate_status": "passed",
+      "paired_costs": [
+        {
+          "instance_id": "p4_006",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4403687720674774
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0689655172413794
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.27332274712187377
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.7566096423017106
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5378323108384457
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5087956698240865
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.41583961889638754
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.316196903533148
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.698378164556962
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3947044334975369
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.45712584358872577
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.4734539669914496
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.004131418453669045
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.8029620090148102
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.7720540888602705
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0693504736129906
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0344827586206895
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0480572597137012
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.28216345197852455
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.8692852543464262
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.31575091575091574
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0470347648261757
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.9875457875457876
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3080586080586081
+        },
+        {
+          "instance_id": "p4_006",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.27795213809337005
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6295669824086603
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.9452672247263361
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6150855365474339
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5606680299931834
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6677398583386993
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.39661617155223294
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3150263620386644
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.31084005508557944
+        },
+        {
+          "instance_id": "p4_006",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.2850137308748528
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7692461908580595
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6256410256410256
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0606527093596059
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.39014997973246857
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.7566096423017106
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.2570812807881775
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6382542472173403
+        },
+        {
+          "instance_id": "p4_006",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4764613573950569
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6710730948678072
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.36912065439672803
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4367088607594938
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3062723302897976
+        },
+        {
+          "instance_id": "p4_006",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7165555119654767
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4477848101265822
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7608431293068505
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6400874925432491
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0683355886332881
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.09856473345049799
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.3001555209953342
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.2585087546724376
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.8901098901098901
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "cs_v031",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.6902689873417722
+        },
+        {
+          "instance_id": "p4_002",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.9954925949774629
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.22567246835443044
+        },
+        {
+          "instance_id": "p4_004",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.17345727848101267
+        },
+        {
+          "instance_id": "p4_006",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.759709690074539
+        },
+        {
+          "instance_id": "p4_010",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7198917456021652
+        },
+        {
+          "instance_id": "p4_012",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4875457875457876
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.319767441860465
+        },
+        {
+          "instance_id": "p4_008",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.2413793103448274
+        },
+        {
+          "instance_id": "p4_011",
+          "condition": "cs_v02",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.8802488335925349
+        },
+        {
+          "instance_id": "p4_009",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3588957055214723
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "summary",
+          "repetition": 1,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.421601416486327
+        },
+        {
+          "instance_id": "p4_007",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3852857721929468
+        },
+        {
+          "instance_id": "p4_005",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3006098760574465
+        },
+        {
+          "instance_id": "p4_001",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.31183009130607386
+        },
+        {
+          "instance_id": "p4_003",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.1511627906976742
+        }
+      ]
+    },
+    {
+      "stage": "regression",
+      "complete": true,
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\regression_recovery_v1_20261003",
+      "evidence_type": "api",
+      "execution_version": "cycle4-execution-v2",
+      "results_sha256": "6ba156748428b7df63bc2d03f4bdb4121b5669fedceffce1961af85c523a0b96",
+      "ledger_sha256": "99aec6496ee2c8ec15f003a0d91eef268197a790d219cbd9f3b60ee12b958207",
+      "actual_usage": {
+        "request_attempts": 165,
+        "successful_responses": 165,
+        "total_tokens": 440988,
+        "known_reported_tokens": 440988,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "conditions": {
+        "full_context": {
+          "assigned": 14,
+          "saved": 14,
+          "successes": 14,
+          "executed": 14,
+          "statuses": {
+            "completed": 14
+          },
+          "final_valid": null,
+          "first_valid": null,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 30,
+            "successful_responses": 30,
+            "total_tokens": 115569,
+            "known_reported_tokens": 115569,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "executor": {
+              "request_attempts": 30,
+              "successful_responses": 30,
+              "total_tokens": 115569,
+              "known_reported_tokens": 115569,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 115150,
+          "output_tokens": 419,
+          "latency_seconds": 48.8245984999885,
+          "cached_input_tokens": 23296
+        },
+        "summary": {
+          "assigned": 14,
+          "saved": 14,
+          "successes": 14,
+          "executed": 14,
+          "statuses": {
+            "completed": 14
+          },
+          "final_valid": 14,
+          "first_valid": 14,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 44,
+            "successful_responses": 44,
+            "total_tokens": 93868,
+            "known_reported_tokens": 93868,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 14,
+              "successful_responses": 14,
+              "total_tokens": 45738,
+              "known_reported_tokens": 45738,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 30,
+              "successful_responses": 30,
+              "total_tokens": 48130,
+              "known_reported_tokens": 48130,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 90563,
+          "output_tokens": 3305,
+          "latency_seconds": 129.1290902999972,
+          "cached_input_tokens": 3840
+        },
+        "cs_v02": {
+          "assigned": 14,
+          "saved": 14,
+          "successes": 12,
+          "executed": 14,
+          "statuses": {
+            "completed": 14
+          },
+          "final_valid": 14,
+          "first_valid": 14,
+          "premature_completed": 0,
+          "policy_violations": 2,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 47,
+            "successful_responses": 47,
+            "total_tokens": 109928,
+            "known_reported_tokens": 109928,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 14,
+              "successful_responses": 14,
+              "total_tokens": 49683,
+              "known_reported_tokens": 49683,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 33,
+              "successful_responses": 33,
+              "total_tokens": 60245,
+              "known_reported_tokens": 60245,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 103323,
+          "output_tokens": 6605,
+          "latency_seconds": 184.4480642000126,
+          "cached_input_tokens": 9216
+        },
+        "cs_v031": {
+          "assigned": 14,
+          "saved": 14,
+          "successes": 14,
+          "executed": 14,
+          "statuses": {
+            "completed": 14
+          },
+          "final_valid": 14,
+          "first_valid": 14,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 44,
+            "successful_responses": 44,
+            "total_tokens": 121623,
+            "known_reported_tokens": 121623,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 14,
+              "successful_responses": 14,
+              "total_tokens": 64913,
+              "known_reported_tokens": 64913,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 30,
+              "successful_responses": 30,
+              "total_tokens": 56710,
+              "known_reported_tokens": 56710,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 112737,
+          "output_tokens": 8886,
+          "latency_seconds": 162.50363649997598,
+          "cached_input_tokens": 12288
+        }
+      },
+      "review_counts": {
+        "summary": {
+          "entity_phase_confusion": {
+            "correct": 14
+          },
+          "unsupported_completion": {
+            "correct": 12,
+            "ambiguous": 1,
+            "incorrect": 1
+          },
+          "invented_requirement": {
+            "correct": 14
+          },
+          "missing_pending_job": {
+            "correct": 10,
+            "not_observed": 4
+          },
+          "unsupported_reopened_question": {
+            "correct": 14
+          },
+          "missing_decision_dependency": {
+            "correct": 14
+          }
+        },
+        "cs_v02": {
+          "entity_phase_confusion": {
+            "correct": 14
+          },
+          "unsupported_completion": {
+            "correct": 14
+          },
+          "invented_requirement": {
+            "correct": 12,
+            "incorrect": 1,
+            "ambiguous": 1
+          },
+          "missing_pending_job": {
+            "correct": 10,
+            "not_observed": 4
+          },
+          "unsupported_reopened_question": {
+            "ambiguous": 4,
+            "correct": 8,
+            "incorrect": 2
+          },
+          "missing_decision_dependency": {
+            "correct": 12,
+            "incorrect": 2
+          }
+        },
+        "cs_v031": {
+          "entity_phase_confusion": {
+            "correct": 12,
+            "ambiguous": 2
+          },
+          "unsupported_completion": {
+            "correct": 14
+          },
+          "invented_requirement": {
+            "correct": 14
+          },
+          "missing_pending_job": {
+            "correct": 9,
+            "not_observed": 5
+          },
+          "unsupported_reopened_question": {
+            "correct": 14
+          },
+          "missing_decision_dependency": {
+            "correct": 14
+          }
+        }
+      },
+      "review_sha256": "4964dc230c43bae8846c8fef99ed4b3b46af9efc3cd55e00e7c4559c88c057aa",
+      "audit_sha256": "8de0e9198e4a48212058d32aebdeffe0b4101629e1ee626a77d265127fc20736",
+      "chains": [],
+      "failures": [
+        {
+          "instance_id": "cont2_completed_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.6666666666666666,
+            "goal_checks": {
+              "oak_calibrated": true,
+              "elm_calibrated": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": true
+            },
+            "workspace_credits_spent": 4,
+            "workspace_credit_budget": 3,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/cont2_completed_a_cs_v02_r0_h1.json"
+        },
+        {
+          "instance_id": "cont2_completed_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 1.0,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.6666666666666666,
+            "goal_checks": {
+              "oak_calibrated": true,
+              "elm_calibrated": true
+            },
+            "decision_checks": {
+              "final_requirements_met": true,
+              "constraints_respected": false,
+              "completion_status_correct": true
+            },
+            "workspace_credits_spent": 4,
+            "workspace_credit_budget": 3,
+            "policy_violation_count": 1,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/cont2_completed_b_cs_v02_r0_h1.json"
+        }
+      ],
+      "limits": [
+        "Small known synthetic development tasks; no unseen generalization claim.",
+        "Assistant content annotations; not independent human gold and not condition blinded.",
+        "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+        "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+      ],
+      "status": "completed",
+      "source_review": {
+        "entries": 42,
+        "observed_representations": 42,
+        "with_concrete_error": 4,
+        "with_ambiguity": 8,
+        "by_condition": {
+          "summary": {
+            "entries": 14,
+            "observed_representations": 14,
+            "with_concrete_error": 1
+          },
+          "cs_v02": {
+            "entries": 14,
+            "observed_representations": 14,
+            "with_concrete_error": 3
+          },
+          "cs_v031": {
+            "entries": 14,
+            "observed_representations": 14,
+            "with_concrete_error": 0
+          }
+        }
+      },
+      "gate_status": "passed",
+      "paired_costs": [
+        {
+          "instance_id": "cont2_control_recoverable_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.01080993868989999
+        },
+        {
+          "instance_id": "cont2_information_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.29196636051787095
+        },
+        {
+          "instance_id": "cont2_control_completed_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7308693388859968
+        },
+        {
+          "instance_id": "cont2_assumption_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.07462161210841245
+        },
+        {
+          "instance_id": "cont2_completed_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.06345620700277232
+        },
+        {
+          "instance_id": "cont2_belief_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.11222718253968256
+        },
+        {
+          "instance_id": "cont2_inflight_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.227253900317548
+        },
+        {
+          "instance_id": "cont2_goal_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.014634146341463428
+        },
+        {
+          "instance_id": "cont2_information_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.30864129232131
+        },
+        {
+          "instance_id": "cont2_belief_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.10887896825396826
+        },
+        {
+          "instance_id": "cont2_assumption_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.05489092188599587
+        },
+        {
+          "instance_id": "cont2_control_completed_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.48984903695991666
+        },
+        {
+          "instance_id": "cont2_assumption_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.030084447572132356
+        },
+        {
+          "instance_id": "cont2_goal_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.01605364763259498
+        },
+        {
+          "instance_id": "cont2_inflight_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.016567720557779886
+        },
+        {
+          "instance_id": "cont2_completed_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.06253850893407276
+        },
+        {
+          "instance_id": "cont2_inflight_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.27577639751552785
+        },
+        {
+          "instance_id": "cont2_inflight_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.05907522429261558
+        },
+        {
+          "instance_id": "cont2_completed_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.21737344696580763
+        },
+        {
+          "instance_id": "cont2_goal_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.1396057711847185
+        },
+        {
+          "instance_id": "cont2_completed_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.0271102895871842
+        },
+        {
+          "instance_id": "cont2_goal_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4428861788617886
+        },
+        {
+          "instance_id": "cont2_information_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.389952417837778
+        },
+        {
+          "instance_id": "cont2_control_recoverable_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.14649887060342048
+        },
+        {
+          "instance_id": "cont2_control_completed_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.3690786048932848
+        },
+        {
+          "instance_id": "cont2_belief_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.03831845238095233
+        },
+        {
+          "instance_id": "cont2_goal_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5831300813008131
+        },
+        {
+          "instance_id": "cont2_belief_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.20027281746031744
+        },
+        {
+          "instance_id": "cont2_assumption_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.38142153413089375
+        },
+        {
+          "instance_id": "cont2_inflight_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.0066252587991717515
+        },
+        {
+          "instance_id": "cont2_control_recoverable_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3878670538883511
+        },
+        {
+          "instance_id": "cont2_belief_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.16902281746031744
+        },
+        {
+          "instance_id": "cont2_completed_b",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.032036143341205525
+        },
+        {
+          "instance_id": "cont2_information_a",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.3113311939803032
+        },
+        {
+          "instance_id": "cont2_information_b",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.4018588183226377
+        },
+        {
+          "instance_id": "cont2_information_b",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.2776609869440142
+        },
+        {
+          "instance_id": "cont2_inflight_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.037691564268949374
+        },
+        {
+          "instance_id": "cont2_assumption_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.025343189017951406
+        },
+        {
+          "instance_id": "cont2_completed_a",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": 0.23649620045183817
+        },
+        {
+          "instance_id": "cont2_assumption_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3537486800422387
+        },
+        {
+          "instance_id": "cont2_goal_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.4149563096931519
+        },
+        {
+          "instance_id": "cont2_belief_a",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.023685515873015817
+        }
+      ]
+    },
+    {
+      "stage": "longitudinal",
+      "complete": true,
+      "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\longitudinal_recovery_v1_20261003",
+      "evidence_type": "api",
+      "execution_version": "cycle4-execution-v2",
+      "results_sha256": "8c3f85ca192abc48939e1f91a83e6aaa25b1ab30f19e6e530c375a2d53d77343",
+      "ledger_sha256": "19c387c4b283367b71bf98549572a21b2e5c45ccbb2506720a749a9ae1a9ec9c",
+      "actual_usage": {
+        "request_attempts": 111,
+        "successful_responses": 111,
+        "total_tokens": 267733,
+        "known_reported_tokens": 267733,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "conditions": {
+        "full_context": {
+          "assigned": 8,
+          "saved": 8,
+          "successes": 8,
+          "executed": 8,
+          "statuses": {
+            "completed": 8
+          },
+          "final_valid": null,
+          "first_valid": null,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 22,
+            "successful_responses": 22,
+            "total_tokens": 55325,
+            "known_reported_tokens": 55325,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "executor": {
+              "request_attempts": 22,
+              "successful_responses": 22,
+              "total_tokens": 55325,
+              "known_reported_tokens": 55325,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 55023,
+          "output_tokens": 302,
+          "latency_seconds": 26.7549710999956,
+          "cached_input_tokens": 23552
+        },
+        "summary": {
+          "assigned": 8,
+          "saved": 8,
+          "successes": 7,
+          "executed": 8,
+          "statuses": {
+            "completed": 8
+          },
+          "final_valid": 8,
+          "first_valid": 8,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 29,
+            "successful_responses": 29,
+            "total_tokens": 57471,
+            "known_reported_tokens": 57471,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 8,
+              "successful_responses": 8,
+              "total_tokens": 16772,
+              "known_reported_tokens": 16772,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 21,
+              "successful_responses": 21,
+              "total_tokens": 40699,
+              "known_reported_tokens": 40699,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 54576,
+          "output_tokens": 2895,
+          "latency_seconds": 79.82701890001772,
+          "cached_input_tokens": 9984
+        },
+        "cs_v02": {
+          "assigned": 8,
+          "saved": 8,
+          "successes": 8,
+          "executed": 8,
+          "statuses": {
+            "completed": 8
+          },
+          "final_valid": 8,
+          "first_valid": 8,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 30,
+            "successful_responses": 30,
+            "total_tokens": 66416,
+            "known_reported_tokens": 66416,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 8,
+              "successful_responses": 8,
+              "total_tokens": 20074,
+              "known_reported_tokens": 20074,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 22,
+              "successful_responses": 22,
+              "total_tokens": 46342,
+              "known_reported_tokens": 46342,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 61779,
+          "output_tokens": 4637,
+          "latency_seconds": 106.9682735999886,
+          "cached_input_tokens": 12800
+        },
+        "cs_v031": {
+          "assigned": 8,
+          "saved": 8,
+          "successes": 8,
+          "executed": 8,
+          "statuses": {
+            "completed": 8
+          },
+          "final_valid": 8,
+          "first_valid": 8,
+          "premature_completed": 0,
+          "policy_violations": 0,
+          "repeat_attempts": 0,
+          "usage": {
+            "request_attempts": 30,
+            "successful_responses": 30,
+            "total_tokens": 88521,
+            "known_reported_tokens": 88521,
+            "unknown_usage_attempts": 0,
+            "shared_extraction_counted_once": true
+          },
+          "phase_usage": {
+            "extraction": {
+              "request_attempts": 8,
+              "successful_responses": 8,
+              "total_tokens": 33838,
+              "known_reported_tokens": 33838,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            },
+            "executor": {
+              "request_attempts": 22,
+              "successful_responses": 22,
+              "total_tokens": 54683,
+              "known_reported_tokens": 54683,
+              "unknown_usage_attempts": 0,
+              "shared_extraction_counted_once": true
+            }
+          },
+          "input_tokens": 79637,
+          "output_tokens": 8884,
+          "latency_seconds": 130.38211060001777,
+          "cached_input_tokens": 14848
+        }
+      },
+      "review_counts": {
+        "summary": {
+          "entity_phase_confusion": {
+            "correct": 8
+          },
+          "unsupported_completion": {
+            "correct": 8
+          },
+          "invented_requirement": {
+            "correct": 8
+          },
+          "missing_pending_job": {
+            "correct": 8
+          },
+          "unsupported_reopened_question": {
+            "correct": 8
+          },
+          "missing_decision_dependency": {
+            "correct": 6,
+            "incorrect": 2
+          }
+        },
+        "cs_v02": {
+          "entity_phase_confusion": {
+            "correct": 8
+          },
+          "unsupported_completion": {
+            "correct": 8
+          },
+          "invented_requirement": {
+            "ambiguous": 1,
+            "correct": 7
+          },
+          "missing_pending_job": {
+            "correct": 8
+          },
+          "unsupported_reopened_question": {
+            "correct": 8
+          },
+          "missing_decision_dependency": {
+            "correct": 8
+          }
+        },
+        "cs_v031": {
+          "entity_phase_confusion": {
+            "correct": 7,
+            "ambiguous": 1
+          },
+          "unsupported_completion": {
+            "correct": 8
+          },
+          "invented_requirement": {
+            "correct": 8
+          },
+          "missing_pending_job": {
+            "correct": 8
+          },
+          "unsupported_reopened_question": {
+            "correct": 8
+          },
+          "missing_decision_dependency": {
+            "ambiguous": 4,
+            "correct": 4
+          }
+        }
+      },
+      "review_sha256": "064e077c1425ff1565c634934cc29ce7f4f0f7ad1389d0b5c92f9637223d9388",
+      "audit_sha256": "0f28e0916e0a4ed6e0e2a9c0d23467e6ba22f73a521e9c755588a82431b5d3c9",
+      "chains": [
+        {
+          "scenario": "archive_workflow",
+          "condition": "full_context",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "archive_workflow",
+          "condition": "summary",
+          "success": false,
+          "handoff_successes": 3,
+          "saved": 4
+        },
+        {
+          "scenario": "archive_workflow",
+          "condition": "cs_v02",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "archive_workflow",
+          "condition": "cs_v031",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "release_workflow",
+          "condition": "full_context",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "release_workflow",
+          "condition": "summary",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "release_workflow",
+          "condition": "cs_v02",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        },
+        {
+          "scenario": "release_workflow",
+          "condition": "cs_v031",
+          "success": true,
+          "handoff_successes": 4,
+          "saved": 4
+        }
+      ],
+      "failures": [
+        {
+          "instance_id": "archive_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 4,
+          "status": "completed",
+          "error": null,
+          "metrics": {
+            "task_success": false,
+            "final_goal_completion": 0.8571428571428571,
+            "tool_usage_correctness": 1.0,
+            "decision_consistency": 0.3333333333333333,
+            "goal_checks": {
+              "right_repaired": true,
+              "left_repaired": true,
+              "job_submitted": true,
+              "job_done": true,
+              "validation_A": true,
+              "validation_B": true,
+              "sealed_branch": false
+            },
+            "decision_checks": {
+              "final_requirements_met": false,
+              "constraints_respected": true,
+              "completion_status_correct": false
+            },
+            "workspace_credits_spent": 0,
+            "workspace_credit_budget": 1,
+            "policy_violation_count": 0,
+            "repeated_work_count": 0,
+            "unavailable_observation_count": 0
+          },
+          "artifact": "instances/archive_workflow_summary_r0_h4.json"
+        }
+      ],
+      "limits": [
+        "Small known synthetic development tasks; no unseen generalization claim.",
+        "Assistant content annotations; not independent human gold and not condition blinded.",
+        "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+        "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+      ],
+      "status": "completed",
+      "source_review": {
+        "entries": 24,
+        "observed_representations": 24,
+        "with_concrete_error": 2,
+        "with_ambiguity": 5,
+        "by_condition": {
+          "summary": {
+            "entries": 8,
+            "observed_representations": 8,
+            "with_concrete_error": 2
+          },
+          "cs_v02": {
+            "entries": 8,
+            "observed_representations": 8,
+            "with_concrete_error": 0
+          },
+          "cs_v031": {
+            "entries": 8,
+            "observed_representations": 8,
+            "with_concrete_error": 0
+          }
+        }
+      },
+      "gate_status": "passed",
+      "paired_costs": [
+        {
+          "instance_id": "release_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.399547072144937
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -0.125985977212971
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": 0.02337801608579093
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": -0.0036214389183968354
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.49603769543799525
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -0.5107747562852745
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": -0.09901738473167043
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": -0.11361487551213356
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.3296209038337974
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -0.28809645972293474
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": 0.06613756613756616
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "summary",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": 0.3172076898833911
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -1.0197347136848918
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -0.42846187554776516
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": -0.4324932975871314
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": -0.5703766296475132
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.7228528592846435
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -1.003335043612109
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": -0.46343537414965996
+        },
+        {
+          "instance_id": "archive_workflow",
+          "condition": "cs_v031",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": -0.8168925307280177
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 1,
+          "comparable": true,
+          "token_reduction": -0.5865415723066969
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 2,
+          "comparable": true,
+          "token_reduction": -0.2188869412795793
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 3,
+          "comparable": true,
+          "token_reduction": -0.051689008042895335
+        },
+        {
+          "instance_id": "release_workflow",
+          "condition": "cs_v02",
+          "repetition": 0,
+          "handoff": 4,
+          "comparable": true,
+          "token_reduction": -0.08715596330275233
+        }
+      ]
+    }
+  ],
+  "prior_interrupted_usage": {
+    "request_attempts": 58,
+    "successful_responses": 57,
+    "total_tokens": null,
+    "known_reported_tokens": 100764,
+    "unknown_usage_attempts": 1,
+    "shared_extraction_counted_once": true
+  },
+  "service_probe": {
+    "purpose": "service_probe_not_experimental_cell",
+    "model": "deepseek-ai/DeepSeek-V4-Flash",
+    "config_sha256": "886758acd416f2cb59ada5cf0e37c33753efd96f2fb131751bddc48b77fb3790",
+    "request_attempts": 1,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with OK."
+      }
+    ],
+    "max_tokens": 8,
+    "temperature": 0,
+    "extra_body": {
+      "enable_thinking": false
+    },
+    "total_tokens": 10,
+    "unknown_usage_attempts": 0,
+    "status": "response_received",
+    "response_id": "01a101f9a460b40e81734f6091e6ea47",
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 8,
+      "total_tokens": 10,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": null,
+        "audio_tokens": null,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": null
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 8
+    },
+    "latency_seconds": 1.7987261000016588
+  },
+  "entire_campaign_usage": {
+    "request_attempts": 629,
+    "successful_responses": 628,
+    "known_reported_tokens": 1320918,
+    "total_tokens": null,
+    "unknown_usage_attempts": 1
+  },
+  "limits": [
+    "Recovery is a separate full run; partial rows are never merged into its denominator.",
+    "Task success and encoding validity do not establish source-grounded state correctness.",
+    "All tasks are known synthetic development data; repetitions are correlated.",
+    "Assistant review is not independent human gold or condition-blinded.",
+    "Unknown usage remains unknown; token totals are not currency amounts."
+  ]
+}

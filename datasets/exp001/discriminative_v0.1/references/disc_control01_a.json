@@ -1,0 +1,62 @@
+{
+  "instance_id": "disc_control01_a",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Select the currently qualified plan",
+      "success_criteria": [
+        "Qualified plan selected using current evidence"
+      ],
+      "constraints": [
+        "2 credits"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "No plan selected",
+        "Current evidence is available"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Select the currently qualified plan",
+      "information_needs": [
+        "Current qualification"
+      ],
+      "next_action": "observe current/qualification; select its qualified plan"
+    }
+  }
+}

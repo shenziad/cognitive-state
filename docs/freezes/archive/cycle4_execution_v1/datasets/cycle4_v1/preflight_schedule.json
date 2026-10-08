@@ -1,0 +1,578 @@
+[
+  {
+    "instance_id": "p4_006",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "full_context",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "cs_v031",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_002",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_006",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_010",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_012",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_008",
+    "condition": "cs_v02",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_011",
+    "condition": "cs_v02",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_004",
+    "condition": "full_context",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_009",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "summary",
+    "repetition": 1,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_007",
+    "condition": "summary",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_005",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_001",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  },
+  {
+    "instance_id": "p4_003",
+    "condition": "cs_v031",
+    "repetition": 0,
+    "handoff": 1
+  }
+]

@@ -1,0 +1,295 @@
+{
+  "stage": "preflight",
+  "complete": false,
+  "source_run": "D:\\Develop\\Cognitive State Representation for Long-Horizon LLM Agents\\cognitive-state\\results\\raw\\cycle4\\preflight_v2_20261003",
+  "evidence_type": "api",
+  "execution_version": "cycle4-execution-v2",
+  "results_sha256": "a7d84d438ff045ea208ee5b794a3b955ece5fe161103d81759c32c23c6d6c191",
+  "ledger_sha256": "243c7ad80d25e9a69bf3d74fee9967e488534b26a83caf8264bbd2b3d24da9ad",
+  "actual_usage": {
+    "request_attempts": 58,
+    "successful_responses": 57,
+    "total_tokens": null,
+    "known_reported_tokens": 100764,
+    "unknown_usage_attempts": 1,
+    "shared_extraction_counted_once": true
+  },
+  "conditions": {
+    "full_context": {
+      "assigned": 24,
+      "saved": 2,
+      "successes": null,
+      "executed": 2,
+      "statuses": {
+        "completed": 2
+      },
+      "final_valid": null,
+      "first_valid": null,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 6,
+        "successful_responses": 6,
+        "total_tokens": 10136,
+        "known_reported_tokens": 10136,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "executor": {
+          "request_attempts": 6,
+          "successful_responses": 6,
+          "total_tokens": 10136,
+          "known_reported_tokens": 10136,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 10054,
+      "output_tokens": 82,
+      "latency_seconds": 5.109192199990503,
+      "cached_input_tokens": 256
+    },
+    "summary": {
+      "assigned": 24,
+      "saved": 6,
+      "successes": null,
+      "executed": 5,
+      "statuses": {
+        "completed": 5,
+        "api_error": 1
+      },
+      "final_valid": 5,
+      "first_valid": 5,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 17,
+        "successful_responses": 16,
+        "total_tokens": null,
+        "known_reported_tokens": 23592,
+        "unknown_usage_attempts": 1,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 6,
+          "successful_responses": 5,
+          "total_tokens": null,
+          "known_reported_tokens": 6327,
+          "unknown_usage_attempts": 1,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 11,
+          "successful_responses": 11,
+          "total_tokens": 17265,
+          "known_reported_tokens": 17265,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": null,
+      "output_tokens": null,
+      "latency_seconds": null,
+      "cached_input_tokens": null
+    },
+    "cs_v02": {
+      "assigned": 24,
+      "saved": 5,
+      "successes": null,
+      "executed": 5,
+      "statuses": {
+        "completed": 5
+      },
+      "final_valid": 5,
+      "first_valid": 5,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 19,
+        "successful_responses": 19,
+        "total_tokens": 33371,
+        "known_reported_tokens": 33371,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 5,
+          "successful_responses": 5,
+          "total_tokens": 7718,
+          "known_reported_tokens": 7718,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 14,
+          "successful_responses": 14,
+          "total_tokens": 25653,
+          "known_reported_tokens": 25653,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 31166,
+      "output_tokens": 2205,
+      "latency_seconds": 79.43782660002034,
+      "cached_input_tokens": 2304
+    },
+    "cs_v031": {
+      "assigned": 24,
+      "saved": 6,
+      "successes": null,
+      "executed": 6,
+      "statuses": {
+        "completed": 6
+      },
+      "final_valid": 6,
+      "first_valid": 6,
+      "premature_completed": 0,
+      "policy_violations": 0,
+      "repeat_attempts": 0,
+      "usage": {
+        "request_attempts": 16,
+        "successful_responses": 16,
+        "total_tokens": 33665,
+        "known_reported_tokens": 33665,
+        "unknown_usage_attempts": 0,
+        "shared_extraction_counted_once": true
+      },
+      "phase_usage": {
+        "extraction": {
+          "request_attempts": 6,
+          "successful_responses": 6,
+          "total_tokens": 15430,
+          "known_reported_tokens": 15430,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        },
+        "executor": {
+          "request_attempts": 10,
+          "successful_responses": 10,
+          "total_tokens": 18235,
+          "known_reported_tokens": 18235,
+          "unknown_usage_attempts": 0,
+          "shared_extraction_counted_once": true
+        }
+      },
+      "input_tokens": 30274,
+      "output_tokens": 3391,
+      "latency_seconds": 78.49051069998677,
+      "cached_input_tokens": 512
+    }
+  },
+  "review_counts": {
+    "summary": {
+      "entity_phase_confusion": {
+        "correct": 4,
+        "incorrect": 1,
+        "not_observed": 1
+      },
+      "unsupported_completion": {
+        "correct": 5,
+        "not_observed": 1
+      },
+      "invented_requirement": {
+        "incorrect": 2,
+        "correct": 3,
+        "not_observed": 1
+      },
+      "missing_pending_job": {
+        "correct": 2,
+        "not_observed": 4
+      },
+      "unsupported_reopened_question": {
+        "correct": 3,
+        "incorrect": 1,
+        "ambiguous": 1,
+        "not_observed": 1
+      },
+      "missing_decision_dependency": {
+        "correct": 4,
+        "incorrect": 1,
+        "not_observed": 1
+      }
+    },
+    "cs_v02": {
+      "entity_phase_confusion": {
+        "correct": 4,
+        "incorrect": 1
+      },
+      "unsupported_completion": {
+        "correct": 5
+      },
+      "invented_requirement": {
+        "incorrect": 4,
+        "correct": 1
+      },
+      "missing_pending_job": {
+        "correct": 4,
+        "not_observed": 1
+      },
+      "unsupported_reopened_question": {
+        "correct": 4,
+        "incorrect": 1
+      },
+      "missing_decision_dependency": {
+        "correct": 4,
+        "ambiguous": 1
+      }
+    },
+    "cs_v031": {
+      "entity_phase_confusion": {
+        "correct": 5,
+        "incorrect": 1
+      },
+      "unsupported_completion": {
+        "correct": 6
+      },
+      "invented_requirement": {
+        "correct": 5,
+        "incorrect": 1
+      },
+      "missing_pending_job": {
+        "not_observed": 3,
+        "correct": 3
+      },
+      "unsupported_reopened_question": {
+        "correct": 5,
+        "incorrect": 1
+      },
+      "missing_decision_dependency": {
+        "correct": 5,
+        "incorrect": 1
+      }
+    }
+  },
+  "review_sha256": "65f1dde1db27d45022dfb139ee42c160479cd3c31620fb98f82002b8899913bf",
+  "audit_sha256": "76b1e7588db0b0faa887be1ceb8435d99ced6271ed6971341e632a70dc359787",
+  "chains": [],
+  "failures": [
+    {
+      "instance_id": "p4_008",
+      "condition": "summary",
+      "repetition": 1,
+      "handoff": 1,
+      "status": "api_error",
+      "error": {
+        "kind": "api_error",
+        "message": "Client request failed; see sanitized ledger status"
+      },
+      "metrics": null,
+      "artifact": "instances/p4_008_summary_r1_h1.json"
+    }
+  ],
+  "limits": [
+    "Small known synthetic development tasks; no unseen generalization claim.",
+    "Assistant content annotations; not independent human gold and not condition blinded.",
+    "Maintenance, repair and failed calls counted; tokens do not establish currency savings.",
+    "V0.3.1 changes schema, instructions and validation as a bundle; not a single-field causal test."
+  ]
+}

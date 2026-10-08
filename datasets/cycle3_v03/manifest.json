@@ -1,0 +1,7 @@
+{
+  "review_status": "assistant_authored_pending_independent_researcher_review",
+  "preflight": "12 short cases, six families with two variants, distinct from regression inputs",
+  "regression": "14 previously inspected instances; no unseen-generalization claim",
+  "longitudinal": "Two previously inspected four-checkpoint workflows",
+  "interface_change": "Same world dynamics; public execute preconditions/effects/increments and actual effect receipts shared by all conditions. Observation values and rubric remain hidden."
+}

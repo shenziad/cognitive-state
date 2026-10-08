@@ -1,0 +1,71 @@
+{
+  "instance_id": "disc_f02_b",
+  "review": {
+    "status": "pending",
+    "author": "assistant_generated",
+    "reviewer": null
+  },
+  "source_message_ids": {
+    "goal": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.facts": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.beliefs": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "world.assumptions": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ],
+    "frontier": [
+      "h01",
+      "h02",
+      "h03",
+      "h04",
+      "h05"
+    ]
+  },
+  "state": {
+    "goal": {
+      "objective": "Finish the remaining validated workflow stages",
+      "success_criteria": [
+        "A, B, C all validated"
+      ],
+      "constraints": [
+        "4 credits; each stage costs 2"
+      ],
+      "preferences": []
+    },
+    "world": {
+      "facts": [
+        "B is already validated",
+        "A, C have not run",
+        "Initial all-stage plan is obsolete"
+      ],
+      "beliefs": [],
+      "assumptions": []
+    },
+    "frontier": {
+      "current_focus": "Finish the remaining validated workflow stages",
+      "information_needs": [],
+      "next_action": "Execute run_A and run_C in either order; finish"
+    }
+  }
+}

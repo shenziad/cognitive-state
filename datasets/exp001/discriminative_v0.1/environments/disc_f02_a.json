@@ -1,0 +1,47 @@
+{
+  "instance_id": "disc_f02_a",
+  "environment_type": "continuation",
+  "initial_state": {
+    "done_A": true,
+    "done_B": false,
+    "done_C": false
+  },
+  "operations": {
+    "run_A": {
+      "description": "Run independent stage A; even re-running a completed stage costs 2 credits.",
+      "effects": {
+        "done_A": true
+      },
+      "cost": 2,
+      "repeat_key": "done_A"
+    },
+    "run_B": {
+      "description": "Run independent stage B; even re-running a completed stage costs 2 credits.",
+      "effects": {
+        "done_B": true
+      },
+      "cost": 2,
+      "repeat_key": "done_B"
+    },
+    "run_C": {
+      "description": "Run independent stage C; even re-running a completed stage costs 2 credits.",
+      "effects": {
+        "done_C": true
+      },
+      "cost": 2,
+      "repeat_key": "done_C"
+    }
+  },
+  "observations": {},
+  "budget": 4,
+  "rubric": {
+    "target_state": {
+      "done_A": true,
+      "done_B": true,
+      "done_C": true
+    },
+    "before_action": [],
+    "forbidden_actions": [],
+    "finish_status": "completed"
+  }
+}

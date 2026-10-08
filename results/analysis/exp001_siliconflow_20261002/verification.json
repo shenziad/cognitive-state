@@ -1,0 +1,9 @@
+{
+  "status": "clear",
+  "files_scanned": 301,
+  "credential_matches": 0,
+  "tests_passed": 20,
+  "live_requests_rejected": 2,
+  "live_model_responses": 0,
+  "performance_evaluation_available": false
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cognitive State v0.2",
+  "type": "object", "additionalProperties": false,
+  "required": ["goal", "world", "frontier"],
+  "$defs": {
+    "text": {"type": "string", "pattern": "\\S"},
+    "texts": {"type": "array", "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "goal": {
+      "type": "object", "additionalProperties": false,
+      "required": ["objective", "success_criteria", "constraints", "preferences"],
+      "properties": {
+        "objective": {"$ref": "#/$defs/text"},
+        "success_criteria": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+        "constraints": {"$ref": "#/$defs/texts"}, "preferences": {"$ref": "#/$defs/texts"}
+      }
+    },
+    "world": {
+      "type": "object", "additionalProperties": false,
+      "required": ["facts", "beliefs", "assumptions"],
+      "properties": {
+        "facts": {"$ref": "#/$defs/texts"}, "assumptions": {"$ref": "#/$defs/texts"},
+        "beliefs": {"type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["claim", "confidence"],
+          "properties": {"claim": {"$ref": "#/$defs/text"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}}
+        }}
+      }
+    },
+    "frontier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["current_focus", "information_needs", "next_action"],
+      "properties": {
+        "current_focus": {"$ref": "#/$defs/text"}, "information_needs": {"$ref": "#/$defs/texts"},
+        "next_action": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}
